@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 // Does the repository wooooooork?!?!?!?
 
+
 // Yes it does!
 
 //That's so awesome!
@@ -29,6 +30,7 @@ public class StartupCommon
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
     public static Item itemCoffeeMug;
+    public static Item itemTea;
     
     public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
     
@@ -50,12 +52,13 @@ public class StartupCommon
     	 itemEnderPowder = (ItemEnderPowder)(new ItemEnderPowder().setUnlocalizedName("itemEnderPowder"));
     	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));
     	 itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
-    	 
+    	 itemTea = (ItemTea) ((new ItemTea(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemTea"));
     	 
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
     	 GameRegistry.registerItem(itemCoffeeMug, "itemCoffeeMug");
+    	 GameRegistry.registerItem(itemTea, "itemTea");
     }
     
     public static void initCommon()
@@ -70,7 +73,12 @@ public class StartupCommon
 			 new ItemStack(itemCoffeeMug)
 			 });
     	 
-
+    	 GameRegistry.addShapelessRecipe(new ItemStack(itemTea, 1), new Object[] {
+			 new ItemStack(Blocks.leaves),
+			 new ItemStack(itemCoffeeMug)
+			 });
+    	 
+    	 
     	 GameRegistry.addRecipe(new ItemStack(itemCoffeeMug, 1),  new Object[] {
     		 "PC",
     		 'C', Items.clay_ball,
