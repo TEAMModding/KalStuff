@@ -1,0 +1,13 @@
+# THIS IS THE BLOCK ITEM MDOEL FILE. IT GOES IN THE assets/kalstuff/models/item/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "parent": "kalstuff:block/blockBridge",
+    "display": {
+        "thirdperson": {
+            "rotation": [ 10, -45, 170 ],
+            "translation": [ 0, 1.5, -2.75 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    }
+}

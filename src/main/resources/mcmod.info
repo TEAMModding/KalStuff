@@ -1,0 +1,16 @@
+[
+{
+  "modid": "kalstuff",
+  "name": "KalStuff",
+  "description": "A mod started by Kalman98 to practice modding by adding random cool stuff. Now being worked on by TEAM team.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["The TEAM Team"],
+  "credits": "The TEAM Team",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

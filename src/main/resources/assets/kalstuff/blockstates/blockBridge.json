@@ -1,0 +1,10 @@
+{
+    "variants": {
+        "facing=down":  { "model": "kalstuff:blockBridge_vertical", "x": 180 },
+        "facing=up":    { "model": "kalstuff:blockBridge_vertical" },
+        "facing=north": { "model": "kalstuff:blockBridge" },
+        "facing=south": { "model": "kalstuff:blockBridge", "y": 180 },
+        "facing=west":  { "model": "kalstuff:blockBridge", "y": 270 },
+        "facing=east":  { "model": "kalstuff:blockBridge", "y": 90 }
+    }
+}
