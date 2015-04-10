@@ -13,12 +13,11 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 // Does the repository wooooooork?!?!?!?
-<<<<<<< HEAD
 
 // Yes it does!
-=======
+
 //That's so awesome!
->>>>>>> 2fc26d8e653123c5ebef3ccc0f07ccf7e5fbcce5
+
 //Yayo
 public class StartupCommon
 {
