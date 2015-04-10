@@ -13,6 +13,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 
 // Does the repository wooooooork?!?!?!?
+//That's so awesome!
 //Yayo
 public class StartupCommon
 {
