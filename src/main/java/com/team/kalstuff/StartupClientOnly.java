@@ -2,13 +2,17 @@ package com.team.kalstuff;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.resources.model.ModelResourceLocation;
+import net.minecraft.client.settings.KeyBinding;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupClientOnly {
 
 	public static void preInitClientOnly()
 	{
+		KeyBinding binding = new KeyBinding("key.kalstuff.test", 37, "key.categories.kalstuff");
+		ClientRegistry.registerKeyBinding(binding);
 	}
 	
 	public static void initClientOnly()
