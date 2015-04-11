@@ -63,43 +63,7 @@ public class StartupCommon
     
     public static void initCommon()
     {
-    	 GameRegistry.addShapelessRecipe(new ItemStack(itemEnderPowder, 4), new Object[] {
-    			 new ItemStack(Items.ender_pearl),
-    			 new ItemStack(Items.flint)
-    			 });
-    	 
-    	 GameRegistry.addShapelessRecipe(new ItemStack(itemCoffee, 1), new Object[] {
-			 new ItemStack(Blocks.dirt),
-			 new ItemStack(itemCoffeeMug)
-			 });
-    	 
-    	 GameRegistry.addShapelessRecipe(new ItemStack(itemTea, 1), new Object[] {
-			 new ItemStack(Blocks.leaves),
-			 new ItemStack(itemCoffeeMug)
-			 });
-    	 
-    	 
-    	 GameRegistry.addRecipe(new ItemStack(itemCoffeeMug, 1),  new Object[] {
-    		 "PC",
-    		 'C', Items.clay_ball,
-    		 'P', Items.flower_pot,
-    			 });
-    	 
-    	 GameRegistry.addRecipe(new ItemStack(blockBridge, 1),  new Object[] {
-    		 "SPS",
-    		 "PEP",
-    		 "SPS",
-    		 'S', Items.stick,
-    		 'P', Blocks.planks,
-    		 'E', itemEnderPowder
-    			 });
-    	 
-    	 GameRegistry.addRecipe(new ItemStack(blockEnder, 1), new Object[] {
-    		 "PPP",
-    		 "PPP",
-    		 "PPP",
-    		 'P', Items.ender_pearl
-    	 });
+    	KalStuffRecipes.add();
     }
     public static void postInitCommon()
     {
