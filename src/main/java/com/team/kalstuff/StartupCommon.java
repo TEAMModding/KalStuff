@@ -11,17 +11,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-
-// Does the repository wooooooork?!?!?!?
-
-//testing repository
-// Yes it does!
-
-//Testing again.
-
-//That's so awesome!
-
-//Yayo
 public class StartupCommon
 {
 
