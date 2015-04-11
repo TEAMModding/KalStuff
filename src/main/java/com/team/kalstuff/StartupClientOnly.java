@@ -9,6 +9,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupClientOnly {
 
+	//testing eclipse with Git
+	
 	public static void preInitClientOnly()
 	{
 		KeyBinding binding = new KeyBinding("key.kalstuff.test", 37, "key.categories.kalstuff");
