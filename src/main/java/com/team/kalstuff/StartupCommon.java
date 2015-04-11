@@ -13,6 +13,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupCommon
 {
+	
+	//One more test, uploading from eclipse.
 
     public static BlockBridge blockBridge;
     public static BlockSquidMat blockSquidMat;
