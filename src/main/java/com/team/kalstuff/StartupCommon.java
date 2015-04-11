@@ -14,7 +14,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class StartupCommon
 {
 	
-	//One more test, uploading from eclipse.
+	//Dis is da' comment dat makes all da' difference.
 
     public static BlockBridge blockBridge;
     public static BlockSquidMat blockSquidMat;
