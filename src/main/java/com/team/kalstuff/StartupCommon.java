@@ -1,14 +1,14 @@
 package com.team.kalstuff;
 
-import net.minecraft.block.Block;
+import com.team.kalstuff.block.BlockBridge;
+import com.team.kalstuff.block.BlockEnder;
+import com.team.kalstuff.block.BlockSquidMat;
+import com.team.kalstuff.item.ItemCoffee;
+import com.team.kalstuff.item.ItemEnderPowder;
+import com.team.kalstuff.item.ItemTea;
+
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemFood;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.Mod.EventHandler;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupCommon

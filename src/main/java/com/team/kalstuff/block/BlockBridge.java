@@ -1,23 +1,21 @@
-package com.team.kalstuff;
+package com.team.kalstuff.block;
 
 import java.util.Random;
 
+import com.team.kalstuff.StartupCommon;
+
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.BlockPistonBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityDispenser;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
@@ -25,9 +23,6 @@ import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-//
-
-// What comment not working?
 
 public class BlockBridge extends Block {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
@@ -64,7 +59,6 @@ public class BlockBridge extends Block {
 	    {
 			// TODO Auto-generated method stub
 			BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
-			BlockPos aPos2 = new BlockPos(pos.getX(), pos.getY() - 1, pos.getZ());
 			if (worldIn.isRemote) return true;
 			if (playerIn.getCurrentEquippedItem().getItem() == Item.getItemFromBlock(Blocks.planks)) {
 				

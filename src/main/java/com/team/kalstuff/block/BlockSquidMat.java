@@ -1,15 +1,16 @@
-package com.team.kalstuff;
+package com.team.kalstuff.block;
+
+import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockSquidMat extends Block {
 
-	protected BlockSquidMat() {
+	public BlockSquidMat() {
 		super(Material.carpet);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
 	    this.setHardness(0.1f);

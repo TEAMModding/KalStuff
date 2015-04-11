@@ -1,6 +1,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "kalstuff:blocks/blockEnder"
+        "all": "kalstuff:blocks/block_of_ender"
     }
 }
