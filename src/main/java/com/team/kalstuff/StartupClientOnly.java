@@ -8,8 +8,6 @@ import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupClientOnly {
-
-	//testing eclipse with Git
 	
 	public static void preInitClientOnly()
 	{

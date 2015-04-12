@@ -13,8 +13,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupCommon
 {
-	
-
     public static BlockBridge blockBridge;
     public static BlockSquidMat blockSquidMat;
     public static BlockEnder blockEnder;
