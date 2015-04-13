@@ -13,9 +13,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupCommon
 {
-	
-	//Dis is da' comment dat makes all da' difference.
-
     public static BlockBridge blockBridge;
     public static BlockSquidMat blockSquidMat;
     public static BlockEnder blockEnder;
@@ -47,7 +44,6 @@ public class StartupCommon
     	 itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
     	 itemTea = (ItemTea) ((new ItemTea(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemTea"));
     	 
-    	 //This is da' oda comment dat' makes more o' da' differ'
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
     	 GameRegistry.registerItem(itemCoffeeMug, "itemCoffeeMug");
