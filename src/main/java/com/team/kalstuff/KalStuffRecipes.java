@@ -23,7 +23,14 @@ public class KalStuffRecipes {
 	 new ItemStack(StartupCommon.itemCoffeeMug)
 	 });
  
- 
+ /*
+  * Recipe for light coffee. If I did it wrong, please change it.
+  */
+ GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemLightCoffee, 1), new Object[] {
+	 new ItemStack(Items.milk_bucket),
+	 new ItemStack(StartupCommon.itemCoffee)
+	 });
+  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.itemCoffeeMug, 1),  new Object[] {
 	 "PC",
 	 'C', Items.clay_ball,
