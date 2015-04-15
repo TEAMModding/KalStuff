@@ -12,6 +12,11 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.IModGuiFactory;
 import net.minecraftforge.fml.client.config.GuiConfig;
 
+/**
+ * this is the class that gives forge the blueprints for it's config gui
+ * @author Joseph
+ *
+ */
 public class KalStuffGuiFactory implements IModGuiFactory 
 {
 	@Override
@@ -30,7 +35,7 @@ public class KalStuffGuiFactory implements IModGuiFactory
     {
     	public KalStuffConfigGui(GuiScreen parentScreen)
         {
-    		super(parentScreen, (new ConfigElement(KalStuff.getConfig().getCategory(Configuration.CATEGORY_GENERAL))).getChildElements(), "KalStuff", false, false, I18n.format("kalstuff.configgui.configTitle"));
+    		super(parentScreen, (new ConfigElement(KalStuff.getConfig().getCategory(Configuration.CATEGORY_GENERAL))).getChildElements(), KalStuff.MODID, Configuration.CATEGORY_GENERAL, false, false, I18n.format("kalstuff.configgui.configTitle"));
         }
     }
 }

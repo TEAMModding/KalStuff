@@ -8,4 +8,7 @@ item.itemCoffeeMug.name=Coffee Mug
 key.categories.kalstuff=KalStuff
 key.kalstuff.test=Test
 
+kalstuff.configgui.configTitle=KalStuff
+kalstuff.configgui.test=Test
+
 itemGroup.kalStuffTab=KalStuff
