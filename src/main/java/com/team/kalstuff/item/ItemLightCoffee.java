@@ -1,6 +1,7 @@
 package com.team.kalstuff.item;
 
 import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.item.ItemCoffee;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
