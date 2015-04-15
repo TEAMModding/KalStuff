@@ -3,6 +3,7 @@ tile.blockEnder.name=Block of Ender
 
 item.itemEnderPowder.name=Crushed Ender
 item.itemCoffee.name=Mug of Coffee
+item.itemLightCoffee.name=Mug of Coffee with Milk
 item.itemCoffeeMug.name=Coffee Mug
 
 key.categories.kalstuff=KalStuff
