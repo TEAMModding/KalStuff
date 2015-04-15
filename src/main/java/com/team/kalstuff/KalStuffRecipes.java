@@ -52,6 +52,7 @@ public class KalStuffRecipes {
 	 "PPP",
 	 'P', Items.blaze_rod
  });
+
 	}
 	
 }
