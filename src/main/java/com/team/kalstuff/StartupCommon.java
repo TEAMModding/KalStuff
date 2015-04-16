@@ -5,7 +5,6 @@ import com.team.kalstuff.block.BlockEnder;
 import com.team.kalstuff.block.BlockSquidMat;
 import com.team.kalstuff.item.ItemCoffee;
 import com.team.kalstuff.item.ItemEnderPowder;
-import com.team.kalstuff.item.ItemLightCoffee;
 import com.team.kalstuff.item.ItemTea;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -22,7 +21,7 @@ public class StartupCommon
     public static ItemCoffee itemCoffee;
     public static Item itemCoffeeMug;
     public static Item itemTea;
-    public static ItemLightCoffee itemLightCoffee;
+    public static ItemCoffee itemLightCoffee;
     
     public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
     
@@ -42,8 +41,8 @@ public class StartupCommon
     	
     	
     	 itemEnderPowder = (ItemEnderPowder)(new ItemEnderPowder().setUnlocalizedName("itemEnderPowder"));
-    	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));
-    	 itemLightCoffee = (ItemLightCoffee) ((new ItemLightCoffee(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemLightCoffee"));
+    	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false, 200)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));
+    	 itemLightCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemLightCoffee")).setCreativeTab(kalStuffTab);
     	 itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
     	 itemTea = (ItemTea) ((new ItemTea(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemTea"));
     	 
