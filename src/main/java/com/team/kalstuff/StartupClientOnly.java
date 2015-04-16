@@ -47,6 +47,9 @@ public class StartupClientOnly {
 		
 		ModelResourceLocation itemModelResourceLocation7 = new ModelResourceLocation("kalstuff:itemTea", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(StartupCommon.itemTea, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation7);
+		
+		ModelResourceLocation itemModelResourceLocation8 = new ModelResourceLocation("kalstuff:itemLightCoffee", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(StartupCommon.itemLightCoffee, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation8);
 
 	}
 	 
