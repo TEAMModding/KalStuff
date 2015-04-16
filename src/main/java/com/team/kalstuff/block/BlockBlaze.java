@@ -8,7 +8,7 @@ import net.minecraft.block.material.Material;
 public class BlockBlaze extends Block {
 
 	public BlockBlaze() {
-		super(Material.rock);
+		super(Material.iron);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
 		this.setHardness(35.0F);
 	}
