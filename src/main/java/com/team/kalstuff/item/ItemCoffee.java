@@ -10,17 +10,29 @@ import net.minecraft.world.World;
 
 public class ItemCoffee extends ItemDrink {
 
+	int potionLength = 0;
+	
+	/**
+     * 
+     *  
+     * @param potionLength is the length of the speed effect the player gets upon drinking.
+     */
+	public ItemCoffee(int amount, float saturation, boolean isWolfFood, int potionLength) {
+		super(amount, saturation, isWolfFood);
+		this.setMaxStackSize(1);
+		this.potionLength = potionLength;
+	}
+	
 	public ItemCoffee(int amount, float saturation, boolean isWolfFood) {
 		super(amount, saturation, isWolfFood);
 		this.setMaxStackSize(1);
-
 	}
 	
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
     {
-		if (!worldIn.isRemote)
+		if (!worldIn.isRemote && this.potionLength != 0)
 		{
-			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, 200, 0));
+			player.addPotionEffect(new PotionEffect(Potion.moveSpeed.id, this.potionLength, 0));
 		}
     }
     
