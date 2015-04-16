@@ -32,7 +32,7 @@ public class StartupClientOnly {
 		 
 		ModelResourceLocation itemModelResourceLocation4 = new ModelResourceLocation("kalstuff:itemCoffeeMug", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(StartupCommon.itemCoffeeMug, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation4);
-		
+		//teasting
 		Item itemBlockSquidMat = GameRegistry.findItem("kalstuff", "blockSquidMat");
 		ModelResourceLocation itemModelResourceLocation5= new ModelResourceLocation("kalstuff:blockSquidMat", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockSquidMat, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation5);
