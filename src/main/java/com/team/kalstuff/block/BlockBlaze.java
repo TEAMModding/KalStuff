@@ -10,7 +10,7 @@ public class BlockBlaze extends Block {
 	public BlockBlaze() {
 		super(Material.rock);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
-		this.setHardness(35.0F);
+		this.setHardness(30.0F);
 	}
 	
 	
