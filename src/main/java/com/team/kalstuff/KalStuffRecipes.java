@@ -52,6 +52,14 @@ public class KalStuffRecipes {
 	 "PPP",
 	 'P', Items.ender_pearl
  });
+ 
+ GameRegistry.addRecipe(new ItemStack(StartupCommon.blockBlaze, 1), new Object[] {
+	 "PPP",
+	 "PPP",
+	 "PPP",
+	 'P', Items.blaze_rod
+ });
+
 	}
 	
 }

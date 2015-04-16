@@ -40,7 +40,11 @@ public class StartupClientOnly {
 		Item itemBlockEnder = GameRegistry.findItem("kalstuff", "blockEnder");
 		ModelResourceLocation itemModelResourceLocation6= new ModelResourceLocation("kalstuff:blockEnder", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockEnder, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation6);
-	
+		
+		Item itemBlockBlaze = GameRegistry.findItem("kalstuff", "blockBlaze");
+		ModelResourceLocation itemModelResourceLocation6= new ModelResourceLocation("kalstuff:blockBlaze", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockBlaze, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation6);
+		
 		ModelResourceLocation itemModelResourceLocation7 = new ModelResourceLocation("kalstuff:itemTea", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(StartupCommon.itemTea, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation7);
 		
