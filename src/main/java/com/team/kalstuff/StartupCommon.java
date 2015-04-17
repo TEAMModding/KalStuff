@@ -1,5 +1,6 @@
 package com.team.kalstuff;
 
+import com.team.kalstuff.block.BlockBlaze;
 import com.team.kalstuff.block.BlockBridge;
 import com.team.kalstuff.block.BlockEnder;
 import com.team.kalstuff.block.BlockSquidMat;
@@ -16,9 +17,7 @@ public class StartupCommon
     public static BlockBridge blockBridge;
     public static BlockSquidMat blockSquidMat;
     public static BlockEnder blockEnder;
-    /*
-     * public static BlockBlaze blockBlaze;
-     */
+    public static BlockBlaze blockBlaze;
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
     public static Item itemCoffeeMug;
@@ -31,20 +30,14 @@ public class StartupCommon
 
     public static void preInitCommon()
     {
-    	//StartupClientOnly.initClientOnly();
     	blockBridge = (BlockBridge)(new BlockBridge().setUnlocalizedName("blockBridge"));
     	blockSquidMat = (BlockSquidMat)(new BlockSquidMat().setUnlocalizedName("blockSquidMat"));
     	blockEnder = (BlockEnder)(new BlockEnder().setUnlocalizedName("blockEnder"));
-    	/*
-    	 * blockBlaze = (BlockBlaze)(new BlockBlaze().setUnlocalizedName("blockBlaze"));
-    	 */
-    	
+    	blockBlaze = (BlockBlaze)(new BlockBlaze().setUnlocalizedName("blockBlaze"));
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
     	GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
     	GameRegistry.registerBlock(blockEnder, "blockEnder");
-    	/*
-    	 * GameRegistry.registerBlock(blockBlaze, "blockBlaze");
-    	 */
+    	GameRegistry.registerBlock(blockBlaze, "blockBlaze");
     	
     	 itemEnderPowder = (ItemEnderPowder)(new ItemEnderPowder().setUnlocalizedName("itemEnderPowder"));
     	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false, 200)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));
