@@ -16,7 +16,9 @@ public class StartupCommon
     public static BlockBridge blockBridge;
     public static BlockSquidMat blockSquidMat;
     public static BlockEnder blockEnder;
-    
+    /*
+     * public static BlockBlaze blockBlaze;
+     */
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
     public static Item itemCoffeeMug;
@@ -33,11 +35,16 @@ public class StartupCommon
     	blockBridge = (BlockBridge)(new BlockBridge().setUnlocalizedName("blockBridge"));
     	blockSquidMat = (BlockSquidMat)(new BlockSquidMat().setUnlocalizedName("blockSquidMat"));
     	blockEnder = (BlockEnder)(new BlockEnder().setUnlocalizedName("blockEnder"));
+    	/*
+    	 * blockBlaze = (BlockBlaze)(new BlockBlaze().setUnlocalizedName("blockBlaze"));
+    	 */
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
     	GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
     	GameRegistry.registerBlock(blockEnder, "blockEnder");
-    	
+    	/*
+    	 * GameRegistry.registerBlock(blockBlaze, "blockBlaze");
+    	 */
     	
     	 itemEnderPowder = (ItemEnderPowder)(new ItemEnderPowder().setUnlocalizedName("itemEnderPowder"));
     	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false, 200)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));
