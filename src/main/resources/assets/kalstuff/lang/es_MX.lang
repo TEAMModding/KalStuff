@@ -1,0 +1,17 @@
+tile.blockBridge.name=Bloque de Puente
+tile.blockEnder.name=Bloque de Ender
+tile.blockSquidMat.name=Alfombra de Calamar
+
+item.itemEnderPowder.name=Ender Aplastado
+item.itemCoffee.name=Sirviendo de Cafe
+item.itemLightCoffee.name=Sirviendo de Cafe con Leche
+item.itemCoffeeMug.name=Taza de Cafe
+item.itemTea.name=Sirviendo de Te
+
+key.categories.kalstuff=KalStuff
+key.kalstuff.test=Test
+
+kalstuff.configgui.configTitle=KalStuff
+kalstuff.configgui.test=Test
+
+itemGroup.kalStuffTab=KalStuff
