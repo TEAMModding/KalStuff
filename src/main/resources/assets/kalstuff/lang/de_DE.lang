@@ -1,0 +1,18 @@
+tile.blockBridge.name=Bruckenblock
+tile.blockEnder.name=Block von Ender
+tile.blockSquidMat.name=Teppich von Tintenfisch
+tile.blockBlaze.name=Block von Blaze
+
+item.itemEnderPowder.name=Zerkleinerte Ender
+item.itemCoffee.name=Tasse Kaffee
+item.itemLightCoffee.name=Becher Kaffee mit Milch
+item.itemCoffeeMug.name=Kaffee-Haferl
+item.itemTea.name=Tasse Tee
+
+key.categories.kalstuff=KalStuff
+key.kalstuff.test=Test
+
+kalstuff.configgui.configTitle=KalStuff
+kalstuff.configgui.test=Test
+
+itemGroup.kalStuffTab=KalStuff
