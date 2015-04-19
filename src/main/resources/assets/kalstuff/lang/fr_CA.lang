@@ -1,0 +1,17 @@
+tile.blockBridge.name=Bloc de Pont
+tile.blockEnder.name=Bloc de Ender
+tile.blockSquidMat.name=Calmars de la Mer
+
+item.itemEnderPowder.name=Ender Ecrasee
+item.itemCoffee.name=Servir de Cafe
+item.itemLightCoffee.name=Servir de Cafe au Lait
+item.itemCoffeeMug.name=Tasse de Cafe
+item.itemTea.name=Servir de The
+
+key.categories.kalstuff=KalStuff
+key.kalstuff.test=Test
+
+kalstuff.configgui.configTitle=KalStuff
+kalstuff.configgui.test=Test
+
+itemGroup.kalStuffTab=KalStuff
