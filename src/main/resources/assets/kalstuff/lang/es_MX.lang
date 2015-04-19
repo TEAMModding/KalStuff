@@ -1,5 +1,6 @@
 tile.blockBridge.name=Bloque de Puente
 tile.blockEnder.name=Bloque de Ender
+tile.blockBlaze.name=Bloque de Blaze
 tile.blockSquidMat.name=Alfombra de Calamar
 
 item.itemEnderPowder.name=Ender Aplastado

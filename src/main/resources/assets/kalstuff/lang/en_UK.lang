@@ -1,6 +1,7 @@
 tile.blockBridge.name=Bridge Block
 tile.blockEnder.name=Block of Ender
 tile.blockSquidMat.name=Squid Mat
+tile.blockBlaze.name=Block Of Blaze
 
 item.itemEnderPowder.name=Crushed Ender
 item.itemCoffee.name=Spot of Coffee
