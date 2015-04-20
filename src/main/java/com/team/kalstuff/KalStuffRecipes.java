@@ -61,10 +61,10 @@ public class KalStuffRecipes {
  });
  
  //GameRegistry.addRecipe(new ItemStack(StartupCommon.blockCarrot, 1), new Object[] {
-//	 "PPP",
-//	 "PPP",
-//	 "PPP",
-//	 'P', Items.carrot
+	// "PPP",
+	// "PPP",
+	// "PPP",
+	// 'P', Items.carrot
 // });
  
 	}
