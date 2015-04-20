@@ -60,12 +60,12 @@ public class KalStuffRecipes {
 	 'P', Items.blaze_rod
  });
  
- //GameRegistry.addRecipe(new ItemStack(StartupCommon.blockCarrot, 1), new Object[] {
-	// "PPP",
-	// "PPP",
-	// "PPP",
-	// 'P', Items.carrot
-// });
+ GameRegistry.addRecipe(new ItemStack(StartupCommon.blockCarrot, 1), new Object[] {
+	 "PPP",
+	 "PPP",
+	 "PPP",
+	 'P', Items.carrot
+ });
  
 	}
 	
