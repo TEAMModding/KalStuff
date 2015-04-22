@@ -2,6 +2,9 @@ tile.blockBridge.name=Bloque de Puente
 tile.blockEnder.name=Bloque de Ender
 title.blockBlaze.name=Bloque de Blaze
 tile.blockSquidMat.name=Alfombra de Calamar
+tile.blockPotato.name=Bloque de la Papa
+tile.blockApple.name=Bloque de Manzana
+tile.blockCarrot.name=Bloque de Zanahoria
 
 item.itemEnderPowder.name=Ender Aplastado
 item.itemCoffee.name=Sirviendo de Cafe

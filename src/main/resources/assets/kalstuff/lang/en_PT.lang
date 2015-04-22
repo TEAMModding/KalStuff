@@ -2,6 +2,9 @@ tile.blockBridge.name=Plank Maker
 tile.blockEnder.name=Block of Ender
 tile.blockSquidMat.name=Leggy Fish Rug
 tile.blockBlaze.name=Block Of Blaze
+tile.blockPotato.name=Tater Block
+tile.blockApple.name=Block of Apple
+tile.blockCarrot.name=Orange Veggy Block
 
 item.itemEnderPowder.name=Crushed Ender
 item.itemCoffee.name=Brown Bean Water

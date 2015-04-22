@@ -2,6 +2,9 @@ tile.blockBridge.name=Bruckenblock
 tile.blockEnder.name=Block von Ender
 tile.blockSquidMat.name=Teppich von Tintenfisch
 tile.blockBlaze.name=Block von Blaze
+tile.blockPotato.name=Kartoffel-Block
+tile.blockApple.name=Apfel-Block
+tile.blockCarrot.name=Karotte-Block
 
 item.itemEnderPowder.name=Zerkleinerte Ender
 item.itemCoffee.name=Tasse Kaffee

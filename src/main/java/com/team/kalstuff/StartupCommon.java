@@ -6,6 +6,7 @@ import com.team.kalstuff.block.BlockApple;
 import com.team.kalstuff.block.BlockBridge;
 import com.team.kalstuff.block.BlockEnder;
 import com.team.kalstuff.block.BlockSquidMat;
+import com.team.kalstuff.block.BlockPotato;
 import com.team.kalstuff.item.ItemCoffee;
 import com.team.kalstuff.item.ItemJewelSoup;
 import com.team.kalstuff.item.ItemEnderPowder;
@@ -24,6 +25,7 @@ public class StartupCommon
     public static BlockBlaze blockBlaze;
     public static BlockCarrot blockCarrot;
     public static BlockApple blockApple;
+    public static BlockPotato blockPotato;
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
     public static ItemJewelSoup itemJewelSoup;
@@ -44,12 +46,14 @@ public class StartupCommon
     	blockBlaze = (BlockBlaze)(new BlockBlaze().setUnlocalizedName("blockBlaze"));
     	blockCarrot = (BlockCarrot)(new BlockCarrot().setUnlocalizedName("blockCarrot"));
     	blockApple = (BlockApple)(new BlockApple().setUnlocalizedName("blockApple"));
+    	blockPotato = (BlockPotato)(new BlockPotato().setUnlocalizedName("blockPotato"));
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
     	GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
     	GameRegistry.registerBlock(blockEnder, "blockEnder");
     	GameRegistry.registerBlock(blockBlaze, "blockBlaze");
     	GameRegistry.registerBlock(blockCarrot, "blockCarrot");
     	GameRegistry.registerBlock(blockApple, "blockApple");
+    	GameRegistry.registerBlock(blockPotato, "blockPotato");
     	
     	 itemEnderPowder = (ItemEnderPowder)(new ItemEnderPowder().setUnlocalizedName("itemEnderPowder"));
     	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false, 200)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));

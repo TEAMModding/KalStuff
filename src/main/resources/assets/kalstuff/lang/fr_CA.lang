@@ -1,6 +1,9 @@
 tile.blockBridge.name=Bloc de Pont
 tile.blockEnder.name=Bloc de Ender
 tile.blockSquidMat.name=Calmars de la Mer
+tile.blockPotato.name=Bloc de la pomme de terre
+tile.blockApple.name=Bloc d'Apple
+tile.blockCarrot.name=Bloc de Carotte
 
 item.itemEnderPowder.name=Ender Ecrasee
 item.itemCoffee.name=Servir de Cafe
