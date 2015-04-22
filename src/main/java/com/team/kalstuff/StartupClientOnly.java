@@ -54,6 +54,12 @@ public class StartupClientOnly {
 		Item itemBlockCarrot = GameRegistry.findItem("kalstuff", "blockCarrot");
 		ModelResourceLocation itemModelResourceLocation10= new ModelResourceLocation("kalstuff:blockCarrot", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockCarrot, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation10);
+	
+		Item itemBlockApple = GameRegistry.findItem("kalstuff", "blockApple");
+		ModelResourceLocation itemModelResourceLocation11= new ModelResourceLocation("kalstuff:blockApple", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockApple, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation11);
+	
+	
 	}
 	 
 	public static void postInitClientOnly()

@@ -10,8 +10,8 @@ public class BlockApple extends Block {
 	public BlockApple() {
 		super(Material.rock);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
-		this.setHardness(2.0F);
-		//import com.team.kalstuff.block.BlockApple;
+		this.setHardness(3.0F);
+	
 	}
 	
 	
