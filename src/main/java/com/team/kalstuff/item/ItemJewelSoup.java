@@ -39,6 +39,6 @@ public class ItemJewelSoup extends ItemDrink {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn)
 	  {
 	      super.onItemUseFinish(stack, worldIn, playerIn);
-	      return new ItemStack(StartupCommon.itemCoffeeMug);
+	      return new ItemStack(StartupCommon.itemGoldenMug);
 	  }
 }
