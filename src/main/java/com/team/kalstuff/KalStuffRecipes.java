@@ -67,6 +67,14 @@ public class KalStuffRecipes {
 	 'P', Items.carrot
  });
  
+ GameRegistry.addRecipe(new ItemStack(StartupCommon.blockApple, 4), new Object[] {
+	 "PPP",
+	 "PPP",
+	 "PPP",
+	 'P', Items.apple
+ });
+ 
+ 
 	}
 	
 }
