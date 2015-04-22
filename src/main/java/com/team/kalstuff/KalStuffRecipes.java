@@ -74,6 +74,17 @@ public class KalStuffRecipes {
 	 'P', Items.apple
  });
  
+ GameRegistry.addRecipe(new ItemStack(StartupCommon.itemGoldenMug, 1), new Object[] {
+	 "...",
+	 "p.p",
+	 ".p.",
+	 'P', Items.gold_ingot
+ });
+ 
+ GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemJewelSoup, 1), new Object[] {
+	 new ItemStack(Items.diamond),
+	 new ItemStack(StartupCommon.itemGoldenMug)
+	 });
  
 	}
 	

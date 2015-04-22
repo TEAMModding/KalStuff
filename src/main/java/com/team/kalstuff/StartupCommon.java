@@ -7,6 +7,7 @@ import com.team.kalstuff.block.BlockBridge;
 import com.team.kalstuff.block.BlockEnder;
 import com.team.kalstuff.block.BlockSquidMat;
 import com.team.kalstuff.item.ItemCoffee;
+import com.team.kalstuff.item.ItemJewelSoup;
 import com.team.kalstuff.item.ItemEnderPowder;
 import com.team.kalstuff.item.ItemTea;
 import com.team.kalstuff.block.BlockCarrot;
@@ -25,7 +26,9 @@ public class StartupCommon
     public static BlockApple blockApple;
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
+    public static ItemJewelSoup itemJewelSoup;
     public static Item itemCoffeeMug;
+    public static Item itemGoldenMug;
     public static Item itemTea;
     public static ItemCoffee itemLightCoffee;
     
@@ -50,14 +53,18 @@ public class StartupCommon
     	
     	 itemEnderPowder = (ItemEnderPowder)(new ItemEnderPowder().setUnlocalizedName("itemEnderPowder"));
     	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false, 200)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));
+    	 itemJewelSoup = (ItemJewelSoup) ((new ItemJewelSoup(2, 2.0f, false, 200)).setAlwaysEdible().setUnlocalizedName("itemJewelSoup"));
     	 itemLightCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemLightCoffee")).setCreativeTab(kalStuffTab);
     	 itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
+    	 itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
     	 itemTea = (ItemTea) ((new ItemTea(2, 2.0f, false)).setAlwaysEdible().setUnlocalizedName("itemTea"));
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
+    	 GameRegistry.registerItem(itemJewelSoup, "itemJewelSoup");
     	 GameRegistry.registerItem(itemLightCoffee, "itemLightCoffee");
     	 GameRegistry.registerItem(itemCoffeeMug, "itemCoffeeMug");
+    	 GameRegistry.registerItem(itemGoldenMug, "itemGoldenMug");
     	 GameRegistry.registerItem(itemTea, "itemTea");
     }
     
