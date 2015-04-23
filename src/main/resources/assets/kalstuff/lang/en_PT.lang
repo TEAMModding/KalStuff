@@ -1,12 +1,13 @@
 tile.blockBridge.name=Plank Maker
-tile.blockEnder.name=Block of Ender
-tile.blockSquidMat.name=Leggy Fish Rug
-tile.blockBlaze.name=Block Of Blaze
+tile.blockEnder.name=Block o' the Tall One
+tile.blockSquidMat.name=Kraken Rug
+tile.blockBlaze.name=Block o' Burnin' Blaze
 tile.blockPotato.name=Tater Block
-tile.blockApple.name=Block of Apple
+tile.blockApple.name=Block o' Scurvy's Cure
 tile.blockCarrot.name=Orange Veggy Block
+tile.blockChickenNest.name=Chickie Nest
 
-item.itemEnderPowder.name=Crushed Ender
+item.itemEnderPowder.name=Tall Man Dust
 item.itemCoffee.name=Brown Bean Water
 item.itemLightCoffee.name=Brown Bean Water with Milk
 item.itemCoffeeMug.name=Mug
@@ -17,5 +18,7 @@ key.kalstuff.test=Tryout
 
 kalstuff.configgui.configTitle=KalStuff
 kalstuff.configgui.test=Tryout
+
+container.chickenNest.name=Chickie Nest
 
 itemGroup.kalStuffTab=KalStuff
