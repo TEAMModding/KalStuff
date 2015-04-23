@@ -1,9 +1,11 @@
 package com.team.kalstuff;
 
 
+import com.team.KalStuff;
 import com.team.kalstuff.block.BlockBlaze;
 import com.team.kalstuff.block.BlockApple;
 import com.team.kalstuff.block.BlockBridge;
+import com.team.kalstuff.block.BlockChickenNest;
 import com.team.kalstuff.block.BlockEnder;
 import com.team.kalstuff.block.BlockSquidMat;
 import com.team.kalstuff.block.BlockPotato;
@@ -12,9 +14,11 @@ import com.team.kalstuff.item.ItemJewelSoup;
 import com.team.kalstuff.item.ItemEnderPowder;
 import com.team.kalstuff.item.ItemTea;
 import com.team.kalstuff.block.BlockCarrot;
+import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupCommon
@@ -26,6 +30,8 @@ public class StartupCommon
     public static BlockCarrot blockCarrot;
     public static BlockApple blockApple;
     public static BlockPotato blockPotato;
+    public static BlockChickenNest blockChickenNest;
+    
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
     public static ItemJewelSoup itemJewelSoup;
@@ -47,6 +53,8 @@ public class StartupCommon
     	blockCarrot = (BlockCarrot)(new BlockCarrot().setUnlocalizedName("blockCarrot"));
     	blockApple = (BlockApple)(new BlockApple().setUnlocalizedName("blockApple"));
     	blockPotato = (BlockPotato)(new BlockPotato().setUnlocalizedName("blockPotato"));
+    	blockChickenNest = (BlockChickenNest)(new BlockChickenNest().setUnlocalizedName("blockChickenNest"));
+    	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
     	GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
     	GameRegistry.registerBlock(blockEnder, "blockEnder");
@@ -54,6 +62,8 @@ public class StartupCommon
     	GameRegistry.registerBlock(blockCarrot, "blockCarrot");
     	GameRegistry.registerBlock(blockApple, "blockApple");
     	GameRegistry.registerBlock(blockPotato, "blockPotato");
+    	GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
+    	
     	
     	 itemEnderPowder = (ItemEnderPowder)(new ItemEnderPowder().setUnlocalizedName("itemEnderPowder"));
     	 itemCoffee = (ItemCoffee) ((new ItemCoffee(2, 2.0f, false, 200)).setAlwaysEdible().setUnlocalizedName("itemCoffee"));
@@ -70,6 +80,12 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemCoffeeMug, "itemCoffeeMug");
     	 GameRegistry.registerItem(itemGoldenMug, "itemGoldenMug");
     	 GameRegistry.registerItem(itemTea, "itemTea");
+
+ 		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
+ 		
+ 		
+		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, GuiHandlerRegistry.getInstance());
+		GuiHandlerRegistry.getInstance().registerGuiHandler(new KalStuffGuiHandler(), KalStuffGuiHandler.getGuiID());
     }
     
     public static void initCommon()
