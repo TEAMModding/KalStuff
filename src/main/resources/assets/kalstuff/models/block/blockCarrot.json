@@ -1,6 +1,7 @@
 {
-    "parent": "block/cube_all",
+    "parent": "block/cube_top",
     "textures": {
-        "all": "kalstuff:blocks/block_of_carrot"
+        "side": "kalstuff:blocks/carrot_side",
+        "top": "kalstuff:blocks/carrot_top"
     }
 }
