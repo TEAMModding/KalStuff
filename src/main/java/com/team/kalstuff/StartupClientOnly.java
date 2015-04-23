@@ -64,6 +64,10 @@ public class StartupClientOnly {
 		
 		ModelResourceLocation itemModelResourceLocation13 = new ModelResourceLocation("kalstuff:itemJewelSoup", "inventory");
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(StartupCommon.itemJewelSoup, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation13);
+		
+		Item itemBlockPotato = GameRegistry.findItem("kalstuff", "blockPotato");
+		ModelResourceLocation itemModelResourceLocation14 = new ModelResourceLocation("kalstuff:blockPotato", "inventory");
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itemBlockPotato, DEFAULT_ITEM_SUBTYPE, itemModelResourceLocation14);
 	
 	}
 	 
