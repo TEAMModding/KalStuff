@@ -44,7 +44,7 @@ public class KalStuff
 	}
 
 	/**
-	 * reads the config, saves it, and is the blueprint for creating
+	 * Reads the config, saves it, and is the blueprint for creating
 	 * the config for the first time
 	 * 
 	 * @author Joseph
@@ -63,7 +63,7 @@ public class KalStuff
         
         Property prop;
         
-        //if you want to add new properties, copy this block and change the names
+        //If you want to add new properties, copy this block and change the names
         prop = config.get(CATEGORY_GENERAL, "test", true);
         prop.comment = "for testing this config file";
         prop.setLanguageKey("kalstuff.configgui.test");
@@ -86,7 +86,7 @@ public class KalStuff
     }
 	
 	/**
-	 * called when the config needs to be saved from the config gui
+	 * Called when the config needs to be saved from the config gui
 	 * 
 	 * @author Joseph
 	 */
