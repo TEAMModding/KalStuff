@@ -6,6 +6,7 @@ tile.blockPotato.name=Kartoffel-Block
 tile.blockApple.name=Apfel-Block
 tile.blockCarrot.name=Karotte-Block
 tile.blockChickenNest.name=Huhnernest
+tile.blockMystery.name=Geheimnisvoll Blockieren
 
 
 item.itemEnderPowder.name=Zerkleinerte Ender

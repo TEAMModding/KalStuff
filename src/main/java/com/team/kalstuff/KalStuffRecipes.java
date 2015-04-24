@@ -53,11 +53,6 @@ public class KalStuffRecipes {
  });
 
 
-
-
-
-
-
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.blockBlaze, 1), new Object[] {
 	 "PPP",

@@ -2,10 +2,27 @@ package com.team.kalstuff;
 
 
 import com.team.KalStuff;
+<<<<<<< HEAD
 
 import com.team.kalstuff.tileentity.*;
 import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
+=======
+import com.team.kalstuff.block.BlockBlaze;
+import com.team.kalstuff.block.BlockApple;
+import com.team.kalstuff.block.BlockBridge;
+import com.team.kalstuff.block.BlockChickenNest;
+import com.team.kalstuff.block.BlockEnder;
+import com.team.kalstuff.block.BlockSquidMat;
+import com.team.kalstuff.block.BlockPotato;
+import com.team.kalstuff.item.ItemCoffee;
+import com.team.kalstuff.item.ItemJewelSoup;
+import com.team.kalstuff.item.ItemEnderPowder;
+import com.team.kalstuff.item.ItemTea;
+import com.team.kalstuff.block.BlockCarrot;
+import com.team.kalstuff.block.BlockMystery;
+import com.team.kalstuff.tileentity.TileEntityChickenNest;
+>>>>>>> refs/remotes/origin/master
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -21,7 +38,11 @@ public class StartupCommon
     public static BlockCarrot blockCarrot;
     public static BlockApple blockApple;
     public static BlockPotato blockPotato;
+<<<<<<< HEAD
     
+=======
+    public static BlockMystery blockMystery;
+>>>>>>> refs/remotes/origin/master
     public static BlockChickenNest blockChickenNest;
     
     public static ItemEnderPowder itemEnderPowder;
@@ -42,6 +63,7 @@ public class StartupCommon
 
     public static void preInitCommon()
     {
+<<<<<<< HEAD
     	blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
     	blockSquidMat = (BlockSquidMat) new BlockSquidMat().setUnlocalizedName("blockSquidMat");
     	blockEnder = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
@@ -50,6 +72,17 @@ public class StartupCommon
     	blockApple = (BlockApple) new BlockApple().setUnlocalizedName("blockApple");
     	blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
     	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
+=======
+    	blockBridge = (BlockBridge)(new BlockBridge().setUnlocalizedName("blockBridge"));
+    	blockSquidMat = (BlockSquidMat)(new BlockSquidMat().setUnlocalizedName("blockSquidMat"));
+    	blockEnder = (BlockEnder)(new BlockEnder().setUnlocalizedName("blockEnder"));
+    	blockBlaze = (BlockBlaze)(new BlockBlaze().setUnlocalizedName("blockBlaze"));
+    	blockCarrot = (BlockCarrot)(new BlockCarrot().setUnlocalizedName("blockCarrot"));
+    	blockApple = (BlockApple)(new BlockApple().setUnlocalizedName("blockApple"));
+    	blockPotato = (BlockPotato)(new BlockPotato().setUnlocalizedName("blockPotato"));
+    	blockMystery = (BlockMystery)(new BlockMystery().setUnlocalizedName("blockMystery"));
+    	blockChickenNest = (BlockChickenNest)(new BlockChickenNest().setUnlocalizedName("blockChickenNest"));
+>>>>>>> refs/remotes/origin/master
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
     	GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
@@ -58,6 +91,10 @@ public class StartupCommon
     	GameRegistry.registerBlock(blockCarrot, "blockCarrot");
     	GameRegistry.registerBlock(blockApple, "blockApple");
     	GameRegistry.registerBlock(blockPotato, "blockPotato");
+<<<<<<< HEAD
+=======
+    	GameRegistry.registerBlock(blockMystery, "blockMystery");
+>>>>>>> refs/remotes/origin/master
     	GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
     	
     	
