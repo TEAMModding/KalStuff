@@ -6,7 +6,7 @@ tile.blockPotato.name=Tater Block
 tile.blockApple.name=Block o' Scurvy's Cure
 tile.blockCarrot.name=Orange Veggy Block
 tile.blockChickenNest.name=Fowl Nest
-
+tile.blockMystery.name=Confusing Block
 
 item.itemEnderPowder.name=Tall Man Dust
 item.itemCoffee.name=Brown Bean Water
