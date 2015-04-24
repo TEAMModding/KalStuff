@@ -5,6 +5,8 @@ tile.blockSquidMat.name=Alfombra de Calamar
 tile.blockPotato.name=Bloque de la Papa
 tile.blockApple.name=Bloque de Manzana
 tile.blockCarrot.name=Bloque de Zanahoria
+tile.blockChickenNest.name=Nido de pollo
+tile.blockMystery.name=Misteriosa Bloque
 
 item.itemEnderPowder.name=Ender Aplastado
 item.itemCoffee.name=Sirviendo de Cafe
@@ -17,5 +19,7 @@ key.kalstuff.test=Test
 
 kalstuff.configgui.configTitle=KalStuff
 kalstuff.configgui.test=Test
+
+container.chickenNest.name=Nido de pollo
 
 itemGroup.kalStuffTab=KalStuff
