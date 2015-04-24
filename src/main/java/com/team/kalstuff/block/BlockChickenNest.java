@@ -1,23 +1,17 @@
 package com.team.kalstuff.block;
-//please fix if the code is not right
-import java.util.List;
 
 import com.team.KalStuff;
 import com.team.kalstuff.KalStuffGuiHandler;
 import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
-import net.minecraft.block.BlockSlab;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
@@ -30,8 +24,9 @@ public class BlockChickenNest extends BlockContainer {
 
 	public BlockChickenNest() {
 		super(Material.plants);
+		this.setStepSound(soundTypeGrass);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
-		this.setHardness(0.5F);
+		this.setHardness(0.4F);
 		this.setBlockBounds(0.0f, 0.0f, 0.0f, 16/16.0f, 3/16.0f, 16/16.0f);
 	}
 

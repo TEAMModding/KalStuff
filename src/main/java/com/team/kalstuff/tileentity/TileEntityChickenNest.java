@@ -1,6 +1,5 @@
 package com.team.kalstuff.tileentity;
 
-import net.minecraft.client.renderer.EntityRenderer;
 import net.minecraft.command.IEntitySelector;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,8 +19,6 @@ import net.minecraft.entity.passive.EntityChicken;
 
 import java.util.Arrays;
 import java.util.List;
-
-import com.sun.xml.internal.fastinfoset.algorithm.BuiltInEncodingAlgorithm.WordListener;
 
 
 public class TileEntityChickenNest extends TileEntity implements IInventory, IUpdatePlayerListBox {
@@ -53,19 +50,20 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	//Find a "random" item over the block
 	public static EntityItem CheckForItemEntities(World worldIn, double p_145897_1_, double p_145897_3_, double p_145897_5_)
 	{
-	List list = worldIn.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 0.5D, p_145897_5_ + 1.0D), IEntitySelector.selectAnything);
+	List<?> list = worldIn.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 0.5D, p_145897_5_ + 1.0D), IEntitySelector.selectAnything);
 	return list.size() > 0 ? (EntityItem)list.get(0) : null;
 	}
 	
 	//Find a "random" item over the block
 	public static EntityChicken CheckForChickens(World worldIn, double p_145897_1_, double p_145897_3_, double p_145897_5_)
 	{
-	List list = worldIn.getEntitiesWithinAABB(EntityChicken.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 1.0D, p_145897_5_ + 1.0D), IEntitySelector.selectAnything);
+	List<?> list = worldIn.getEntitiesWithinAABB(EntityChicken.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 1.0D, p_145897_5_ + 1.0D), IEntitySelector.selectAnything);
 	return list.size() > 0 ? (EntityChicken)list.get(0) : null;
 	}
 	
 	//Checks if there is any space whatsoever, include partial stacks
-    private boolean hasEmptySpace()
+    @SuppressWarnings("unused")
+	private boolean hasEmptySpace()
     {
     	return (this.inventory[0] == null || this.inventory[0].stackSize != this.inventory[0].getMaxStackSize());
     }
@@ -234,7 +232,7 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	public void dropChicken() {
 		if (!worldObj.isRemote) {
 			this.resetCooldown();
-			if (this.chicken != null) this.chicken.setPositionAndUpdate(this.getPos().getX() + .5, this.getPos().getY() + .5, this.getPos().getZ() + .5);
+			if (this.chicken != null) this.chicken.setPositionAndUpdate(this.getPos().getX() + .5, this.getPos().getY() + .6, this.getPos().getZ() + .5);
 			this.chicken = null;
 			System.out.println("Chicken Dropped. Cooldown: " + this.cooldown);
 		}
