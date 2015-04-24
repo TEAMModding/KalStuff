@@ -2,6 +2,7 @@ package com.team.kalstuff;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -96,8 +97,46 @@ public class KalStuffRecipes {
  GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemJewelSoup, 1), new Object[] {
 	 new ItemStack(Items.diamond),
 	 new ItemStack(StartupCommon.itemGoldenMug)
-	 });
+ });
+ 
+	GameRegistry.addRecipe(new ItemStack(StartupCommon.blockChickenNest, 1), new Object[] {
+		" x ",
+		"x x",
+		" x ",
+		'x', Items.wheat
+	});
+	
+	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemChocolateCap), new Object[] {
+		"888",
+		"8 8",
+		"   ",
+		'8', new ItemStack(Items.dye, 1, EnumDyeColor.BROWN.getDyeDamage())
+	});;
+	
+	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemBaconCore), new Object[] {
+		" p",
+		"p ",
+		'p', Items.cooked_porkchop
+	});;
+	
+	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemInfusedBaconCore), new Object[] {
+		" c ",
+		"cbc",
+		" c ",
+		'b', StartupCommon.itemBaconCore,
+		'c', StartupCommon.itemCoffee
+	});;
+	
+	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemBaconWand), new Object[] {
+		"  c",
+		" b ",
+		"c  ",
+		'b', StartupCommon.itemInfusedBaconCore,
+		'c', StartupCommon.itemChocolateCap
+	});;
  
 	}
+	
+
 	
 }

@@ -13,6 +13,10 @@ item.itemCoffee.name=Mug of Coffee
 item.itemLightCoffee.name=Mug of Coffee with Milk
 item.itemCoffeeMug.name=Coffee Mug
 item.itemTea.name=Mug of Tea
+item.itemBaconWand.name=Chocolate Capped Bacon Wand
+item.itemBaconCore.name=Bacon Wand Core
+item.itemInfusedBaconCore.name=Infused Bacon Wand Core
+item.itemChocolateCap.name=Chocolate Cap
 
 key.categories.kalstuff=KalStuff
 key.kalstuff.test=Test
