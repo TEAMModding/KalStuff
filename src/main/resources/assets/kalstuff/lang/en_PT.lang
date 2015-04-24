@@ -5,7 +5,8 @@ tile.blockBlaze.name=Block o' Burnin' Blaze
 tile.blockPotato.name=Tater Block
 tile.blockApple.name=Block o' Scurvy's Cure
 tile.blockCarrot.name=Orange Veggy Block
-tile.blockChickenNest.name=Chickie Nest
+tile.blockChickenNest.name=Fowl Nest
+tile.blockMystery.name=Confusing Block
 
 item.itemEnderPowder.name=Tall Man Dust
 item.itemCoffee.name=Brown Bean Water
@@ -19,6 +20,6 @@ key.kalstuff.test=Tryout
 kalstuff.configgui.configTitle=KalStuff
 kalstuff.configgui.test=Tryout
 
-container.chickenNest.name=Chickie Nest
+container.chickenNest.name=Fowl Nest
 
 itemGroup.kalStuffTab=KalStuff

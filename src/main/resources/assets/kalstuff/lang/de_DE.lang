@@ -5,6 +5,8 @@ tile.blockBlaze.name=Block von Blaze
 tile.blockPotato.name=Kartoffel-Block
 tile.blockApple.name=Apfel-Block
 tile.blockCarrot.name=Karotte-Block
+tile.blockChickenNest.name=Huhnernest
+tile.blockMystery.name=Mysterious Block
 
 item.itemEnderPowder.name=Zerkleinerte Ender
 item.itemCoffee.name=Tasse Kaffee
@@ -17,5 +19,7 @@ key.kalstuff.test=Test
 
 kalstuff.configgui.configTitle=KalStuff
 kalstuff.configgui.test=Test
+
+container.chickenNest.name=Huhnernest
 
 itemGroup.kalStuffTab=KalStuff

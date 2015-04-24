@@ -69,9 +69,14 @@ public class BlockChickenNest extends BlockContainer {
 			// open on the server side only  (not sure why you shouldn't open client side too... vanilla doesn't, so we better not either)
 			if (worldIn.isRemote) return true;
 
-			playerIn.openGui(KalStuff.instance, KalStuffGuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+			if (playerIn.isSneaking()) {
+				TileEntityChickenNest tileentitychickennest = (TileEntityChickenNest) worldIn.getTileEntity(pos);
+				tileentitychickennest.dropChicken();
+			} else playerIn.openGui(KalStuff.instance, KalStuffGuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+			
 			return true;
 		}
+		
 		
 		// This is where you can do something when the block is broken. In this case drop the inventory's contents
 		@Override
@@ -110,9 +115,6 @@ public class BlockChickenNest extends BlockContainer {
 			// Super MUST be called last because it removes the tile entity
 			super.breakBlock(worldIn, pos, state);
 		}
-    
-    
-    
     
     
     

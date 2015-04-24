@@ -6,6 +6,7 @@ tile.blockPotato.name=Block of Potato
 tile.blockApple.name=Block of Apple
 tile.blockCarrot.name=Block of Carrot
 tile.blockChickenNest.name=Chicken Nest
+tile.blockMystery.name=Mysterious Block
 
 item.itemEnderPowder.name=Crushed Ender
 item.itemCoffee.name=Mug of Coffee
