@@ -84,6 +84,8 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemCoffeeMug, "itemCoffeeMug");
     	 GameRegistry.registerItem(itemGoldenMug, "itemGoldenMug");
     	 GameRegistry.registerItem(itemTea, "itemTea");
+    	 
+    	 GameRegistry.registerWorldGenerator(new WorldGen(), 1);
 
  		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
  		
