@@ -14,7 +14,7 @@ import com.team.kalstuff.item.ItemJewelSoup;
 import com.team.kalstuff.item.ItemEnderPowder;
 import com.team.kalstuff.item.ItemTea;
 import com.team.kalstuff.block.BlockCarrot;
-
+import com.team.kalstuff.block.BlockMystery;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -31,7 +31,7 @@ public class StartupCommon
     public static BlockCarrot blockCarrot;
     public static BlockApple blockApple;
     public static BlockPotato blockPotato;
-
+    public static BlockMystery blockMystery;
     public static BlockChickenNest blockChickenNest;
     
     public static ItemEnderPowder itemEnderPowder;
@@ -55,7 +55,7 @@ public class StartupCommon
     	blockCarrot = (BlockCarrot)(new BlockCarrot().setUnlocalizedName("blockCarrot"));
     	blockApple = (BlockApple)(new BlockApple().setUnlocalizedName("blockApple"));
     	blockPotato = (BlockPotato)(new BlockPotato().setUnlocalizedName("blockPotato"));
-
+    	blockMystery = (BlockMystery)(new BlockMystery().setUnlocalizedName("blockMystery"));
     	blockChickenNest = (BlockChickenNest)(new BlockChickenNest().setUnlocalizedName("blockChickenNest"));
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
@@ -65,7 +65,7 @@ public class StartupCommon
     	GameRegistry.registerBlock(blockCarrot, "blockCarrot");
     	GameRegistry.registerBlock(blockApple, "blockApple");
     	GameRegistry.registerBlock(blockPotato, "blockPotato");
-
+    	GameRegistry.registerBlock(blockMystery, "blockMystery");
     	GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
     	
     	
