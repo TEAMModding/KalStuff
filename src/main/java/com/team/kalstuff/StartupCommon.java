@@ -55,7 +55,7 @@ public class StartupCommon
     	blockCarrot = (BlockCarrot)(new BlockCarrot().setUnlocalizedName("blockCarrot"));
     	blockApple = (BlockApple)(new BlockApple().setUnlocalizedName("blockApple"));
     	blockPotato = (BlockPotato)(new BlockPotato().setUnlocalizedName("blockPotato"));
-    	blockMystery = (BlockMystery)(new BlockPotato().setUnlocalizedName("blockMystery"));
+    	blockMystery = (BlockMystery)(new BlockMystery().setUnlocalizedName("blockMystery"));
     	blockChickenNest = (BlockChickenNest)(new BlockChickenNest().setUnlocalizedName("blockChickenNest"));
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
