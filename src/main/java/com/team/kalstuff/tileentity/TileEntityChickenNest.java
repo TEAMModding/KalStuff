@@ -21,6 +21,8 @@ import net.minecraft.entity.passive.EntityChicken;
 import java.util.Arrays;
 import java.util.List;
 
+import com.sun.xml.internal.fastinfoset.algorithm.BuiltInEncodingAlgorithm.WordListener;
+
 
 public class TileEntityChickenNest extends TileEntity implements IInventory, IUpdatePlayerListBox {
 	// Create and initialize the items variable that will store store the items
@@ -31,20 +33,21 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	//Check for items
 	@Override
 	public void update() {
-	EntityItem item = CheckForItemEntities(this.worldObj, this.pos.getX(), this.pos.getY(), this.pos.getZ());
-	if (item != null)
-	{
-	ItemStack itemstack = item.getEntityItem().copy();
-	item.setEntityItemStack(this.add(itemstack));
-	System.out.println(itemstack.getItem());
-	}
-		if (this.cooldown > 0) this.cooldown --;
-		if (this.chicken != null && this.chicken.isDead) this.chicken = null;
-		if (this.chicken == null && this.cooldown <= 0) this.chicken = CheckForChickens(this.worldObj, this.pos.getX(), this.pos.getY(), this.pos.getZ());
-		else if (this.chicken != null) {
-			this.chicken.setPosition(this.getPos().getX() + .5, this.getPos().getY(), this.getPos().getZ() + .5);
-	}
-
+		if (!worldObj.isRemote) {
+			EntityItem item = CheckForItemEntities(this.worldObj, this.pos.getX(), this.pos.getY(), this.pos.getZ());
+			if (item != null)
+			{
+				ItemStack itemstack = item.getEntityItem().copy();
+				item.setEntityItemStack(this.add(itemstack));
+				System.out.println(itemstack.getItem());
+			}
+			
+			if (this.cooldown > 0) this.cooldown --;
+			if (this.chicken != null && this.chicken.isDead) this.chicken = null;
+			if (this.chicken == null && this.cooldown <= 0) this.chicken = CheckForChickens(this.worldObj, this.pos.getX(), this.pos.getY(), this.pos.getZ());
+			else if (this.chicken != null) this.chicken.setPosition(this.getPos().getX() + .5, this.getPos().getY(), this.getPos().getZ() + .5);
+		}
+		
 	}
 
 	//Find a "random" item over the block
@@ -229,10 +232,12 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	}
 
 	public void dropChicken() {
-		this.resetCooldown();
-		if (this.chicken != null) this.chicken.setPositionAndUpdate(this.getPos().getX() + .5, this.getPos().getY() + .5, this.getPos().getZ() + .5);
-		this.chicken = null;
-		System.out.println("Chicken Dropped. Cooldown: " + this.cooldown);
+		if (!worldObj.isRemote) {
+			this.resetCooldown();
+			if (this.chicken != null) this.chicken.setPositionAndUpdate(this.getPos().getX() + .5, this.getPos().getY() + .5, this.getPos().getZ() + .5);
+			this.chicken = null;
+			System.out.println("Chicken Dropped. Cooldown: " + this.cooldown);
+		}
 	}
 	
 	public void resetCooldown() {
