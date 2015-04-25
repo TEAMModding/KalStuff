@@ -22,13 +22,13 @@ public class WorldGen implements IWorldGenerator
 			build(structures.get(random.nextInt(structures.size())).structure, new BlockPos(chunkX * 16, world.getHorizon(new BlockPos(chunkX * 16, 0, chunkZ * 16)).getY(), chunkZ * 16), world);
 	}
 	
-	private void spawn(Random rand, BlockPos pos, World world)
+	/*private void spawn(Random rand, BlockPos pos, World world)
 	{
 		world.setBlockState(pos, Blocks.stonebrick.getDefaultState(), 3);
 		world.setBlockState(pos.up(), Blocks.stonebrick.getDefaultState(), 3);
 		world.setBlockState(pos.up(2), Blocks.stonebrick.getStateFromMeta(3), 3);
 		
-	}
+	}*/
 	
 	public void add(Structure structure) {
 		structures.add(structure);

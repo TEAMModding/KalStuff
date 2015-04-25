@@ -33,7 +33,7 @@ public class KalStuffRecipes {
  GameRegistry.addRecipe(new ItemStack(StartupCommon.itemCoffeeMug, 1),  new Object[] {
 	 "PC",
 	 'C', Items.clay_ball,
-	 'P', Items.flower_pot,
+	 'P', Items.flower_pot
 		 });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.blockBridge, 1),  new Object[] {

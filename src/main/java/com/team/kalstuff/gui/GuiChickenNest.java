@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import java.awt.*;
 
-import com.team.container.ContainerChickenNest;
+import com.team.kalstuff.container.ContainerChickenNest;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 /**

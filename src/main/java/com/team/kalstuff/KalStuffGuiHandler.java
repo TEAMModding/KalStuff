@@ -1,6 +1,6 @@
 package com.team.kalstuff;
 
-import com.team.container.ContainerChickenNest;
+import com.team.kalstuff.container.ContainerChickenNest;
 import com.team.kalstuff.gui.GuiChickenNest;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
