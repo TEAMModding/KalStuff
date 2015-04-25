@@ -30,7 +30,12 @@ public class StartupClientOnly
 		registerItemRendering("itemGoldenMug");
 		registerItemRendering("itemJewelSoup");
 		registerItemRendering("blockPotato");
+		registerItemRendering("blockMystery");
 		registerItemRendering("blockChickenNest");
+		registerItemRendering("itemBaconWand");
+		registerItemRendering("itemChocolateCap");
+		registerItemRendering("itemBaconCore");
+		registerItemRendering("itemInfusedBaconCore");
 		//from now on add itemRendering here
 	}
 	 

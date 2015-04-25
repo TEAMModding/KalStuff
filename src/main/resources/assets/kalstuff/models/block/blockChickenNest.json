@@ -1,7 +1,7 @@
 {
     "ambientocclusion": false,
     "textures": {
-	"particle": "kalstuff:blocks/blockChickenNest_Top"
+	"particle": "kalstuff:blocks/blockChickenNest_Top",
         "top": "kalstuff:blocks/blockChickenNest_Top",
 	"sides": "kalstuff:blocks/blockChickenNest_Sides",
 	"bottom": "kalstuff:blocks/blockChickenNest_Bottom"
