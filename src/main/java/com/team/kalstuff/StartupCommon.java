@@ -7,7 +7,7 @@ import com.team.KalStuff;
 import com.team.kalstuff.tileentity.*;
 import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
-
+import com.team.kalstuff.structure.*;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -91,13 +91,18 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
     	 GameRegistry.registerItem(itemInfusedBaconCore, "itemInfusedBaconCore");
     	 
-    	 GameRegistry.registerWorldGenerator(new WorldGen(), 1);
+    	 WorldGen worldGen = new WorldGen();
+    	 GameRegistry.registerWorldGenerator(worldGen, 1);
 
  		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
  		
  		
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, GuiHandlerRegistry.getInstance());
 		GuiHandlerRegistry.getInstance().registerGuiHandler(new KalStuffGuiHandler(), KalStuffGuiHandler.getGuiID());
+		
+		StructureHut structureHut = new StructureHut();
+		worldGen.add(structureHut);
+		
     }
     
     public static void initCommon()
