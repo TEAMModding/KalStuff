@@ -25,7 +25,7 @@ public class ItemJewelSoup extends ItemDrink {
 	
 	public ItemJewelSoup(int amount, float saturation, boolean isWolfFood) {
 		super(amount, saturation, isWolfFood);
-		this.setMaxStackSize(1);
+		this.setMaxStackSize(16);
 	}
 	
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
@@ -36,7 +36,9 @@ public class ItemJewelSoup extends ItemDrink {
 			player.addPotionEffect(new PotionEffect(Potion.absorption.id, 6000, 0));
 			player.addPotionEffect(new PotionEffect(Potion.saturation.id, 6000, 0));
 			player.addPotionEffect(new PotionEffect(Potion.regeneration.id, 6000, 0));
-			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 6000, 0));
+			player.addPotionEffect(new PotionEffect(Potion.digSpeed.id, 6000, 0));
+			player.addPotionEffect(new PotionEffect(Potion.resistance.id, 6000, 0));
+			player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 6000, 0));
 		}
     }
     
