@@ -1,0 +1,46 @@
+{
+    "textures": {
+        "particle": "kalstuff:blocks/trash_can",
+	   "side": "kalstuff:blocks/trash_can_side",
+	   "bottom": "kalstuff:blocks/trash_can_bottom"
+    },
+    "elements": [
+        {
+		"from": [ 2, 0, 2 ],
+            "to": [ 14, 15, 14 ],
+            "faces": {
+                "down":  { "uv": [ 2, 2, 14, 14 ], "texture": "#bottom" },
+                "up":    { "uv": [ 2, 2, 14, 14 ], "texture": "#particle" },
+                "north": { "uv": [ 2, 1, 14, 16 ], "texture": "#side" },
+                "south": { "uv": [ 2, 1, 14, 16 ], "texture": "#side" },
+                "west":  { "uv": [ 2, 1, 14, 16 ], "texture": "#side" },
+                "east":  { "uv": [ 2, 1, 14, 16 ], "texture": "#side" }
+            }
+
+        },
+	  {
+		"from": [ 1, 13, 1 ],
+            "to": [ 15, 14, 15 ],
+            "faces": {
+                "down":  { "uv": [ 1, 1, 15, 15 ], "texture": "#particle" },
+                "up":    { "uv": [ 1, 1, 15, 15 ], "texture": "#particle" },
+                "north": { "uv": [ 1, 2, 15, 3 ], "texture": "#side" },
+                "south": { "uv": [ 1, 2, 15, 3 ], "texture": "#side" },
+                "west":  { "uv": [ 1, 2, 15, 3 ], "texture": "#side" },
+                "east":  { "uv": [ 1, 2, 15, 3 ], "texture": "#side" }
+            }
+
+        },
+	  {
+		"from": [ 6, 15, 7.5 ],
+            "to": [ 10, 16, 8.5 ],
+            "faces": {
+                "up":    { "uv": [ 6, 7, 10, 8 ], "texture": "#particle" },
+                "north": { "uv": [ 6, 0, 10, 1 ], "texture": "#side" },
+                "south": { "uv": [ 6, 0, 10, 1 ], "texture": "#side" },
+                "west":  { "uv": [ 5, 1, 6, 2 ], "texture": "#side" },
+                "east":  { "uv": [ 10, 1, 11, 2 ], "texture": "#side" }
+            }
+        }
+	  ]
+}

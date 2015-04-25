@@ -1,7 +1,9 @@
 package com.team.kalstuff;
 
 import com.team.kalstuff.container.ContainerChickenNest;
+import com.team.kalstuff.container.ContainerTrashCan;
 import com.team.kalstuff.gui.GuiChickenNest;
+import com.team.kalstuff.gui.GuiTrashCan;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,44 +13,60 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
 
 /**
- * User: brandon3055
- * Date: 06/01/2015
+ * This is the new gui registry everyone should use.
+ * To add a new Gui simply add a new case statement with it's own number
+ * (your gui id). If your gui is on both client and server you will need 
+ * to add it in both methods.
+ * @author Joseph
  *
- * This class is used to get the client and server gui elements when a player opens a gui. There can only be one registered
- *   IGuiHandler instance handler per mod.
  */
 public class KalStuffGuiHandler implements IGuiHandler {
 	private static final int GUIID_CHICKEN_NEST = 30;
 	public static int getGuiID() {return GUIID_CHICKEN_NEST;}
 
-	// Gets the server side element for the given gui id- this should return a container
+	/**
+	 * Gets the server gui element, should return a child of Container.
+	 */
 	@Override
 	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		if (ID != getGuiID()) {
-			System.err.println("Invalid ID: expected " + getGuiID() + ", received " + ID);
-		}
-
-		BlockPos xyz = new BlockPos(x, y, z);
-		TileEntity tileEntity = world.getTileEntity(xyz);
-		if (tileEntity instanceof TileEntityChickenNest) {
-			TileEntityChickenNest tileEntityChickenNest = (TileEntityChickenNest) tileEntity;
-			return new ContainerChickenNest(player.inventory, tileEntityChickenNest);
+		BlockPos pos = new BlockPos(x, y, z);
+		switch(ID)
+		{
+			case(0): {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity instanceof TileEntityChickenNest) 
+				{
+					TileEntityChickenNest tileEntityChickenNest = (TileEntityChickenNest) tileEntity;
+					return new ContainerChickenNest(player.inventory, tileEntityChickenNest);
+				}
+			}
+			case(1): {
+				return new ContainerTrashCan(player.inventory);
+			}
 		}
 		return null;
 	}
 
-	// Gets the client side element for the given gui id- this should return a gui
+	/**
+	 * Gets the client gui element, this one returns the actual gui.
+	 */
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		if (ID != getGuiID()) {
-			System.err.println("Invalid ID: expected " + getGuiID() + ", received " + ID);
-		}
-
-		BlockPos xyz = new BlockPos(x, y, z);
-		TileEntity tileEntity = world.getTileEntity(xyz);
-		if (tileEntity instanceof TileEntityChickenNest) {
-			TileEntityChickenNest tileEntityChickenNest = (TileEntityChickenNest) tileEntity;
-			return new GuiChickenNest(player.inventory, tileEntityChickenNest);
+		BlockPos pos = new BlockPos(x, y, z);
+		switch(ID)
+		{
+			case(0): {
+				TileEntity tileEntity = world.getTileEntity(pos);
+				if (tileEntity instanceof TileEntityChickenNest) 
+				{
+					TileEntityChickenNest tileEntityChickenNest = (TileEntityChickenNest) tileEntity;
+					return new GuiChickenNest(player.inventory, tileEntityChickenNest);
+				}
+				return null;
+			}
+			case(1): {
+				return new GuiTrashCan(player.inventory);
+			}
 		}
 		return null;
 	}

@@ -22,6 +22,7 @@ public class StartupCommon
     public static BlockCarrot blockCarrot;
     public static BlockApple blockApple;
     public static BlockPotato blockPotato;
+    public static BlockTrashCan blockTrashCan;
 
 
     public static BlockChickenNest blockChickenNest;
@@ -53,6 +54,7 @@ public class StartupCommon
     	blockApple = (BlockApple) new BlockApple().setUnlocalizedName("blockApple");
     	blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
     	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
+    	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
 
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
@@ -62,8 +64,8 @@ public class StartupCommon
     	GameRegistry.registerBlock(blockCarrot, "blockCarrot");
     	GameRegistry.registerBlock(blockApple, "blockApple");
     	GameRegistry.registerBlock(blockPotato, "blockPotato");
-
     	GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
+    	GameRegistry.registerBlock(blockTrashCan, "blockTrashCan");
     	
     	
     	 itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
@@ -98,8 +100,7 @@ public class StartupCommon
  		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
  		
  		
-		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, GuiHandlerRegistry.getInstance());
-		GuiHandlerRegistry.getInstance().registerGuiHandler(new KalStuffGuiHandler(), KalStuffGuiHandler.getGuiID());
+		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
 		
 		StructureHut structureHut = new StructureHut();
 		worldGen.add(structureHut);

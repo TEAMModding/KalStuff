@@ -1,7 +1,6 @@
 package com.team.kalstuff.block;
 
 import com.team.KalStuff;
-import com.team.kalstuff.KalStuffGuiHandler;
 import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
@@ -67,7 +66,7 @@ public class BlockChickenNest extends BlockContainer {
 			if (playerIn.isSneaking()) {
 				TileEntityChickenNest tileentitychickennest = (TileEntityChickenNest) worldIn.getTileEntity(pos);
 				tileentitychickennest.dropChicken();
-			} else playerIn.openGui(KalStuff.instance, KalStuffGuiHandler.getGuiID(), worldIn, pos.getX(), pos.getY(), pos.getZ());
+			} else playerIn.openGui(KalStuff.instance, 0, worldIn, pos.getX(), pos.getY(), pos.getZ());
 			
 			return true;
 		}
