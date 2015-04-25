@@ -15,14 +15,8 @@ import com.team.kalstuff.item.ItemEnderPowder;
 import com.team.kalstuff.item.ItemTea;
 import com.team.kalstuff.block.BlockCarrot;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
-=======
 
-
-import com.team.kalstuff.tileentity.*;
-import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
-
->>>>>>> branch 'master' of https://github.com/Kalman98/KalStuff.git
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
