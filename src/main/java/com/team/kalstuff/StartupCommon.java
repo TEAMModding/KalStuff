@@ -14,7 +14,6 @@ import com.team.kalstuff.item.ItemJewelSoup;
 import com.team.kalstuff.item.ItemEnderPowder;
 import com.team.kalstuff.item.ItemTea;
 import com.team.kalstuff.block.BlockCarrot;
-
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -85,7 +84,7 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemGoldenMug, "itemGoldenMug");
     	 GameRegistry.registerItem(itemTea, "itemTea");
     	 
-    	 GameRegistry.registerWorldGenerator(new WorldGen(), 1);
+    	 GameRegistry.registerWorldGenerator(new WorldGenRocks(), 1);
 
  		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
  		
