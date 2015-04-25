@@ -1,13 +1,12 @@
 package com.team.kalstuff;
 
-
 import com.team.KalStuff;
 
-
-import com.team.kalstuff.tileentity.*;
 import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
+import com.team.kalstuff.tileentity.*;
 import com.team.kalstuff.structure.*;
+
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -91,8 +90,10 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
     	 GameRegistry.registerItem(itemInfusedBaconCore, "itemInfusedBaconCore");
     	 
+
     	 WorldGen worldGen = new WorldGen();
     	 GameRegistry.registerWorldGenerator(worldGen, 1);
+
 
  		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
  		
