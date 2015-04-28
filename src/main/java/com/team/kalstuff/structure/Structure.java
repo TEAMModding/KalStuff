@@ -1,4 +1,4 @@
-package com.team.kalstuff;
+package com.team.kalstuff.structure;
 
 import java.util.ArrayList;
 

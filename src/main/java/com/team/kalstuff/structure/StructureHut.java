@@ -3,8 +3,6 @@ package com.team.kalstuff.structure;
 import net.minecraft.block.*;
 import net.minecraft.init.Blocks;
 
-import com.team.kalstuff.Structure;
-
 public class StructureHut extends Structure {
 	
 	

@@ -1,7 +1,6 @@
 package com.team.kalstuff.block;
 
 import java.util.Random;
-
 import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.block.Block;
@@ -14,8 +13,6 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
@@ -26,7 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBridge extends Block {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
-	public BlockBridge() {
+	public BlockBridge() throws StackOverflowError {
 	super(Material.wood);
 	this.setCreativeTab(StartupCommon.kalStuffTab);
     this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
@@ -60,18 +57,54 @@ public class BlockBridge extends Block {
 			// TODO Auto-generated method stub
 			BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
 			if (worldIn.isRemote) return true;
-			if (playerIn.getCurrentEquippedItem().getItem() == Item.getItemFromBlock(Blocks.planks)) {
+			
+				if (Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()) != null) {
+
+				if (state.getValue(FACING).equals(EnumFacing.EAST)) 
+					do aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
+					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+						
 				
-				if (state.getValue(FACING).equals(EnumFacing.EAST)) while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState()) aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
-				if (state.getValue(FACING).equals(EnumFacing.WEST)) while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState()) aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
-				if (state.getValue(FACING).equals(EnumFacing.UP)) while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState()) aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
-				if (state.getValue(FACING).equals(EnumFacing.DOWN)) while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState()) aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
-				if (state.getValue(FACING).equals(EnumFacing.NORTH)) while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState()) aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
-				if (state.getValue(FACING).equals(EnumFacing.SOUTH)) while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState()) aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
+				if (state.getValue(FACING).equals(EnumFacing.WEST)) 
+					do aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
+					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+						
+				
+				if (state.getValue(FACING).equals(EnumFacing.UP))
+					do aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
+					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+						
+				
+				if (state.getValue(FACING).equals(EnumFacing.DOWN)) 
+					do aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
+					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
 
 				
+				if (state.getValue(FACING).equals(EnumFacing.NORTH)) 
+					do aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
+					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+
+				
+				if (state.getValue(FACING).equals(EnumFacing.SOUTH)) 
+					do 	aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
+					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+
+				
+				if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
+					System.out.println("It's a bridge block here.");
+					BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
+		        	aBridge.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, pos);
+				} else {
+
+				IBlockState block;
+		        if (Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
+
+		        	block = StartupCommon.blockBridge.getDefaultState().withProperty(FACING, BlockPistonBase.getFacingFromEntity(worldIn, pos, playerIn));
+		        }
+		        else block = Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getStateFromMeta(playerIn.getCurrentEquippedItem().getMetadata());
+		        
 				Random rand = new Random();
-				worldIn.setBlockState(aPos, Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getStateFromMeta(playerIn.getCurrentEquippedItem().getMetadata()));
+				worldIn.setBlockState(aPos, block);
 				for (int i = 0; i < 16; ++i)
                 {
                     worldIn.spawnParticle(EnumParticleTypes.PORTAL, aPos.getX(), aPos.getY() + rand.nextDouble() * 2.0D, aPos.getZ(), rand.nextGaussian(), 0.0D, rand.nextGaussian(), new int[0]);
@@ -79,79 +112,17 @@ public class BlockBridge extends Block {
 	            worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), "dig.wood", 1.0f, 1.0f);
 				System.out.println(state.getValue(FACING));	
 				if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
-
-			}
+				}
+				}
+			
 			return true;
 	    }
-	 
-	    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
-	    {
-	        super.onBlockAdded(worldIn, pos, state);
-	        this.setDefaultDirection(worldIn, pos, state);
-	    }
-	    
+
 	    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
 	    {
 	        return this.getDefaultState().withProperty(FACING, BlockPistonBase.getFacingFromEntity(worldIn, pos, placer));
 	    }
 
-	    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack)
-	    {
-	        worldIn.setBlockState(pos, state.withProperty(FACING, BlockPistonBase.getFacingFromEntity(worldIn, pos, placer)), 2);
-
-	   /*     if (stack.hasDisplayName())
-	        {
-	            TileEntity tileentity = worldIn.getTileEntity(pos);
-
-	            if (tileentity instanceof TileEntityDispenser)
-	            {
-	                ((TileEntityDispenser)tileentity).setCustomName(stack.getDisplayName());
-	            }
-	        }*/
-	    }
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-
-	    private void setDefaultDirection(World worldIn, BlockPos pos, IBlockState state)
-	    {
-	        if (!worldIn.isRemote)
-	        {
-	            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
-	            boolean flag = worldIn.getBlockState(pos.north()).getBlock().isFullBlock();
-	            boolean flag1 = worldIn.getBlockState(pos.south()).getBlock().isFullBlock();
-
-	            if (enumfacing == EnumFacing.NORTH && flag && !flag1)
-	            {
-	                enumfacing = EnumFacing.SOUTH;
-	            }
-	            else if (enumfacing == EnumFacing.SOUTH && flag1 && !flag)
-	            {
-	                enumfacing = EnumFacing.NORTH;
-	            }
-	            else
-	            {
-	                boolean flag2 = worldIn.getBlockState(pos.west()).getBlock().isFullBlock();
-	                boolean flag3 = worldIn.getBlockState(pos.east()).getBlock().isFullBlock();
-
-	                if (enumfacing == EnumFacing.WEST && flag2 && !flag3)
-	                {
-	                    enumfacing = EnumFacing.EAST;
-	                }
-	                else if (enumfacing == EnumFacing.EAST && flag3 && !flag2)
-	                {
-	                    enumfacing = EnumFacing.WEST;
-	                }
-	            }
-
-	            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
-	        }
-	    }
-	    
 	    public static EnumFacing getFacing(int meta)
 	    {
 	        return EnumFacing.getFront(meta & 7);
@@ -182,4 +153,74 @@ public class BlockBridge extends Block {
 	    {
 	        return new BlockState(this, new IProperty[] {FACING});
 	    }
+	    
+	    public boolean chain(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ, BlockPos firstPos) {
+	    	// TODO Auto-generated method stub
+	    				BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+	    				if (worldIn.isRemote) return true;
+	    				
+	    					if (Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()) != null) {
+
+	    					if (state.getValue(FACING).equals(EnumFacing.EAST)) 
+	    						do aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
+	    						while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    							
+	    					
+	    					if (state.getValue(FACING).equals(EnumFacing.WEST)) 
+	    						do aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
+	    						while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    							
+	    					
+	    					if (state.getValue(FACING).equals(EnumFacing.UP))
+	    						do aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
+	    						while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    							
+	    					
+	    					if (state.getValue(FACING).equals(EnumFacing.DOWN)) 
+	    						do aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
+	    						while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+
+	    					
+	    					if (state.getValue(FACING).equals(EnumFacing.NORTH)) 
+	    						do aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
+	    						while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+
+	    					
+	    					if (state.getValue(FACING).equals(EnumFacing.SOUTH)) 
+	    						do 	aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
+	    						while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+
+	    					if (aPos == firstPos) return true;
+	    					else if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
+	    						BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
+	    						try {
+	    			        	aBridge.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, pos);
+	    						} catch (StackOverflowError e) {
+	    							System.out.println(playerIn.getName() + " tried to make a bridge block loop! But we stopped them.");
+	    						}
+	    					} else {
+
+	    					IBlockState block;
+	    			        if (Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
+
+	    			        	block = StartupCommon.blockBridge.getDefaultState().withProperty(FACING, BlockPistonBase.getFacingFromEntity(worldIn, pos, playerIn));
+	    			        }
+	    			        else block = Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getStateFromMeta(playerIn.getCurrentEquippedItem().getMetadata());
+	    			        
+	    					Random rand = new Random();
+	    					worldIn.setBlockState(aPos, block);
+	    					for (int i = 0; i < 16; ++i)
+	    	                {
+	    	                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, aPos.getX(), aPos.getY() + rand.nextDouble() * 2.0D, aPos.getZ(), rand.nextGaussian(), 0.0D, rand.nextGaussian(), new int[0]);
+	    	                }
+	    		            worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), "dig.wood", 1.0f, 1.0f);
+	    					System.out.println(state.getValue(FACING));	
+	    					if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+	    					}
+	    					}
+	    				
+	    				return true;
+	    }
+	    
+	   // public BlockPos findNextPosition(World worldIn, BlockPos pos)
 }

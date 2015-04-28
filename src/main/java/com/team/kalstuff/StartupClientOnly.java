@@ -37,6 +37,8 @@ public class StartupClientOnly
 		registerItemRendering("itemBaconCore");
 		registerItemRendering("itemInfusedBaconCore");
 		registerItemRendering("blockTrashCan");
+		registerItemRendering("blockGrapeVine");
+		registerItemRendering("itemGrapes");
 		//from now on add itemRendering here
 	}
 	 

@@ -1,15 +1,16 @@
 package com.team.kalstuff;
 
 import com.team.KalStuff;
-
 import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
 import com.team.kalstuff.tileentity.*;
+import com.team.kalstuff.worldgen.WorldGen;
+import com.team.kalstuff.worldgen.WorldGenGrapeVine;
 import com.team.kalstuff.structure.*;
-
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -23,6 +24,7 @@ public class StartupCommon
     public static BlockApple blockApple;
     public static BlockPotato blockPotato;
     public static BlockTrashCan blockTrashCan;
+    public static BlockGrapeVine blockGrapeVine;
 
 
     public static BlockChickenNest blockChickenNest;
@@ -38,6 +40,7 @@ public class StartupCommon
     public static Item itemChocolateCap;
     public static Item itemBaconCore;
     public static Item itemInfusedBaconCore;
+    public static ItemFood itemGrapes;
     
     public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
     
@@ -55,6 +58,7 @@ public class StartupCommon
     	blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
     	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
+    	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
 
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
@@ -66,6 +70,7 @@ public class StartupCommon
     	GameRegistry.registerBlock(blockPotato, "blockPotato");
     	GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
     	GameRegistry.registerBlock(blockTrashCan, "blockTrashCan");
+    	GameRegistry.registerBlock(blockGrapeVine, "blockGrapeVine");
     	
     	
     	 itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
@@ -79,6 +84,7 @@ public class StartupCommon
     	 itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
     	 itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
     	 itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
+    	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
@@ -91,11 +97,13 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemChocolateCap, "itemChocolateCap");
     	 GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
     	 GameRegistry.registerItem(itemInfusedBaconCore, "itemInfusedBaconCore");
+    	 GameRegistry.registerItem(itemGrapes, "itemGrapes");
     	 
 
     	 WorldGen worldGen = new WorldGen();
     	 GameRegistry.registerWorldGenerator(worldGen, 1);
-
+    	 
+    	 GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
 
  		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
  		

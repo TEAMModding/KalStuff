@@ -8,6 +8,7 @@ tile.blockCarrot.name=Block of Carrot
 tile.blockChickenNest.name=Chicken Nest
 tile.blockMystery.name=Mysterious Block
 tile.trashCan.name=Trash Can
+tile.blockGrapeVine.name=Wild Grape Vine
 
 item.itemEnderPowder.name=Crushed Ender
 item.itemCoffee.name=Mug of Coffee
@@ -18,6 +19,7 @@ item.itemBaconWand.name=Chocolate Capped Bacon Wand
 item.itemBaconCore.name=Bacon Wand Core
 item.itemInfusedBaconCore.name=Infused Bacon Wand Core
 item.itemChocolateCap.name=Chocolate Cap
+item.itemGrapes.name=Grapes
 
 key.categories.kalstuff=KalStuff
 key.kalstuff.test=Test
