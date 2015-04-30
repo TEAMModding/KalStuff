@@ -83,10 +83,9 @@ public class KalStuffRecipes {
  });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.itemGoldenMug, 1), new Object[] {
-	 "...",
-	 "p.p",
-	 ".p.",
-	 'P', Items.gold_ingot
+	 "p p",
+	 " p ",
+	 'p', Items.gold_ingot
  });
  
  GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemJewelSoup, 1), new Object[] {
@@ -106,21 +105,21 @@ public class KalStuffRecipes {
 		"8 8",
 		"   ",
 		'8', new ItemStack(Items.dye, 1, EnumDyeColor.BROWN.getDyeDamage())
-	});;
+	});
 	
 	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemBaconCore), new Object[] {
 		" p",
 		"p ",
 		'p', Items.cooked_porkchop
-	});;
+	});
 	
 	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemInfusedBaconCore), new Object[] {
 		" c ",
 		"cbc",
 		" c ",
 		'b', StartupCommon.itemBaconCore,
-		'c', StartupCommon.itemCoffee
-	});;
+		'c', StartupCommon.itemCoffee.setContainerItem(StartupCommon.itemCoffeeMug)
+	});
 	
 	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemBaconWand), new Object[] {
 		"  c",
@@ -128,7 +127,7 @@ public class KalStuffRecipes {
 		"c  ",
 		'b', StartupCommon.itemInfusedBaconCore,
 		'c', StartupCommon.itemChocolateCap
-	});;
+	});
  
 	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemGrapeSeeds, 1), new Object[] {
 		 new ItemStack(StartupCommon.itemGrapes)
