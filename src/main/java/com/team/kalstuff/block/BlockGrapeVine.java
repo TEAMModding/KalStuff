@@ -65,9 +65,10 @@ public class BlockGrapeVine extends BlockCrops {
 	            {
 	                if (rand.nextInt(15) <= age)
 	                {
-	                    ret.add(new ItemStack(this.getSeed(), rand.nextInt(2) + 3, 0));
+	                    ret.add(new ItemStack(this.getSeed(), 1, 0));
 	                }
 	            }
+	            ret.add(new ItemStack(this.getCrop(), rand.nextInt(2) + 3));
 	        }
 	        return ret;
 	    }
@@ -76,12 +77,6 @@ public class BlockGrapeVine extends BlockCrops {
 	    public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
 	    {
 	        return false;
-	    }
-	    
-	/*    @Override
-	    public boolean canHarvestBlock(IBlockAccess world, BlockPos pos, EntityPlayer player) {
-	    	return false;
-	    }*/
-	    
+	    } 
 	    
 }
