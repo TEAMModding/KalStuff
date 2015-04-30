@@ -20,7 +20,7 @@ public class WorldGenGrapeVine implements IWorldGenerator {
 		
 		if (aPos != null && world.getBiomeGenForCoordsBody(aPos).biomeID == BiomeGenBase.roofedForest.biomeID) {
 			System.out.println("Generatin' grape vines...");
-			world.setBlockState(aPos.up(), StartupCommon.blockGrapeVine.getDefaultState());
+			world.setBlockState(aPos.up(), StartupCommon.blockWildGrapeVine.getDefaultState());
 		}
 		}
 	}

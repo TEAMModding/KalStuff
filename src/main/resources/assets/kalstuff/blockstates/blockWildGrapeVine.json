@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "grown=0": { "model": "kalstuff:blockWildGrapeVine_stage0" },
+        "grown=1": { "model": "kalstuff:blockWildGrapeVine_stage1" }
+
+    }
+}

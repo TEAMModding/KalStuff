@@ -23,7 +23,6 @@ public class ItemBaconWand extends Item {
 		super.onItemRightClick(itemStackIn, worldIn, playerIn);
 		//playerIn.dropOneItem(true);
 		return itemStackIn;
-
 	}
 	
 	@Override
@@ -38,7 +37,7 @@ public class ItemBaconWand extends Item {
 			EntityPlayerMP anEntity = (EntityPlayerMP) entity;
 			anEntity.dropOneItem(true);
 			stack.stackSize --;
-	        anEntity.addPotionEffect(new PotionEffect(23, 0, 4));
+	        anEntity.addPotionEffect(new PotionEffect(23, 1, 4));
 	        Random rand = new Random();
 	        anEntity.playSound("random.burp", 0.5F, rand.nextFloat() * 0.1F + 0.9F);
 		}
@@ -46,6 +45,5 @@ public class ItemBaconWand extends Item {
 		return true;
 		
 	}
-	
 
 }

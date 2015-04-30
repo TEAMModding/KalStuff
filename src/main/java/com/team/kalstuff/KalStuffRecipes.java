@@ -130,6 +130,9 @@ public class KalStuffRecipes {
 		'c', StartupCommon.itemChocolateCap
 	});;
  
+	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemGrapeSeeds, 1), new Object[] {
+		 new ItemStack(StartupCommon.itemGrapes)
+		 });
 	}
 	
 

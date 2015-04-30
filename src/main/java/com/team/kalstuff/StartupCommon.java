@@ -9,8 +9,10 @@ import com.team.kalstuff.worldgen.WorldGenGrapeVine;
 import com.team.kalstuff.structure.*;
 
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemSeeds;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -23,11 +25,12 @@ public class StartupCommon
     public static BlockCarrot blockCarrot;
     public static BlockApple blockApple;
     public static BlockPotato blockPotato;
+    public static BlockChickenNest blockChickenNest;
     public static BlockTrashCan blockTrashCan;
+    public static BlockWildGrapeVine blockWildGrapeVine;
     public static BlockGrapeVine blockGrapeVine;
 
 
-    public static BlockChickenNest blockChickenNest;
     
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
@@ -41,6 +44,7 @@ public class StartupCommon
     public static Item itemBaconCore;
     public static Item itemInfusedBaconCore;
     public static ItemFood itemGrapes;
+    public static ItemSeeds itemGrapeSeeds;
     
     public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
     
@@ -58,6 +62,7 @@ public class StartupCommon
     	blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
     	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
+    	blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
     	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
 
     	
@@ -70,6 +75,7 @@ public class StartupCommon
     	GameRegistry.registerBlock(blockPotato, "blockPotato");
     	GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
     	GameRegistry.registerBlock(blockTrashCan, "blockTrashCan");
+    	GameRegistry.registerBlock(blockWildGrapeVine, "blockWildGrapeVine");
     	GameRegistry.registerBlock(blockGrapeVine, "blockGrapeVine");
     	
     	
@@ -85,6 +91,7 @@ public class StartupCommon
     	 itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
     	 itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
     	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
+    	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
@@ -98,6 +105,7 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
     	 GameRegistry.registerItem(itemInfusedBaconCore, "itemInfusedBaconCore");
     	 GameRegistry.registerItem(itemGrapes, "itemGrapes");
+    	 GameRegistry.registerItem(itemGrapeSeeds, "itemGrapeSeeds");
     	 
 
     	 WorldGen worldGen = new WorldGen();
