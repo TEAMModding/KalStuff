@@ -6,6 +6,7 @@ import com.team.kalstuff.item.*;
 import com.team.kalstuff.tileentity.*;
 import com.team.kalstuff.worldgen.WorldGen;
 import com.team.kalstuff.worldgen.WorldGenGrapeVine;
+import com.team.kalstuff.worldgen.WorldGenMoonFlower;
 import com.team.kalstuff.structure.*;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -29,6 +30,7 @@ public class StartupCommon
     public static BlockTrashCan blockTrashCan;
     public static BlockWildGrapeVine blockWildGrapeVine;
     public static BlockGrapeVine blockGrapeVine;
+    public static BlockMoonFlower blockMoonFlower;
 
 
     
@@ -64,6 +66,7 @@ public class StartupCommon
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
     	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
+    	blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower().setUnlocalizedName("blockMoonFlower");
 
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
@@ -77,6 +80,7 @@ public class StartupCommon
     	GameRegistry.registerBlock(blockTrashCan, "blockTrashCan");
     	GameRegistry.registerBlock(blockWildGrapeVine, "blockWildGrapeVine");
     	GameRegistry.registerBlock(blockGrapeVine, "blockGrapeVine");
+    	GameRegistry.registerBlock(blockMoonFlower,  "blockMoonFlower");
     	
     	
     	 itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
@@ -112,8 +116,10 @@ public class StartupCommon
     	 GameRegistry.registerWorldGenerator(worldGen, 1);
     	 
     	 GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
-
- 		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
+    	 GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
+    	 
+    	 
+    	 GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
  		
  		
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());

@@ -41,6 +41,7 @@ public class StartupClientOnly
 		registerItemRendering("itemGrapes");
 		registerItemRendering("itemGrapeSeeds");
 		registerItemRendering("blockGrapeVine");
+		registerItemRendering("blockMoonFlower");
 		//from now on add itemRendering here
 	}
 	 
