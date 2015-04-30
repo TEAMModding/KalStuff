@@ -1,4 +1,9 @@
 # KalStuff
 Files for a mod that adds random stuff.
 
-Hi there. I just thought that most awesome programs have a readme, so this one probably should too. Feel free to edit if you like.
+If anyone has any good ideas put them in here. To keep things organized, write a comment saying that you are implementing
+this idea before you start coding it.
+
+ideas:
+
+[idea here]
