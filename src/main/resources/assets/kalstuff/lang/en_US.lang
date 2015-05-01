@@ -10,12 +10,15 @@ tile.blockMystery.name=Mysterious Block
 tile.trashCan.name=Trash Can
 tile.blockWildGrapeVine.name=Wild Grape Vine
 tile.blockGrapeVine.name=Grape Vine
+tile.blockMoonFlower.name=Moon Flower
 
 item.itemEnderPowder.name=Crushed Ender
 item.itemCoffee.name=Mug of Coffee
 item.itemLightCoffee.name=Mug of Coffee with Milk
 item.itemCoffeeMug.name=Coffee Mug
 item.itemTea.name=Mug of Tea
+item.itemJewelSoup.name=Jewel Soup
+item.itemBlazeSoup.name=Blaze Soup
 item.itemBaconWand.name=§eChocolate Capped Bacon Wand
 item.itemBaconCore.name=Bacon Wand Core
 item.itemInfusedBaconCore.name=Infused Bacon Wand Core

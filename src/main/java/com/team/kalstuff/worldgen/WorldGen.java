@@ -39,7 +39,7 @@ public class WorldGen implements IWorldGenerator
 	}
 
 	
-	public static void build(ArrayList<Block[][]> structure, BlockPos pos, World world) {
+	private static void build(ArrayList<Block[][]> structure, BlockPos pos, World world) {
 
 			for (int i = 0; i < structure.size(); i ++) {
 				for (int j = 0; j < structure.get(i).length; j ++) {
