@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 tile.blockBridge.name=Bridge Block
 tile.blockEnder.name=Block of Ender
 tile.blockSquidMat.name=Squid Mat
@@ -32,3 +33,42 @@ commands.worldgen.usage=/worldgen <x1> <y1> <z1> <x2> <y2> <y3> <FileName>
 commands.worldgenbuild.usage=/worldgenbuild <x> <y> <z> <FileName>
 
 itemGroup.kalStuffTab=KalStuff
+=======
+﻿tile.blockBridge.name=Bridge Block
+tile.blockEnder.name=Block of Ender
+tile.blockSquidMat.name=Squid Mat
+tile.blockBlaze.name=Block Of Blaze
+tile.blockPotato.name=Block of Potato
+tile.blockApple.name=Block of Apple
+tile.blockCarrot.name=Block of Carrot
+tile.blockChickenNest.name=Chicken Nest
+tile.blockMystery.name=Mysterious Block
+tile.trashCan.name=Trash Can
+tile.blockWildGrapeVine.name=Wild Grape Vine
+tile.blockGrapeVine.name=Grape Vine
+tile.blockMoonFlower.name=Moon Flower
+
+item.itemEnderPowder.name=Crushed Ender
+item.itemCoffee.name=Mug of Coffee
+item.itemLightCoffee.name=Mug of Coffee with Milk
+item.itemCoffeeMug.name=Coffee Mug
+item.itemTea.name=Mug of Tea
+item.itemJewelSoup.name=Jewel Soup
+item.itemBlazeSoup.name=Blaze Soup
+item.itemBaconWand.name=§eChocolate Capped Bacon Wand
+item.itemBaconCore.name=Bacon Wand Core
+item.itemInfusedBaconCore.name=Infused Bacon Wand Core
+item.itemChocolateCap.name=Chocolate Cap
+item.itemGrapes.name=Grapes
+item.itemGrapeSeeds.name=Grape Seeds
+
+key.categories.kalstuff=KalStuff
+key.kalstuff.test=Test
+
+kalstuff.configgui.configTitle=KalStuff
+kalstuff.configgui.test=Test
+
+container.chickenNest.name=Chicken Nest
+
+itemGroup.kalStuffTab=KalStuff
+>>>>>>> branch 'master' of https://github.com/Kalman98/KalStuff.git

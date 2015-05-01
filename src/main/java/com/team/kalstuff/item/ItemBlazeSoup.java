@@ -21,6 +21,7 @@ public class ItemBlazeSoup extends ItemDrink {
 		super(amount, saturation, isWolfFood);
 		this.setMaxStackSize(1);
 		this.potionLength = potionLength;
+		this.setCreativeTab(StartupCommon.kalStuffTab);
 	}
 	
 	public ItemBlazeSoup(int amount, float saturation, boolean isWolfFood) {
@@ -30,7 +31,7 @@ public class ItemBlazeSoup extends ItemDrink {
 	
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
     {
-		if (!worldIn.isRemote && this.potionLength != 0)
+		if (!worldIn.isRemote)
 		{
 			player.addPotionEffect(new PotionEffect(Potion.absorption.id, 6000, 0));
 			player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 6000, 0));

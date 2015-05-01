@@ -1,4 +1,4 @@
-package com.team.kalstuff;
+package com.team.kalstuff.worldgen;
 
 import java.util.Random;
 
