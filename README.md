@@ -8,3 +8,4 @@ If anyone has any good ideas put them in here, along with your name if you want.
  - [ideas here]
 
  - add Moon Flowers (nunyabiznis): [Finished]
+ - add day counter to tell you what day you are on 
