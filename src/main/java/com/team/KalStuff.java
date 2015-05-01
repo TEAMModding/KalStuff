@@ -6,6 +6,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.team.kalstuff.CommandWorldGenBuild;
+
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
@@ -17,6 +19,7 @@ import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(modid = KalStuff.MODID, version = KalStuff.VERSION, guiFactory = "com.team.kalstuff.KalStuffGuiFactory")
@@ -119,6 +122,13 @@ public class KalStuff
 	public void postInit(FMLPostInitializationEvent event)
 	{
 		proxy.postInit();
+	}
+	
+	@EventHandler
+	public void init(FMLServerStartingEvent event)
+	{
+		System.out.println("server starting!!!!!!");
+		event.registerServerCommand(new CommandWorldGenBuild());
 	}
 }
 

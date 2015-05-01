@@ -27,4 +27,8 @@ kalstuff.configgui.test=Test
 
 container.chickenNest.name=Chicken Nest
 
+commands.worldgen.success=Copied from: %d, %d, %d, to: %d, %d, %d
+commands.worldgen.usage=/worldgen <x1> <y1> <z1> <x2> <y2> <y3> <FileName>
+commands.worldgenbuild.usage=/worldgenbuild <x> <y> <z> <FileName>
+
 itemGroup.kalStuffTab=KalStuff

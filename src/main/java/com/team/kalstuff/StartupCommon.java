@@ -1,15 +1,14 @@
 package com.team.kalstuff;
 
 import com.team.KalStuff;
-
 import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
 import com.team.kalstuff.tileentity.*;
 import com.team.kalstuff.structure.*;
 
-
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -95,6 +94,7 @@ public class StartupCommon
 
     	 WorldGen worldGen = new WorldGen();
     	 GameRegistry.registerWorldGenerator(worldGen, 1);
+    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage"), 1);
 
 
  		GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
@@ -105,11 +105,14 @@ public class StartupCommon
 		StructureHut structureHut = new StructureHut();
 		worldGen.add(structureHut);
 		
+		
     }
     
     public static void initCommon()
     {
     	KalStuffRecipes.add();
+    	ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
+    	ClientCommandHandler.instance.registerCommand(new CommandWorldGenBuild());
     }
     public static void postInitCommon()
     {
