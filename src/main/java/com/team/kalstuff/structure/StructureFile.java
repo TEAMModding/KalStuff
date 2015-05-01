@@ -47,7 +47,6 @@ public class StructureFile implements IWorldGenerator
 				int z = in.readInt();
 				int id = in.readInt();
 			
-				System.out.println("placing: " + Block.getStateById(id).getBlock() + "at: " + x + pos.getX() + ", " + y + pos.getY() + ", " + z + pos.getZ());
 				world.setBlockState(new BlockPos(x + pos.getX(), y + pos.getY(), z + pos.getZ()), Block.getStateById(id), 2);
 			}
 		}

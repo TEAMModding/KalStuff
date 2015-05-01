@@ -16,6 +16,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
+import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -116,9 +117,11 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemGrapeSeeds, "itemGrapeSeeds");
     	 GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
     	 
+    	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 
     	 WorldGen worldGen = new WorldGen();
     	 GameRegistry.registerWorldGenerator(worldGen, 1);
+    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage"), 1);
     	 
     	 GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	 GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
