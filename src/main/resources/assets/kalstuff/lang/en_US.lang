@@ -19,6 +19,7 @@ item.itemBaconWand.name=Chocolate Capped Bacon Wand
 item.itemBaconCore.name=Bacon Wand Core
 item.itemInfusedBaconCore.name=Infused Bacon Wand Core
 item.itemChocolateCap.name=Chocolate Cap
+item.itemWalkingStick.name=Walking Stick
 
 key.categories.kalstuff=KalStuff
 key.kalstuff.test=Test

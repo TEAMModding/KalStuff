@@ -1,0 +1,19 @@
+{
+    "parent": "builtin/generated",
+    "textures": {
+        "layer0": "kalstuff:items/itemWalkingStick"
+    },
+    "display": {
+        "thirdperson": {
+            "rotation": [ 0, 90, -100 ],
+            "translation": [ 0, 3, -1.5 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson": {
+            "rotation": [ 0, -135, 25 ],
+            "translation": [ 0, 0, 2 ],
+            "scale": [ 1.7, 1.7, 1.7 ]
+        }
+    }
+}
+

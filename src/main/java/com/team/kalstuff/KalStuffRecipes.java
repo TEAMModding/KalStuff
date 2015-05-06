@@ -132,6 +132,20 @@ public class KalStuffRecipes {
 	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemGrapeSeeds, 1), new Object[] {
 		 new ItemStack(StartupCommon.itemGrapes)
 		 });
+	 
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.blockTrashCan), new Object[] {
+			"A A",
+			"A A",
+			"AAA",
+			'A', Blocks.stone
+		});
+	 
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.itemWalkingStick), new Object[] {
+			"  A",
+			" A ",
+			"A  ",
+			'A', Items.stick
+		});
 	}
 	
 

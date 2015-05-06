@@ -43,6 +43,7 @@ public class StartupClientOnly
 		registerItemRendering("blockGrapeVine");
 		registerItemRendering("blockMoonFlower");
 		registerItemRendering("itemBlazeSoup");
+		registerItemRendering("itemWalkingStick");
 		//from now on add itemRendering here
 	}
 	 
@@ -63,5 +64,4 @@ public class StartupClientOnly
 	{
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GameRegistry.findItem("kalstuff", name), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
 	}
-	
 }

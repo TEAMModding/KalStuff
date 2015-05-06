@@ -27,7 +27,6 @@ public class BlockMoonFlower extends BlockBush {
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		super.updateTick(worldIn, pos, state, rand);
         IBlockState iblockstate = worldIn.getBlockState(pos);
-        System.out.println(worldIn.getWorldTime());
 		if (worldIn.getWorldTime() >= 13000 || worldIn.getWorldTime() < 1000 && ((Integer)iblockstate.getValue(NIGHT)).intValue() != 1)
 			worldIn.setBlockState(pos, iblockstate.withProperty(NIGHT, Integer.valueOf(1)));
 		else worldIn.setBlockState(pos, iblockstate.withProperty(NIGHT, Integer.valueOf(0)));

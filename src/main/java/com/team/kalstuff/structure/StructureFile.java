@@ -24,7 +24,7 @@ public class StructureFile implements IWorldGenerator
 	
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		if (random.nextInt(50) == 1)
+		if (random.nextInt(70) == 1)
 		{
 			try {
 				BlockPos pos = new BlockPos(chunkX * 16, world.getHorizon(new BlockPos(chunkX * 16, 0, chunkZ * 16)).getY(), chunkZ * 16);

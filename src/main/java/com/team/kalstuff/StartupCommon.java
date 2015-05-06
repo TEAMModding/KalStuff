@@ -17,6 +17,8 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraftforge.client.ClientCommandHandler;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -51,6 +53,7 @@ public class StartupCommon
     public static Item itemInfusedBaconCore;
     public static ItemFood itemGrapes;
     public static ItemSeeds itemGrapeSeeds;
+    public static ItemWalkingStick itemWalkingStick;
     
     public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
     
@@ -101,6 +104,7 @@ public class StartupCommon
     	 itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
     	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
     	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
+    	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
@@ -116,6 +120,7 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemGrapes, "itemGrapes");
     	 GameRegistry.registerItem(itemGrapeSeeds, "itemGrapeSeeds");
     	 GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
+    	 GameRegistry.registerItem(itemWalkingStick, "itemWalkingStick");
     	 
     	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 
@@ -140,7 +145,12 @@ public class StartupCommon
     public static void initCommon()
     {
     	KalStuffRecipes.add();
+    	
+    	CoreEventHandler events = new CoreEventHandler();
+		MinecraftForge.EVENT_BUS.register(events);
+		FMLCommonHandler.instance().bus().register(events);
     }
+    
     public static void postInitCommon()
     {
     }

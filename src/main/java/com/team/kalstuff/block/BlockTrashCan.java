@@ -18,6 +18,7 @@ public class BlockTrashCan extends Block
 		super(Material.iron);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
 		this.setBlockBounds(1/16.0f, 0.0f, 1/16.0f, 15/16.0f, 1.0f, 15/16.0f);
+		this.setHardness(3.0F);
 	}
 	
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) 

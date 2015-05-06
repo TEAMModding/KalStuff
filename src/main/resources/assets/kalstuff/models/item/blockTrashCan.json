@@ -1,5 +1,5 @@
 {
-    "parent": "kalstuff:block/trashCan",
+    "parent": "kalstuff:block/blockTrashCan",
     "display": {
         "thirdperson": {
             "rotation": [ 10, -45, 170 ],
