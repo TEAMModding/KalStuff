@@ -67,7 +67,7 @@ public class CommandWorldGen extends CommandBase
                 }
                 
                 try {
-                	DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream(args[6] + ".worldgen")));
+                	DataOutputStream out = new DataOutputStream(new BufferedOutputStream(new FileOutputStream("worldgen-export/" + args[6] + ".worldgen")));
                 	for (int x = minBlockpos.getX(); x < maxBlockpos.getX(); x++)
                 	{
                 		for (int y = minBlockpos.getY(); y < maxBlockpos.getY(); y++)

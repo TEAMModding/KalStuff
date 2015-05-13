@@ -2,6 +2,12 @@
 
 package com.team.kalstuff;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Paths;
+import java.nio.file.attribute.FileAttribute;
+
 import com.team.KalStuff;
 import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
@@ -16,6 +22,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -126,7 +133,7 @@ public class StartupCommon
 
     	 WorldGen worldGen = new WorldGen();
     	 GameRegistry.registerWorldGenerator(worldGen, 1);
-    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage"), 1);
+    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage", 110), 1);
     	 
     	 GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	 GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
@@ -149,6 +156,16 @@ public class StartupCommon
     	CoreEventHandler events = new CoreEventHandler();
 		MinecraftForge.EVENT_BUS.register(events);
 		FMLCommonHandler.instance().bus().register(events);
+		
+		System.out.println(new ResourceLocation("kalstuff", "textures/gui/chickenNestGui.png").getResourceDomain());
+		
+		if (!Files.exists(Paths.get("worldgen-export"), LinkOption.NOFOLLOW_LINKS)) {
+			try {
+				Files.createDirectory(Paths.get("worldgen-export"), new FileAttribute[] {});
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
     }
     
     public static void postInitCommon()

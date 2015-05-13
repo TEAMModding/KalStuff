@@ -41,7 +41,7 @@ public class CommandWorldGenBuild extends CommandBase
 		else
 		{
 			BlockPos blockpos = func_175757_a(sender, args, 0, false);
-			String file = args[3] + ".worldgen";
+			String file = "worldgen-export/" + args[3] + ".worldgen";
 			World world = sender.getEntityWorld();
 			try {
 				build(blockpos, file, world);
