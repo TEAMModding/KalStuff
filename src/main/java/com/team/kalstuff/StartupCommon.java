@@ -127,7 +127,7 @@ public class StartupCommon
     	 
     	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 
-    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage", 150), 1);
+    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage", 500), 1);
     	 
     	 GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	 GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
@@ -154,9 +154,11 @@ public class StartupCommon
 				e.printStackTrace();
 			}
 		}
+		
     }
     
     public static void postInitCommon()
     {
+		System.out.println("Wait a minute... GUYS! IT WORKS! WE MADE A MOD!!!");
     }
 }
