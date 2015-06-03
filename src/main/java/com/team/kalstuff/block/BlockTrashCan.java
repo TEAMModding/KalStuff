@@ -25,7 +25,6 @@ public class BlockTrashCan extends Block
 	{
 		if (!worldIn.isRemote)
 		{
-			System.out.println("opening gui");
 			playerIn.openGui(KalStuff.instance, 1, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 		return true;

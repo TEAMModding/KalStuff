@@ -58,7 +58,6 @@ public class ItemEnderPowder extends Item {
 	                            Block block = worldIn.getBlockState(aPos).getBlock();
 	                            Block block2 = worldIn.getBlockState(aPos2).getBlock();
 	                            Block block3 = worldIn.getBlockState(aPos3).getBlock();
-		                    	System.out.println(randX + ", " + randY + ", " + randZ);
 	                    	if (loopCount <= (maxTries / 3) * 2) {
 	                    			if (block.getMaterial().blocksMovement() &&
 	                    				!block2.getMaterial().blocksMovement() &&
@@ -79,8 +78,6 @@ public class ItemEnderPowder extends Item {
 	                    			goodPos = true;
 	                    		}
 	                    	}
-	                    	
-	                    	System.out.println(randX + ", " + randY + ", " + randZ);
 	                    	net.minecraftforge.event.entity.living.EnderTeleportEvent event = new net.minecraftforge.event.entity.living.EnderTeleportEvent(playerIn, randX, randY, randZ, 2.0F);
 	                        if (!net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event))
 	                        { // Don't indent to lower patch size

@@ -46,7 +46,6 @@ public class WorldGen implements IWorldGenerator
 					for (int k = 0; k < structure.get(i)[j].length; k ++) {
 						BlockPos aPos = new BlockPos(pos.getX() + j, pos.getY() + i, pos.getZ() + k);
 						world.setBlockState(aPos, structure.get(i)[j][k].getDefaultState());
-						System.out.println("X: " + (pos.getX() + j) + ", Y: " + (pos.getY() + i) + ", Z: " + (pos.getZ() + k + ", Block: " + structure.get(i)[j][k]));
 					}
 				}
 			}

@@ -19,7 +19,6 @@ public class WorldGenGrapeVine implements IWorldGenerator {
 		BlockPos aPos = this.getSurface(chunkX * 16 + random.nextInt(16), chunkZ * 16 + random.nextInt(16), world);
 		
 		if (aPos != null && world.getBiomeGenForCoordsBody(aPos).biomeID == BiomeGenBase.roofedForest.biomeID) {
-			System.out.println("Generatin' grape vines...");
 			world.setBlockState(aPos.up(), StartupCommon.blockWildGrapeVine.getDefaultState());
 		}
 		}

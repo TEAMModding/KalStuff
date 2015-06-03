@@ -39,7 +39,6 @@ public class KalStuff
 	
 	public KalStuff()
 	{
-		System.out.println("KalStuff is being initialized");
 		config = null;
 		File cfgFile = new File(Loader.instance().getConfigDir(), "kalstuff.cfg");
         config = new Configuration(cfgFile);
@@ -67,13 +66,12 @@ public class KalStuff
         Property prop;
         
         //If you want to add new properties, copy this block and change the names
-        prop = config.get(CATEGORY_GENERAL, "test", true);
-        prop.comment = "for testing this config file";
-        prop.setLanguageKey("kalstuff.configgui.test");
+        prop = config.get(CATEGORY_GENERAL, "debug", false);
+        prop.comment = "Enables debug output.";
+        prop.setLanguageKey("kalstuff.configgui.debug");
         propOrder.add(prop.getName());
         
         
-        System.out.println("config value is: " + prop.getBoolean(true));
         
         config.setCategoryPropertyOrder(CATEGORY_GENERAL, propOrder);
         
@@ -127,7 +125,6 @@ public class KalStuff
 	@EventHandler
 	public void init(FMLServerStartingEvent event)
 	{
-		System.out.println("server starting!!!!!!");
 		event.registerServerCommand(new CommandWorldGenBuild());
 	}
 }

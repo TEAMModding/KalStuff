@@ -36,7 +36,6 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 			{
 				ItemStack itemstack = item.getEntityItem().copy();
 				item.setEntityItemStack(this.add(itemstack));
-				System.out.println(itemstack.getItem());
 			}
 			
 			if (this.cooldown > 0) this.cooldown --;
@@ -234,7 +233,6 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 			this.resetCooldown();
 			if (this.chicken != null) this.chicken.setPositionAndUpdate(this.getPos().getX() + .5, this.getPos().getY() + .6, this.getPos().getZ() + .5);
 			this.chicken = null;
-			System.out.println("Chicken Dropped. Cooldown: " + this.cooldown);
 		}
 	}
 	

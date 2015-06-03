@@ -91,7 +91,6 @@ public class BlockBridge extends Block {
 
 				
 				if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
-					System.out.println("It's a bridge block here.");
 					BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
 		        	aBridge.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, pos);
 				} else {
@@ -110,7 +109,6 @@ public class BlockBridge extends Block {
                     worldIn.spawnParticle(EnumParticleTypes.PORTAL, aPos.getX(), aPos.getY() + rand.nextDouble() * 2.0D, aPos.getZ(), rand.nextGaussian(), 0.0D, rand.nextGaussian(), new int[0]);
                 }
 	            worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), "dig.wood", 1.0f, 1.0f);
-				System.out.println(state.getValue(FACING));	
 				if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
 				}
 				}
@@ -196,7 +194,6 @@ public class BlockBridge extends Block {
 	    						try {
 	    			        	aBridge.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, pos);
 	    						} catch (StackOverflowError e) {
-	    							System.out.println(playerIn.getName() + " tried to make a bridge block loop! But we stopped them.");
 	    						}
 	    					} else {
 
@@ -214,7 +211,6 @@ public class BlockBridge extends Block {
 	    	                    worldIn.spawnParticle(EnumParticleTypes.PORTAL, aPos.getX(), aPos.getY() + rand.nextDouble() * 2.0D, aPos.getZ(), rand.nextGaussian(), 0.0D, rand.nextGaussian(), new int[0]);
 	    	                }
 	    		            worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), "dig.wood", 1.0f, 1.0f);
-	    					System.out.println(state.getValue(FACING));	
 	    					if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
 	    					}
 	    					}

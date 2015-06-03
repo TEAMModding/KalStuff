@@ -12,7 +12,6 @@ import com.team.KalStuff;
 import com.team.kalstuff.block.*;
 import com.team.kalstuff.item.*;
 import com.team.kalstuff.tileentity.*;
-import com.team.kalstuff.worldgen.WorldGen;
 import com.team.kalstuff.worldgen.WorldGenGrapeVine;
 import com.team.kalstuff.worldgen.WorldGenMoonFlower;
 import com.team.kalstuff.structure.*;
@@ -22,7 +21,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -32,7 +30,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class StartupCommon
 {
     public static BlockBridge blockBridge;
-    public static BlockSquidMat blockSquidMat;
+    //public static BlockSquidMat blockSquidMat;
     public static BlockEnder blockEnder;
     public static BlockBlaze blockBlaze;
     public static BlockCarrot blockCarrot;
@@ -43,15 +41,13 @@ public class StartupCommon
     public static BlockWildGrapeVine blockWildGrapeVine;
     public static BlockGrapeVine blockGrapeVine;
     public static BlockMoonFlower blockMoonFlower;
-
-
     
     public static ItemEnderPowder itemEnderPowder;
     public static ItemCoffee itemCoffee;
     public static ItemJewelSoup itemJewelSoup;
     public static Item itemCoffeeMug;
     public static Item itemGoldenMug;
-    public static Item itemBlazeSoup;
+    //public static Item itemBlazeSoup;
     public static Item itemTea;
     public static ItemCoffee itemLightCoffee;
     public static ItemBaconWand itemBaconWand;
@@ -70,7 +66,7 @@ public class StartupCommon
     {
 
     	blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
-    	blockSquidMat = (BlockSquidMat) new BlockSquidMat().setUnlocalizedName("blockSquidMat");
+    	//blockSquidMat = (BlockSquidMat) new BlockSquidMat().setUnlocalizedName("blockSquidMat");
     	blockEnder = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
     	blockBlaze = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
     	blockCarrot = (BlockCarrot) new BlockCarrot().setUnlocalizedName("blockCarrot");
@@ -84,7 +80,7 @@ public class StartupCommon
 
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
-    	GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
+    	//GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
     	GameRegistry.registerBlock(blockEnder, "blockEnder");
     	GameRegistry.registerBlock(blockBlaze, "blockBlaze");
     	GameRegistry.registerBlock(blockCarrot, "blockCarrot");
@@ -104,7 +100,7 @@ public class StartupCommon
     	 itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea");
     	 itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
     	 itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup");
-    	 itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup");
+    	 //itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup");
     	 itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
     	 itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
     	 itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
@@ -126,14 +122,12 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemInfusedBaconCore, "itemInfusedBaconCore");
     	 GameRegistry.registerItem(itemGrapes, "itemGrapes");
     	 GameRegistry.registerItem(itemGrapeSeeds, "itemGrapeSeeds");
-    	 GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
+    	 //GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
     	 GameRegistry.registerItem(itemWalkingStick, "itemWalkingStick");
     	 
     	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 
-    	 WorldGen worldGen = new WorldGen();
-    	 GameRegistry.registerWorldGenerator(worldGen, 1);
-    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage", 110), 1);
+    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage", 150), 1);
     	 
     	 GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	 GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
@@ -143,10 +137,6 @@ public class StartupCommon
  		
  		
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
-		
-		StructureHut structureHut = new StructureHut();
-		worldGen.add(structureHut);
-		
     }
     
     public static void initCommon()
@@ -156,8 +146,6 @@ public class StartupCommon
     	CoreEventHandler events = new CoreEventHandler();
 		MinecraftForge.EVENT_BUS.register(events);
 		FMLCommonHandler.instance().bus().register(events);
-		
-		System.out.println(new ResourceLocation("kalstuff", "textures/gui/chickenNestGui.png").getResourceDomain());
 		
 		if (!Files.exists(Paths.get("worldgen-export"), LinkOption.NOFOLLOW_LINKS)) {
 			try {
