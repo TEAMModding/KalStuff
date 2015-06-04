@@ -1,16 +1,30 @@
 [
 {
+
   "modid": "kalstuff",
+
   "name": "KalStuff",
-  "description": "A mod started by Kalman98 to practice modding by adding random cool stuff. Now being worked on by TEAM team.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
+
+  "description": "A mod that adds plenty of random stuff. From chicken nests to moon flowers, KalStuff will suit all your random mod needs!",
+
+  "version": "v0.5 beta",
+
+  "mcversion": "1.8",
+
+  "url": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2441490-kalstuff",
+
   "updateUrl": "",
+
   "authorList": ["The TEAM Team"],
+
   "credits": "The TEAM Team",
-  "logoFile": "",
+
+  "credits": "Creeps, inc and TheGreyGhost(MinecraftByExample)",
+  "logoFile": "KSLogo.png",
+
   "screenshots": [],
+
   "dependencies": []
+
 }
 ]
