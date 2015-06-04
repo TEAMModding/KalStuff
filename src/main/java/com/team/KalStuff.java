@@ -70,6 +70,7 @@ public class KalStuff
         prop = config.get(CATEGORY_GENERAL, "cottageGen", 500);
         prop.comment = "Rarity for cottage generation.";
         prop.setLanguageKey("kalstuff.configgui.cottageGen").setRequiresMcRestart(true);
+        prop.setName("Cottage Rarity");
         cottageRarity = prop.getInt();
         propOrder.add(prop.getName());
         
