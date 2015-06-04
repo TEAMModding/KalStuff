@@ -127,7 +127,7 @@ public class StartupCommon
     	 
     	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 
-    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage", 500), 1);
+    	 GameRegistry.registerWorldGenerator(new StructureFile("cottage", KalStuff.cottageRarity), 1);
     	 
     	 GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	 GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);

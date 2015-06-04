@@ -27,6 +27,7 @@ public class KalStuff
 {
 	public static final String MODID = "kalstuff";
 	public static final String VERSION = "1.0";
+	public static int cottageRarity;
 	private static Configuration config;
 	
 	//The instance of your mod that Forge uses. Optional.
@@ -66,9 +67,10 @@ public class KalStuff
         Property prop;
         
         //If you want to add new properties, copy this block and change the names
-        prop = config.get(CATEGORY_GENERAL, "debug", false);
-        prop.comment = "Enables debug output.";
-        prop.setLanguageKey("kalstuff.configgui.debug");
+        prop = config.get(CATEGORY_GENERAL, "cottageGen", 500);
+        prop.comment = "Rarity for cottage generation.";
+        prop.setLanguageKey("kalstuff.configgui.cottageGen").setRequiresMcRestart(true);
+        cottageRarity = prop.getInt();
         propOrder.add(prop.getName());
         
         
