@@ -47,6 +47,7 @@ public class StartupCommon
     public static ItemJewelSoup itemJewelSoup;
     public static Item itemCoffeeMug;
     public static Item itemGoldenMug;
+    public static Item itemSodaCan;
     //public static Item itemBlazeSoup;
     public static Item itemTea;
     public static ItemCoffee itemLightCoffee;
@@ -57,7 +58,7 @@ public class StartupCommon
     public static ItemFood itemGrapes;
     public static ItemSeeds itemGrapeSeeds;
     public static ItemWalkingStick itemWalkingStick;
-    
+        
     public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
     
     
@@ -108,6 +109,7 @@ public class StartupCommon
     	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
     	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
+    	 itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
@@ -124,6 +126,7 @@ public class StartupCommon
     	 GameRegistry.registerItem(itemGrapeSeeds, "itemGrapeSeeds");
     	 //GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
     	 GameRegistry.registerItem(itemWalkingStick, "itemWalkingStick");
+    	 GameRegistry.registerItem(itemSodaCan, "itemSodaCan");
     	 
     	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 

@@ -146,6 +146,8 @@ public class KalStuffRecipes {
 			"A  ",
 			'A', Items.stick
 		});
+	 
+	 GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(StartupCommon.itemSodaCan), 3);
 	}
 	
 
