@@ -152,7 +152,7 @@ public class KalStuffRecipes {
 		new ItemStack(Items.apple)
 	});
 	
-	GameRegistry.addShapedRecipe(new ItemStack(StartupCommon.itemGrapeSoda), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemGrapeSoda), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
 		new ItemStack(StartupCommon.itemGrapes)
 	});
