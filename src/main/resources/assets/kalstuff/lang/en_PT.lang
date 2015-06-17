@@ -13,6 +13,11 @@ item.itemCoffee.name=Brown Bean Water
 item.itemLightCoffee.name=Brown Bean Water with Milk
 item.itemCoffeeMug.name=Mug
 item.itemTea.name=Leaf Water
+tile.itemAppleSoda.name=Scurvy's Cure Bubbly Water
+tile.itemSodaCan.name=Empty Bubbly Water Can
+tile.itemGrapeSoda.name=Grape Bubbly Water
+tile.itemMelonSoda.name=Melon Bubbly Water
+tile.itemRootBeer.name=Amazing Bubbly Water
 
 key.categories.kalstuff=KalStuff
 key.kalstuff.test=Tryout

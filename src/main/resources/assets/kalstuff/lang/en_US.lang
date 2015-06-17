@@ -20,6 +20,11 @@ item.itemBaconCore.name=Bacon Wand Core
 item.itemInfusedBaconCore.name=Infused Bacon Wand Core
 item.itemChocolateCap.name=Chocolate Cap
 item.itemWalkingStick.name=Walking Stick
+item.itemAppleSoda.name=Apple Soda
+item.itemSodaCan.name=Empty Soda Can
+item.itemGrapeSoda.name=Grape Soda
+item.itemMelonSoda.name=Melon Soda
+item.itemRootBeer.name=Root Beer
 
 key.categories.kalstuff=KalStuff
 key.kalstuff.test=Test

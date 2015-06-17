@@ -48,6 +48,10 @@ public class StartupCommon
     public static Item itemCoffeeMug;
     public static Item itemGoldenMug;
     public static Item itemSodaCan;
+    public static ItemDrink itemRootBeer;
+    public static ItemDrink itemMelonSoda;
+    public static ItemDrink itemAppleSoda;
+    public static ItemDrink itemGrapeSoda;
     //public static Item itemBlazeSoup;
     public static Item itemTea;
     public static ItemCoffee itemLightCoffee;
@@ -110,6 +114,10 @@ public class StartupCommon
     	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
     	 itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
+    	 itemRootBeer = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
+    	 itemAppleSoda = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
+    	 itemMelonSoda = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
+    	 itemGrapeSoda = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
@@ -127,6 +135,10 @@ public class StartupCommon
     	 //GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
     	 GameRegistry.registerItem(itemWalkingStick, "itemWalkingStick");
     	 GameRegistry.registerItem(itemSodaCan, "itemSodaCan");
+    	 GameRegistry.registerItem(itemRootBeer, "itemRootBeer");
+    	 GameRegistry.registerItem(itemAppleSoda, "itemAppleSoda");
+    	 GameRegistry.registerItem(itemMelonSoda, "itemMelonSoda");
+    	 GameRegistry.registerItem(itemGrapeSoda, "itemGrapeSoda");
     	 
     	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 
@@ -162,6 +174,7 @@ public class StartupCommon
     
     public static void postInitCommon()
     {
-		System.out.println("Wait a minute... GUYS! IT WORKS! WE MADE A MOD!!!");
+		System.out.println("Hi there, nerdy geeks. You should just endjoy minecraft and stop looking at the system output.");
+    	System.out.println("Wait a minute... GUYS! IT WORKS! WE MADE A MOD!!!");
     }
 }

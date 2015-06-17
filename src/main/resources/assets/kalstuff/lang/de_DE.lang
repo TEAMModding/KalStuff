@@ -14,6 +14,11 @@ item.itemCoffee.name=Tasse Kaffee
 item.itemLightCoffee.name=Becher Kaffee mit Milch
 item.itemCoffeeMug.name=Kaffee-Haferl
 item.itemTea.name=Tasse Tee
+tile.itemAppleSoda.name=Apfel Soda
+tile.itemSodaCan.name=Getrankedose
+tile.itemGrapeSoda.name=Trauben Soda
+tile.itemMelonSoda.name=Melone Soda
+tile.itemRootBeer.name=Wurzel Bier
 
 key.categories.kalstuff=KalStuff
 key.kalstuff.test=Test
