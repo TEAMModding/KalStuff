@@ -114,10 +114,10 @@ public class StartupCommon
     	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
     	 itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
-    	 itemRootBeer = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
-    	 itemAppleSoda = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
-    	 itemMelonSoda = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
-    	 itemGrapeSoda = (ItemDrink) new ItemDrink(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
+    	 itemRootBeer = (ItemRootBeer) new ItemRootBeer(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
+    	 itemAppleSoda = (ItemAppleSoda) new ItemAppleSoda(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
+    	 itemMelonSoda = (ItemMelonSoda) new ItemMelonSoda(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
+    	 itemGrapeSoda = (ItemGrapeSoda) new ItemGrapeSoda(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");

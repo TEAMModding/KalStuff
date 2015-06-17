@@ -28,7 +28,7 @@ public class ItemRootBeer extends ItemDrink {
     {
 		if (!worldIn.isRemote && this.potionLength != 0)
 		{
-			player.addPotionEffect(new PotionEffect(Potion.jump.id, this.potionLength, 0));
+			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, this.potionLength, 0));
 		}
     }
     

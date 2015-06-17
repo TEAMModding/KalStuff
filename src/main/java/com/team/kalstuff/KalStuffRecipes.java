@@ -129,27 +129,46 @@ public class KalStuffRecipes {
 		'c', StartupCommon.itemChocolateCap
 	});
  
-	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemGrapeSeeds, 1), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemGrapeSeeds, 1), new Object[] {
 		 new ItemStack(StartupCommon.itemGrapes)
 		 });
 	 
-	 GameRegistry.addRecipe(new ItemStack(StartupCommon.blockTrashCan), new Object[] {
+	GameRegistry.addRecipe(new ItemStack(StartupCommon.blockTrashCan), new Object[] {
 			"A A",
 			"A A",
 			"AAA",
 			'A', Blocks.stone
 		});
 	 
-	 GameRegistry.addRecipe(new ItemStack(StartupCommon.itemWalkingStick), new Object[] {
+	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemWalkingStick), new Object[] {
 			"  A",
 			" A ",
 			"A  ",
 			'A', Items.stick
 		});
-	 
-	 GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(StartupCommon.itemSodaCan), 3);
-	}
 	
-
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemAppleSoda), new Object[] {
+		new ItemStack(StartupCommon.itemSodaCan),
+		new ItemStack(Items.apple)
+	});
+	
+	GameRegistry.addShapedRecipe(new ItemStack(StartupCommon.itemGrapeSoda), new Object[] {
+		new ItemStack(StartupCommon.itemSodaCan),
+		new ItemStack(StartupCommon.itemGrapes)
+	});
+	
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemMelonSoda), new Object[] {
+		new ItemStack(StartupCommon.itemSodaCan),
+		new ItemStack(Items.melon)
+	});
+	
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemRootBeer), new Object[] {
+		new ItemStack(StartupCommon.itemSodaCan),
+		new ItemStack(Items.nether_wart)
+	});
+	 
+	GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(StartupCommon.itemSodaCan), 3);
+	};
+	
 	
 }
