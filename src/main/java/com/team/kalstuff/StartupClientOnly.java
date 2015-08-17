@@ -42,6 +42,11 @@ public class StartupClientOnly
 		registerItemRendering("itemGrapeSeeds");
 		registerItemRendering("blockGrapeVine");
 		registerItemRendering("blockMoonFlower");
+		registerItemRendering("blockMoonFlower1");
+		registerItemRendering("blockMoonFlower2");
+		registerItemRendering("blockMoonFlower3");
+		registerItemRendering("blockMoonFlower4");
+		registerItemRendering("blockMoonFlower5");
 		registerItemRendering("itemBlazeSoup");
 		registerItemRendering("itemWalkingStick");
 		registerItemRendering("itemSodaCan");
