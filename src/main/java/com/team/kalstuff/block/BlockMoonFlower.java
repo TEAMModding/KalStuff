@@ -28,8 +28,7 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
         this.setStepSound(soundTypeGrass);
 	}
 
-    public void breakBlock(World worldIn, BlockPos pos, IBlockState state)
-    {
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
         super.breakBlock(worldIn, pos, state);
         worldIn.removeTileEntity(pos);
     }
@@ -37,8 +36,7 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
     /**
      * Called on both Client and Server when World#addBlockEvent is called
      */
-    public boolean onBlockEventReceived(World worldIn, BlockPos pos, IBlockState state, int eventID, int eventParam)
-    {
+    public boolean onBlockEventReceived(World worldIn, BlockPos pos, IBlockState state, int eventID, int eventParam) {
         super.onBlockEventReceived(worldIn, pos, state, eventID, eventParam);
         TileEntity tileentity = worldIn.getTileEntity(pos);
         return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
@@ -50,12 +48,10 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		super.updateTick(worldIn, pos, state, rand);
-		if (worldIn.getWorldTime() >= 13000 || worldIn.getWorldTime() < 1000 && ((Integer)state.getValue(NIGHT)).intValue() != 1) {
+		if (worldIn.getWorldTime() >= 13000 || worldIn.getWorldTime() < 1000 && ((Integer)state.getValue(NIGHT)).intValue() != 1)
 			worldIn.setBlockState(pos, state.withProperty(NIGHT, Integer.valueOf(1)));
-		}
-		else {
-			worldIn.setBlockState(pos, state.withProperty(NIGHT, Integer.valueOf(0)));
-		}
+		else worldIn.setBlockState(pos, state.withProperty(NIGHT, Integer.valueOf(0)));
+
 	}
 
 	public void checkSky(World worldIn, BlockPos pos) {
@@ -71,36 +67,31 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 		else worldIn.setBlockState(pos, StartupCommon.blockMoonFlower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
 	}
 	
-    protected BlockState createBlockState()
-    {
+    protected BlockState createBlockState() {
         return new BlockState(this, new IProperty[] {NIGHT});
     }
     
     
-    public Item getItemDropped(IBlockState state, Random rand, int fortune)
-    {
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         return Item.getItemFromBlock(StartupCommon.blockMoonFlower);
     }
     
     @SideOnly(Side.CLIENT)
-    public Item getItem(World worldIn, BlockPos pos)
-    {
+    public Item getItem(World worldIn, BlockPos pos) {
         return Item.getItemFromBlock(StartupCommon.blockMoonFlower);
     }
     
     /**
      * Convert the given metadata into a BlockState for this Block
      */
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(NIGHT, Integer.valueOf(meta));
     }
 
     /**
      * Convert the BlockState into the correct metadata value
      */
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
         return ((Integer)state.getValue(NIGHT)).intValue();
     }
     
