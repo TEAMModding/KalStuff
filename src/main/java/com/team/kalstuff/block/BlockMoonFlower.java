@@ -24,7 +24,7 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
     public static final PropertyInteger NIGHT = PropertyInteger.create("night", 0, 1);
 	public BlockMoonFlower(float light) {
         this.setDefaultState(this.blockState.getBaseState().withProperty(NIGHT, Integer.valueOf(0)));
-        this.setLightLevel((light + 4) / 16.0f);
+        this.setLightLevel((light) / 16.0f);
         this.setStepSound(soundTypeGrass);
 	}
 

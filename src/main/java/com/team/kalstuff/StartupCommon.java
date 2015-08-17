@@ -87,12 +87,12 @@ public class StartupCommon
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
     	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
-    	blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(-4).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
-    	blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(2).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower");
+    	blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
+    	blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower");
+    	blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower");
+    	blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower");
+    	blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(10).setUnlocalizedName("blockMoonFlower");
+    	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(12).setUnlocalizedName("blockMoonFlower");
 
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
