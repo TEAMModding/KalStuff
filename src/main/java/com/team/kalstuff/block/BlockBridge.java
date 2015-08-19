@@ -139,30 +139,35 @@ public class BlockBridge extends Block {
 				} else {
 	
 					IBlockState block;
-			      
 					 try {
 						block = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState().withProperty(FACING, BlockPistonBase.getFacingFromEntity(worldIn, origin, playerIn));
+						if (block.getBlock().canPlaceBlockAt(worldIn, aPos)) {
 						worldIn.setBlockState(aPos, block);
 						this.partLoc = aPos;
 						this.particle = true;
 						worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
-			            if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+						if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+						}
 					 } catch (Exception error) {
 						 try {
 							 block = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState().withProperty(FACING, playerIn.getHorizontalFacing().getOpposite());;
-								worldIn.setBlockState(aPos, block);
-								this.partLoc = aPos;
-								this.particle = true;
-								worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
-					            if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+								if (block.getBlock().canPlaceBlockAt(worldIn, aPos)) {
+									worldIn.setBlockState(aPos, block);
+									this.partLoc = aPos;
+									this.particle = true;
+									worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
+									if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+								}
 						 } catch (Exception error2) {
 							 try {
 								 block = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState();
-								worldIn.setBlockState(aPos, block);
-								this.partLoc = aPos;
-								this.particle = true;
-								worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
-					            if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+									if (block.getBlock().canPlaceBlockAt(worldIn, aPos)) {
+										worldIn.setBlockState(aPos, block);
+										this.partLoc = aPos;
+										this.particle = true;
+										worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
+										if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+									}
 							 } catch (Exception error3) {}
 						 }
 					 }

@@ -15,7 +15,7 @@ public class WorldGenMoonFlower implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
-		if (random.nextInt(10) == 1) {
+		if (random.nextInt(100) == 1) {
 		ArrayList<BlockPos> somePos = this.getValidLocationsInArea(random, chunkX * 16 + random.nextInt(16), chunkZ * 16 + random.nextInt(16), 8, world);
 		
 		if (somePos != null) {

@@ -27,8 +27,7 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class StartupCommon
-{
+public class StartupCommon {
     public static BlockBridge blockBridge;
     //public static BlockSquidMat blockSquidMat;
     public static BlockEnder blockEnder;
@@ -73,8 +72,7 @@ public class StartupCommon
     
     
 
-    public static void preInitCommon()
-    {
+    public static void preInitCommon() {
 
     	blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
     	//blockSquidMat = (BlockSquidMat) new BlockSquidMat().setUnlocalizedName("blockSquidMat");
@@ -171,8 +169,9 @@ public class StartupCommon
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
     }
     
-    public static void initCommon()
-    {
+    public static void initCommon() {
+		System.out.println("Hi there, nerdy geeks. You should just enjoy minecraft and stop looking at the system output.");
+    	
     	KalStuffRecipes.add();
     	
     	CoreEventHandler events = new CoreEventHandler();
@@ -189,9 +188,7 @@ public class StartupCommon
 		
     }
     
-    public static void postInitCommon()
-    {
-		System.out.println("Hi there, nerdy geeks. You should just endjoy minecraft and stop looking at the system output.");
-    	System.out.println("Wait a minute... GUYS! IT WORKS! WE MADE A MOD!!!");
+    public static void postInitCommon() {
+    	System.out.println("Wait a minute... Guys! IT WORKS!?! WE MADE A MOD!!!");
     }
 }

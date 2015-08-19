@@ -48,23 +48,28 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		super.updateTick(worldIn, pos, state, rand);
-		if (worldIn.getWorldTime() >= 13000 || worldIn.getWorldTime() < 1000 && ((Integer)state.getValue(NIGHT)).intValue() != 1)
+		if (worldIn.getWorldTime() >= 13000 && ((Integer)state.getValue(NIGHT)).intValue() != 1)
 			worldIn.setBlockState(pos, state.withProperty(NIGHT, Integer.valueOf(1)));
-		else worldIn.setBlockState(pos, state.withProperty(NIGHT, Integer.valueOf(0)));
+		else if (worldIn.getWorldTime() > 1000 && worldIn.getWorldTime() < 13000) worldIn.setBlockState(pos, state.withProperty(NIGHT, Integer.valueOf(0)));
 
 	}
 
 	public void checkSky(World worldIn, BlockPos pos) {
 		IBlockState iblockstate = worldIn.getBlockState(pos);
-		if (worldIn.canSeeSky(pos) && ((Integer)worldIn.getBlockState(pos).getValue(NIGHT)).intValue() == 1) {
-
-			if (worldIn.getMoonPhase() == 4) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower1.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
-			if (worldIn.getMoonPhase() == 3 || worldIn.getMoonPhase() == 5) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower2.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
-			if (worldIn.getMoonPhase() == 2 || worldIn.getMoonPhase() == 6) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower3.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
-			if (worldIn.getMoonPhase() == 1 || worldIn.getMoonPhase() == 7) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower4.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
-			if (worldIn.getMoonPhase() == 0) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower5.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
-		}
-		else worldIn.setBlockState(pos, StartupCommon.blockMoonFlower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
+		if (worldIn.getBlockState(pos).getBlock().getClass() == BlockMoonFlower.class) {
+			if (worldIn.canSeeSky(pos) && ((Integer)worldIn.getBlockState(pos).getValue(NIGHT)).intValue() == 1) {
+				System.out.println(worldIn.canSeeSky(pos));
+				if (worldIn.getCurrentMoonPhaseFactor() == 0) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower1.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .25) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower2.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .50) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower3.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .75) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower4.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == 1) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower5.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+			}
+			else {
+				worldIn.setBlockState(pos, StartupCommon.blockMoonFlower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
+				System.out.println("Wha?");
+			}
+		}	
 	}
 	
     protected BlockState createBlockState() {
