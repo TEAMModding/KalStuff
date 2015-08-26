@@ -58,7 +58,6 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 		IBlockState iblockstate = worldIn.getBlockState(pos);
 		if (worldIn.getBlockState(pos).getBlock().getClass() == BlockMoonFlower.class) {
 			if (worldIn.canSeeSky(pos) && ((Integer)worldIn.getBlockState(pos).getValue(NIGHT)).intValue() == 1) {
-				System.out.println(worldIn.canSeeSky(pos));
 				if (worldIn.getCurrentMoonPhaseFactor() == 0) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower1.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
 				if (worldIn.getCurrentMoonPhaseFactor() == .25) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower2.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
 				if (worldIn.getCurrentMoonPhaseFactor() == .50) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower3.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
@@ -67,7 +66,6 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 			}
 			else {
 				worldIn.setBlockState(pos, StartupCommon.blockMoonFlower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
-				System.out.println("Wha?");
 			}
 		}	
 	}

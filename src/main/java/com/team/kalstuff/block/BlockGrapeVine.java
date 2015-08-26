@@ -65,10 +65,10 @@ public class BlockGrapeVine extends BlockCrops {
 	            {
 	                if (rand.nextInt(15) <= age)
 	                {
-	                    ret.add(new ItemStack(this.getSeed(), 1, 0));
+	    	            ret.add(new ItemStack(this.getCrop(), 1, 0));
 	                }
 	            }
-	            ret.add(new ItemStack(this.getCrop(), rand.nextInt(2) + 3));
+                ret.add(new ItemStack(this.getSeed(), 1, 0));
 	        }
 	        return ret;
 	    }

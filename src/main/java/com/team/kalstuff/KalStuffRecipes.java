@@ -113,14 +113,17 @@ public class KalStuffRecipes {
 		'p', Items.cooked_porkchop
 	});
 	
-	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemInfusedBaconCore), new Object[] {
+/*	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemInfusedBaconCore), new Object[] {
 		" c ",
 		"cbc",
 		" c ",
 		'b', StartupCommon.itemBaconCore,
 		'c', StartupCommon.itemCoffee.setContainerItem(StartupCommon.itemCoffeeMug)
-	});
-	
+	});*/
+	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemInfusedBaconCore, 1), new Object[] {
+		 new ItemStack(StartupCommon.itemBaconCore),
+		 new ItemStack(StartupCommon.itemCoffee.setContainerItem(StartupCommon.itemCoffeeMug))
+	 });
 	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemBaconWand), new Object[] {
 		"  c",
 		" b ",

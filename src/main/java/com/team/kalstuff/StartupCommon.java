@@ -128,10 +128,10 @@ public class StartupCommon {
     	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
     	 itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
-    	 itemRootBeer = (ItemRootBeer) new ItemRootBeer(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
-    	 itemAppleSoda = (ItemAppleSoda) new ItemAppleSoda(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
-    	 itemMelonSoda = (ItemMelonSoda) new ItemMelonSoda(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
-    	 itemGrapeSoda = (ItemGrapeSoda) new ItemGrapeSoda(2, 2.0f, false, 1000).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
+    	 itemRootBeer = (ItemRootBeer) new ItemRootBeer(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
+    	 itemAppleSoda = (ItemAppleSoda) new ItemAppleSoda(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
+    	 itemMelonSoda = (ItemMelonSoda) new ItemMelonSoda(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
+    	 itemGrapeSoda = (ItemGrapeSoda) new ItemGrapeSoda(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
     	 
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
@@ -170,7 +170,7 @@ public class StartupCommon {
     }
     
     public static void initCommon() {
-		System.out.println("Hi there, nerdy geeks. You should just enjoy minecraft and stop looking at the system output.");
+		System.out.println("Hi there, nerdy geeks. You should just enjoy Minecraft and stop looking at the system output.");
     	
     	KalStuffRecipes.add();
     	
