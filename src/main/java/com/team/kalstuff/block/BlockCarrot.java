@@ -20,7 +20,7 @@ public class BlockCarrot extends Block {
 	{
 		if (playerIn.canEat(false))
 		{
-		playerIn.getFoodStats().addStats(7, 0.1F);
+		playerIn.getFoodStats().addStats(7, 4.8F);
 		worldIn.setBlockToAir(pos);
 		}
 		return true;
