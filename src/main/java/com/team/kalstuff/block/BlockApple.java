@@ -21,7 +21,7 @@ public class BlockApple extends Block {
 		{
 			if (playerIn.canEat(false))
 			{
-			playerIn.getFoodStats().addStats(9, 0.1F);
+			playerIn.getFoodStats().addStats(9, 2.4F);
 			worldIn.setBlockToAir(pos);
 			}
 			return true;
