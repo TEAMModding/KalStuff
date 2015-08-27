@@ -171,7 +171,34 @@ public class KalStuffRecipes {
 	});
 	 
 	GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(StartupCommon.itemSodaCan), 3);
+	
+	GameRegistry.addSmelting(StartupCommon.blockPotato, new ItemStack(StartupCommon.blockBakedPotato), 2);
+	
+	GameRegistry.addShapelessRecipe(new ItemStack(Items.carrot , 9), new Object[] {
+			new ItemStack(StartupCommon.blockCarrot),
+			new ItemStack(StartupCommon.blockCarrot),
+			new ItemStack(StartupCommon.blockCarrot),
+			new ItemStack(StartupCommon.blockCarrot),
+		});
+	
+	GameRegistry.addShapelessRecipe(new ItemStack(Items.apple , 9), new Object[] {
+			new ItemStack(StartupCommon.blockApple),
+			new ItemStack(StartupCommon.blockApple),
+			new ItemStack(StartupCommon.blockApple),
+			new ItemStack(StartupCommon.blockApple),
+		});
+	
+	GameRegistry.addShapelessRecipe(new ItemStack(Items.potato , 9), new Object[] {
+			new ItemStack(StartupCommon.blockPotato),
+			new ItemStack(StartupCommon.blockPotato),
+		});
+		 
+	
+	
+	
 	};
 	
+	
+
 	
 }

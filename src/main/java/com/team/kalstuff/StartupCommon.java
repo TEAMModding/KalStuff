@@ -35,6 +35,7 @@ public class StartupCommon {
     public static BlockCarrot blockCarrot;
     public static BlockApple blockApple;
     public static BlockPotato blockPotato;
+    public static BlockBakedPotato blockBakedPotato;
     public static BlockChickenNest blockChickenNest;
     public static BlockTrashCan blockTrashCan;
     public static BlockWildGrapeVine blockWildGrapeVine;
