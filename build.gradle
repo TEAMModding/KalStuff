@@ -17,7 +17,7 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "v0.5 beta"
+version = "v0.6 beta"
 group= "com.team.kalstuff" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "KalStuff-1.8"
 
