@@ -1,7 +1,7 @@
 {
 "item.closedSoda.open":
     {
-        "category": "neutral",
+        "category": "player",
         "sounds":
         [
             "item/closedSoda/open"
