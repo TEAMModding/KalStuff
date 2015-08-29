@@ -46,6 +46,7 @@ public class StartupCommon {
     public static BlockMoonFlower blockMoonFlower3;
     public static BlockMoonFlower blockMoonFlower4;
     public static BlockMoonFlower blockMoonFlower5;
+    public static BlockLockedChest blockLockedChest;
 
 
     public static ItemEnderPowder itemEnderPowder;
@@ -93,7 +94,7 @@ public class StartupCommon {
     	blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower");
     	blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(10).setUnlocalizedName("blockMoonFlower");
     	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(12).setUnlocalizedName("blockMoonFlower");
-
+    	blockLockedChest = (BlockLockedChest) new BlockLockedChest(0).setUnlocalizedName("blockLockedChest");
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
     	//GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
@@ -113,7 +114,8 @@ public class StartupCommon {
     	GameRegistry.registerBlock(blockMoonFlower3,  "blockMoonFlower3");
     	GameRegistry.registerBlock(blockMoonFlower4,  "blockMoonFlower4");
     	GameRegistry.registerBlock(blockMoonFlower5,  "blockMoonFlower5");
-
+    	GameRegistry.registerBlock(blockLockedChest,  "blockLockedChest");
+    	
     	
     	 itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
     	 itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
@@ -174,6 +176,7 @@ public class StartupCommon {
     
     public static void initCommon() {
 		System.out.println("Hi there, nerdy geeks. You should just enjoy Minecraft and stop looking at the system output.");
+		System.out.println("ParkerMc is a geek not a nerd ok?");
     	
     	KalStuffRecipes.add();
     	
