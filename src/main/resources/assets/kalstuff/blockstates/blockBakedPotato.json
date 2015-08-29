@@ -1,5 +1,8 @@
 {
     "variants": {
-        "normal": { "model": "kalstuff:blockBakedPotato" }
+        "facing=north": { "model": "kalstuff:blockBakedPotato" },
+        "facing=south": { "model": "kalstuff:blockBakedPotato", "y": 180 },
+        "facing=west":  { "model": "kalstuff:blockBakedPotato", "y": 270 },
+        "facing=east":  { "model": "kalstuff:blockBakedPotato", "y": 90 }
     }
 }
