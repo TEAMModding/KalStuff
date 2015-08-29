@@ -1,9 +1,0 @@
-# THIS IS THE BLOCK MDOEL FILE. IT GOES IN THE assets/kalstuff/models/block/ folder.
-# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
-
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "kalstuff:blocks/blockBridge"
-    }
-}

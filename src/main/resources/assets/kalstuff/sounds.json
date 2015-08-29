@@ -1,0 +1,10 @@
+{
+"item.closedSoda.open":
+    {
+        "category": "player",
+        "sounds":
+        [
+            "item/closedSoda/open"
+        ]
+    }
+}

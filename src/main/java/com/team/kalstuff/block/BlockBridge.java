@@ -14,6 +14,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
@@ -27,6 +28,7 @@ public class BlockBridge extends Block {
 	boolean particle = false;
 	BlockPos partLoc;
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
+    
 	public BlockBridge() throws StackOverflowError, IllegalArgumentException, NullPointerException {
 	super(Material.wood);
 	this.setCreativeTab(StartupCommon.kalStuffTab);
@@ -55,9 +57,8 @@ public class BlockBridge extends Block {
 	 }
 	 
 	 @Override
-	 public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
-	    {
-		return chain(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ, pos);
+	 public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
+		 return chain(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ, pos);
 	    }
 
 	    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
@@ -97,95 +98,104 @@ public class BlockBridge extends Block {
 	    }
 	    
 	    public boolean chain(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ, BlockPos origin) {
-	    				
+			ItemStack itemstack = playerIn.getCurrentEquippedItem();
+			Block block;
+	    	try {block = Block.getBlockFromItem(itemstack.getItem());}
+	    	catch (Exception e) {return true;}
 	    	BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
 	    	if (worldIn.isRemote) return true;
-			
-	    	try {Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem());}
-	    	catch (Exception e) {return true;}
-				if (state.getValue(FACING).equals(EnumFacing.EAST))
-					do aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
-					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
-				
-				if (state.getValue(FACING).equals(EnumFacing.WEST))
-					do aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
-					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
-				
-				if (state.getValue(FACING).equals(EnumFacing.UP))
-					do aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
-					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
-				
-				if (state.getValue(FACING).equals(EnumFacing.DOWN))
-					do aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
-					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
-				
-				if (state.getValue(FACING).equals(EnumFacing.NORTH))
-					do aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
-					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
-				
-				if (state.getValue(FACING).equals(EnumFacing.SOUTH))
-					do 	aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
-					while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
-
-				if (aPos == origin) return true;
-				
-				if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
-					BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
-					
-					try {
-						aBridge.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, origin);
-					} catch (StackOverflowError e) {}
-					
-				} else {
-	
-					IBlockState block;
-					 try {
-						block = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState().withProperty(FACING, BlockPistonBase.getFacingFromEntity(worldIn, origin, playerIn));
-						if (block.getBlock().canPlaceBlockAt(worldIn, aPos)) {
-						worldIn.setBlockState(aPos, block);
-						this.partLoc = aPos;
-						this.particle = true;
-						worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
-						if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
-						}
-					 } catch (Exception error) {
-						 try {
-							 block = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState().withProperty(FACING, playerIn.getHorizontalFacing().getOpposite());;
-								if (block.getBlock().canPlaceBlockAt(worldIn, aPos)) {
-									worldIn.setBlockState(aPos, block);
-									this.partLoc = aPos;
-									this.particle = true;
-									worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
-									if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
-								}
-						 } catch (Exception error2) {
-							 try {
-								 block = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getDefaultState();
-									if (block.getBlock().canPlaceBlockAt(worldIn, aPos)) {
-										worldIn.setBlockState(aPos, block);
-										this.partLoc = aPos;
-										this.particle = true;
-										worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.getBlock().stepSound.getBreakSound(), 1.0f, 1.0f);
-										if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
-									}
-							 } catch (Exception error3) {}
-						 }
-					 }
-				}
 	    	
-			
-	    	return true;
-			
+	    	int i = 0;
+	    	if (state.getValue(FACING).equals(EnumFacing.EAST))
+	    		do {
+	    			aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
+	    			i ++;
+	    		}
+	    		while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    	
+	    	if (state.getValue(FACING).equals(EnumFacing.WEST))
+	    		do {
+	    			aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
+	    			i ++;
+	    		}
+	    		while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    	
+	    	if (state.getValue(FACING).equals(EnumFacing.UP))
+	    		do {
+	    			aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
+	    			i ++;
+	    		}
+	    		while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+				
+	    	if (state.getValue(FACING).equals(EnumFacing.DOWN))
+	    		do {
+	    			aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
+	    			i ++;
+	    		}
+	    		while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+				
+	    	if (state.getValue(FACING).equals(EnumFacing.NORTH))
+	    		do {
+	    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
+	    			i ++;
+	    		}
+	    		while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    	
+	    	if (state.getValue(FACING).equals(EnumFacing.SOUTH))
+	    		do 	{
+	    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
+	    			i ++;
+	    		}
+	    		while (worldIn.getBlockState(aPos) != Blocks.air.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    	
+	    	if (aPos == origin) return true;
+	    	
+	    	if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
+	    		BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
+	    			
+	    		try {
+	    			aBridge.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, origin);
+	    		} catch (StackOverflowError e) {}
+	    		
+	    	} else if (i <= 16 && worldIn.canBlockBePlaced(block, aPos, true, BlockPistonBase.getFacingFromEntity(worldIn, pos, playerIn), playerIn, itemstack)) {
+	    		boolean success = false;
+	    		IBlockState blockstate;
+	    		try {
+	    			blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, BlockPistonBase.getFacingFromEntity(worldIn, origin, playerIn));
+	    			if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
+	    			success = true;
+	    		} catch (Exception error) {
+	    			try {
+	    				blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, playerIn.getHorizontalFacing().getOpposite());;
+	    				if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
+	    				success = true;
+	    			} catch (Exception error2) {
+	    				try {
+	    					blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getCurrentEquippedItem().getItem()).getStateFromMeta(itemstack.getMetadata());
+	    					if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
+	    					success = true;
+	    				} catch (Exception error3) {}
+	    			}
+	    		}
+	    		if (success) {
+	    			System.out.println("Success at last!");
+	    			this.partLoc = aPos;
+	    			this.particle = true;
+	    			worldIn.playSoundEffect(aPos.getX(), aPos.getY(), aPos.getZ(), block.stepSound.getPlaceSound(), 1.0f, 1.0f);
+	    			if (!playerIn.capabilities.isCreativeMode) --playerIn.getCurrentEquippedItem().stackSize;
+	    		}
 
+	    	}
+			return true;
 	    }
 	    @SideOnly(Side.CLIENT)
 	    public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
 	    {
-	           if (this.particle)
-	        	   for (int i = 0; i < 8; i ++) {
-	                   worldIn.spawnParticle(EnumParticleTypes.PORTAL, this.partLoc.getX() + 0.5, this.partLoc.getY() + 0.5, this.partLoc.getZ() + 0.5, (rand.nextDouble() * 2) - 1, (rand.nextDouble() * 2) - 1.5, (rand.nextDouble() * 2) - 1, new int[0]);
-	        	   }
-	          this.particle = false;
+	    	if (this.particle)
+	    		for (int i = 0; i < 8; i ++) {
+	    			worldIn.spawnParticle(EnumParticleTypes.PORTAL, this.partLoc.getX() + 0.5, this.partLoc.getY() + 0.5, this.partLoc.getZ() + 0.5, (rand.nextDouble() * 2) - 1, (rand.nextDouble() * 2) - 1.5, (rand.nextDouble() * 2) - 1, new int[0]);
+	    		}
+	    	this.particle = false;
 	    }
-	   // public BlockPos findNextPosition(World worldIn, BlockPos pos)
+	    // public BlockPos findNextPosition(World worldIn, BlockPos pos)
 }

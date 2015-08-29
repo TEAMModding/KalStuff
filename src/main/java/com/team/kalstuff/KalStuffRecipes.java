@@ -157,22 +157,22 @@ public class KalStuffRecipes {
 			'A', Items.stick
 		});
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemAppleSoda), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedAppleSoda), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
 		new ItemStack(Items.apple)
 	});
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemGrapeSoda), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedGrapeSoda), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
 		new ItemStack(StartupCommon.itemGrapes)
 	});
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemMelonSoda), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedMelonSoda), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
 		new ItemStack(Items.melon)
 	});
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemRootBeer), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedRootBeer), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
 		new ItemStack(Items.nether_wart)
 	});
