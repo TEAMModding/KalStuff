@@ -4,6 +4,7 @@ tile.blockEnder.name=Block of Ender
 tile.blockSquidMat.name=Squid Mat
 tile.blockBlaze.name=Block Of Blaze
 tile.blockPotato.name=Block of Potato
+tile.blockBakedPotato.name=Block of Baked Potato
 tile.blockApple.name=Block of Apple
 tile.blockCarrot.name=Block of Carrot
 tile.blockChickenNest.name=Chicken Nest

@@ -20,7 +20,7 @@ public class BlockPotato extends Block {
 	{
 		if (playerIn.canEat(false))
 		{
-		playerIn.getFoodStats().addStats(5, 0.6F);
+		playerIn.getFoodStats().addStats(3, 0.6F);
 		worldIn.setBlockToAir(pos);
 		}
 		return true;
