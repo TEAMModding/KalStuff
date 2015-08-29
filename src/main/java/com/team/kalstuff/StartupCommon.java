@@ -21,6 +21,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -53,10 +54,10 @@ public class StartupCommon {
     public static Item itemCoffeeMug;
     public static Item itemGoldenMug;
     public static Item itemSodaCan;
-    public static ItemDrink itemRootBeer;
-    public static ItemDrink itemMelonSoda;
-    public static ItemDrink itemAppleSoda;
-    public static ItemDrink itemGrapeSoda;
+    public static ItemSoda itemRootBeer;
+    public static ItemSoda itemMelonSoda;
+    public static ItemSoda itemAppleSoda;
+    public static ItemSoda itemGrapeSoda;
     //public static Item itemBlazeSoup;
     public static Item itemTea;
     public static ItemCoffee itemLightCoffee;
@@ -67,7 +68,11 @@ public class StartupCommon {
     public static ItemFood itemGrapes;
     public static ItemSeeds itemGrapeSeeds;
     public static ItemWalkingStick itemWalkingStick;
-        
+    public static ItemClosedSoda itemClosedRootBeer;
+    public static ItemClosedSoda itemClosedMelonSoda;
+    public static ItemClosedSoda itemClosedAppleSoda;
+    public static ItemClosedSoda itemClosedGrapeSoda;
+    
     public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
     
     
@@ -86,11 +91,11 @@ public class StartupCommon {
     	blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
     	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
     	blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
-    	blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(10).setUnlocalizedName("blockMoonFlower");
-    	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(12).setUnlocalizedName("blockMoonFlower");
+    	blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(10).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(12).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
 
     	
     	GameRegistry.registerBlock(blockBridge, "blockBridge");
@@ -114,9 +119,9 @@ public class StartupCommon {
     	
     	 itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
     	 itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
-    	 itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee");
+    	 itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee").setCreativeTab(kalStuffTab);
     	 itemLightCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemLightCoffee").setCreativeTab(kalStuffTab);
-    	 itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea");
+    	 itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea").setCreativeTab(kalStuffTab);
     	 itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
     	 itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup");
     	 //itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup");
@@ -128,11 +133,15 @@ public class StartupCommon {
     	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
     	 itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
-    	 itemRootBeer = (ItemRootBeer) new ItemRootBeer(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
-    	 itemAppleSoda = (ItemAppleSoda) new ItemAppleSoda(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
-    	 itemMelonSoda = (ItemMelonSoda) new ItemMelonSoda(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
-    	 itemGrapeSoda = (ItemGrapeSoda) new ItemGrapeSoda(2, 2.0f, false, 600).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
-    	 
+    	 itemRootBeer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.fireResistance).setAlwaysEdible().setUnlocalizedName("itemRootBeer");
+    	 itemAppleSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.nightVision).setAlwaysEdible().setUnlocalizedName("itemAppleSoda");
+    	 itemMelonSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.digSpeed).setAlwaysEdible().setUnlocalizedName("itemMelonSoda");
+    	 itemGrapeSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.jump).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda");
+      	 itemClosedRootBeer = (ItemClosedSoda) new ItemClosedSoda(itemRootBeer).setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
+    	 itemClosedAppleSoda = (ItemClosedSoda) new ItemClosedSoda(itemAppleSoda).setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
+    	 itemClosedMelonSoda = (ItemClosedSoda) new ItemClosedSoda(itemMelonSoda).setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
+    	 itemClosedGrapeSoda = (ItemClosedSoda) new ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
+
     	 GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
     	 GameRegistry.registerItem(itemCoffee, "itemCoffee");
     	 GameRegistry.registerItem(itemJewelSoup, "itemJewelSoup");
@@ -153,6 +162,10 @@ public class StartupCommon {
     	 GameRegistry.registerItem(itemAppleSoda, "itemAppleSoda");
     	 GameRegistry.registerItem(itemMelonSoda, "itemMelonSoda");
     	 GameRegistry.registerItem(itemGrapeSoda, "itemGrapeSoda");
+    	 GameRegistry.registerItem(itemClosedRootBeer, "itemClosedRootBeer");
+    	 GameRegistry.registerItem(itemClosedAppleSoda, "itemClosedAppleSoda");
+    	 GameRegistry.registerItem(itemClosedMelonSoda, "itemClosedMelonSoda");
+    	 GameRegistry.registerItem(itemClosedGrapeSoda, "itemClosedGrapeSoda");
     	 
     	 ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 

@@ -54,6 +54,10 @@ public class StartupClientOnly
 		registerItemRendering("itemAppleSoda");
 		registerItemRendering("itemMelonSoda");
 		registerItemRendering("itemGrapeSoda");
+		registerItemRendering("itemClosedRootBeer");
+		registerItemRendering("itemClosedAppleSoda");
+		registerItemRendering("itemClosedMelonSoda");
+		registerItemRendering("itemClosedGrapeSoda");
 		//from now on add itemRendering here
 	}
 	 

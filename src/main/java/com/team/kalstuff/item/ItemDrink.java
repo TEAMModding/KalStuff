@@ -1,7 +1,5 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.StartupCommon;
-
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemFood;
@@ -14,7 +12,6 @@ public class ItemDrink extends ItemFood {
     
 	public ItemDrink(int amount, float saturation, boolean isWolfFood) {
 		super(amount, saturation, isWolfFood);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
 	}
 	
 	
