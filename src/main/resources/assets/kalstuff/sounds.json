@@ -1,7 +1,10 @@
 {
-  "canOpen": {
-    "sounds": [
-      "canOpen"
-    ]
-   }
+"item.closedSoda.open":
+    {
+        "category": "neutral",
+        "sounds":
+        [
+            "item/closedSoda/open"
+        ]
+    }
 }
