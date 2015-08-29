@@ -18,7 +18,7 @@ public class ItemClosedSoda extends Item {
 	public ItemStack onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn) {
 		super.onItemRightClick(itemStackIn, worldIn, playerIn);
 		
-		worldIn.playSoundAtEntity(playerIn, "kalstuff:canOpen", 1.0f, 1.0f);
+		worldIn.playSoundAtEntity(playerIn, "kalstuff:item.closedSoda.open", 1.0f, 1.0f);
 		--itemStackIn.stackSize;
         if (itemStackIn.stackSize <= 0) return new ItemStack(this.item);
         playerIn.inventory.addItemStackToInventory(new ItemStack(this.item));
