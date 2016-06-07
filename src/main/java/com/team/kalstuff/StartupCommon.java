@@ -91,7 +91,7 @@ public class StartupCommon {
     	//blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	//blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
-    	//blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
+    	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
     	//blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
     	//blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
     	//blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
@@ -126,7 +126,10 @@ public class StartupCommon {
     	GameRegistry.register(new ItemBlock(blockTrashCan).setRegistryName("blockTrashCan"));
     	
     	//GameRegistry.registerBlock(blockWildGrapeVine, "blockWildGrapeVine");
-    	//GameRegistry.registerBlock(blockGrapeVine, "blockGrapeVine");
+    	
+    	GameRegistry.register(blockGrapeVine.setRegistryName("blockGrapeVine"));
+    	GameRegistry.register(new ItemBlock(blockGrapeVine).setRegistryName("blockGrapeVine"));
+    	
     	//GameRegistry.registerBlock(blockMoonFlower,  "blockMoonFlower");
     	//GameRegistry.registerBlock(blockMoonFlower1,  "blockMoonFlower1");
     	//GameRegistry.registerBlock(blockMoonFlower2,  "blockMoonFlower2");
@@ -147,8 +150,8 @@ public class StartupCommon {
     	 //itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
     	 //itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
     	 //itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
-    	 //itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
-    	 //itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.farmland).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
+    	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
+    	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.FARMLAND).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
     	 //itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
     	 //itemRootBeer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.fireResistance).setAlwaysEdible().setUnlocalizedName("itemRootBeer");
@@ -171,8 +174,8 @@ public class StartupCommon {
     	 //GameRegistry.registerItem(itemChocolateCap, "itemChocolateCap");
     	 //GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
     	 //GameRegistry.registerItem(itemInfusedBaconCore, "itemInfusedBaconCore");
-    	 //GameRegistry.registerItem(itemGrapes, "itemGrapes");
-    	 //GameRegistry.registerItem(itemGrapeSeeds, "itemGrapeSeeds");
+    	 GameRegistry.register(itemGrapes.setRegistryName("itemGrapes"));
+    	 GameRegistry.register(itemGrapeSeeds.setRegistryName("itemGrapeSeeds"));
     	 ////GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
     	 
     	 GameRegistry.register(itemWalkingStick.setRegistryName("itemWalkingStick"));
