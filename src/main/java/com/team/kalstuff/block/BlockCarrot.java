@@ -5,14 +5,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 
 public class BlockCarrot extends Block {
 
 	public BlockCarrot() {
-		super(Material.grass);
+		super(Material.GRASS);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
 		this.setHardness(2.0F);
 	}

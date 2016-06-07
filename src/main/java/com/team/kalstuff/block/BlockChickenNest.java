@@ -11,7 +11,8 @@ import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.world.IBlockAccess;
@@ -20,19 +21,21 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockChickenNest extends BlockContainer {
-
+	public static final AxisAlignedBB AABB = new AxisAlignedBB(0d, 0d, 0d, 1d, 3d/16d, 1d);
+	
 	public BlockChickenNest() {
-		super(Material.plants);
-		this.setStepSound(soundTypeGrass);
+		super(Material.PLANTS);
+		//this.setStepSound(soundTypeGrass);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
 		this.setHardness(0.4F);
-		this.setBlockBounds(0.0f, 0.0f, 0.0f, 16/16.0f, 3/16.0f, 16/16.0f);
+		
 	}
 
-    public void setBlockBoundsBasedOnState(IBlockAccess worldIn, BlockPos pos)
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
     {
-                    this.setBlockBounds(0.0f, 0.0f, 0.0f, 16/16.0f, 3/16.0f, 16/16.0f);
+        return AABB;
     }
+	
 	/*
  	
 	//These lines are presumed unnecessary, but were in the BlockSlab file. If problems arise

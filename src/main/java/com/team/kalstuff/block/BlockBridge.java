@@ -9,13 +9,12 @@ import net.minecraft.block.BlockPistonBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.EnumWorldBlockLayer;
@@ -30,7 +29,7 @@ public class BlockBridge extends Block {
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
     
 	public BlockBridge() throws StackOverflowError, IllegalArgumentException, NullPointerException {
-	super(Material.wood);
+	super(Material.WOOD);
 	this.setCreativeTab(StartupCommon.kalStuffTab);
     this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     this.setHardness(0.5f);

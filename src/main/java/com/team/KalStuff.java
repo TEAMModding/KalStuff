@@ -68,7 +68,7 @@ public class KalStuff
         
         //If you want to add new properties, copy this block and change the names
         prop = config.get(CATEGORY_GENERAL, "cottageGen", 500);
-        prop.comment = "Rarity for cottage generation.";
+        prop.setComment("Rarity for cottage generation.");
         prop.setLanguageKey("kalstuff.configgui.cottageGen").setRequiresMcRestart(true);
         prop.setName("Cottage Rarity");
         cottageRarity = prop.getInt();
@@ -97,9 +97,9 @@ public class KalStuff
 	@SubscribeEvent
     public void onConfigChanged(OnConfigChangedEvent event)
     {
-		if (MODID.equals(event.modID) && !event.isWorldRunning)
+		if (MODID.equals(event.getModID()) && !event.isWorldRunning())
         {
-            if (Configuration.CATEGORY_GENERAL.equals(event.configID))
+            if (Configuration.CATEGORY_GENERAL.equals(event.getConfigID()))
             {
                 syncConfig(false);
             }
@@ -128,7 +128,7 @@ public class KalStuff
 	@EventHandler
 	public void init(FMLServerStartingEvent event)
 	{
-		event.registerServerCommand(new CommandWorldGenBuild());
+		//event.registerServerCommand(new CommandWorldGenBuild());
 	}
 }
 

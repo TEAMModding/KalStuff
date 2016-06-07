@@ -8,7 +8,7 @@ import net.minecraft.block.material.Material;
 public class BlockEnder extends Block {
 
 	public BlockEnder() {
-		super(Material.rock);
+		super(Material.ROCK);
 		this.setCreativeTab(StartupCommon.kalStuffTab);
 		this.setHardness(5.0F);
 	}

@@ -1,17 +1,17 @@
 package com.team.kalstuff;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupClientOnly 
 {
 	public static void preInitClientOnly()
 	{
-		KeyBinding binding = new KeyBinding("key.kalstuff.test", 37, "key.categories.kalstuff");
-		ClientRegistry.registerKeyBinding(binding);
+		//KeyBinding binding = new KeyBinding("key.kalstuff.test", 37, "key.categories.kalstuff");
+		//ClientRegistry.registerKeyBinding(binding);
 	}
 	
 	public static void initClientOnly()
@@ -78,6 +78,7 @@ public class StartupClientOnly
 	 */
 	private static void registerItemRendering(String name)
 	{
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GameRegistry.findItem("kalstuff", name), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
+		
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.REGISTRY.getObject(new ResourceLocation("kalstuff", name)), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
 	}
 }

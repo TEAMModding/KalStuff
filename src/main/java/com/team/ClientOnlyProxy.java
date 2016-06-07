@@ -42,7 +42,8 @@ com.team.kalstuff.StartupClientOnly.postInitClientOnly();
 public boolean playerIsInCreativeMode(EntityPlayer player) {
 if (player instanceof EntityPlayerMP) {
 EntityPlayerMP entityPlayerMP = (EntityPlayerMP)player;
-return entityPlayerMP.theItemInWorldManager.isCreative();
+//return entityPlayerMP.theItemInWorldManager.isCreative();
+return entityPlayerMP.isCreative();
 } else if (player instanceof EntityPlayerSP) {
 return Minecraft.getMinecraft().playerController.isInCreativeMode();
 }

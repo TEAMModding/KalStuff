@@ -31,7 +31,8 @@ super.postInit();
 public boolean playerIsInCreativeMode(EntityPlayer player) {
 if (player instanceof EntityPlayerMP) {
 EntityPlayerMP entityPlayerMP = (EntityPlayerMP) player;
-return entityPlayerMP.theItemInWorldManager.isCreative();
+//return entityPlayerMP.theItemInWorldManager.isCreative();
+return entityPlayerMP.isCreative();
 }
 return false;
 }
