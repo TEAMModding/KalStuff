@@ -1,19 +1,17 @@
 package com.team.kalstuff.tileentity;
 
-import net.minecraft.command.IEntitySelector;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.ChatComponentText;
-import net.minecraft.util.ChatComponentTranslation;
-import net.minecraft.util.IChatComponent;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.ITickable;
 import net.minecraft.world.World;
 import net.minecraft.entity.passive.EntityChicken;
 
@@ -21,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class TileEntityChickenNest extends TileEntity implements IInventory, IUpdatePlayerListBox {
+public class TileEntityChickenNest extends TileEntity implements IInventory, ITickable {
 	// Create and initialize the items variable that will store store the items
 	private ItemStack[] inventory = new ItemStack[1];
 	private EntityChicken chicken;
@@ -49,14 +47,14 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	//Find a "random" item over the block
 	public static EntityItem CheckForItemEntities(World worldIn, double p_145897_1_, double p_145897_3_, double p_145897_5_)
 	{
-	List<?> list = worldIn.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 0.5D, p_145897_5_ + 1.0D), IEntitySelector.selectAnything);
+	List<?> list = worldIn.getEntitiesWithinAABB(EntityItem.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 0.5D, p_145897_5_ + 1.0D), null);
 	return list.size() > 0 ? (EntityItem)list.get(0) : null;
 	}
 	
 	//Find a "random" item over the block
 	public static EntityChicken CheckForChickens(World worldIn, double p_145897_1_, double p_145897_3_, double p_145897_5_)
 	{
-	List<?> list = worldIn.getEntitiesWithinAABB(EntityChicken.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 1.0D, p_145897_5_ + 1.0D), IEntitySelector.selectAnything);
+	List<?> list = worldIn.getEntitiesWithinAABB(EntityChicken.class, new AxisAlignedBB(p_145897_1_, p_145897_3_, p_145897_5_, p_145897_1_ + 1.0D, p_145897_3_ + 1.0D, p_145897_5_ + 1.0D), null);
 	return list.size() > 0 ? (EntityChicken)list.get(0) : null;
 	}
 	
@@ -159,13 +157,13 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	@Override
 	public boolean isItemValidForSlot(int slotIndex, ItemStack itemstack) {
 		
-		return itemstack == new ItemStack(Items.egg);
+		return itemstack == new ItemStack(Items.EGG);
 	}
 
 	// This is where you save any data that you don't want to lose when the tile entity unloads
 	// In this case, it saves the itemstacks stored in the container
 	@Override
-	public void writeToNBT(NBTTagCompound parentNBTTagCompound)
+	public NBTTagCompound writeToNBT(NBTTagCompound parentNBTTagCompound)
 	{
 		super.writeToNBT(parentNBTTagCompound); // The super call is required to save and load the tileEntity's location
 
@@ -184,6 +182,8 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 		}
 		// the array of hashmaps is then inserted into the parent hashmap for the container
 		parentNBTTagCompound.setTag("Items", dataForAllSlots);
+		
+		return parentNBTTagCompound;
 	}
 
 	// This is where you load the data that you saved in writeToNBT
@@ -222,11 +222,11 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 		return false;
 	}
 
-	// standard code to look up what the human-readable name is
+	/*// standard code to look up what the human-readable name is
 	@Override
 	public IChatComponent getDisplayName() {
 		return this.hasCustomName() ? new ChatComponentText(this.getName()) : new ChatComponentTranslation(this.getName());
-	}
+	}*/
 
 	public void dropChicken() {
 		if (!worldObj.isRemote) {
@@ -242,19 +242,6 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	
 	// -----------------------------------------------------------------------------------------------------------
 	// The following methods are not needed for this example but are part of IInventory so they must be implemented
-
-	/**
-	 * This method removes the entire contents of the given slot and returns it.
-	 * Used by containers such as crafting tables which return any items in their slots when you close the GUI
-	 * @param slotIndex
-	 * @return
-	 */
-	@Override
-	public ItemStack getStackInSlotOnClosing(int slotIndex) {
-		ItemStack itemStack = getStackInSlot(slotIndex);
-		if (itemStack != null) setInventorySlotContents(slotIndex, null);
-		return itemStack;
-	}
 
 	@Override
 	public void openInventory(EntityPlayer player) {}
@@ -273,5 +260,16 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, IUp
 	@Override
 	public int getFieldCount() {
 		return 0;
+	}
+
+	@Override
+	public ITextComponent getDisplayName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public ItemStack removeStackFromSlot(int index) {
+		return ItemStackHelper.getAndRemove(inventory, index);
 	}
 }

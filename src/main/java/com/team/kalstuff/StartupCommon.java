@@ -88,7 +88,7 @@ public class StartupCommon {
     	blockApple = (BlockApple) new BlockApple().setUnlocalizedName("blockApple");
     	blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
     	//blockBakedPotato = (BlockBakedPotato) new BlockBakedPotato().setUnlocalizedName("blockBakedPotato");
-    	//blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
+    	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	//blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
     	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
@@ -120,7 +120,9 @@ public class StartupCommon {
     	GameRegistry.register(new ItemBlock(blockPotato).setRegistryName("blockPotato"));
     	
     	//GameRegistry.registerBlock(blockBakedPotato, "blockBakedPotato");
-    	//GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
+    	
+    	GameRegistry.register(blockChickenNest.setRegistryName("blockChickenNest"));
+    	GameRegistry.register(new ItemBlock(blockChickenNest).setRegistryName("blockChickenNest"));
     	
     	GameRegistry.register(blockTrashCan.setRegistryName("blockTrashCan"));
     	GameRegistry.register(new ItemBlock(blockTrashCan).setRegistryName("blockTrashCan"));
@@ -198,7 +200,7 @@ public class StartupCommon {
     	 //GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
     	 
     	 
-    	 //GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
+    	 GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
     	 //GameRegistry.registerTileEntity(TileEntityMoonFlower.class, "tileEntityMoonFlower");
 
  		
