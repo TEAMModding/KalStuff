@@ -10,38 +10,38 @@ public class KalStuffRecipes {
 
 	public static void add() {
    	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemEnderPowder, 4), new Object[] {
-		 new ItemStack(Items.ender_pearl),
-		 new ItemStack(Items.flint)
+		 new ItemStack(Items.ENDER_PEARL),
+		 new ItemStack(Items.FLINT)
 		 });
  
  GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemCoffee, 1), new Object[] {
-	 new ItemStack(Blocks.dirt),
+	 new ItemStack(Blocks.DIRT),
 	 new ItemStack(StartupCommon.itemCoffeeMug)
 	 });
  
  GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemTea, 1), new Object[] {
-	 new ItemStack(Blocks.leaves),
+	 new ItemStack(Blocks.LEAVES),
 	 new ItemStack(StartupCommon.itemCoffeeMug)
 	 });
  
 
  GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemLightCoffee, 1), new Object[] {
-	 new ItemStack(Items.milk_bucket),
+	 new ItemStack(Items.MILK_BUCKET),
 	 new ItemStack(StartupCommon.itemCoffee)
 	 });
   
  GameRegistry.addRecipe(new ItemStack(StartupCommon.itemCoffeeMug, 1),  new Object[] {
 	 "PC",
-	 'C', Items.clay_ball,
-	 'P', Items.flower_pot
+	 'C', Items.CLAY_BALL,
+	 'P', Items.FLOWER_POT
 		 });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.blockBridge, 1),  new Object[] {
 	 "SPS",
 	 "PEP",
 	 "SPS",
-	 'S', Items.stick,
-	 'P', Blocks.planks,
+	 'S', Items.STICK,
+	 'P', Blocks.PLANKS,
 	 'E', StartupCommon.itemEnderPowder
 		 });
  
@@ -49,7 +49,7 @@ public class KalStuffRecipes {
 	 "PPP",
 	 "PPP",
 	 "PPP",
-	 'P', Items.ender_pearl
+	 'P', Items.ENDER_PEARL
  });
 
 
@@ -58,45 +58,45 @@ public class KalStuffRecipes {
 	 "PPP",
 	 "PPP",
 	 "PPP",
-	 'P', Items.blaze_rod
+	 'P', Items.BLAZE_ROD
  });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.blockCarrot, 4), new Object[] {
 	 "PPP",
 	 "PPP",
 	 "PPP",
-	 'P', Items.carrot
+	 'P', Items.CARROT
  });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.blockApple, 4), new Object[] {
 	 "PPP",
 	 "PPP",
 	 "PPP",
-	 'P', Items.apple
+	 'P', Items.APPLE
  });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.blockPotato, 4), new Object[] {
 	 "PPP",
 	 "PPP",
 	 "PPP",
-	 'P', Items.potato
+	 'P', Items.POTATO
  });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.blockBakedPotato, 4), new Object[] {
 		 "PPP",
 		 "PPP",
 		 "PPP",
-		 'P', Items.baked_potato
+		 'P', Items.BAKED_POTATO
 	 });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.itemGoldenMug, 1), new Object[] {
 	 "p p",
 	 " p ",
-	 'p', Items.gold_ingot
+	 'p', Items.GOLD_INGOT
  });
  
  GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemJewelSoup, 1), new Object[] {
-	 new ItemStack(Items.diamond),
+	 new ItemStack(Items.DIAMOND),
 	 new ItemStack(StartupCommon.itemGoldenMug)
  });
  
@@ -104,20 +104,20 @@ public class KalStuffRecipes {
 		" x ",
 		"x x",
 		" x ",
-		'x', Items.wheat
+		'x', Items.WHEAT
 	});
 	
 	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemChocolateCap), new Object[] {
 		"888",
 		"8 8",
 		"   ",
-		'8', new ItemStack(Items.dye, 1, EnumDyeColor.BROWN.getDyeDamage())
+		'8', new ItemStack(Items.DYE, 1, EnumDyeColor.BROWN.getDyeDamage())
 	});
 	
 	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemBaconCore), new Object[] {
 		" p",
 		"p ",
-		'p', Items.cooked_porkchop
+		'p', Items.COOKED_PORKCHOP
 	});
 	
 /*	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemInfusedBaconCore), new Object[] {
@@ -147,19 +147,19 @@ public class KalStuffRecipes {
 			"A A",
 			"A A",
 			"AAA",
-			'A', Blocks.stone
+			'A', Blocks.STONE
 		});
 	 
 	GameRegistry.addRecipe(new ItemStack(StartupCommon.itemWalkingStick), new Object[] {
 			"  A",
 			" A ",
 			"A  ",
-			'A', Items.stick
+			'A', Items.STICK
 		});
 	
 	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedAppleSoda), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
-		new ItemStack(Items.apple)
+		new ItemStack(Items.APPLE)
 	});
 	
 	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedGrapeSoda), new Object[] {
@@ -169,40 +169,40 @@ public class KalStuffRecipes {
 	
 	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedMelonSoda), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
-		new ItemStack(Items.melon)
+		new ItemStack(Items.MELON)
 	});
 	
 	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.itemClosedRootBeer), new Object[] {
 		new ItemStack(StartupCommon.itemSodaCan),
-		new ItemStack(Items.nether_wart)
+		new ItemStack(Items.NETHER_WART)
 	});
 	 
-	GameRegistry.addSmelting(Items.iron_ingot, new ItemStack(StartupCommon.itemSodaCan), 3);
+	GameRegistry.addSmelting(Items.IRON_INGOT, new ItemStack(StartupCommon.itemSodaCan), 3);
 	
 	GameRegistry.addSmelting(StartupCommon.blockPotato, new ItemStack(StartupCommon.blockBakedPotato), 2);
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(Items.carrot , 9), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(Items.CARROT , 9), new Object[] {
 			new ItemStack(StartupCommon.blockCarrot),
 			new ItemStack(StartupCommon.blockCarrot),
 			new ItemStack(StartupCommon.blockCarrot),
 			new ItemStack(StartupCommon.blockCarrot),
 		});
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(Items.apple , 9), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(Items.APPLE , 9), new Object[] {
 			new ItemStack(StartupCommon.blockApple),
 			new ItemStack(StartupCommon.blockApple),
 			new ItemStack(StartupCommon.blockApple),
 			new ItemStack(StartupCommon.blockApple),
 		});
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(Items.potato , 9), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(Items.POTATO , 9), new Object[] {
 			new ItemStack(StartupCommon.blockPotato),
 			new ItemStack(StartupCommon.blockPotato),
 			new ItemStack(StartupCommon.blockPotato),
 			new ItemStack(StartupCommon.blockPotato),
 		});
 	
-	GameRegistry.addShapelessRecipe(new ItemStack(Items.baked_potato , 9), new Object[] {
+	GameRegistry.addShapelessRecipe(new ItemStack(Items.BAKED_POTATO , 9), new Object[] {
 			new ItemStack(StartupCommon.blockBakedPotato),
 			new ItemStack(StartupCommon.blockBakedPotato),
 			new ItemStack(StartupCommon.blockBakedPotato),
