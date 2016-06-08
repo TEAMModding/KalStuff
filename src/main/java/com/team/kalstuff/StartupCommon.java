@@ -24,6 +24,7 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraft.potion.Potion;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
@@ -140,14 +141,14 @@ public class StartupCommon {
     	//GameRegistry.registerBlock(blockMoonFlower5,  "blockMoonFlower5");
     	//GameRegistry.registerBlock(blockLockedChest, "blockLockedChest");
     	
-    	 //itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
-    	 //itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
-    	 //itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee").setCreativeTab(kalStuffTab);
-    	 //itemLightCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemLightCoffee").setCreativeTab(kalStuffTab);
-    	 //itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea").setCreativeTab(kalStuffTab);
-    	 //itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
-    	 //itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup");
-    	 ////itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup");
+    	//itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
+    	itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
+    	itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee").setCreativeTab(kalStuffTab);
+    	itemLightCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemLightCoffee").setCreativeTab(kalStuffTab);
+    	itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea").setCreativeTab(kalStuffTab);
+    	itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
+    	itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup").setCreativeTab(kalStuffTab);
+    	 //itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup");
     	 //itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
     	 //itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
     	 //itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
@@ -166,12 +167,12 @@ public class StartupCommon {
     	 //itemClosedGrapeSoda = (ItemClosedSoda) new ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
 
     	 //GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
-    	 //GameRegistry.registerItem(itemCoffee, "itemCoffee");
-    	 //GameRegistry.registerItem(itemJewelSoup, "itemJewelSoup");
-    	 //GameRegistry.registerItem(itemLightCoffee, "itemLightCoffee");
-    	 //GameRegistry.registerItem(itemCoffeeMug, "itemCoffeeMug");
-    	 //GameRegistry.registerItem(itemGoldenMug, "itemGoldenMug");
-    	 //GameRegistry.registerItem(itemTea, "itemTea");
+    	 GameRegistry.register(itemCoffee.setRegistryName("itemCoffee"));
+    	 GameRegistry.register(itemJewelSoup.setRegistryName("itemJewelSoup"));
+    	 GameRegistry.register(itemLightCoffee.setRegistryName("itemLightCoffee"));
+    	 GameRegistry.register(itemTea.setRegistryName("itemTea"));
+    	 GameRegistry.register(itemCoffeeMug.setRegistryName("itemCoffeeMug"));
+    	 GameRegistry.register(itemGoldenMug.setRegistryName("itemGoldenMug"));    	 //GameRegistry.registerItem(itemTea, "itemTea");
     	 //GameRegistry.registerItem(itemBaconWand, "itemBaconWand");
     	 //GameRegistry.registerItem(itemChocolateCap, "itemChocolateCap");
     	 //GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
@@ -203,6 +204,7 @@ public class StartupCommon {
     	 GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
     	 //GameRegistry.registerTileEntity(TileEntityMoonFlower.class, "tileEntityMoonFlower");
 
+    	 
  		
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
     }
