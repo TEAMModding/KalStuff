@@ -15,6 +15,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.IBlockAccess;
@@ -125,14 +126,22 @@ public class BlockChickenNest extends BlockContainer {
 	public BlockRenderLayer getBlockLayer() {
 		return BlockRenderLayer.SOLID;
 	}
+	
+	 /**
+     * The type of render function called. 3 for standard block models, 2 for TESR's, 1 for liquids, -1 is no render
+     */
+    public EnumBlockRenderType getRenderType(IBlockState state)
+    {
+        return EnumBlockRenderType.MODEL;
+    }
 
 	@Override
 	public boolean isOpaqueCube(IBlockState state) {
-		return true;
+		return false;
 	}
 
 	@Override
 	public boolean isFullCube(IBlockState state) {
-		return true;
+		return false;
 	}
 }
