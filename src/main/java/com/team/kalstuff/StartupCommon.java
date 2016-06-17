@@ -81,10 +81,9 @@ public class StartupCommon {
 	public static CreativeTabs kalStuffTab = new KalStuffCreativeTab("kalStuffTab");
 
 	public static void preInitCommon() {
+		
 		ModSoundEvents.registerSounds();
 		
-		
-
 		// ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 		
     	//blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");

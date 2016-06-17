@@ -25,7 +25,7 @@ public class ItemClosedSoda extends Item {
 		super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
 		
 		//worldIn.playSoundAtEntity(playerIn, "kalstuff:item.closedSoda.open", 1.0f, 1.0f);
-		worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, ModSoundEvents.item_soda_can_open, SoundCategory.PLAYERS, 1.0F, 1.0F);
+		playerIn.worldObj.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, ModSoundEvents.CAN_OPEN, SoundCategory.PLAYERS, 1.0F, 1.0F);
 		
 		--itemStackIn.stackSize;
         if (itemStackIn.stackSize <= 0) return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, new ItemStack(this.item));
