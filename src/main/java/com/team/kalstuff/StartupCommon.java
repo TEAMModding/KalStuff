@@ -82,7 +82,6 @@ public class StartupCommon {
 
 	public static void preInitCommon() {
 		ModSoundEvents.registerSounds();
-<<<<<<< HEAD
 		
 		
 
@@ -172,39 +171,6 @@ public class StartupCommon {
     	 //itemClosedAppleSoda = (ItemClosedSoda) new ItemClosedSoda(itemAppleSoda).setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
     	 //itemClosedMelonSoda = (ItemClosedSoda) new ItemClosedSoda(itemMelonSoda).setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
     	 //itemClosedGrapeSoda = (ItemClosedSoda) new ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
-=======
-		// blockBridge = (BlockBridge) new
-		// BlockBridge().setUnlocalizedName("blockBridge");
-		//// blockSquidMat = (BlockSquidMat) new
-		// BlockSquidMat().setUnlocalizedName("blockSquidMat");
-		blockEnder = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
-		blockBlaze = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
-		blockCarrot = (BlockCarrot) new BlockCarrot().setUnlocalizedName("blockCarrot");
-		blockApple = (BlockApple) new BlockApple().setUnlocalizedName("blockApple");
-		blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
-		// blockBakedPotato = (BlockBakedPotato) new
-		// BlockBakedPotato().setUnlocalizedName("blockBakedPotato");
-		// blockChickenNest = (BlockChickenNest) new
-		// BlockChickenNest().setUnlocalizedName("blockChickenNest");
-		blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
-		// blockWildGrapeVine = (BlockWildGrapeVine) new
-		// BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
-		blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
-		// blockMoonFlower = (BlockMoonFlower) new
-		// BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
-		// blockMoonFlower1 = (BlockMoonFlower) new
-		// BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-		// blockMoonFlower2 = (BlockMoonFlower) new
-		// BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-		// blockMoonFlower3 = (BlockMoonFlower) new
-		// BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-		// blockMoonFlower4 = (BlockMoonFlower) new
-		// BlockMoonFlower(10).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-		// blockMoonFlower5 = (BlockMoonFlower) new
-		// BlockMoonFlower(12).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-		// blockLockedChest = (BlockLockedChest) new
-		// BlockLockedChest(0).setUnlocalizedName("blockLockedChest");
->>>>>>> branch 'MC-1.9' of https://github.com/TEAMModding/KalStuff.git
 
     	// GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
  		GameRegistry.register(itemCoffee.setRegistryName("itemCoffee"));
@@ -223,7 +189,6 @@ public class StartupCommon {
  		GameRegistry.register(itemGrapeSeeds.setRegistryName("itemGrapeSeeds"));
  		//// GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
 
-<<<<<<< HEAD
  		GameRegistry.register(itemWalkingStick.setRegistryName("itemWalkingStick"));
 
  		// GameRegistry.registerItem(itemSodaCan, "itemSodaCan");
@@ -239,208 +204,6 @@ public class StartupCommon {
  		// GameRegistry.registerItem(itemClosedGrapeSoda,
  		// "itemClosedGrapeSoda");
     	 
-=======
-		GameRegistry.register(blockEnder.setRegistryName("blockEnder"));
-		GameRegistry.register(new ItemBlock(blockEnder).setRegistryName("blockEnder"));
-
-		GameRegistry.register(blockBlaze.setRegistryName("blockBlaze"));
-		GameRegistry.register(new ItemBlock(blockBlaze).setRegistryName("blockBlaze"));
-
-		GameRegistry.register(blockCarrot.setRegistryName("blockCarrot"));
-		GameRegistry.register(new ItemBlock(blockCarrot).setRegistryName("blockCarrot"));
-
-		GameRegistry.register(blockApple.setRegistryName("blockApple"));
-		GameRegistry.register(new ItemBlock(blockApple).setRegistryName("blockApple"));
-
-		GameRegistry.register(blockPotato.setRegistryName("blockPotato"));
-		GameRegistry.register(new ItemBlock(blockPotato).setRegistryName("blockPotato"));
-
-		// GameRegistry.registerBlock(blockBakedPotato, "blockBakedPotato");
-		// GameRegistry.registerBlock(blockChickenNest, "blockChickenNest");
-
-		GameRegistry.register(blockTrashCan.setRegistryName("blockTrashCan"));
-		GameRegistry.register(new ItemBlock(blockTrashCan).setRegistryName("blockTrashCan"));
-
-		// GameRegistry.registerBlock(blockWildGrapeVine, "blockWildGrapeVine");
-
-		GameRegistry.register(blockGrapeVine.setRegistryName("blockGrapeVine"));
-		GameRegistry.register(new ItemBlock(blockGrapeVine).setRegistryName("blockGrapeVine"));
-
-		// GameRegistry.registerBlock(blockMoonFlower, "blockMoonFlower");
-		// GameRegistry.registerBlock(blockMoonFlower1, "blockMoonFlower1");
-		// GameRegistry.registerBlock(blockMoonFlower2, "blockMoonFlower2");
-		// GameRegistry.registerBlock(blockMoonFlower3, "blockMoonFlower3");
-		// GameRegistry.registerBlock(blockMoonFlower4, "blockMoonFlower4");
-		// GameRegistry.registerBlock(blockMoonFlower5, "blockMoonFlower5");
-		// GameRegistry.registerBlock(blockLockedChest, "blockLockedChest");
-
-		// itemEnderPowder = (ItemEnderPowder) new
-		// ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
-		itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
-		itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee")
-				.setCreativeTab(kalStuffTab);
-		itemLightCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible()
-				.setUnlocalizedName("itemLightCoffee").setCreativeTab(kalStuffTab);
-		itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea")
-				.setCreativeTab(kalStuffTab);
-		itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
-		itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible()
-				.setUnlocalizedName("itemJewelSoup").setCreativeTab(kalStuffTab);
-		// itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f,
-		// false).setUnlocalizedName("itemBlazeSoup");
-		// itemBaconWand = (ItemBaconWand) new
-		// ItemBaconWand().setUnlocalizedName("itemBaconWand");
-		// itemChocolateCap = new
-		// Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
-		// itemBaconCore = new
-		// Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
-		// itemInfusedBaconCore = new
-		// Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
-		itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes")
-				.setCreativeTab(kalStuffTab);
-		itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.FARMLAND).setUnlocalizedName("itemGrapeSeeds")
-				.setCreativeTab(kalStuffTab);
-		itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick")
-				.setCreativeTab(kalStuffTab);
-				// itemSodaCan = new
-				// Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
-				 itemRootBeer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("itemRootBeer");
-				// itemAppleSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600,
-				// Potion.nightVision).setAlwaysEdible().setUnlocalizedName("itemAppleSoda");
-				// itemMelonSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600,
-				// Potion.digSpeed).setAlwaysEdible().setUnlocalizedName("itemMelonSoda");
-				// itemGrapeSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600,
-				// Potion.jump).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda");
-				 itemClosedRootBeer = (ItemClosedSoda) new ItemClosedSoda(itemRootBeer).setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
-				// itemClosedAppleSoda = (ItemClosedSoda) new
-				// ItemClosedSoda(itemAppleSoda).setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
-				// itemClosedMelonSoda = (ItemClosedSoda) new
-				// ItemClosedSoda(itemMelonSoda).setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
-				// itemClosedGrapeSoda = (ItemClosedSoda) new
-				// ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
-
-		// GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
-		GameRegistry.register(itemCoffee.setRegistryName("itemCoffee"));
-		GameRegistry.register(itemJewelSoup.setRegistryName("itemJewelSoup"));
-		GameRegistry.register(itemLightCoffee.setRegistryName("itemLightCoffee"));
-		GameRegistry.register(itemTea.setRegistryName("itemTea"));
-		GameRegistry.register(itemCoffeeMug.setRegistryName("itemCoffeeMug"));
-		GameRegistry.register(itemGoldenMug.setRegistryName("itemGoldenMug")); // GameRegistry.registerItem(itemTea,
-																				// "itemTea");
-		// GameRegistry.registerItem(itemBaconWand, "itemBaconWand");
-		// GameRegistry.registerItem(itemChocolateCap, "itemChocolateCap");
-		// GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
-		// GameRegistry.registerItem(itemInfusedBaconCore,
-		// "itemInfusedBaconCore");
-		GameRegistry.register(itemGrapes.setRegistryName("itemGrapes"));
-		GameRegistry.register(itemGrapeSeeds.setRegistryName("itemGrapeSeeds"));
-		//// GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
-
-		GameRegistry.register(itemWalkingStick.setRegistryName("itemWalkingStick"));
-
-		// GameRegistry.registerItem(itemSodaCan, "itemSodaCan");
-		 GameRegistry.register(itemRootBeer.setRegistryName("itemRootBeer"));
-		// GameRegistry.registerItem(itemAppleSoda, "itemAppleSoda");
-		// GameRegistry.registerItem(itemMelonSoda, "itemMelonSoda");
-		// GameRegistry.registerItem(itemGrapeSoda, "itemGrapeSoda");
-		 GameRegistry.register(itemClosedRootBeer.setRegistryName("itemClosedRootBeer"));
-		// GameRegistry.registerItem(itemClosedAppleSoda,
-		// "itemClosedAppleSoda");
-		// GameRegistry.registerItem(itemClosedMelonSoda,
-		// "itemClosedMelonSoda");
-		// GameRegistry.registerItem(itemClosedGrapeSoda,
-		// "itemClosedGrapeSoda");
-
-		// ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
-
-		// GameRegistry.registerWorldGenerator(new StructureFile("cottage",
-		// KalStuff.cottageRarity), 1);
-    	//blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
-    	////blockSquidMat = (BlockSquidMat) new BlockSquidMat().setUnlocalizedName("blockSquidMat");
-    	blockEnder = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
-    	blockBlaze = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
-    	blockCarrot = (BlockCarrot) new BlockCarrot().setUnlocalizedName("blockCarrot");
-    	blockApple = (BlockApple) new BlockApple().setUnlocalizedName("blockApple");
-    	blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
-    	//blockBakedPotato = (BlockBakedPotato) new BlockBakedPotato().setUnlocalizedName("blockBakedPotato");
-    	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
-    	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
-    	//blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
-    	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
-    	//blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
-    	//blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(10).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(12).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockLockedChest = (BlockLockedChest) new BlockLockedChest(0).setUnlocalizedName("blockLockedChest");
-    	
-    	
-    	//GameRegistry.registerBlock(blockBridge, "blockBridge");
-    	//GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
-    	
-    	GameRegistry.register(blockEnder.setRegistryName("blockEnder"));
-    	GameRegistry.register(new ItemBlock(blockEnder).setRegistryName("blockEnder"));
-    	
-    	GameRegistry.register(blockBlaze.setRegistryName("blockBlaze"));
-    	GameRegistry.register(new ItemBlock(blockBlaze).setRegistryName("blockBlaze"));
-    	
-    	GameRegistry.register(blockCarrot.setRegistryName("blockCarrot"));
-    	GameRegistry.register(new ItemBlock(blockCarrot).setRegistryName("blockCarrot"));
-    	
-    	GameRegistry.register(blockApple.setRegistryName("blockApple"));
-    	GameRegistry.register(new ItemBlock(blockApple).setRegistryName("blockApple"));
-    	
-    	GameRegistry.register(blockPotato.setRegistryName("blockPotato"));
-    	GameRegistry.register(new ItemBlock(blockPotato).setRegistryName("blockPotato"));
-    	
-    	//GameRegistry.registerBlock(blockBakedPotato, "blockBakedPotato");
-    	
-    	GameRegistry.register(blockChickenNest.setRegistryName("blockChickenNest"));
-    	GameRegistry.register(new ItemBlock(blockChickenNest).setRegistryName("blockChickenNest"));
-    	
-    	GameRegistry.register(blockTrashCan.setRegistryName("blockTrashCan"));
-    	GameRegistry.register(new ItemBlock(blockTrashCan).setRegistryName("blockTrashCan"));
-    	
-    	//GameRegistry.registerBlock(blockWildGrapeVine, "blockWildGrapeVine");
-    	
-    	GameRegistry.register(blockGrapeVine.setRegistryName("blockGrapeVine"));
-    	GameRegistry.register(new ItemBlock(blockGrapeVine).setRegistryName("blockGrapeVine"));
-    	
-    	//GameRegistry.registerBlock(blockMoonFlower,  "blockMoonFlower");
-    	//GameRegistry.registerBlock(blockMoonFlower1,  "blockMoonFlower1");
-    	//GameRegistry.registerBlock(blockMoonFlower2,  "blockMoonFlower2");
-    	//GameRegistry.registerBlock(blockMoonFlower3,  "blockMoonFlower3");
-    	//GameRegistry.registerBlock(blockMoonFlower4,  "blockMoonFlower4");
-    	//GameRegistry.registerBlock(blockMoonFlower5,  "blockMoonFlower5");
-    	//GameRegistry.registerBlock(blockLockedChest, "blockLockedChest");
-    	
-    	//itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
-    	itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
-    	itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee").setCreativeTab(kalStuffTab);
-    	itemLightCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemLightCoffee").setCreativeTab(kalStuffTab);
-    	itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea").setCreativeTab(kalStuffTab);
-    	itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
-    	itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup").setCreativeTab(kalStuffTab);
-    	 //itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup");
-    	 //itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
-    	 //itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
-    	 //itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
-    	 //itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
-    	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
-    	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.FARMLAND).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
-    	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
-    	 //itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
-    	 //itemRootBeer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.fireResistance).setAlwaysEdible().setUnlocalizedName("itemRootBeer");
-    	 //itemAppleSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.nightVision).setAlwaysEdible().setUnlocalizedName("itemAppleSoda");
-    	 //itemMelonSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.digSpeed).setAlwaysEdible().setUnlocalizedName("itemMelonSoda");
-    	 //itemGrapeSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, Potion.jump).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda");
-      	 //itemClosedRootBeer = (ItemClosedSoda) new ItemClosedSoda(itemRootBeer).setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
-    	 //itemClosedAppleSoda = (ItemClosedSoda) new ItemClosedSoda(itemAppleSoda).setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
-    	 //itemClosedMelonSoda = (ItemClosedSoda) new ItemClosedSoda(itemMelonSoda).setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
-    	 //itemClosedGrapeSoda = (ItemClosedSoda) new ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
-
->>>>>>> branch 'MC-1.9' of https://github.com/TEAMModding/KalStuff.git
 		// GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
 		// GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
 
