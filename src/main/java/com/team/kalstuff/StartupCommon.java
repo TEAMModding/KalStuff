@@ -34,7 +34,6 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class StartupCommon {
 	public static BlockBridge blockBridge;
-	// public static BlockSquidMat blockSquidMat;
 	public static BlockEnder blockEnder;
 	public static BlockBlaze blockBlaze;
 	public static BlockCarrot blockCarrot;
@@ -51,7 +50,6 @@ public class StartupCommon {
 	public static BlockMoonFlower blockMoonFlower3;
 	public static BlockMoonFlower blockMoonFlower4;
 	public static BlockMoonFlower blockMoonFlower5;
-	public static BlockLockedChest blockLockedChest;
 
 	public static Item itemEnderPowder;
 	public static ItemCoffee itemCoffee;
@@ -102,7 +100,6 @@ public class StartupCommon {
     	blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(3).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
     	blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
     	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockLockedChest = (BlockLockedChest) new BlockLockedChest(0).setUnlocalizedName("blockLockedChest");
     	
     	
     	//GameRegistry.registerBlock(blockBridge, "blockBridge");
@@ -136,13 +133,6 @@ public class StartupCommon {
     	GameRegistry.register(blockGrapeVine.setRegistryName("blockGrapeVine"));
     	GameRegistry.register(new ItemBlock(blockGrapeVine).setRegistryName("blockGrapeVine"));
     	
-    	//GameRegistry.registerBlock(blockMoonFlower,  "blockMoonFlower");
-    	//GameRegistry.registerBlock(blockMoonFlower1,  "blockMoonFlower1");
-    	//GameRegistry.registerBlock(blockMoonFlower2,  "blockMoonFlower2");
-    	//GameRegistry.registerBlock(blockMoonFlower3,  "blockMoonFlower3");
-    	//GameRegistry.registerBlock(blockMoonFlower4,  "blockMoonFlower4");
-    	//GameRegistry.registerBlock(blockMoonFlower5,  "blockMoonFlower5");
-    	
     	GameRegistry.register(blockMoonFlower.setRegistryName("blockMoonFlower"));
     	GameRegistry.register(blockMoonFlower1.setRegistryName("blockMoonFlowe1"));
     	GameRegistry.register(blockMoonFlower2.setRegistryName("blockMoonFlower2"));
@@ -151,7 +141,6 @@ public class StartupCommon {
     	GameRegistry.register(blockMoonFlower5.setRegistryName("blockMoonFlower5"));
     	GameRegistry.register(new ItemBlock(blockMoonFlower).setRegistryName("blockMoonFlower"));
     	
-    	//GameRegistry.registerBlock(blockLockedChest, "blockLockedChest");
     	
     	itemEnderPowder = new Item().setUnlocalizedName("itemEnderPowder").setCreativeTab(kalStuffTab);
     	itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
@@ -209,8 +198,8 @@ public class StartupCommon {
  		
     	GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
-    	 
-    	 
+    	
+    	
     	GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
     	GameRegistry.registerTileEntity(TileEntityMoonFlower.class, "tileEntityMoonFlower");
 
