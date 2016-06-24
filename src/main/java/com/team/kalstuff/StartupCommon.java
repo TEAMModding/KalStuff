@@ -205,19 +205,14 @@ public class StartupCommon {
  		GameRegistry.register(itemClosedAppleSoda.setRegistryName("ItemClosedAppleSoda"));
  		GameRegistry.register(itemClosedMelonSoda.setRegistryName("ItemClosedMelonSoda"));
  		GameRegistry.register(itemClosedGrapeSoda.setRegistryName("ItemClosedGrapeSoda"));
-    	 
-		// GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
-		// GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
-
-		// GameRegistry.registerTileEntity(TileEntityMoonFlower.class,
-		// "tileEntityMoonFlower");
-    	 
-    	//GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
-    	//GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
+    	
+ 		
+    	GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
+    	GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
     	 
     	 
-    	 GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
-    	 GameRegistry.registerTileEntity(TileEntityMoonFlower.class, "tileEntityMoonFlower");
+    	GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
+    	GameRegistry.registerTileEntity(TileEntityMoonFlower.class, "tileEntityMoonFlower");
 
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
 	}
