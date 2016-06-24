@@ -53,7 +53,7 @@ public class StartupCommon {
 	public static BlockMoonFlower blockMoonFlower5;
 	public static BlockLockedChest blockLockedChest;
 
-	public static ItemEnderPowder itemEnderPowder;
+	public static Item itemEnderPowder;
 	public static ItemCoffee itemCoffee;
 	public static ItemJewelSoup itemJewelSoup;
 	public static Item itemCoffeeMug;
@@ -146,7 +146,7 @@ public class StartupCommon {
     	//GameRegistry.registerBlock(blockMoonFlower5,  "blockMoonFlower5");
     	//GameRegistry.registerBlock(blockLockedChest, "blockLockedChest");
     	
-    	//itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder");
+    	itemEnderPowder = new Item().setUnlocalizedName("itemEnderPowder").setCreativeTab(kalStuffTab);
     	itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
     	itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee").setCreativeTab(kalStuffTab);
     	itemLightCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemLightCoffee").setCreativeTab(kalStuffTab);
@@ -171,7 +171,7 @@ public class StartupCommon {
     	 itemClosedMelonSoda = (ItemClosedSoda) new ItemClosedSoda(itemMelonSoda).setUnlocalizedName("itemMelonSoda.closed").setCreativeTab(kalStuffTab);
     	 itemClosedGrapeSoda = (ItemClosedSoda) new ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda.closed").setCreativeTab(kalStuffTab);
 
-    	// GameRegistry.registerItem(itemEnderPowder, "itemEnderPowder");
+    	GameRegistry.register(itemEnderPowder.setRegistryName("itemEnderPowder"));
  		GameRegistry.register(itemCoffee.setRegistryName("itemCoffee"));
  		GameRegistry.register(itemJewelSoup.setRegistryName("itemJewelSoup"));
  		GameRegistry.register(itemLightCoffee.setRegistryName("itemLightCoffee"));
