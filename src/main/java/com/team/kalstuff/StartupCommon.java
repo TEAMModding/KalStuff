@@ -63,7 +63,7 @@ public class StartupCommon {
 	public static ItemSoda itemMelonSoda;
 	public static ItemSoda itemAppleSoda;
 	public static ItemSoda itemGrapeSoda;
-	// public static Item itemBlazeSoup;
+	public static ItemBlazeSoup itemBlazeSoup;
 	public static Item itemTea;
 	public static ItemCoffee itemLightCoffee;
 	public static ItemBaconWand itemBaconWand;
@@ -153,7 +153,7 @@ public class StartupCommon {
     	itemTea = (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemTea").setCreativeTab(kalStuffTab);
     	itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
     	itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup").setCreativeTab(kalStuffTab);
-    	 //itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup");
+    	itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup").setCreativeTab(kalStuffTab);
     	 //itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
     	 //itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
     	 //itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
@@ -186,7 +186,7 @@ public class StartupCommon {
  		// "itemInfusedBaconCore");
  		GameRegistry.register(itemGrapes.setRegistryName("itemGrapes"));
  		GameRegistry.register(itemGrapeSeeds.setRegistryName("itemGrapeSeeds"));
- 		//// GameRegistry.registerItem(itemBlazeSoup, "itemBlazeSoup");
+ 		GameRegistry.register(itemBlazeSoup.setRegistryName("itemBlazeSoup"));
 
  		GameRegistry.register(itemWalkingStick.setRegistryName("itemWalkingStick"));
 
