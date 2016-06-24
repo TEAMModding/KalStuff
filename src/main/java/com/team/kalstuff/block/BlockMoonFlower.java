@@ -6,6 +6,7 @@ import net.minecraft.block.BlockBush;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
@@ -25,7 +26,6 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	public BlockMoonFlower(float light) {
         this.setDefaultState(this.blockState.getBaseState().withProperty(NIGHT, Integer.valueOf(0)));
         this.setLightLevel((light) / 16.0f);
-        this.setStepSound(soundTypeGrass);
 	}
 
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
@@ -36,8 +36,9 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
     /**
      * Called on both Client and Server when World#addBlockEvent is called
      */
-    public boolean onBlockEventReceived(World worldIn, BlockPos pos, IBlockState state, int eventID, int eventParam) {
-        super.onBlockEventReceived(worldIn, pos, state, eventID, eventParam);
+    public boolean eventRecieved(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+    	//why is this deprecated but forge doesn't provide an alternative?
+        super.eventReceived(state, worldIn, pos, eventID, eventParam);
         TileEntity tileentity = worldIn.getTileEntity(pos);
         return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
     }
@@ -70,8 +71,8 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 		}	
 	}
 	
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[] {NIGHT});
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[] {NIGHT});
     }
     
     

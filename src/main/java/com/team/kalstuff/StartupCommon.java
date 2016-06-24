@@ -95,12 +95,13 @@ public class StartupCommon {
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	//blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
     	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
-    	//blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
-    	//blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(6).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(8).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(10).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
-    	//blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(12).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	
+    	blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
+    	blockMoonFlower1 = (BlockMoonFlower) new BlockMoonFlower(1).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower2 = (BlockMoonFlower) new BlockMoonFlower(2).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower3 = (BlockMoonFlower) new BlockMoonFlower(3).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower4 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
+    	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
     	//blockLockedChest = (BlockLockedChest) new BlockLockedChest(0).setUnlocalizedName("blockLockedChest");
     	
     	
@@ -140,6 +141,15 @@ public class StartupCommon {
     	//GameRegistry.registerBlock(blockMoonFlower3,  "blockMoonFlower3");
     	//GameRegistry.registerBlock(blockMoonFlower4,  "blockMoonFlower4");
     	//GameRegistry.registerBlock(blockMoonFlower5,  "blockMoonFlower5");
+    	
+    	GameRegistry.register(blockMoonFlower.setRegistryName("blockMoonFlower"));
+    	GameRegistry.register(blockMoonFlower1.setRegistryName("blockMoonFlowe1"));
+    	GameRegistry.register(blockMoonFlower2.setRegistryName("blockMoonFlower2"));
+    	GameRegistry.register(blockMoonFlower3.setRegistryName("blockMoonFlower3"));
+    	GameRegistry.register(blockMoonFlower4.setRegistryName("blockMoonFlower4"));
+    	GameRegistry.register(blockMoonFlower5.setRegistryName("blockMoonFlower5"));
+    	GameRegistry.register(new ItemBlock(blockMoonFlower).setRegistryName("blockMoonFlower"));
+    	
     	//GameRegistry.registerBlock(blockLockedChest, "blockLockedChest");
     	
     	itemEnderPowder = new Item().setUnlocalizedName("itemEnderPowder").setCreativeTab(kalStuffTab);
@@ -206,7 +216,7 @@ public class StartupCommon {
     	 
     	 
     	 GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
-    	 //GameRegistry.registerTileEntity(TileEntityMoonFlower.class, "tileEntityMoonFlower");
+    	 GameRegistry.registerTileEntity(TileEntityMoonFlower.class, "tileEntityMoonFlower");
 
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
 	}
