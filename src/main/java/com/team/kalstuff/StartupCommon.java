@@ -154,10 +154,10 @@ public class StartupCommon {
     	itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
     	itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup").setCreativeTab(kalStuffTab);
     	itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup").setCreativeTab(kalStuffTab);
-    	 //itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
-    	 //itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
-    	 //itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
-    	 //itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
+    	 itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
+    	 itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
+    	 itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
+    	 itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
     	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
     	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.FARMLAND).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
     	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
@@ -177,13 +177,12 @@ public class StartupCommon {
  		GameRegistry.register(itemLightCoffee.setRegistryName("itemLightCoffee"));
  		GameRegistry.register(itemTea.setRegistryName("itemTea"));
  		GameRegistry.register(itemCoffeeMug.setRegistryName("itemCoffeeMug"));
- 		GameRegistry.register(itemGoldenMug.setRegistryName("itemGoldenMug")); // GameRegistry.registerItem(itemTea,
- 																				// "itemTea");
- 		// GameRegistry.registerItem(itemBaconWand, "itemBaconWand");
- 		// GameRegistry.registerItem(itemChocolateCap, "itemChocolateCap");
- 		// GameRegistry.registerItem(itemBaconCore, "itemBaconCore");
- 		// GameRegistry.registerItem(itemInfusedBaconCore,
- 		// "itemInfusedBaconCore");
+ 		GameRegistry.register(itemGoldenMug.setRegistryName("itemGoldenMug"));
+ 		
+ 		GameRegistry.register(itemBaconWand.setRegistryName("itemBaconWand"));
+ 		GameRegistry.register(itemChocolateCap.setRegistryName("itemChocolateCap"));
+ 		GameRegistry.register(itemBaconCore.setRegistryName("itemBaconCore"));
+ 		GameRegistry.register(itemInfusedBaconCore.setRegistryName("itemInfusedBaconCore"));
  		GameRegistry.register(itemGrapes.setRegistryName("itemGrapes"));
  		GameRegistry.register(itemGrapeSeeds.setRegistryName("itemGrapeSeeds"));
  		GameRegistry.register(itemBlazeSoup.setRegistryName("itemBlazeSoup"));
