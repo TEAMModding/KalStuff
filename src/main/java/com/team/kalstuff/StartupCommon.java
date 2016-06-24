@@ -93,7 +93,7 @@ public class StartupCommon {
     	//blockBakedPotato = (BlockBakedPotato) new BlockBakedPotato().setUnlocalizedName("blockBakedPotato");
     	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
-    	//blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
+    	blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
     	blockGrapeVine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("blockGrapeVine");
     	
     	blockMoonFlower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("blockMoonFlower").setCreativeTab(kalStuffTab);
@@ -130,7 +130,8 @@ public class StartupCommon {
     	GameRegistry.register(blockTrashCan.setRegistryName("blockTrashCan"));
     	GameRegistry.register(new ItemBlock(blockTrashCan).setRegistryName("blockTrashCan"));
     	
-    	//GameRegistry.registerBlock(blockWildGrapeVine, "blockWildGrapeVine");
+    	GameRegistry.register(blockWildGrapeVine.setRegistryName("blockWildGrapeVine"));
+    	GameRegistry.register(new ItemBlock(blockWildGrapeVine).setRegistryName("blockWildGrapeVine"));
     	
     	GameRegistry.register(blockGrapeVine.setRegistryName("blockGrapeVine"));
     	GameRegistry.register(new ItemBlock(blockGrapeVine).setRegistryName("blockGrapeVine"));
