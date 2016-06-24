@@ -87,7 +87,6 @@ public class StartupCommon {
 		// ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
 		
     	//blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
-    	////blockSquidMat = (BlockSquidMat) new BlockSquidMat().setUnlocalizedName("blockSquidMat");
     	blockEnder = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
     	blockBlaze = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
     	blockCarrot = (BlockCarrot) new BlockCarrot().setUnlocalizedName("blockCarrot");
@@ -108,7 +107,6 @@ public class StartupCommon {
     	
     	
     	//GameRegistry.registerBlock(blockBridge, "blockBridge");
-    	//GameRegistry.registerBlock(blockSquidMat, "blockSquidMat");
     	
     	GameRegistry.register(blockEnder.setRegistryName("blockEnder"));
     	GameRegistry.register(new ItemBlock(blockEnder).setRegistryName("blockEnder"));

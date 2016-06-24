@@ -20,7 +20,6 @@ public class StartupClientOnly
 		registerItemRendering("itemEnderPowder");
 		registerItemRendering("itemCoffee");
 		registerItemRendering("itemCoffeeMug");
-		registerItemRendering("blockSquidMat");
 		registerItemRendering("blockEnder");
 		registerItemRendering("itemTea");
 		registerItemRendering("itemLightCoffee");
