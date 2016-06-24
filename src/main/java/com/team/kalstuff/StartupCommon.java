@@ -84,8 +84,6 @@ public class StartupCommon {
 		
 		ModSoundEvents.registerSounds();
 		
-		// ClientCommandHandler.instance.registerCommand(new CommandWorldGen());
-		
     	//blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
     	blockEnder = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
     	blockBlaze = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
@@ -152,22 +150,22 @@ public class StartupCommon {
     	itemGoldenMug = new Item().setUnlocalizedName("itemGoldenMug").setCreativeTab(kalStuffTab);
     	itemJewelSoup = (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemJewelSoup").setCreativeTab(kalStuffTab);
     	itemBlazeSoup = (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("itemBlazeSoup").setCreativeTab(kalStuffTab);
-    	 itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
-    	 itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
-    	 itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
-    	 itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
-    	 itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
-    	 itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.FARMLAND).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
-    	 itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
-    	 itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
-    	 itemRootBeer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
-    	 itemAppleSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.NIGHT_VISION).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
-    	 itemMelonSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.HASTE).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
-    	 itemGrapeSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.JUMP_BOOST).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
-      	 itemClosedRootBeer = (ItemClosedSoda) new ItemClosedSoda(itemRootBeer).setUnlocalizedName("itemRootBeer.closed").setCreativeTab(kalStuffTab);
-    	 itemClosedAppleSoda = (ItemClosedSoda) new ItemClosedSoda(itemAppleSoda).setUnlocalizedName("itemAppleSoda.closed").setCreativeTab(kalStuffTab);
-    	 itemClosedMelonSoda = (ItemClosedSoda) new ItemClosedSoda(itemMelonSoda).setUnlocalizedName("itemMelonSoda.closed").setCreativeTab(kalStuffTab);
-    	 itemClosedGrapeSoda = (ItemClosedSoda) new ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda.closed").setCreativeTab(kalStuffTab);
+    	itemBaconWand = (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("itemBaconWand");
+    	itemChocolateCap = new Item().setUnlocalizedName("itemChocolateCap").setCreativeTab(kalStuffTab);
+    	itemBaconCore = new Item().setUnlocalizedName("itemBaconCore").setCreativeTab(kalStuffTab);
+    	itemInfusedBaconCore = new Item().setUnlocalizedName("itemInfusedBaconCore").setCreativeTab(kalStuffTab);
+    	itemGrapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("itemGrapes").setCreativeTab(kalStuffTab);
+    	itemGrapeSeeds = (ItemSeeds) new ItemSeeds(blockGrapeVine, Blocks.FARMLAND).setUnlocalizedName("itemGrapeSeeds").setCreativeTab(kalStuffTab);
+    	itemWalkingStick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("itemWalkingStick").setCreativeTab(kalStuffTab);
+    	itemSodaCan = new Item().setUnlocalizedName("itemSodaCan").setCreativeTab(kalStuffTab);
+    	itemRootBeer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("itemRootBeer").setCreativeTab(kalStuffTab);
+    	itemAppleSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.NIGHT_VISION).setAlwaysEdible().setUnlocalizedName("itemAppleSoda").setCreativeTab(kalStuffTab);
+    	itemMelonSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.HASTE).setAlwaysEdible().setUnlocalizedName("itemMelonSoda").setCreativeTab(kalStuffTab);
+    	itemGrapeSoda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.JUMP_BOOST).setAlwaysEdible().setUnlocalizedName("itemGrapeSoda").setCreativeTab(kalStuffTab);
+      	itemClosedRootBeer = (ItemClosedSoda) new ItemClosedSoda(itemRootBeer).setUnlocalizedName("itemRootBeer.closed").setCreativeTab(kalStuffTab);
+    	itemClosedAppleSoda = (ItemClosedSoda) new ItemClosedSoda(itemAppleSoda).setUnlocalizedName("itemAppleSoda.closed").setCreativeTab(kalStuffTab);
+    	itemClosedMelonSoda = (ItemClosedSoda) new ItemClosedSoda(itemMelonSoda).setUnlocalizedName("itemMelonSoda.closed").setCreativeTab(kalStuffTab);
+    	itemClosedGrapeSoda = (ItemClosedSoda) new ItemClosedSoda(itemGrapeSoda).setUnlocalizedName("itemGrapeSoda.closed").setCreativeTab(kalStuffTab);
 
     	GameRegistry.register(itemEnderPowder.setRegistryName("itemEnderPowder"));
  		GameRegistry.register(itemCoffee.setRegistryName("itemCoffee"));
@@ -202,10 +200,9 @@ public class StartupCommon {
 
 		// GameRegistry.registerTileEntity(TileEntityMoonFlower.class,
 		// "tileEntityMoonFlower");
-    	 //GameRegistry.registerWorldGenerator(new StructureFile("cottage", KalStuff.cottageRarity), 1);
     	 
-    	 //GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
-    	 //GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
+    	//GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
+    	//GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
     	 
     	 
     	 GameRegistry.registerTileEntity(TileEntityChickenNest.class, "tileEntityChickenNest");
@@ -222,15 +219,6 @@ public class StartupCommon {
 
 		CoreEventHandler events = new CoreEventHandler();
 		MinecraftForge.EVENT_BUS.register(events);
-
-		/*
-		 * if (!Files.exists(Paths.get("worldgen-export"),
-		 * LinkOption.NOFOLLOW_LINKS)) { try {
-		 * Files.createDirectory(Paths.get("worldgen-export"), new
-		 * FileAttribute[] {}); } catch (IOException e) { e.printStackTrace(); }
-		 * }
-		 */
-
 	}
 
 	public static void postInitCommon() {

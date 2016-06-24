@@ -10,8 +10,7 @@ public class StartupClientOnly
 {
 	public static void preInitClientOnly()
 	{
-		//KeyBinding binding = new KeyBinding("key.kalstuff.test", 37, "key.categories.kalstuff");
-		//ClientRegistry.registerKeyBinding(binding);
+		
 	}
 	
 	public static void initClientOnly()
