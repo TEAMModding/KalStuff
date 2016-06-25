@@ -82,13 +82,13 @@ public class StartupCommon {
 		
 		ModSoundEvents.registerSounds();
 		
-    	//blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
+    	blockBridge = (BlockBridge) new BlockBridge().setUnlocalizedName("blockBridge");
     	blockEnder = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
     	blockBlaze = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
     	blockCarrot = (BlockCarrot) new BlockCarrot().setUnlocalizedName("blockCarrot");
     	blockApple = (BlockApple) new BlockApple().setUnlocalizedName("blockApple");
     	blockPotato = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
-    	//blockBakedPotato = (BlockBakedPotato) new BlockBakedPotato().setUnlocalizedName("blockBakedPotato");
+    	blockBakedPotato = (BlockBakedPotato) new BlockBakedPotato().setUnlocalizedName("blockBakedPotato");
     	blockChickenNest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("blockChickenNest");
     	blockTrashCan = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	blockWildGrapeVine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("blockWildGrapeVine");
@@ -102,7 +102,8 @@ public class StartupCommon {
     	blockMoonFlower5 = (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("blockMoonFlower").setCreativeTab(null);
     	
     	
-    	//GameRegistry.registerBlock(blockBridge, "blockBridge");
+    	GameRegistry.register(blockBridge.setRegistryName("blockBridge"));
+    	GameRegistry.register(new ItemBlock(blockBridge).setRegistryName("blockBridge"));
     	
     	GameRegistry.register(blockEnder.setRegistryName("blockEnder"));
     	GameRegistry.register(new ItemBlock(blockEnder).setRegistryName("blockEnder"));
@@ -119,7 +120,8 @@ public class StartupCommon {
     	GameRegistry.register(blockPotato.setRegistryName("blockPotato"));
     	GameRegistry.register(new ItemBlock(blockPotato).setRegistryName("blockPotato"));
     	
-    	//GameRegistry.registerBlock(blockBakedPotato, "blockBakedPotato");
+    	GameRegistry.register(blockBakedPotato.setRegistryName("blockBakedPotato"));
+    	GameRegistry.register(new ItemBlock(blockBakedPotato).setRegistryName("blockBakedPotato"));
     	
     	GameRegistry.register(blockChickenNest.setRegistryName("blockChickenNest"));
     	GameRegistry.register(new ItemBlock(blockChickenNest).setRegistryName("blockChickenNest"));
