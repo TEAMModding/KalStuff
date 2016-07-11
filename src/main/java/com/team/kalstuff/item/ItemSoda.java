@@ -14,6 +14,8 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemSoda extends ItemDrink {
 
@@ -47,6 +49,7 @@ public class ItemSoda extends ItemDrink {
 		}
     }
 	
+	@SideOnly(Side.SERVER)
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (entityLiving instanceof EntityPlayer)
         {
@@ -63,11 +66,11 @@ public class ItemSoda extends ItemDrink {
         	  stack.damageItem(1, player);
         	  System.out.println("Oh it got hurt.");
           }
-	      System.out.println(player.capabilities.isCreativeMode + ", " + (stack.getItemDamage() >= stack.getMaxDamage() - 2));
-          if (!player.capabilities.isCreativeMode && stack.getItemDamage() >= stack.getMaxDamage() - 2) {
+	      System.out.println(stack.getItemDamage() + ", " + stack.getMaxDamage());
+          if (!player.capabilities.isCreativeMode && stack.getItemDamage() >= stack.getMaxDamage() + 1) {
         	  System.out.print("Yipee!");
 	            if (stack.stackSize <= 0) return new ItemStack(StartupCommon.itemSodaCan);
-	            player.inventory.addItemStackToInventory(new ItemStack(StartupCommon.itemSodaCan));
+	            else player.inventory.addItemStackToInventory(new ItemStack(StartupCommon.itemSodaCan));
           }
           
 	      return stack;
@@ -78,6 +81,6 @@ public class ItemSoda extends ItemDrink {
      */
 	@Override
     public int getMaxItemUseDuration(ItemStack stack) {
-        return 10;
+        return 5;
     }
 }
