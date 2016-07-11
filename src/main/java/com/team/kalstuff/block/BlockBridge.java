@@ -97,12 +97,15 @@ public class BlockBridge extends Block {
 	    }
 	    
 	    public boolean chain(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ, BlockPos origin) {
-			ItemStack itemstack = playerIn.getHeldItemMainhand();
+			
+	    	if (worldIn.isRemote) return true;
+	    	
+	    	ItemStack itemstack = playerIn.getHeldItemMainhand();
 			Block block;
 	    	try {block = Block.getBlockFromItem(itemstack.getItem());}
 	    	catch (Exception e) {return true;}
+	    	if (block == null) return true;
 	    	BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
-	    	if (worldIn.isRemote) return true;
 	    	
 	    	int i = 0;
 	    	if (state.getValue(FACING).equals(EnumFacing.EAST))
