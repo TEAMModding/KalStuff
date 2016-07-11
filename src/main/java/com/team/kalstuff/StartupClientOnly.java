@@ -10,8 +10,7 @@ public class StartupClientOnly
 {
 	public static void preInitClientOnly()
 	{
-		//KeyBinding binding = new KeyBinding("key.kalstuff.test", 37, "key.categories.kalstuff");
-		//ClientRegistry.registerKeyBinding(binding);
+		
 	}
 	
 	public static void initClientOnly()
@@ -20,7 +19,6 @@ public class StartupClientOnly
 		registerItemRendering("itemEnderPowder");
 		registerItemRendering("itemCoffee");
 		registerItemRendering("itemCoffeeMug");
-		registerItemRendering("blockSquidMat");
 		registerItemRendering("blockEnder");
 		registerItemRendering("itemTea");
 		registerItemRendering("itemLightCoffee");

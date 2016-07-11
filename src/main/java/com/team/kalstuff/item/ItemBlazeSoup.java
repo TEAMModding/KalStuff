@@ -3,8 +3,8 @@ package com.team.kalstuff.item;
 import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
@@ -33,10 +33,10 @@ public class ItemBlazeSoup extends ItemDrink {
     {
 		if (!worldIn.isRemote)
 		{
-			player.addPotionEffect(new PotionEffect(Potion.absorption.id, 6000, 0));
-			player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 6000, 0));
-			player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 6000, 0));
-			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 6000, 0));
 		}
     }
     

@@ -1,6 +1,6 @@
 package com.team.kalstuff.worldgen;
 
-import java.util.ArrayList;
+/*import java.util.ArrayList;
 import java.util.Random;
 
 import com.team.kalstuff.structure.Structure;
@@ -10,12 +10,13 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraftforge.fml.common.IWorldGenerator;
+import net.minecraftforge.fml.common.IWorldGenerator;*/
 
-public class WorldGen implements IWorldGenerator
+public class WorldGen //implements IWorldGenerator
 {
+	//This is all unused and needs to be updated. Keeping it around for reference.
 	
-	private ArrayList<Structure> structures = new ArrayList<Structure>();
+	/*private ArrayList<Structure> structures = new ArrayList<Structure>();
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkProvider chunkGenerator, IChunkProvider chunkProvider) {
@@ -26,13 +27,13 @@ public class WorldGen implements IWorldGenerator
 		}
 	}
 	
-	/*private void spawn(Random rand, BlockPos pos, World world)
+	private void spawn(Random rand, BlockPos pos, World world)
 	{
 		world.setBlockState(pos, Blocks.stonebrick.getDefaultState(), 3);
 		world.setBlockState(pos.up(), Blocks.stonebrick.getDefaultState(), 3);
 		world.setBlockState(pos.up(2), Blocks.stonebrick.getStateFromMeta(3), 3);
 		
-	}*/
+	}
 	
 	public void add(Structure structure) {
 		structures.add(structure);
@@ -59,6 +60,6 @@ public class WorldGen implements IWorldGenerator
 			if (world.getBlockState(aPos) == Blocks.grass.getDefaultState()) return aPos;
 		}
 		return null;
-	}
+	}*/
 	
 }
