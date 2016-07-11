@@ -49,9 +49,10 @@ public class ItemSoda extends ItemDrink {
 		}
     }
 	
-	@SideOnly(Side.SERVER)
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
-        if (entityLiving instanceof EntityPlayer)
+        if (worldIn.isRemote) return stack;
+        int originalStackSize = stack.stackSize;
+		if (entityLiving instanceof EntityPlayer)
         {
             EntityPlayer entityplayer = (EntityPlayer)entityLiving;
             entityplayer.getFoodStats().addStats(this, stack);
@@ -67,12 +68,11 @@ public class ItemSoda extends ItemDrink {
         	  System.out.println("Oh it got hurt.");
           }
 	      System.out.println(stack.getItemDamage() + ", " + stack.getMaxDamage());
-          if (!player.capabilities.isCreativeMode && stack.getItemDamage() >= stack.getMaxDamage() + 1) {
+          if (!player.capabilities.isCreativeMode && stack.stackSize == 0) {
         	  System.out.print("Yipee!");
 	            if (stack.stackSize <= 0) return new ItemStack(StartupCommon.itemSodaCan);
 	            else player.inventory.addItemStackToInventory(new ItemStack(StartupCommon.itemSodaCan));
           }
-          
 	      return stack;
 	  }
 	

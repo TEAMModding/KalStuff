@@ -212,7 +212,7 @@ public class StartupCommon {
 		System.out.println(
 				"Hi there, nerdy geeks. You should just enjoy Minecraft and stop looking at the system output.");
 
-		// KalStuffRecipes.add();
+		 KalStuffRecipes.add();
 
 		CoreEventHandler events = new CoreEventHandler();
 		MinecraftForge.EVENT_BUS.register(events);
