@@ -51,7 +51,7 @@ public class StartupCommon {
 	public static BlockMoonFlower blockMoonFlower4;
 	public static BlockMoonFlower blockMoonFlower5;
 
-	public static Item itemEnderPowder;
+	public static ItemEnderPowder itemEnderPowder;
 	public static ItemCoffee itemCoffee;
 	public static ItemJewelSoup itemJewelSoup;
 	public static Item itemCoffeeMug;
@@ -144,7 +144,7 @@ public class StartupCommon {
     	GameRegistry.register(new ItemBlock(blockMoonFlower).setRegistryName("blockMoonFlower"));
     	
     	
-    	itemEnderPowder = new Item().setUnlocalizedName("itemEnderPowder").setCreativeTab(kalStuffTab);
+    	itemEnderPowder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("itemEnderPowder").setCreativeTab(kalStuffTab);
     	itemCoffeeMug = new Item().setUnlocalizedName("itemCoffeeMug").setCreativeTab(kalStuffTab);
     	itemCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("itemCoffee").setCreativeTab(kalStuffTab);
     	itemLightCoffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("itemLightCoffee").setCreativeTab(kalStuffTab);

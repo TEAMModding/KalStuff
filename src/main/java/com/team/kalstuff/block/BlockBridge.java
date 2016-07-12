@@ -6,6 +6,7 @@ import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPistonBase;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
@@ -16,13 +17,12 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -72,7 +72,7 @@ public class BlockBridge extends Block {
 	    
 	    public IBlockState getStateForEntityRender(IBlockState state)
 	    {
-	        return this.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
+	        return this.getDefaultState().withProperty(FACING, EnumFacing.NORTH);
 	    }
 
 	    public IBlockState getStateFromMeta(int meta)
@@ -96,7 +96,8 @@ public class BlockBridge extends Block {
 	        return new BlockStateContainer(this, new IProperty[] {FACING});
 	    }
 	    
-	    public boolean chain(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ, BlockPos origin) {
+	    @SuppressWarnings("deprecation")
+		public boolean chain(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ, BlockPos origin) {
 			
 	    	if (worldIn.isRemote) return true;
 	    	
@@ -166,41 +167,42 @@ public class BlockBridge extends Block {
 	    			blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, BlockPistonBase.getFacingFromEntity(origin, playerIn));
 	    			if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
 	    			success = true;
-	    		} catch (Exception error) {
+	    		} catch (Exception e) {
 	    			try {
-	    				blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, playerIn.getHorizontalFacing().getOpposite());;
+	    				blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, playerIn.getHorizontalFacing().getOpposite());
 	    				if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
 	    				success = true;
-	    			} catch (Exception error2) {
+	    			} catch (Exception e2) {
 	    				try {
 	    					blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata());
 	    					if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
 	    					success = true;
-	    				} catch (Exception error3) {}
+	    				} catch (Exception e3) {}
 	    			}
 	    		}
 	    		if (success) {
-	    			System.out.println("Success at last!");
 	    			this.partLoc = aPos;
 	    			this.particle = true;
 	    			
-	    			//TODO: not sure how to fix this
-	    			//worldIn.playSound(aPos.getX(), aPos.getY(), aPos.getZ(), block.getSoundType().getPlaceSound(), 1.0f, 1.0f);
-	    			
+	    			SoundType soundtype = block.getSoundType();
+	    			worldIn.playSound(null, aPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+	    			worldIn.playSound(null, pos, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.BLOCKS, 0.5F, 0.8F);
 	    			if (!playerIn.capabilities.isCreativeMode) --playerIn.getHeldItemMainhand().stackSize;
 	    		}
 
 	    	}
 			return true;
 	    }
+	    
 	    @SideOnly(Side.CLIENT)
-	    public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+	    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
 	    {
 	    	if (this.particle)
 	    		for (int i = 0; i < 8; i ++) {
-	    			worldIn.spawnParticle(EnumParticleTypes.PORTAL, this.partLoc.getX() + 0.5, this.partLoc.getY() + 0.5, this.partLoc.getZ() + 0.5, (rand.nextDouble() * 2) - 1, (rand.nextDouble() * 2) - 1.5, (rand.nextDouble() * 2) - 1, new int[0]);
+	    			for (int j = 0; j < 2; j ++)
+	    				worldIn.spawnParticle(EnumParticleTypes.PORTAL, this.partLoc.getX() + 0.5, this.partLoc.getY() + 0.5, this.partLoc.getZ() + 0.5, (rand.nextDouble() * 2) - 1, (rand.nextDouble() * 2) - 1.5, (rand.nextDouble() * 2) - 1, new int[0]);
+	    			//worldIn.spawnParticle(EnumParticleTypes.PORTAL, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, (rand.nextDouble() * 2) - 1, (rand.nextDouble() * 2) - 1.5, (rand.nextDouble() * 2) - 1, new int[0]);
 	    		}
 	    	this.particle = false;
 	    }
-	    // public BlockPos findNextPosition(World worldIn, BlockPos pos)
 }
