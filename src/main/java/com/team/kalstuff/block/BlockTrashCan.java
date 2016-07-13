@@ -21,7 +21,7 @@ public class BlockTrashCan extends Block
 
 	public BlockTrashCan() {
 		super(Material.IRON);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(3.0F);
 	}
 	

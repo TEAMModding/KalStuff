@@ -14,7 +14,7 @@ public class BlockApple extends Block {
 
 	public BlockApple() {
 		super(Material.ROCK);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(15.0F);
 		}
 		public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)

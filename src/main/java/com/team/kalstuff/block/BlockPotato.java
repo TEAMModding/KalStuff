@@ -13,7 +13,7 @@ public class BlockPotato extends Block {
 
 	public BlockPotato() {
 		super(Material.GRASS);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(2.0F);
 	}
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)

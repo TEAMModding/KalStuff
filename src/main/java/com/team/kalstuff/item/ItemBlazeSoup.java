@@ -22,7 +22,7 @@ public class ItemBlazeSoup extends ItemDrink {
 		super(amount, saturation, isWolfFood);
 		this.setMaxStackSize(1);
 		this.potionLength = potionLength;
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 	}
 	
 	public ItemBlazeSoup(int amount, float saturation, boolean isWolfFood) {
@@ -44,6 +44,6 @@ public class ItemBlazeSoup extends ItemDrink {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
 	  {
 	      super.onItemUseFinish(stack, worldIn, entityLiving);
-	      return new ItemStack(StartupCommon.itemGoldenMug);
+	      return new ItemStack(StartupCommon.golden_mug);
 	  }
 }

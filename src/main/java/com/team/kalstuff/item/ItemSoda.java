@@ -65,8 +65,8 @@ public class ItemSoda extends ItemDrink {
 	      System.out.println(stack.getItemDamage() + ", " + stack.getMaxDamage());
           if (!player.capabilities.isCreativeMode && stack.stackSize == 0) {
         	  System.out.print("Yipee!");
-	            if (stack.stackSize <= 0) return new ItemStack(StartupCommon.itemSodaCan);
-	            else player.inventory.addItemStackToInventory(new ItemStack(StartupCommon.itemSodaCan));
+	            if (stack.stackSize <= 0) return new ItemStack(StartupCommon.soda_can);
+	            else player.inventory.addItemStackToInventory(new ItemStack(StartupCommon.soda_can));
           }
 	      return stack;
 	  }

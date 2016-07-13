@@ -9,7 +9,7 @@ public class BlockEnder extends Block {
 
 	public BlockEnder() {
 		super(Material.ROCK);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(5.0F);
 	}
 	

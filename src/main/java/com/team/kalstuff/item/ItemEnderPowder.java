@@ -23,7 +23,7 @@ public class ItemEnderPowder extends Item {
 	
 		public ItemEnderPowder() {
 		this.setMaxStackSize(64);
-		this.setCreativeTab(StartupCommon.kalStuffTab); // the item will appear on the Miscellaneous tab in creative
+		this.setCreativeTab(StartupCommon.KALSTUFF); // the item will appear on the Miscellaneous tab in creative
 		}
 		
 		public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {

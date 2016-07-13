@@ -35,7 +35,7 @@ public class BlockBridge extends Block {
     
 	public BlockBridge() throws StackOverflowError, IllegalArgumentException, NullPointerException {
 		super(Material.WOOD);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
     	this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     	this.setHardness(0.5f);
 	}
@@ -114,46 +114,46 @@ public class BlockBridge extends Block {
 	    			aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
 	    	
 	    	if (state.getValue(FACING).equals(EnumFacing.WEST))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
 	    	
 	    	if (state.getValue(FACING).equals(EnumFacing.UP))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
 				
 	    	if (state.getValue(FACING).equals(EnumFacing.DOWN))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
 				
 	    	if (state.getValue(FACING).equals(EnumFacing.NORTH))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
 	    	
 	    	if (state.getValue(FACING).equals(EnumFacing.SOUTH))
 	    		do 	{
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.blockBridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
 	    	
 	    	if (aPos == origin) return true;
 	    	
-	    	if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.blockBridge.getDefaultState()) {
+	    	if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.bridge.getDefaultState()) {
 	    		BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
 	    			
 	    		try {

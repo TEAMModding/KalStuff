@@ -18,12 +18,12 @@ public class BlockGrapeVine extends BlockCrops {
 
     protected Item getSeed()
     {
-        return StartupCommon.itemGrapeSeeds;
+        return StartupCommon.grape_seeds;
     }
 
     protected Item getCrop()
     {
-        return StartupCommon.itemGrapes;
+        return StartupCommon.grapes;
     }
     
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
@@ -32,7 +32,7 @@ public class BlockGrapeVine extends BlockCrops {
 		if (((Integer)state.getValue(AGE)).intValue() == 7) {
         worldIn.setBlockState(pos, state.withProperty(AGE, 6));
         Random rand = new Random();
-        ItemStack aStack = new ItemStack(StartupCommon.itemGrapes, rand.nextInt(2) + 3);
+        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
         spawnAsEntity(worldIn, pos, aStack);
 		return true;
 		}
@@ -45,7 +45,7 @@ public class BlockGrapeVine extends BlockCrops {
 	    	super.onBlockDestroyedByPlayer(worldIn, pos, state);
 	    	if (((Integer)state.getValue(AGE)).intValue() == 1) {
 	        Random rand = new Random();
-	        ItemStack aStack = new ItemStack(StartupCommon.itemGrapes, rand.nextInt(2) + 3);
+	        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
 	        spawnAsEntity(worldIn, pos, aStack);
 	    	}
 	    }

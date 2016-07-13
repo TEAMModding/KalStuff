@@ -44,6 +44,6 @@ public class ItemJewelSoup extends ItemDrink {
 	@Override
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
 		super.onItemUseFinish(stack, worldIn, entityLiving);
-		return new ItemStack(StartupCommon.itemGoldenMug);
+		return new ItemStack(StartupCommon.golden_mug);
 	}
 }

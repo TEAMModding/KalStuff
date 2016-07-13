@@ -17,7 +17,7 @@ import net.minecraft.world.World;
 public class ItemBaconWand extends Item {
 
 	public ItemBaconWand() {
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 	}
 	
 	@Override

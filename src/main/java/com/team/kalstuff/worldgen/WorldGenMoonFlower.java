@@ -22,7 +22,7 @@ public class WorldGenMoonFlower implements IWorldGenerator {
 		if (somePos != null) {
 			for (int i = 0; i < somePos.size(); i ++)
 				if (somePos.get(i) != null)
-					world.setBlockState(somePos.get(i).up(), StartupCommon.blockMoonFlower.getDefaultState());
+					world.setBlockState(somePos.get(i).up(), StartupCommon.moon_flower.getDefaultState());
 
 		}
 		}

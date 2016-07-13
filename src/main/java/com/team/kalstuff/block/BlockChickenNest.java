@@ -29,7 +29,7 @@ public class BlockChickenNest extends BlockContainer {
 	public BlockChickenNest() {
 		super(Material.PLANTS);
 		// this.setStepSound(soundTypeGrass);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(0.4F);
 
 	}

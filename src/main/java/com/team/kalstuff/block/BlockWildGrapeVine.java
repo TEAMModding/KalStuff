@@ -28,7 +28,7 @@ public class BlockWildGrapeVine extends BlockBush {
 	
     public BlockWildGrapeVine() {
     	super(Material.PLANTS);
-    	this.setCreativeTab(StartupCommon.kalStuffTab);
+    	this.setCreativeTab(StartupCommon.KALSTUFF);
     	this.setDefaultState(this.blockState.getBaseState().withProperty(GROWN, Integer.valueOf(1)));
     }
     
@@ -130,7 +130,7 @@ public class BlockWildGrapeVine extends BlockBush {
 		if (((Integer)state.getValue(GROWN)).intValue() == 1) {
         worldIn.setBlockState(pos, state.withProperty(GROWN, 0));
         Random rand = new Random();
-        ItemStack aStack = new ItemStack(StartupCommon.itemGrapes, rand.nextInt(2) + 3);
+        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
         spawnAsEntity(worldIn, pos, aStack);
 		return true;
 		}
@@ -169,7 +169,7 @@ public class BlockWildGrapeVine extends BlockBush {
 	    	super.onBlockDestroyedByPlayer(worldIn, pos, state);
 	    	if (((Integer)state.getValue(GROWN)).intValue() == 1) {
 	        Random rand = new Random();
-	        ItemStack aStack = new ItemStack(StartupCommon.itemGrapes, rand.nextInt(2) + 3);
+	        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
 	        spawnAsEntity(worldIn, pos, aStack);
 	    	}
 	    }

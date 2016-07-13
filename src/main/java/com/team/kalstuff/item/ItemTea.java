@@ -17,6 +17,6 @@ public class ItemTea extends ItemDrink {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
 	  {
 	      super.onItemUseFinish(stack, worldIn, entityLiving);
-	      return new ItemStack(StartupCommon.itemCoffeeMug);
+	      return new ItemStack(StartupCommon.coffee_mug);
 	  }
 }

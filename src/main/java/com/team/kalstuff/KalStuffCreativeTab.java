@@ -16,7 +16,7 @@ super(tabLabel);
 @SideOnly(Side.CLIENT)
 public Item getTabIconItem()
 {
-return Item.getItemFromBlock(StartupCommon.blockBridge);
+return Item.getItemFromBlock(StartupCommon.bridge);
 }
 
 }
