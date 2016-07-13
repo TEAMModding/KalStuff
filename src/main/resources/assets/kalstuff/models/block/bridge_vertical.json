@@ -1,7 +1,7 @@
 {
     "parent": "block/orientable_vertical",
     "textures": {
-        "front": "kalstuff:blocks/blockBridge_Front",
-        "side": "kalstuff:blocks/blockBridge"
+        "front": "kalstuff:blocks/bridge_front",
+        "side": "kalstuff:blocks/bridge"
     }
 }

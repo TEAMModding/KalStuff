@@ -12,7 +12,7 @@ public class ModSoundEvents {
 	
 	
 	static {
-		CAN_OPEN = registerSound("item.soda_can.open");
+		CAN_OPEN = registerSound("item.closed_soda.open");
 	}
 	/**
 	 * Register the {@link SoundEvent}s.

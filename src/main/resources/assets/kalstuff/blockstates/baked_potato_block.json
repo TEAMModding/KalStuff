@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "kalstuff:baked_potato_block" },
+        "facing=south": { "model": "kalstuff:baked_potato_block", "y": 180 },
+        "facing=west":  { "model": "kalstuff:baked_potato_block", "y": 270 },
+        "facing=east":  { "model": "kalstuff:baked_potato_block", "y": 90 }
+    }
+}

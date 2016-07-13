@@ -24,7 +24,7 @@ import com.team.kalstuff.tileentity.TileEntityChickenNest;
 public class GuiChickenNest extends GuiContainer {
 
 	// This is the resource location for the background image for the GUI
-	private static final ResourceLocation texture = new ResourceLocation("kalstuff", "textures/gui/chickenNestGui.png");
+	private static final ResourceLocation texture = new ResourceLocation("kalstuff", "textures/gui/chicken_nest.png");
 	private TileEntityChickenNest tileEntityChickenNest;
 
 	public GuiChickenNest(InventoryPlayer invPlayer, TileEntityChickenNest tile) {

@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 
 public class GuiTrashCan extends GuiContainer
 {
-	private static final ResourceLocation texture = new ResourceLocation("kalstuff", "textures/gui/chickenNestGui.png");
+	private static final ResourceLocation texture = new ResourceLocation("kalstuff", "textures/gui/trash_can.png");
 	
 	public GuiTrashCan(InventoryPlayer invPlayer) {
 		super(new ContainerTrashCan(invPlayer));

@@ -9,7 +9,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class KalStuffRecipes {
 
 	public static void add() {
-   	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.ender_powder, 4), new Object[] {
+   	 GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.crushed_ender, 4), new Object[] {
 		 new ItemStack(Items.ENDER_PEARL),
 		 new ItemStack(Items.FLINT)
 		 });
@@ -42,7 +42,7 @@ public class KalStuffRecipes {
 	 "SPS",
 	 'S', Items.STICK,
 	 'P', Blocks.PLANKS,
-	 'E', StartupCommon.ender_powder
+	 'E', StartupCommon.crushed_ender
 		 });
  
  GameRegistry.addRecipe(new ItemStack(StartupCommon.ender_block, 1), new Object[] {

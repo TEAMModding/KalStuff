@@ -1,0 +1,12 @@
+{
+    "parent": "block/cube",
+    "textures": {
+        "particle": "kalstuff:blocks/baked_potato_block_top",
+        "down": "kalstuff:blocks/baked_potato_block",
+        "up": "kalstuff:blocks/baked_potato_block_top",
+        "north": "kalstuff:blocks/baked_potato_block_side",
+        "east": "kalstuff:blocks/baked_potato_block",
+        "south": "kalstuff:blocks/baked_potato_block_side",
+        "west": "kalstuff:blocks/baked_potato_block"
+    }
+}

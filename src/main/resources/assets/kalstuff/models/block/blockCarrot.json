@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_top",
-    "textures": {
-        "side": "kalstuff:blocks/carrot_side",
-        "top": "kalstuff:blocks/carrot_top"
-    }
-}

@@ -65,7 +65,7 @@ public class StartupCommon {
 	public static BlockMoonFlower			moon_flower4;
 	public static BlockMoonFlower			moon_flower5;
 	
-	public static ItemEnderPowder			ender_powder;
+	public static ItemEnderPowder			crushed_ender;
 	public static Item						coffee_mug;
 	public static ItemCoffee				coffee;
 	public static ItemCoffee				light_coffee;
@@ -117,45 +117,45 @@ public class StartupCommon {
     	GameRegistry.register(bridge.setRegistryName("bridge"));
     	GameRegistry.register(new ItemBlock(bridge).setRegistryName("bridge"));
     	
-    	GameRegistry.register(ender_block.setRegistryName("blockEnder"));
-    	GameRegistry.register(new ItemBlock(ender_block).setRegistryName("blockEnder"));
+    	GameRegistry.register(ender_block.setRegistryName("ender_block"));
+    	GameRegistry.register(new ItemBlock(ender_block).setRegistryName("ender_block"));
     	
-    	GameRegistry.register(blaze_block.setRegistryName("blockBlaze"));
-    	GameRegistry.register(new ItemBlock(blaze_block).setRegistryName("blockBlaze"));
+    	GameRegistry.register(blaze_block.setRegistryName("blaze_block"));
+    	GameRegistry.register(new ItemBlock(blaze_block).setRegistryName("blaze_block"));
     	
-    	GameRegistry.register(carrot_block.setRegistryName("blockCarrot"));
-    	GameRegistry.register(new ItemBlock(carrot_block).setRegistryName("blockCarrot"));
+    	GameRegistry.register(carrot_block.setRegistryName("carrot_block"));
+    	GameRegistry.register(new ItemBlock(carrot_block).setRegistryName("carrot_block"));
     	
-    	GameRegistry.register(apple_block.setRegistryName("blockApple"));
-    	GameRegistry.register(new ItemBlock(apple_block).setRegistryName("blockApple"));
+    	GameRegistry.register(apple_block.setRegistryName("apple_block"));
+    	GameRegistry.register(new ItemBlock(apple_block).setRegistryName("apple_block"));
     	
-    	GameRegistry.register(potato_block.setRegistryName("blockPotato"));
-    	GameRegistry.register(new ItemBlock(potato_block).setRegistryName("blockPotato"));
+    	GameRegistry.register(potato_block.setRegistryName("potato_block"));
+    	GameRegistry.register(new ItemBlock(potato_block).setRegistryName("potato_block"));
     	
-    	GameRegistry.register(baked_potato_block.setRegistryName("blockBakedPotato"));
-    	GameRegistry.register(new ItemBlock(baked_potato_block).setRegistryName("blockBakedPotato"));
+    	GameRegistry.register(baked_potato_block.setRegistryName("baked_potato_block"));
+    	GameRegistry.register(new ItemBlock(baked_potato_block).setRegistryName("baked_potato_block"));
     	
-    	GameRegistry.register(chicken_nest.setRegistryName("chickenNest"));
-    	GameRegistry.register(new ItemBlock(chicken_nest).setRegistryName("chickenNest"));
+    	GameRegistry.register(chicken_nest.setRegistryName("chicken_nest"));
+    	GameRegistry.register(new ItemBlock(chicken_nest).setRegistryName("chicken_nest"));
     	
-    	GameRegistry.register(trash_can.setRegistryName("trashCan"));
-    	GameRegistry.register(new ItemBlock(trash_can).setRegistryName("trashCan"));
+    	GameRegistry.register(trash_can.setRegistryName("trash_can"));
+    	GameRegistry.register(new ItemBlock(trash_can).setRegistryName("trash_can"));
     	
-    	GameRegistry.register(wild_grape_vine.setRegistryName("wildGrapeVine"));
-    	GameRegistry.register(new ItemBlock(wild_grape_vine).setRegistryName("wildGrapeVine"));
+    	GameRegistry.register(wild_grape_vine.setRegistryName("wild_grape_vine"));
+    	GameRegistry.register(new ItemBlock(wild_grape_vine).setRegistryName("wild_grape_vine"));
     	
-    	GameRegistry.register(grape_vine.setRegistryName("grapeVine"));
-    	GameRegistry.register(new ItemBlock(grape_vine).setRegistryName("grapeVine"));
+    	GameRegistry.register(grape_vine.setRegistryName("grape_vine"));
+    	GameRegistry.register(new ItemBlock(grape_vine).setRegistryName("grape_vine"));
     	
-    	GameRegistry.register(moon_flower.setRegistryName("moonFlower"));
-    	GameRegistry.register(moon_flower1.setRegistryName("moonFlower1"));
-    	GameRegistry.register(moon_flower2.setRegistryName("moonFlower2"));
-    	GameRegistry.register(moon_flower3.setRegistryName("moonFlower3"));
-    	GameRegistry.register(moon_flower4.setRegistryName("moonFlower4"));
-    	GameRegistry.register(moon_flower5.setRegistryName("moonFlower5"));
-    	GameRegistry.register(new ItemBlock(moon_flower).setRegistryName("moonFlower"));
+    	GameRegistry.register(moon_flower.setRegistryName("moon_flower"));
+    	GameRegistry.register(moon_flower1.setRegistryName("moon_flower1"));
+    	GameRegistry.register(moon_flower2.setRegistryName("moon_flower2"));
+    	GameRegistry.register(moon_flower3.setRegistryName("moon_flower3"));
+    	GameRegistry.register(moon_flower4.setRegistryName("moon_flower4"));
+    	GameRegistry.register(moon_flower5.setRegistryName("moon_flower5"));
+    	GameRegistry.register(new ItemBlock(moon_flower).setRegistryName("moon_flower"));
     	
-    	ender_powder = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("enderPowder").setCreativeTab(KALSTUFF);
+    	crushed_ender = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("enderPowder").setCreativeTab(KALSTUFF);
     	coffee_mug = new Item().setUnlocalizedName("coffeeMug").setCreativeTab(KALSTUFF);
     	coffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("coffee").setCreativeTab(KALSTUFF);
     	light_coffee = (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("lightCoffee").setCreativeTab(KALSTUFF);
@@ -180,30 +180,30 @@ public class StartupCommon {
     	closed_apple_soda = (ItemClosedSoda) new ItemClosedSoda(apple_soda).setUnlocalizedName("closedAppleSoda").setCreativeTab(KALSTUFF);
     	closed_grape_soda = (ItemClosedSoda) new ItemClosedSoda(grape_soda).setUnlocalizedName("closedGrapeSoda").setCreativeTab(KALSTUFF);
 
-    	GameRegistry.register(ender_powder.setRegistryName("enderPowder"));
- 		GameRegistry.register(coffee_mug.setRegistryName("coffeeMug"));
+    	GameRegistry.register(crushed_ender.setRegistryName("crushed_ender"));
+ 		GameRegistry.register(coffee_mug.setRegistryName("coffee_mug"));
  		GameRegistry.register(coffee.setRegistryName("coffee"));
- 		GameRegistry.register(light_coffee.setRegistryName("lightCoffee"));
+ 		GameRegistry.register(light_coffee.setRegistryName("light_coffee"));
  		GameRegistry.register(tea.setRegistryName("tea"));
- 		GameRegistry.register(golden_mug.setRegistryName("goldenMug"));
- 		GameRegistry.register(jewel_soup.setRegistryName("jewelSoup"));
- 		GameRegistry.register(blaze_soup.setRegistryName("blazeSoup"));
- 		GameRegistry.register(bacon_wand.setRegistryName("baconWand"));
- 		GameRegistry.register(chocolate_cap.setRegistryName("chocolateCap"));
- 		GameRegistry.register(bacon_core.setRegistryName("baconCore"));
- 		GameRegistry.register(infused_bacon_core.setRegistryName("infusedBaconCore"));
+ 		GameRegistry.register(golden_mug.setRegistryName("golden_mug"));
+ 		GameRegistry.register(jewel_soup.setRegistryName("jewel_soup"));
+ 		GameRegistry.register(blaze_soup.setRegistryName("blaze_soup"));
+ 		GameRegistry.register(bacon_wand.setRegistryName("bacon_wand"));
+ 		GameRegistry.register(chocolate_cap.setRegistryName("chocolate_cap"));
+ 		GameRegistry.register(bacon_core.setRegistryName("bacon_core"));
+ 		GameRegistry.register(infused_bacon_core.setRegistryName("infused_bacon_core"));
  		GameRegistry.register(grapes.setRegistryName("grapes"));
- 		GameRegistry.register(grape_seeds.setRegistryName("grapeSeeds"));
- 		GameRegistry.register(walking_stick.setRegistryName("walkingStick"));
- 		GameRegistry.register(soda_can.setRegistryName("sodaCan"));
- 		GameRegistry.register(root_beer.setRegistryName("rootBeer"));
- 		GameRegistry.register(melon_soda.setRegistryName("melonSoda"));
- 		GameRegistry.register(apple_soda.setRegistryName("appleSoda"));
- 		GameRegistry.register(grape_soda.setRegistryName("grapeSoda"));
- 		GameRegistry.register(closed_root_beer.setRegistryName("closedRootBeer"));
- 		GameRegistry.register(closed_melon_soda.setRegistryName("closedMelonSoda"));
- 		GameRegistry.register(closed_apple_soda.setRegistryName("closedAppleSoda"));
- 		GameRegistry.register(closed_grape_soda.setRegistryName("closedGrapeSoda"));
+ 		GameRegistry.register(grape_seeds.setRegistryName("grape_seeds"));
+ 		GameRegistry.register(walking_stick.setRegistryName("walking_stick"));
+ 		GameRegistry.register(soda_can.setRegistryName("soda_can"));
+ 		GameRegistry.register(root_beer.setRegistryName("root_beer"));
+ 		GameRegistry.register(melon_soda.setRegistryName("melon_soda"));
+ 		GameRegistry.register(apple_soda.setRegistryName("apple_soda"));
+ 		GameRegistry.register(grape_soda.setRegistryName("grape_soda"));
+ 		GameRegistry.register(closed_root_beer.setRegistryName("closed_root_beer"));
+ 		GameRegistry.register(closed_melon_soda.setRegistryName("closed_melon_soda"));
+ 		GameRegistry.register(closed_apple_soda.setRegistryName("closed_apple_soda"));
+ 		GameRegistry.register(closed_grape_soda.setRegistryName("closed_grape_soda"));
     	
  		
     	GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);

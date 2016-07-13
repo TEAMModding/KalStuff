@@ -1,6 +1,0 @@
-{
-    "parent": "block/crop",
-    "textures": {
-        "crop": "kalstuff:blocks/blockGrapeVine_stage_6"
-    }
-}

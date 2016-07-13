@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "night=0": { "model": "kalstuff:moon_flower_closed" },
+        "night=1": { "model": "kalstuff:moon_flower_open" }
+
+    }
+}
