@@ -39,7 +39,7 @@ public class ItemBaconWand extends Item {
 			if (anEntity.canEat(false)) {
 				anEntity.getFoodStats().addStats(5, 10.0F);
 			}
-			anEntity.worldObj.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, anEntity.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+			anEntity.worldObj.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, anEntity.worldObj.rand.nextFloat() * 0.1F + 0.9F);
 			
 		}
 		return true;

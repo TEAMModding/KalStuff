@@ -1,8 +1,9 @@
 {
+	"parent": "block/block",
     "textures": {
-        "particle": "kalstuff:blocks/trash_can",
-	   "side": "kalstuff:blocks/trash_can_side",
-	   "bottom": "kalstuff:blocks/trash_can_bottom"
+    "particle": "kalstuff:blocks/trash_can",
+	"side": "kalstuff:blocks/trash_can_side",
+	"bottom": "kalstuff:blocks/trash_can_bottom"
     },
     "elements": [
         {

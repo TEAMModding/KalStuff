@@ -2,6 +2,7 @@ package com.team.kalstuff.item;
 
 import com.team.kalstuff.StartupCommon;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
@@ -40,9 +41,9 @@ public class ItemBlazeSoup extends ItemDrink {
 		}
     }
     
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn)
+	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
 	  {
-	      super.onItemUseFinish(stack, worldIn, playerIn);
+	      super.onItemUseFinish(stack, worldIn, entityLiving);
 	      return new ItemStack(StartupCommon.itemGoldenMug);
 	  }
 }
