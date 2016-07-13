@@ -17,7 +17,8 @@ public class ItemWalkingStick extends Item
 	
 	public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot)
     {
-        Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers(equipmentSlot);
+        @SuppressWarnings("deprecation")
+		Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers(equipmentSlot);
 
         if (equipmentSlot == EntityEquipmentSlot.MAINHAND)
         {

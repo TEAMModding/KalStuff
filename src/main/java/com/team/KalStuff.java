@@ -104,6 +104,7 @@ public class KalStuff
         }
     }
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{

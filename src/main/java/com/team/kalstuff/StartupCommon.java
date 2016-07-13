@@ -1,21 +1,33 @@
 
 package com.team.kalstuff;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.LinkOption;
-import java.nio.file.Paths;
-import java.nio.file.attribute.FileAttribute;
-
 import com.team.KalStuff;
-import com.team.kalstuff.block.*;
-import com.team.kalstuff.item.*;
-import com.team.kalstuff.tileentity.*;
+import com.team.kalstuff.block.BlockApple;
+import com.team.kalstuff.block.BlockBakedPotato;
+import com.team.kalstuff.block.BlockBlaze;
+import com.team.kalstuff.block.BlockBridge;
+import com.team.kalstuff.block.BlockCarrot;
+import com.team.kalstuff.block.BlockChickenNest;
+import com.team.kalstuff.block.BlockEnder;
+import com.team.kalstuff.block.BlockGrapeVine;
+import com.team.kalstuff.block.BlockMoonFlower;
+import com.team.kalstuff.block.BlockPotato;
+import com.team.kalstuff.block.BlockTrashCan;
+import com.team.kalstuff.block.BlockWildGrapeVine;
+import com.team.kalstuff.item.ItemBaconWand;
+import com.team.kalstuff.item.ItemBlazeSoup;
+import com.team.kalstuff.item.ItemClosedSoda;
+import com.team.kalstuff.item.ItemCoffee;
+import com.team.kalstuff.item.ItemEnderPowder;
+import com.team.kalstuff.item.ItemJewelSoup;
+import com.team.kalstuff.item.ItemSoda;
+import com.team.kalstuff.item.ItemTea;
+import com.team.kalstuff.item.ItemWalkingStick;
+import com.team.kalstuff.tileentity.TileEntityChickenNest;
+import com.team.kalstuff.tileentity.TileEntityMoonFlower;
 import com.team.kalstuff.worldgen.WorldGenGrapeVine;
 import com.team.kalstuff.worldgen.WorldGenMoonFlower;
-import com.team.kalstuff.structure.*;
 
-import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -23,12 +35,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
-import net.minecraft.potion.Potion;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.SoundEvent;
-import net.minecraftforge.client.ClientCommandHandler;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 

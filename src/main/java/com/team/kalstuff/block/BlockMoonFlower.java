@@ -2,12 +2,14 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
+import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.tileentity.TileEntityMoonFlower;
+
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
@@ -15,9 +17,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.team.kalstuff.StartupCommon;
-import com.team.kalstuff.tileentity.TileEntityMoonFlower;
 
 public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	
@@ -36,8 +35,11 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
     /**
      * Called on both Client and Server when World#addBlockEvent is called
      */
-    public boolean eventRecieved(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+    @SuppressWarnings("deprecation")
+	public boolean eventRecieved(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
     	//why is this deprecated but forge doesn't provide an alternative?
+    	
+    	//I have no idea, adding a SuppressWarnings.
         super.eventReceived(state, worldIn, pos, eventID, eventParam);
         TileEntity tileentity = worldIn.getTileEntity(pos);
         return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);

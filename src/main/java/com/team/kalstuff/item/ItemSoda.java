@@ -4,7 +4,6 @@ import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
@@ -12,10 +11,7 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemSoda extends ItemDrink {
 
@@ -51,8 +47,7 @@ public class ItemSoda extends ItemDrink {
 	
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
         if (worldIn.isRemote) return stack;
-        int originalStackSize = stack.stackSize;
-		if (entityLiving instanceof EntityPlayer)
+        if (entityLiving instanceof EntityPlayer)
         {
             EntityPlayer entityplayer = (EntityPlayer)entityLiving;
             entityplayer.getFoodStats().addStats(this, stack);
