@@ -23,7 +23,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 @Mod(	modid = KalStuff.MODID,
 		name = KalStuff.NAME,
 		version = KalStuff.VERSION,
-		acceptedMinecraftVersions = "[1.9, 1.9.1, 1.9.2, 1.9.3, 1.9.4, 1.10, 1.10.1, 1.10.2]",
+		acceptedMinecraftVersions = "[1.9.4, 1.11)",
 		guiFactory = "com.team.kalstuff.KalStuffGuiFactory")
 public class KalStuff 
 {
