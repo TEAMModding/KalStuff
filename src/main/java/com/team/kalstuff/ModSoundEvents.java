@@ -18,7 +18,7 @@ public class ModSoundEvents {
 	 * Register the {@link SoundEvent}s.
 	 */
 	public static void registerSounds() {
-		// Dummy method to make sure the static initialiser runs
+		// Dummy method to make sure the static initializer runs.
 	}
 	
 	/**

@@ -55,6 +55,11 @@ public class StartupClientOnly
 		registerItemRendering("closed_apple_soda");
 		registerItemRendering("closed_melon_soda");
 		registerItemRendering("closed_grape_soda");
+		registerItemRendering("iron_dagger");
+		registerItemRendering("wooden_dagger");
+		registerItemRendering("stone_dagger");
+		registerItemRendering("diamond_dagger");
+		registerItemRendering("golden_dagger");
 		//from now on add itemRendering here
 	}
 	 

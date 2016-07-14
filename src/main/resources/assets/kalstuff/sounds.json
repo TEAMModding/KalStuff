@@ -1,6 +1,6 @@
 {
 	"item.soda_can.open": {
 		"category": "player",
-		"sounds": [	"kalstuff:item/closedSoda/open"	]
+		"sounds": [	"kalstuff:item/closed_soda/open"	]
 	}
 }
