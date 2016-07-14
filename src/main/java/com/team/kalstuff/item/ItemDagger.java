@@ -14,7 +14,7 @@ public class ItemDagger extends Item {
 	public ItemDagger(ToolMaterial material) {
         this.maxStackSize = 1;
         this.setMaxDamage(material.getMaxUses());
-        this.attackDamage = material.getDamageVsEntity() / 2;
+        this.attackDamage = 1 + (material.getDamageVsEntity() / 2);
 	}
 
 	@SuppressWarnings("deprecation")

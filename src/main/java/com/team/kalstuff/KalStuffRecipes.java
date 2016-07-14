@@ -157,6 +157,37 @@ public class KalStuffRecipes {
 			'A', Items.STICK
 		});
 	
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.iron_dagger, 1),  new Object[] {
+			 "M",
+			 "S",
+			 'M', Items.IRON_INGOT,
+			 'S', Items.STICK
+				 });
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.wooden_dagger, 1),  new Object[] {
+			 "M",
+			 "S",
+			 'M', Blocks.PLANKS,
+			 'S', Items.STICK
+				 });
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.stone_dagger, 1),  new Object[] {
+			 "M",
+			 "S",
+			 'M', Blocks.COBBLESTONE,
+			 'S', Items.STICK
+				 });
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.diamond_dagger, 1),  new Object[] {
+			 "M",
+			 "S",
+			 'M', Items.DIAMOND,
+			 'S', Items.STICK
+				 });
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.golden_dagger, 1),  new Object[] {
+			 "M",
+			 "S",
+			 'M', Items.GOLD_INGOT,
+			 'S', Items.STICK
+				 });
+	
 	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.closed_apple_soda), new Object[] {
 		new ItemStack(StartupCommon.soda_can),
 		new ItemStack(Items.APPLE)
