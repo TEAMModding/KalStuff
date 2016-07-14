@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "night=0": { "model": "kalstuff:blockMoonFlower_day" },
-        "night=1": { "model": "kalstuff:blockMoonFlower_night" }
-
-    }
-}

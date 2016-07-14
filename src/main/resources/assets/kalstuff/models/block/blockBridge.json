@@ -1,8 +1,0 @@
-{
-    "parent": "block/orientable",
-    "textures": {
-        "top": "kalstuff:blocks/blockBridge",
-        "front": "kalstuff:blocks/blockBridge_Front",
-        "side": "kalstuff:blocks/blockBridge"
-    }
-}

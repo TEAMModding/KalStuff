@@ -9,30 +9,30 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
 public class BlockGrapeVine extends BlockCrops {
 
     protected Item getSeed()
     {
-        return StartupCommon.itemGrapeSeeds;
+        return StartupCommon.grape_seeds;
     }
 
     protected Item getCrop()
     {
-        return StartupCommon.itemGrapes;
+        return StartupCommon.grapes;
     }
     
-	 @Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) {
-		super.onBlockActivated(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ);
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
+		super.onBlockActivated(worldIn, pos, state, playerIn, hand, heldItem, side, hitX, hitY, hitZ);
 		
 		if (((Integer)state.getValue(AGE)).intValue() == 7) {
         worldIn.setBlockState(pos, state.withProperty(AGE, 6));
         Random rand = new Random();
-        ItemStack aStack = new ItemStack(StartupCommon.itemGrapes, rand.nextInt(2) + 3);
+        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
         spawnAsEntity(worldIn, pos, aStack);
 		return true;
 		}
@@ -45,7 +45,7 @@ public class BlockGrapeVine extends BlockCrops {
 	    	super.onBlockDestroyedByPlayer(worldIn, pos, state);
 	    	if (((Integer)state.getValue(AGE)).intValue() == 1) {
 	        Random rand = new Random();
-	        ItemStack aStack = new ItemStack(StartupCommon.itemGrapes, rand.nextInt(2) + 3);
+	        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
 	        spawnAsEntity(worldIn, pos, aStack);
 	    	}
 	    }

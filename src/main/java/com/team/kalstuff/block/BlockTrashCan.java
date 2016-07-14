@@ -7,22 +7,31 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.BlockPos;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockTrashCan extends Block
 {
+	public static final AxisAlignedBB AABB = new AxisAlignedBB(1d/16d, 0d, 1d/16d, 15d/16d, 1d, 15d/16d);
 
 	public BlockTrashCan() {
-		super(Material.iron);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
-		this.setBlockBounds(1/16.0f, 0.0f, 1/16.0f, 15/16.0f, 1.0f, 15/16.0f);
+		super(Material.IRON);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(3.0F);
 	}
 	
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ) 
-	{
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+    {
+        return AABB;
+    }
+	
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ)
+    {
 		if (!worldIn.isRemote)
 		{
 			playerIn.openGui(KalStuff.instance, 1, worldIn, pos.getX(), pos.getY(), pos.getZ());
@@ -31,12 +40,12 @@ public class BlockTrashCan extends Block
 	}
 	
 	@Override
-	public boolean isOpaqueCube() {
+	public boolean isOpaqueCube(IBlockState state) {
 		return false;
 	}
 
 	@Override
-	public boolean isFullCube() {
+	public boolean isFullCube(IBlockState state) {
 		return false;
 	}
 }

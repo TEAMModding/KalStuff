@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "kalstuff:blocks/potato_block"
+    }
+}

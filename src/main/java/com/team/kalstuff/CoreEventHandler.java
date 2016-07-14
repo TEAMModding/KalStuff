@@ -1,5 +1,7 @@
 package com.team.kalstuff;
 
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.util.EnumHand;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
@@ -8,16 +10,16 @@ public class CoreEventHandler
 	@SubscribeEvent
 	public void onUpdateEvent(LivingUpdateEvent event)
 	{
-		if (event.entityLiving.getHeldItem()!= null)
+		EntityLivingBase living = event.getEntityLiving();
+		if (living.getHeldItem(EnumHand.MAIN_HAND)!= null && living.getHeldItem(EnumHand.MAIN_HAND).getItem() == StartupCommon.walking_stick)
 		{
-			if (event.entityLiving.getHeldItem().getItem() == StartupCommon.itemWalkingStick)
-			{
-				event.entityLiving.stepHeight = 1F;
-			}
-			else
-				event.entityLiving.stepHeight = 0.6F;
+			event.getEntityLiving().stepHeight = 1F;
+		}
+		else if (living.getHeldItem(EnumHand.OFF_HAND)!= null && living.getHeldItem(EnumHand.OFF_HAND).getItem() == StartupCommon.walking_stick)
+		{
+			event.getEntityLiving().stepHeight = 1F;
 		}
 		else
-			event.entityLiving.stepHeight = 0.6F;
+			event.getEntityLiving().stepHeight = 0.6F;
 	}
 }

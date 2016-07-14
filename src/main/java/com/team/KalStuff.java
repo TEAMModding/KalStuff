@@ -6,8 +6,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.team.kalstuff.CommandWorldGenBuild;
-
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
 import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
@@ -22,10 +20,14 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = KalStuff.MODID, version = KalStuff.VERSION, guiFactory = "com.team.kalstuff.KalStuffGuiFactory")
+@Mod(	modid = KalStuff.MODID,
+		name = KalStuff.NAME,
+		version = KalStuff.VERSION,
+		guiFactory = "com.team.kalstuff.KalStuffGuiFactory")
 public class KalStuff 
 {
 	public static final String MODID = "kalstuff";
+	public static final String NAME = "KalStuff";
 	public static final String VERSION = "1.0";
 	public static int cottageRarity;
 	private static Configuration config;
@@ -68,7 +70,7 @@ public class KalStuff
         
         //If you want to add new properties, copy this block and change the names
         prop = config.get(CATEGORY_GENERAL, "cottageGen", 500);
-        prop.comment = "Rarity for cottage generation.";
+        prop.setComment("Rarity for cottage generation.");
         prop.setLanguageKey("kalstuff.configgui.cottageGen").setRequiresMcRestart(true);
         prop.setName("Cottage Rarity");
         cottageRarity = prop.getInt();
@@ -97,15 +99,16 @@ public class KalStuff
 	@SubscribeEvent
     public void onConfigChanged(OnConfigChangedEvent event)
     {
-		if (MODID.equals(event.modID) && !event.isWorldRunning)
+		if (MODID.equals(event.getModID()) && !event.isWorldRunning())
         {
-            if (Configuration.CATEGORY_GENERAL.equals(event.configID))
+            if (Configuration.CATEGORY_GENERAL.equals(event.getConfigID()))
             {
                 syncConfig(false);
             }
         }
     }
 	
+	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
@@ -128,7 +131,7 @@ public class KalStuff
 	@EventHandler
 	public void init(FMLServerStartingEvent event)
 	{
-		event.registerServerCommand(new CommandWorldGenBuild());
+		//event.registerServerCommand(new CommandWorldGenBuild());
 	}
 }
 

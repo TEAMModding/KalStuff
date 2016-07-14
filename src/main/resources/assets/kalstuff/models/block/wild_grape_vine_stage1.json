@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "kalstuff:blocks/wild_grape_vine_stage1"
+    }
+}

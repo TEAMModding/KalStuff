@@ -6,11 +6,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -21,8 +21,8 @@ public class BlockBakedPotato extends Block {
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
 	public BlockBakedPotato() {
-		super(Material.grass);
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		super(Material.GRASS);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(2.0F);
 	}
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ)
@@ -49,10 +49,10 @@ public class BlockBakedPotato extends Block {
     {
         if (!worldIn.isRemote)
         {
-            Block block = worldIn.getBlockState(pos.north()).getBlock();
-            Block block1 = worldIn.getBlockState(pos.south()).getBlock();
-            Block block2 = worldIn.getBlockState(pos.west()).getBlock();
-            Block block3 = worldIn.getBlockState(pos.east()).getBlock();
+            IBlockState block = worldIn.getBlockState(pos.north());
+            IBlockState block1 = worldIn.getBlockState(pos.south());
+            IBlockState block2 = worldIn.getBlockState(pos.west());
+            IBlockState block3 = worldIn.getBlockState(pos.east());
             EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
 
             if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock())
@@ -108,8 +108,8 @@ public class BlockBakedPotato extends Block {
         return ((EnumFacing)state.getValue(FACING)).getIndex();
     }
 
-    protected BlockState createBlockState()
+    protected BlockStateContainer createBlockState()
     {
-        return new BlockState(this, new IProperty[] {FACING});
+        return new BlockStateContainer(this, new IProperty[] {FACING});
     }
 }

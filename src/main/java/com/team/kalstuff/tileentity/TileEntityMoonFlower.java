@@ -2,11 +2,11 @@ package com.team.kalstuff.tileentity;
 
 import com.team.kalstuff.block.BlockMoonFlower;
 
-import net.minecraft.server.gui.IUpdatePlayerListBox;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ITickable;
 
 
-public class TileEntityMoonFlower extends TileEntity implements IUpdatePlayerListBox {
+public class TileEntityMoonFlower extends TileEntity implements ITickable {
 
 	
 	@Override

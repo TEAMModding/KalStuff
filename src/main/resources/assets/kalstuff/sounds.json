@@ -1,10 +1,6 @@
 {
-"item.closedSoda.open":
-    {
-        "category": "player",
-        "sounds":
-        [
-            "item/closedSoda/open"
-        ]
-    }
+	"item.soda_can.open": {
+		"category": "player",
+		"sounds": [	"kalstuff:item/closedSoda/open"	]
+	}
 }

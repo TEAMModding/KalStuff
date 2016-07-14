@@ -1,0 +1,23 @@
+{
+	"parent": "block/block",
+    "textures": {
+	"particle": "kalstuff:blocks/chicken_nest_top",
+    "top": "kalstuff:blocks/chicken_nest_top",
+	"sides": "kalstuff:blocks/chicken_nest_side",
+	"bottom": "kalstuff:blocks/chicken_nest"
+    },
+	"elements": [
+		{
+			"from": [ 0, 0, 0 ],
+			"to": [ 16, 3, 16 ],
+			"faces": {						
+    			"down": {"uv": [ 0, 0, 16, 16], "texture": "#bottom"},	
+				"up": {"uv": [ 0, 0, 16, 16], "texture": "#top"},	
+    			"north": {"uv": [ 0, 0, 16, 3], "texture": "#sides"},	
+    			"south": {"uv": [ 0, 0, 16, 3], "texture": "#sides"},
+    			"west": {"uv": [ 0, 0, 16, 3], "texture": "#sides"},
+    			"east": {"uv": [ 0, 0, 16, 3], "texture": "#sides"}						
+			}	
+		}
+	]
+}

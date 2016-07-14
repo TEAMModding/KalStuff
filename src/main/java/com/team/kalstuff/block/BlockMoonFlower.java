@@ -2,21 +2,21 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
+import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.tileentity.TileEntityMoonFlower;
+
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.ITileEntityProvider;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
-import net.minecraft.block.state.BlockState;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.team.kalstuff.StartupCommon;
-import com.team.kalstuff.tileentity.TileEntityMoonFlower;
 
 public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	
@@ -25,7 +25,6 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	public BlockMoonFlower(float light) {
         this.setDefaultState(this.blockState.getBaseState().withProperty(NIGHT, Integer.valueOf(0)));
         this.setLightLevel((light) / 16.0f);
-        this.setStepSound(soundTypeGrass);
 	}
 
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {
@@ -36,8 +35,12 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
     /**
      * Called on both Client and Server when World#addBlockEvent is called
      */
-    public boolean onBlockEventReceived(World worldIn, BlockPos pos, IBlockState state, int eventID, int eventParam) {
-        super.onBlockEventReceived(worldIn, pos, state, eventID, eventParam);
+    @SuppressWarnings("deprecation")
+	public boolean eventRecieved(IBlockState state, World worldIn, BlockPos pos, int eventID, int eventParam) {
+    	//why is this deprecated but forge doesn't provide an alternative?
+    	
+    	//I have no idea, adding a SuppressWarnings.
+        super.eventReceived(state, worldIn, pos, eventID, eventParam);
         TileEntity tileentity = worldIn.getTileEntity(pos);
         return tileentity == null ? false : tileentity.receiveClientEvent(eventID, eventParam);
     }
@@ -58,30 +61,30 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 		IBlockState iblockstate = worldIn.getBlockState(pos);
 		if (worldIn.getBlockState(pos).getBlock().getClass() == BlockMoonFlower.class) {
 			if (worldIn.canSeeSky(pos) && ((Integer)worldIn.getBlockState(pos).getValue(NIGHT)).intValue() == 1) {
-				if (worldIn.getCurrentMoonPhaseFactor() == 0) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower1.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == .25) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower2.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == .50) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower3.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == .75) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower4.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == 1) worldIn.setBlockState(pos, StartupCommon.blockMoonFlower5.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == 0) worldIn.setBlockState(pos, StartupCommon.moon_flower1.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .25) worldIn.setBlockState(pos, StartupCommon.moon_flower2.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .50) worldIn.setBlockState(pos, StartupCommon.moon_flower3.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .75) worldIn.setBlockState(pos, StartupCommon.moon_flower4.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == 1) worldIn.setBlockState(pos, StartupCommon.moon_flower5.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
 			}
 			else {
-				worldIn.setBlockState(pos, StartupCommon.blockMoonFlower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
+				worldIn.setBlockState(pos, StartupCommon.moon_flower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
 			}
 		}	
 	}
 	
-    protected BlockState createBlockState() {
-        return new BlockState(this, new IProperty[] {NIGHT});
+    protected BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, new IProperty[] {NIGHT});
     }
     
     
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return Item.getItemFromBlock(StartupCommon.blockMoonFlower);
+        return Item.getItemFromBlock(StartupCommon.moon_flower);
     }
     
     @SideOnly(Side.CLIENT)
     public Item getItem(World worldIn, BlockPos pos) {
-        return Item.getItemFromBlock(StartupCommon.blockMoonFlower);
+        return Item.getItemFromBlock(StartupCommon.moon_flower);
     }
     
     /**

@@ -3,7 +3,7 @@ package com.team.kalstuff;
 import java.io.Serializable;
 
 import net.minecraft.block.Block;
-import net.minecraft.util.BlockPos;
+import net.minecraft.util.math.BlockPos;
 
 public class BlockLocation implements Serializable 
 {

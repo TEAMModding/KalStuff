@@ -2,9 +2,10 @@ package com.team.kalstuff.item;
 
 import com.team.kalstuff.StartupCommon;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
 
@@ -21,7 +22,7 @@ public class ItemBlazeSoup extends ItemDrink {
 		super(amount, saturation, isWolfFood);
 		this.setMaxStackSize(1);
 		this.potionLength = potionLength;
-		this.setCreativeTab(StartupCommon.kalStuffTab);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
 	}
 	
 	public ItemBlazeSoup(int amount, float saturation, boolean isWolfFood) {
@@ -33,16 +34,16 @@ public class ItemBlazeSoup extends ItemDrink {
     {
 		if (!worldIn.isRemote)
 		{
-			player.addPotionEffect(new PotionEffect(Potion.absorption.id, 6000, 0));
-			player.addPotionEffect(new PotionEffect(Potion.nightVision.id, 6000, 0));
-			player.addPotionEffect(new PotionEffect(Potion.damageBoost.id, 6000, 0));
-			player.addPotionEffect(new PotionEffect(Potion.fireResistance.id, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.NIGHT_VISION, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 6000, 0));
+			player.addPotionEffect(new PotionEffect(MobEffects.FIRE_RESISTANCE, 6000, 0));
 		}
     }
     
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityPlayer playerIn)
+	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
 	  {
-	      super.onItemUseFinish(stack, worldIn, playerIn);
-	      return new ItemStack(StartupCommon.itemGoldenMug);
+	      super.onItemUseFinish(stack, worldIn, entityLiving);
+	      return new ItemStack(StartupCommon.golden_mug);
 	  }
 }

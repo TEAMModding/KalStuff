@@ -1,65 +1,60 @@
 package com.team.kalstuff;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.resources.model.ModelResourceLocation;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
 public class StartupClientOnly 
 {
 	public static void preInitClientOnly()
 	{
-		KeyBinding binding = new KeyBinding("key.kalstuff.test", 37, "key.categories.kalstuff");
-		ClientRegistry.registerKeyBinding(binding);
+		
 	}
 	
 	public static void initClientOnly()
 	{
-		registerItemRendering("blockBridge");
-		registerItemRendering("itemEnderPowder");
-		registerItemRendering("itemCoffee");
-		registerItemRendering("itemCoffeeMug");
-		registerItemRendering("blockSquidMat");
-		registerItemRendering("blockEnder");
-		registerItemRendering("itemTea");
-		registerItemRendering("itemLightCoffee");
-		registerItemRendering("blockBlaze");
-		registerItemRendering("blockCarrot");
-		registerItemRendering("blockApple");
-		registerItemRendering("itemGoldenMug");
-		registerItemRendering("itemJewelSoup");
-		registerItemRendering("blockPotato");
-		registerItemRendering("blockBakedPotato");
-		registerItemRendering("blockMystery");
-		registerItemRendering("blockChickenNest");
-		registerItemRendering("itemBaconWand");
-		registerItemRendering("itemChocolateCap");
-		registerItemRendering("itemBaconCore");
-		registerItemRendering("itemInfusedBaconCore");
-		registerItemRendering("blockTrashCan");
-		registerItemRendering("blockWildGrapeVine");
-		registerItemRendering("itemGrapes");
-		registerItemRendering("itemGrapeSeeds");
-		registerItemRendering("blockGrapeVine");
-		registerItemRendering("blockMoonFlower");
-		registerItemRendering("blockMoonFlower1");
-		registerItemRendering("blockMoonFlower2");
-		registerItemRendering("blockMoonFlower3");
-		registerItemRendering("blockMoonFlower4");
-		registerItemRendering("blockMoonFlower5");
-		registerItemRendering("itemBlazeSoup");
-		registerItemRendering("itemWalkingStick");
-		registerItemRendering("itemSodaCan");
-		registerItemRendering("itemRootBeer");
-		registerItemRendering("itemAppleSoda");
-		registerItemRendering("itemMelonSoda");
-		registerItemRendering("itemGrapeSoda");
-	    registerItemRendering("itemClosedRootBeer");
-		registerItemRendering("itemClosedAppleSoda");
-		registerItemRendering("itemClosedMelonSoda");
-		registerItemRendering("itemClosedGrapeSoda");
-		registerItemRendering("blockBlockLockedChest");
+		registerItemRendering("bridge");
+		registerItemRendering("crushed_ender");
+		registerItemRendering("coffee");
+		registerItemRendering("coffee_mug");
+		registerItemRendering("ender_block");
+		registerItemRendering("tea");
+		registerItemRendering("light_coffee");
+		registerItemRendering("blaze_block");
+		registerItemRendering("carrot_block");
+		registerItemRendering("apple_block");
+		registerItemRendering("golden_mug");
+		registerItemRendering("jewel_soup");
+		registerItemRendering("potato_block");
+		registerItemRendering("baked_potato_block");
+		registerItemRendering("chicken_nest");
+		registerItemRendering("bacon_wand");
+		registerItemRendering("chocolate_cap");
+		registerItemRendering("bacon_core");
+		registerItemRendering("infused_bacon_core");
+		registerItemRendering("trash_can");
+		registerItemRendering("wild_grape_vine");
+		registerItemRendering("grapes");
+		registerItemRendering("grape_seeds");
+		registerItemRendering("grape_vine");
+		registerItemRendering("moon_flower");
+		registerItemRendering("moon_flower1");
+		registerItemRendering("moon_flower2");
+		registerItemRendering("moon_flower3");
+		registerItemRendering("moon_flower4");
+		registerItemRendering("moon_flower5");
+		registerItemRendering("blaze_soup");
+		registerItemRendering("walking_stick");
+		registerItemRendering("soda_can");
+		registerItemRendering("root_beer");
+		registerItemRendering("apple_soda");
+		registerItemRendering("melon_soda");
+		registerItemRendering("grape_soda");
+	    registerItemRendering("closed_root_beer");
+		registerItemRendering("closed_apple_soda");
+		registerItemRendering("closed_melon_soda");
+		registerItemRendering("closed_grape_soda");
 		//from now on add itemRendering here
 	}
 	 
@@ -78,6 +73,7 @@ public class StartupClientOnly
 	 */
 	private static void registerItemRendering(String name)
 	{
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(GameRegistry.findItem("kalstuff", name), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
+		
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.REGISTRY.getObject(new ResourceLocation("kalstuff", name)), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
 	}
 }
