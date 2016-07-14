@@ -5,27 +5,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.team.KalStuff;
-import com.team.kalstuff.block.BlockApple;
-import com.team.kalstuff.block.BlockBakedPotato;
-import com.team.kalstuff.block.BlockBlaze;
-import com.team.kalstuff.block.BlockBridge;
-import com.team.kalstuff.block.BlockCarrot;
-import com.team.kalstuff.block.BlockChickenNest;
-import com.team.kalstuff.block.BlockEnder;
-import com.team.kalstuff.block.BlockGrapeVine;
-import com.team.kalstuff.block.BlockMoonFlower;
-import com.team.kalstuff.block.BlockPotato;
-import com.team.kalstuff.block.BlockTrashCan;
-import com.team.kalstuff.block.BlockWildGrapeVine;
-import com.team.kalstuff.item.ItemBaconWand;
-import com.team.kalstuff.item.ItemBlazeSoup;
-import com.team.kalstuff.item.ItemClosedSoda;
-import com.team.kalstuff.item.ItemCoffee;
-import com.team.kalstuff.item.ItemEnderPowder;
-import com.team.kalstuff.item.ItemJewelSoup;
-import com.team.kalstuff.item.ItemSoda;
-import com.team.kalstuff.item.ItemTea;
-import com.team.kalstuff.item.ItemWalkingStick;
+import com.team.kalstuff.block.*;
+import com.team.kalstuff.item.*;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 import com.team.kalstuff.tileentity.TileEntityMoonFlower;
 import com.team.kalstuff.worldgen.WorldGenGrapeVine;
@@ -89,7 +70,12 @@ public class StartupCommon {
 	public static ItemSoda					melon_soda;
 	public static ItemSoda					apple_soda;
 	public static ItemSoda					grape_soda;
-
+	public static ItemDagger				iron_dagger;
+	public static ItemDagger				wooden_dagger;
+	public static ItemDagger				stone_dagger;
+	public static ItemDagger				diamond_dagger;
+	public static ItemDagger				golden_dagger;
+	
 	public static void preInitCommon() {
 		
 		ModSoundEvents.registerSounds();
@@ -179,7 +165,12 @@ public class StartupCommon {
     	closed_melon_soda = (ItemClosedSoda) new ItemClosedSoda(melon_soda).setUnlocalizedName("closedMelonSoda").setCreativeTab(KALSTUFF);
     	closed_apple_soda = (ItemClosedSoda) new ItemClosedSoda(apple_soda).setUnlocalizedName("closedAppleSoda").setCreativeTab(KALSTUFF);
     	closed_grape_soda = (ItemClosedSoda) new ItemClosedSoda(grape_soda).setUnlocalizedName("closedGrapeSoda").setCreativeTab(KALSTUFF);
-
+    	iron_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.IRON).setUnlocalizedName("ironDagger").setCreativeTab(KALSTUFF);
+    	wooden_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.WOOD).setUnlocalizedName("woodenDagger").setCreativeTab(KALSTUFF);
+    	stone_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.STONE).setUnlocalizedName("stoneDagger").setCreativeTab(KALSTUFF);
+    	diamond_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.DIAMOND).setUnlocalizedName("diamondDagger").setCreativeTab(KALSTUFF);
+    	golden_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.GOLD).setUnlocalizedName("goldenDagger").setCreativeTab(KALSTUFF);
+    	
     	GameRegistry.register(crushed_ender.setRegistryName("crushed_ender"));
  		GameRegistry.register(coffee_mug.setRegistryName("coffee_mug"));
  		GameRegistry.register(coffee.setRegistryName("coffee"));
@@ -204,7 +195,11 @@ public class StartupCommon {
  		GameRegistry.register(closed_melon_soda.setRegistryName("closed_melon_soda"));
  		GameRegistry.register(closed_apple_soda.setRegistryName("closed_apple_soda"));
  		GameRegistry.register(closed_grape_soda.setRegistryName("closed_grape_soda"));
-    	
+    	GameRegistry.register(iron_dagger.setRegistryName("iron_dagger"));
+    	GameRegistry.register(wooden_dagger.setRegistryName("wooden_dagger"));
+    	GameRegistry.register(stone_dagger.setRegistryName("stone_dagger"));
+    	GameRegistry.register(diamond_dagger.setRegistryName("diamond_dagger"));
+    	GameRegistry.register(golden_dagger.setRegistryName("golden_dagger"));
  		
     	GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);

@@ -48,6 +48,11 @@ item.closedMelonSoda.name=Melon Soda
 item.closedRootBeer.name=Root Beer
 item.grapes.name=Grapes
 item.grapeSeeds.name=Grape Seeds
+item.ironDagger.name=Iron Dagger
+item.woodenDagger.name=Wooden Dagger
+item.stoneDagger.name=Stone Dagger
+item.diamondDagger.name=Diamond Dagger
+item.goldenDagger.name=Golden Dagger
 
 #
 # GUI
