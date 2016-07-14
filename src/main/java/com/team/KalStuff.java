@@ -59,7 +59,7 @@ public class KalStuff
     {
 		List<String> propOrder = new ArrayList<String>();
 		
-		if (!config.isChild)http://mcforge.readthedocs.io/en/latest/conventions/versioning/
+		if (!config.isChild)//http://mcforge.readthedocs.io/en/latest/conventions/versioning/
         {
             if (load)
             {
