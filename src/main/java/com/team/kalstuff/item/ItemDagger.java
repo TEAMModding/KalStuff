@@ -2,18 +2,21 @@ package com.team.kalstuff.item;
 
 import com.google.common.collect.Multimap;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.DamageSource;
 
 public class ItemDagger extends ItemSword {
 
-    private final float attackDamage;
-	
+    private float attackDamage;
+    
 	public ItemDagger(Item.ToolMaterial material) {
 		super(material);
 		this.maxStackSize = 1;
@@ -38,7 +41,7 @@ public class ItemDagger extends ItemSword {
 	
 	@Override
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
-		if (target.getHorizontalFacing() == attacker.getHorizontalFacing()) attacker.attackEntityAsMob(target);
+        if (target.getHorizontalFacing() == attacker.getHorizontalFacing()) target.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 1 + (attackDamage * 2));
 		return super.hitEntity(stack, target, attacker);
 	}
 }
