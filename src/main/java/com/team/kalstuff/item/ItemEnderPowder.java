@@ -74,7 +74,7 @@ public class ItemEnderPowder extends Item {
 						}
 					}
 
-					net.minecraftforge.event.entity.living.EnderTeleportEvent event = new net.minecraftforge.event.entity.living.EnderTeleportEvent(playerIn, randX, randY, randZ, 0.0F);
+					net.minecraftforge.event.entity.living.EnderTeleportEvent event = new net.minecraftforge.event.entity.living.EnderTeleportEvent(playerIn, randX, randY, randZ, 2.0F);
 					if (!net.minecraftforge.common.MinecraftForge.EVENT_BUS.post(event)) {
 						if (rand.nextFloat() < 0.03F && worldIn.getGameRules().getBoolean("doMobSpawning")) {
 							EntityEndermite entityendermite = new EntityEndermite(worldIn);
