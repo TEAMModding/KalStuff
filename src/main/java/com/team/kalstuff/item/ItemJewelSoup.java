@@ -32,12 +32,8 @@ public class ItemJewelSoup extends ItemDrink {
 	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
 		if (!worldIn.isRemote && this.potionLength != 0) {
 			player.addPotionEffect(new PotionEffect(MobEffects.SPEED, 6000, 0));
-			player.addPotionEffect(new PotionEffect(MobEffects.ABSORPTION, 6000, 0));
-			player.addPotionEffect(new PotionEffect(MobEffects.SATURATION, 6000, 0));
 			player.addPotionEffect(new PotionEffect(MobEffects.REGENERATION, 6000, 0));
-			player.addPotionEffect(new PotionEffect(MobEffects.HASTE, 6000, 0));
-			player.addPotionEffect(new PotionEffect(MobEffects.RESISTANCE, 6000, 0));
-			player.addPotionEffect(new PotionEffect(MobEffects.STRENGTH, 6000, 0));
+
 		}
 	}
 	
