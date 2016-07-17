@@ -2,6 +2,7 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
+import com.team.KalStuff;
 import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.block.Block;
@@ -13,6 +14,7 @@ import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
@@ -23,6 +25,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -106,6 +109,12 @@ public class BlockBridge extends Block {
 	    	try {block = Block.getBlockFromItem(itemstack.getItem());}
 	    	catch (Exception e) {return true;}
 	    	if (block == null) return true;
+	    	
+	    	if ((!EntityEnderman.getCarriable(block) && block != StartupCommon.bridge) || (KalStuff.bridgeTNT && block == Blocks.TNT)) {
+	    		playerIn.addChatMessage(new TextComponentTranslation("The bridge is unable to send this block", new Object[0]));
+	    		return true;
+	    	}
+	    	
 	    	BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
 	    	
 	    	int i = 0;
@@ -152,6 +161,10 @@ public class BlockBridge extends Block {
 	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
 	    	
 	    	if (aPos == origin) return true;
+	    	if (i > 16) {
+	    		playerIn.addChatMessage(new TextComponentTranslation("The bridge cannot reach that far", new Object[0]));
+	    		return true;
+	    	}
 	    	
 	    	if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.bridge.getDefaultState()) {
 	    		BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
@@ -180,6 +193,7 @@ public class BlockBridge extends Block {
 	    				} catch (Exception e3) {}
 	    			}
 	    		}
+	    		System.out.println(i);
 	    		if (success) {
 	    			this.partLoc = aPos;
 	    			this.particle = true;

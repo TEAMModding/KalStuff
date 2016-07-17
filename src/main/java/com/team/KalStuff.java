@@ -31,6 +31,7 @@ public class KalStuff
 	public static final String NAME = "KalStuff";
 	public static final String VERSION = "0.7.0";
 	public static int cottageRarity;
+	public static boolean bridgeTNT;
 	private static Configuration config;
 	
 	//The instance of your mod that Forge uses. Optional.
@@ -77,7 +78,12 @@ public class KalStuff
         cottageRarity = prop.getInt();
         propOrder.add(prop.getName());
         
-        
+        prop = config.get(CATEGORY_GENERAL, "bridgeTNT", true);
+        prop.setComment("Restricts bridge blocks from placing TNT.");
+        prop.setLanguageKey("kalstuff.configgui.bridgeTNT");
+        prop.setName("Blacklist Bridge TNT");
+        bridgeTNT = prop.getBoolean();
+        propOrder.add(prop.getName());
         
         config.setCategoryPropertyOrder(CATEGORY_GENERAL, propOrder);
         
