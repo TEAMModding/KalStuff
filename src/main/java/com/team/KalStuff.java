@@ -1,16 +1,9 @@
 package com.team;
 
-import static net.minecraftforge.common.config.Configuration.CATEGORY_GENERAL;
+import com.team.kalstuff.config.Configs;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
-import net.minecraftforge.common.config.Configuration;
-import net.minecraftforge.common.config.Property;
-import net.minecraftforge.fml.client.event.ConfigChangedEvent.OnConfigChangedEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -18,7 +11,6 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 @Mod(	modid = KalStuff.MODID,
 		name = KalStuff.NAME,
@@ -30,96 +22,24 @@ public class KalStuff
 	public static final String MODID = "kalstuff";
 	public static final String NAME = "KalStuff";
 	public static final String VERSION = "0.7.0";
-	public static int cottageRarity;
-	public static boolean bridgeTNT;
-	private static Configuration config;
 	
-	//The instance of your mod that Forge uses. Optional.
+	//The instance of the mod that Forge uses.
 	@Mod.Instance(KalStuff.MODID)
 	public static KalStuff instance;
 	
 	//Says where the client and server 'proxy' code is loaded.
 	@SidedProxy(clientSide="com.team.ClientOnlyProxy", serverSide="com.team.DedicatedServerProxy")
 	public static CommonProxy proxy;
-	
-	public KalStuff()
-	{
-		config = null;
-		File cfgFile = new File(Loader.instance().getConfigDir(), "kalstuff.cfg");
-        config = new Configuration(cfgFile);
-        syncConfig(true);
-	}
 
-	/**
-	 * Reads the config, saves it, and is the blueprint for creating
-	 * the config for the first time
-	 * 
-	 * @author Joseph
-	 */
-	public static void syncConfig(boolean load)
-    {
-		List<String> propOrder = new ArrayList<String>();
-		
-		if (!config.isChild)//http://mcforge.readthedocs.io/en/latest/conventions/versioning/
-        {
-            if (load)
-            {
-                config.load();
-            }
-        }
-        
-        Property prop;
-        
-        //If you want to add new properties, copy this block and change the names
-        prop = config.get(CATEGORY_GENERAL, "cottageGen", 500);
-        prop.setComment("Rarity for cottage generation.");
-        prop.setLanguageKey("kalstuff.configgui.cottageGen").setRequiresMcRestart(true);
-        prop.setName("Cottage Rarity");
-        cottageRarity = prop.getInt();
-        propOrder.add(prop.getName());
-        
-        prop = config.get(CATEGORY_GENERAL, "bridgeTNT", true);
-        prop.setComment("Restricts bridge blocks from placing TNT.");
-        prop.setLanguageKey("kalstuff.configgui.bridgeTNT");
-        prop.setName("Blacklist Bridge TNT");
-        bridgeTNT = prop.getBoolean();
-        propOrder.add(prop.getName());
-        
-        config.setCategoryPropertyOrder(CATEGORY_GENERAL, propOrder);
-        
-        if (config.hasChanged())
-        {
-            config.save();
-        }
-    }
-	
-	public static Configuration getConfig()
-    {
-        return config;
-    }
-	
-	/**
-	 * Called when the config needs to be saved from the config gui
-	 * 
-	 * @author Joseph
-	 */
-	@SubscribeEvent
-    public void onConfigChanged(OnConfigChangedEvent event)
-    {
-		if (MODID.equals(event.getModID()) && !event.isWorldRunning())
-        {
-            if (Configuration.CATEGORY_GENERAL.equals(event.getConfigID()))
-            {
-                syncConfig(false);
-            }
-        }
-    }
-	
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event)
 	{
+		Configs.loadConfigsFromFile(event.getSuggestedConfigurationFile());
+		
 		FMLCommonHandler.instance().bus().register(this);
+		
+		MinecraftForge.EVENT_BUS.register(new Configs());
 		proxy.preInit();
 	}
 	

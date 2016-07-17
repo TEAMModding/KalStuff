@@ -4,6 +4,7 @@ import java.util.Random;
 
 import com.team.KalStuff;
 import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.config.Configs;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockPistonBase;
@@ -110,7 +111,7 @@ public class BlockBridge extends Block {
 	    	catch (Exception e) {return true;}
 	    	if (block == null) return true;
 	    	
-	    	if ((!EntityEnderman.getCarriable(block) && block != StartupCommon.bridge) || (KalStuff.bridgeTNT && block == Blocks.TNT)) {
+	    	if ((!EntityEnderman.getCarriable(block) && block != StartupCommon.bridge) || (Configs.bridgeTNT && block == Blocks.TNT)) {
 	    		playerIn.addChatMessage(new TextComponentTranslation("The bridge is unable to send this block", new Object[0]));
 	    		return true;
 	    	}
