@@ -53,6 +53,7 @@ item.woodenDagger.name=Wooden Dagger
 item.stoneDagger.name=Stone Dagger
 item.diamondDagger.name=Diamond Dagger
 item.goldenDagger.name=Golden Dagger
+item.woodenRoundShield.name=Wooden Round Shield
 
 #
 # GUI

@@ -60,6 +60,7 @@ public class StartupClientOnly
 		registerItemRendering("stone_dagger");
 		registerItemRendering("diamond_dagger");
 		registerItemRendering("golden_dagger");
+		registerItemRendering("round_wooden_shield");
 		//from now on add itemRendering here
 	}
 	 
