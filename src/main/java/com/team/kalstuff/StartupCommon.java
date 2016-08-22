@@ -75,7 +75,6 @@ public class StartupCommon {
 	public static ItemDagger				stone_dagger;
 	public static ItemDagger				diamond_dagger;
 	public static ItemDagger				golden_dagger;
-	public static ItemRoundShield			wooden_round_shield;
 	
 	public static void preInitCommon() {
 		
@@ -171,7 +170,6 @@ public class StartupCommon {
     	stone_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.STONE).setUnlocalizedName("stoneDagger").setCreativeTab(KALSTUFF);
     	diamond_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.DIAMOND).setUnlocalizedName("diamondDagger").setCreativeTab(KALSTUFF);
     	golden_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.GOLD).setUnlocalizedName("goldenDagger").setCreativeTab(KALSTUFF);
-    	wooden_round_shield = (ItemRoundShield) new ItemRoundShield(Item.ToolMaterial.WOOD).setUnlocalizedName("roundWoodenShield").setCreativeTab(KALSTUFF);
     	
     	GameRegistry.register(crushed_ender.setRegistryName("crushed_ender"));
  		GameRegistry.register(coffee_mug.setRegistryName("coffee_mug"));
@@ -202,7 +200,6 @@ public class StartupCommon {
     	GameRegistry.register(stone_dagger.setRegistryName("stone_dagger"));
     	GameRegistry.register(diamond_dagger.setRegistryName("diamond_dagger"));
     	GameRegistry.register(golden_dagger.setRegistryName("golden_dagger"));
-    	GameRegistry.register(wooden_round_shield.setRegistryName("wooden_round_shield"));
     	
     	GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
