@@ -188,6 +188,13 @@ public class KalStuffRecipes {
 			 'S', Items.STICK
 				 });
 	
+	 GameRegistry.addRecipe(new ItemStack(StartupCommon.golden_dagger, 1),  new Object[] {
+			 "M",
+			 "S",
+			 'M', Items.GOLD_INGOT,
+			 'S', Items.STICK
+				 });
+	 
 	GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.closed_apple_soda), new Object[] {
 		new ItemStack(StartupCommon.soda_can),
 		new ItemStack(Items.APPLE)
@@ -207,8 +214,6 @@ public class KalStuffRecipes {
 		new ItemStack(StartupCommon.soda_can),
 		new ItemStack(Items.NETHER_WART)
 	});
-	 
-	GameRegistry.addSmelting(Items.IRON_INGOT, new ItemStack(StartupCommon.soda_can), 3);
 	
 	GameRegistry.addSmelting(StartupCommon.potato_block, new ItemStack(StartupCommon.baked_potato_block), 2);
 	
