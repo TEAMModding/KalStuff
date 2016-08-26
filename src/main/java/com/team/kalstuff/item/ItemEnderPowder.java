@@ -1,5 +1,6 @@
 package com.team.kalstuff.item;
 
+import java.util.List;
 import java.util.Random;
 
 import com.team.kalstuff.StartupCommon;
@@ -96,5 +97,11 @@ public class ItemEnderPowder extends Item {
 				
 			}
 			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
+		}
+		
+		@Override
+		public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+			
+			tooltip.add("Randomly teleporting since §o§nbefore§r§7 it was cool.");
 		}
 }
