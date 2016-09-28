@@ -7,6 +7,7 @@ import com.team.kalstuff.StartupCommon;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -45,8 +46,10 @@ public class BlockGrapeVine extends BlockCrops {
 	    	super.onBlockDestroyedByPlayer(worldIn, pos, state);
 	    	if (((Integer)state.getValue(AGE)).intValue() == 1) {
 	        Random rand = new Random();
-	        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
-	        spawnAsEntity(worldIn, pos, aStack);
+	        ItemStack stack1 = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
+	        ItemStack stack2 = new ItemStack(Items.STICK, 4);
+	        spawnAsEntity(worldIn, pos, stack1);
+	        spawnAsEntity(worldIn, pos, stack2);
 	    	}
 	    }
 	    
