@@ -59,7 +59,8 @@ public class StartupCommon {
 	public static Item						bacon_core;
 	public static Item						infused_bacon_core;
 	public static ItemFood					grapes;
-	public static ItemSeeds					grape_seeds;
+	public static Item						grape_seeds;
+	public static ItemSeeds					plantable_grape_seeds;
 	public static ItemWalkingStick			walking_stick;
 	public static Item						soda_can;
 	public static ItemClosedSoda			closed_root_beer;
@@ -155,7 +156,8 @@ public class StartupCommon {
     	bacon_core = new Item().setUnlocalizedName("baconCore").setCreativeTab(KALSTUFF);
     	infused_bacon_core = new Item().setUnlocalizedName("infusedBaconCore").setCreativeTab(KALSTUFF);
     	grapes = (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("grapes").setCreativeTab(KALSTUFF);
-    	grape_seeds = (ItemSeeds) new ItemSeeds(grape_vine, Blocks.FARMLAND).setUnlocalizedName("grapeSeeds").setCreativeTab(KALSTUFF);
+    	grape_seeds = new Item().setUnlocalizedName("grapeSeeds").setCreativeTab(KALSTUFF);
+    	plantable_grape_seeds = (ItemSeeds) new ItemSeeds(grape_vine, Blocks.FARMLAND).setUnlocalizedName("plantableGrapeSeeds").setCreativeTab(KALSTUFF);
     	walking_stick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("walkingStick").setCreativeTab(KALSTUFF);
     	soda_can = new Item().setUnlocalizedName("sodaCan").setCreativeTab(KALSTUFF);
     	root_beer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("rootBeer").setCreativeTab(KALSTUFF);
@@ -187,6 +189,7 @@ public class StartupCommon {
  		GameRegistry.register(infused_bacon_core.setRegistryName("infused_bacon_core"));
  		GameRegistry.register(grapes.setRegistryName("grapes"));
  		GameRegistry.register(grape_seeds.setRegistryName("grape_seeds"));
+ 		GameRegistry.register(plantable_grape_seeds.setRegistryName("plantable_grape_seeds"));
  		GameRegistry.register(walking_stick.setRegistryName("walking_stick"));
  		GameRegistry.register(soda_can.setRegistryName("soda_can"));
  		GameRegistry.register(root_beer.setRegistryName("root_beer"));

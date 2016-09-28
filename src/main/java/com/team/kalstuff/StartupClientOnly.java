@@ -37,6 +37,7 @@ public class StartupClientOnly
 		registerItemRendering("wild_grape_vine");
 		registerItemRendering("grapes");
 		registerItemRendering("grape_seeds");
+		registerItemRendering("plantable_grape_seeds");
 		registerItemRendering("grape_vine");
 		registerItemRendering("moon_flower");
 		registerItemRendering("moon_flower1");
