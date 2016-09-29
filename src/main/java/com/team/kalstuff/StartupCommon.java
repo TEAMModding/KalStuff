@@ -12,6 +12,8 @@ import com.team.kalstuff.tileentity.TileEntityMoonFlower;
 import com.team.kalstuff.worldgen.WorldGenGrapeVine;
 import com.team.kalstuff.worldgen.WorldGenMoonFlower;
 
+import net.minecraft.block.Block;
+import net.minecraft.block.material.Material;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
@@ -45,6 +47,7 @@ public class StartupCommon {
 	public static BlockMoonFlower			moon_flower3;
 	public static BlockMoonFlower			moon_flower4;
 	public static BlockMoonFlower			moon_flower5;
+	public static Block						great_grape;
 	
 	public static ItemEnderPowder			crushed_ender;
 	public static Item						coffee_mug;
@@ -93,6 +96,7 @@ public class StartupCommon {
     	trash_can = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	wild_grape_vine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("wildGrapeVine");
     	grape_vine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("grapeVine");
+    	great_grape = new Block(Material.SPONGE).setUnlocalizedName("greatGrape").setCreativeTab(KALSTUFF);
     	
     	moon_flower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("moonFlower").setCreativeTab(KALSTUFF);
     	moon_flower1 = (BlockMoonFlower) new BlockMoonFlower(1).setUnlocalizedName("moonFlower").setCreativeTab(null);
@@ -135,6 +139,9 @@ public class StartupCommon {
     	GameRegistry.register(grape_vine.setRegistryName("grape_vine"));
     	GameRegistry.register(new ItemBlock(grape_vine).setRegistryName("grape_vine"));
     	
+    	GameRegistry.register(great_grape.setRegistryName("great_grape"));
+    	GameRegistry.register(new ItemBlock(great_grape).setRegistryName("great_grape"));
+    	
     	GameRegistry.register(moon_flower.setRegistryName("moon_flower"));
     	GameRegistry.register(moon_flower1.setRegistryName("moon_flower1"));
     	GameRegistry.register(moon_flower2.setRegistryName("moon_flower2"));
@@ -142,6 +149,8 @@ public class StartupCommon {
     	GameRegistry.register(moon_flower4.setRegistryName("moon_flower4"));
     	GameRegistry.register(moon_flower5.setRegistryName("moon_flower5"));
     	GameRegistry.register(new ItemBlock(moon_flower).setRegistryName("moon_flower"));
+    	
+    	
     	
     	crushed_ender = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("enderPowder").setCreativeTab(KALSTUFF);
     	coffee_mug = new Item().setUnlocalizedName("coffeeMug").setCreativeTab(KALSTUFF);
@@ -160,10 +169,10 @@ public class StartupCommon {
     	plantable_grape_seeds = (ItemSeeds) new ItemSeeds(grape_vine, Blocks.FARMLAND).setUnlocalizedName("plantableGrapeSeeds").setCreativeTab(KALSTUFF);
     	walking_stick = (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("walkingStick").setCreativeTab(KALSTUFF);
     	soda_can = new Item().setUnlocalizedName("sodaCan").setCreativeTab(KALSTUFF);
-    	root_beer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("rootBeer").setCreativeTab(KALSTUFF);
-    	melon_soda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.HASTE).setAlwaysEdible().setUnlocalizedName("melonSoda").setCreativeTab(KALSTUFF);
-    	apple_soda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.NIGHT_VISION).setAlwaysEdible().setUnlocalizedName("appleSoda").setCreativeTab(KALSTUFF);
-    	grape_soda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.JUMP_BOOST).setAlwaysEdible().setUnlocalizedName("grapeSoda").setCreativeTab(KALSTUFF);
+    	root_beer = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("rootBeer");
+    	melon_soda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.HASTE).setAlwaysEdible().setUnlocalizedName("melonSoda");
+    	apple_soda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.NIGHT_VISION).setAlwaysEdible().setUnlocalizedName("appleSoda");
+    	grape_soda = (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.JUMP_BOOST).setAlwaysEdible().setUnlocalizedName("grapeSoda");
       	closed_root_beer = (ItemClosedSoda) new ItemClosedSoda(root_beer).setUnlocalizedName("closedRootBeer").setCreativeTab(KALSTUFF);
     	closed_melon_soda = (ItemClosedSoda) new ItemClosedSoda(melon_soda).setUnlocalizedName("closedMelonSoda").setCreativeTab(KALSTUFF);
     	closed_apple_soda = (ItemClosedSoda) new ItemClosedSoda(apple_soda).setUnlocalizedName("closedAppleSoda").setCreativeTab(KALSTUFF);
