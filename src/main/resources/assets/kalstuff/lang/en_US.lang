@@ -56,8 +56,6 @@ item.stoneDagger.name=Stone Dagger
 item.diamondDagger.name=Diamond Dagger
 item.goldenDagger.name=Golden Dagger
 item.woodenRoundShield.name=Wooden Round Shield
-item.wine.name=Bottle of Wine
-item.wineBottle.name=Empty Wine Bottle
 
 #
 # GUI
