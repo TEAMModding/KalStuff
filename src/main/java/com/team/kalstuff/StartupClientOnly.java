@@ -63,6 +63,8 @@ public class StartupClientOnly
 		registerItemRendering("golden_dagger");
 		registerItemRendering("round_wooden_shield");
 		registerItemRendering("great_grape");
+		registerItemRendering("wine");
+		registerItemRendering("wine_bottle");
 		//from now on add itemRendering here
 	}
 	 
