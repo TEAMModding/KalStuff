@@ -1,13 +1,20 @@
 {
     "variants": {
-        "age=0": { "model": "kalstuff:grape_vine_stage0" },
-        "age=1": { "model": "kalstuff:grape_vine_stage1" },
-        "age=2": { "model": "kalstuff:grape_vine_stage2" },
-        "age=3": { "model": "kalstuff:grape_vine_stage3" },
-        "age=4": { "model": "kalstuff:grape_vine_stage4" },
-        "age=5": { "model": "kalstuff:grape_vine_stage5" },
-        "age=6": { "model": "kalstuff:grape_vine_stage6" },
-        "age=7": { "model": "kalstuff:grape_vine_stage7" }
-
+        "age=0,great=false": { "model": "kalstuff:grape_vine_stage0" },
+        "age=1,great=false": { "model": "kalstuff:grape_vine_stage1" },
+        "age=2,great=false": { "model": "kalstuff:grape_vine_stage2" },
+        "age=3,great=false": { "model": "kalstuff:grape_vine_stage3" },
+        "age=4,great=false": { "model": "kalstuff:grape_vine_stage4" },
+        "age=5,great=false": { "model": "kalstuff:grape_vine_stage5" },
+        "age=6,great=false": { "model": "kalstuff:grape_vine_stage6" },
+        "age=7,great=false": { "model": "kalstuff:grape_vine_stage7" },
+        "age=0,great=true": { "model": "kalstuff:grape_vine_stage0" },
+        "age=1,great=true": { "model": "kalstuff:grape_vine_stage1" },
+        "age=2,great=true": { "model": "kalstuff:grape_vine_stage2" },
+        "age=3,great=true": { "model": "kalstuff:grape_vine_stage3" },
+        "age=4,great=true": { "model": "kalstuff:grape_vine_stage4" },
+        "age=5,great=true": { "model": "kalstuff:grape_vine_stage5" },
+        "age=6,great=true": { "model": "kalstuff:grape_vine_stage6" },
+        "age=7,great=true": { "model": "kalstuff:grape_vine_stage7" }
     }
 }

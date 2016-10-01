@@ -80,6 +80,8 @@ public class StartupCommon {
 	public static ItemDagger				diamond_dagger;
 	public static ItemDagger				golden_dagger;
 	public static ItemRoundShield			wooden_round_shield;
+	public static Item						wine_bottle;
+	public static ItemWine					wine;
 	
 	public static void preInitCommon() {
 		
@@ -183,6 +185,8 @@ public class StartupCommon {
     	diamond_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.DIAMOND).setUnlocalizedName("diamondDagger").setCreativeTab(KALSTUFF);
     	golden_dagger = (ItemDagger) new ItemDagger(Item.ToolMaterial.GOLD).setUnlocalizedName("goldenDagger").setCreativeTab(KALSTUFF);
     	wooden_round_shield = (ItemRoundShield) new ItemRoundShield(Item.ToolMaterial.WOOD).setUnlocalizedName("roundWoodenShield").setCreativeTab(KALSTUFF);
+    	wine = (ItemWine) new ItemWine(2, 2.0f, false, 1200).setAlwaysEdible().setUnlocalizedName("wine").setCreativeTab(KALSTUFF);
+    	wine_bottle = new Item().setUnlocalizedName("wineBottle").setCreativeTab(KALSTUFF);
     	
     	GameRegistry.register(crushed_ender.setRegistryName("crushed_ender"));
  		GameRegistry.register(coffee_mug.setRegistryName("coffee_mug"));
@@ -215,6 +219,9 @@ public class StartupCommon {
     	GameRegistry.register(diamond_dagger.setRegistryName("diamond_dagger"));
     	GameRegistry.register(golden_dagger.setRegistryName("golden_dagger"));
     	GameRegistry.register(wooden_round_shield.setRegistryName("wooden_round_shield"));
+    	GameRegistry.register(wine.setRegistryName("wine"));
+    	GameRegistry.register(wine_bottle.setRegistryName("wine_bottle"));
+    	
     	
     	GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
