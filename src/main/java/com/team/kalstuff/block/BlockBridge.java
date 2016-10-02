@@ -2,7 +2,6 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
-import com.team.KalStuff;
 import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.config.Configs;
 
