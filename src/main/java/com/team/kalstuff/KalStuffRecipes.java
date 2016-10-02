@@ -11,6 +11,9 @@ public class KalStuffRecipes {
 	public static void add() {
 		
 		
+		
+		
+		
 		/*--------------------BEGIN SHAPED RECIPES--------------------*/
 		
 		GameRegistry.addRecipe(new ItemStack(StartupCommon.coffee_mug, 1),  new Object[] {
@@ -170,19 +173,13 @@ public class KalStuffRecipes {
 				'S', Items.STICK
 		});
 		
-		
-		
-		
-		
 		/*--------------------END SHAPED RECIPES--------------------*/
 		
 		
 		
+		
+		
 		/*--------------------SHAPELESS RECIPES--------------------*/
-		
-		
-		
-		
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(StartupCommon.crushed_ender, 4), new Object[] {
 				new ItemStack(Items.ENDER_PEARL),
@@ -266,25 +263,15 @@ public class KalStuffRecipes {
 				new ItemStack(StartupCommon.baked_potato_block),
 		});
 		
-		
-		
-		
-		
 		/*--------------------END SHAPELESS RECIPES--------------------*/
+		
+		
 		
 		
 		
 		/*--------------------BEGIN SMELTING RECIPES--------------------*/
 		
-		
-		
-		
-		
 		GameRegistry.addSmelting(StartupCommon.potato_block, new ItemStack(StartupCommon.baked_potato_block), 2);
-		
-		
-		
-		
 		
 		/*--------------------END SMELTING RECIPES--------------------*/
 	}

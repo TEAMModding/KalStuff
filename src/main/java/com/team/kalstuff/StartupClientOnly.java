@@ -5,15 +5,13 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 
-public class StartupClientOnly 
-{
-	public static void preInitClientOnly()
-	{
+public class StartupClientOnly {
+	public static void preInitClientOnly() {
 		
 	}
 	
-	public static void initClientOnly()
-	{
+	public static void initClientOnly() {
+		
 		registerItemRendering("bridge");
 		registerItemRendering("crushed_ender");
 		registerItemRendering("coffee");
@@ -68,8 +66,7 @@ public class StartupClientOnly
 		//from now on add itemRendering here
 	}
 	 
-	public static void postInitClientOnly()
-	{
+	public static void postInitClientOnly() {
 		
 	}
 	
@@ -81,8 +78,7 @@ public class StartupClientOnly
 	 * 
 	 * @param name The itemModel/block name
 	 */
-	private static void registerItemRendering(String name)
-	{
+	private static void registerItemRendering(String name) {
 		
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.REGISTRY.getObject(new ResourceLocation("kalstuff", name)), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
 	}

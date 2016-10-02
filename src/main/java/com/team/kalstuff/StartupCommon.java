@@ -30,6 +30,12 @@ public class StartupCommon {
 	public static final CreativeTabs KALSTUFF = new KalStuffCreativeTab("kalstuffTab");
 	public static final Logger log = LogManager.getLogger(KalStuff.MODID);
 	
+	
+	
+	
+	
+	/*--------------------BEGIN CREATE BLOCKS-------------------*/
+	
 	public static BlockBridge				bridge;
 	public static BlockEnder				ender_block;
 	public static BlockBlaze				blaze_block;
@@ -48,6 +54,14 @@ public class StartupCommon {
 	public static BlockMoonFlower			moon_flower4;
 	public static BlockMoonFlower			moon_flower5;
 	public static Block						great_grape;
+	
+	/*--------------------END CREATE BLOCKS-------------------*/
+
+	
+	
+	
+	
+	/*--------------------BEGIN CREATE ITEMS-------------------*/
 	
 	public static ItemEnderPowder			crushed_ender;
 	public static Item						coffee_mug;
@@ -83,11 +97,23 @@ public class StartupCommon {
 	public static Item						wine_bottle;
 	public static ItemWine					wine;
 	
+	/*--------------------END CREATE ITEMS-------------------*/
+	
+	
+	
+	
+
 	public static void preInitCommon() {
 		
 		ModSoundEvents.registerSounds();
 		
-    	bridge = (BlockBridge) new BlockBridge().setUnlocalizedName("bridge");
+		
+		
+		
+		
+		/*--------------------BEGIN INITIALIZE BLOCKS-------------------*/
+		
+		bridge = (BlockBridge) new BlockBridge().setUnlocalizedName("bridge");
     	ender_block = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
     	blaze_block = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
     	carrot_block = (BlockCarrot) new BlockCarrot().setUnlocalizedName("blockCarrot");
@@ -106,7 +132,14 @@ public class StartupCommon {
     	moon_flower3 = (BlockMoonFlower) new BlockMoonFlower(3).setUnlocalizedName("moonFlower").setCreativeTab(null);
     	moon_flower4 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("moonFlower").setCreativeTab(null);
     	moon_flower5 = (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("moonFlower").setCreativeTab(null);
+    
+    	/*--------------------END INITIALIZE BLOCKS-------------------*/
+
     	
+    	
+    
+    	
+    	/*--------------------BEGIN REGISTER BLOCKS-------------------*/
     	
     	GameRegistry.register(bridge.setRegistryName("bridge"));
     	GameRegistry.register(new ItemBlock(bridge).setRegistryName("bridge"));
@@ -152,7 +185,13 @@ public class StartupCommon {
     	GameRegistry.register(moon_flower5.setRegistryName("moon_flower5"));
     	GameRegistry.register(new ItemBlock(moon_flower).setRegistryName("moon_flower"));
     	
+    	/*--------------------END REGISTER BLOCKS-------------------*/
+
     	
+    	
+    	
+    	
+    	/*--------------------BEGIN INITIALIZE ITEMS-------------------*/
     	
     	crushed_ender = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("enderPowder").setCreativeTab(KALSTUFF);
     	coffee_mug = new Item().setUnlocalizedName("coffeeMug").setCreativeTab(KALSTUFF);
@@ -188,6 +227,14 @@ public class StartupCommon {
     	wine = (ItemWine) new ItemWine(2, 2.0f, false, 1200).setAlwaysEdible().setUnlocalizedName("wine").setCreativeTab(KALSTUFF);
     	wine_bottle = new Item().setUnlocalizedName("wineBottle").setCreativeTab(KALSTUFF);
     	
+    	/*--------------------END INITIALIZE ITEMS-------------------*/
+
+    	
+    	
+    	
+    	
+    	/*--------------------BEGIN REGISTER ITEMS-------------------*/
+    	
     	GameRegistry.register(crushed_ender.setRegistryName("crushed_ender"));
  		GameRegistry.register(coffee_mug.setRegistryName("coffee_mug"));
  		GameRegistry.register(coffee.setRegistryName("coffee"));
@@ -222,6 +269,11 @@ public class StartupCommon {
     	GameRegistry.register(wine.setRegistryName("wine"));
     	GameRegistry.register(wine_bottle.setRegistryName("wine_bottle"));
     	
+    	/*--------------------END REGISTER ITEMS-------------------*/
+    	
+    	
+    	
+    	
     	
     	GameRegistry.registerWorldGenerator(new WorldGenGrapeVine(), 1);
     	GameRegistry.registerWorldGenerator(new WorldGenMoonFlower(), 1);
@@ -234,14 +286,16 @@ public class StartupCommon {
 	}
 
 	public static void initCommon() {
-		log.info("Hi there, nerdy geeks. You should just enjoy Minecraft and stop looking at the system output.");
-		KalStuffRecipes.add();
 		
+		log.info("Hi there, nerdy geeks. You should just enjoy Minecraft and stop looking at the system output.");
+		
+		KalStuffRecipes.add();
 		CoreEventHandler events = new CoreEventHandler();
 		MinecraftForge.EVENT_BUS.register(events);
 	}
 
 	public static void postInitCommon() {
+		
 		log.info("Wait a minute... Guys! IT WORKS!?! WE MADE A MOD!!!");
 	}
 }
