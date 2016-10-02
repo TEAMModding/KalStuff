@@ -37,11 +37,11 @@ public class StartupCommon {
 	/*--------------------BEGIN CREATE BLOCKS-------------------*/
 	
 	public static BlockBridge				bridge;
-	public static BlockEnder				ender_block;
-	public static BlockBlaze				blaze_block;
-	public static BlockCarrot				carrot_block;
-	public static BlockApple				apple_block;
-	public static BlockPotato				potato_block;
+	public static Block						ender_block;
+	public static Block						blaze_block;
+	public static BlockFood					carrot_block;
+	public static BlockFood					apple_block;
+	public static BlockFood					potato_block;
 	public static BlockBakedPotato			baked_potato_block;
 	public static BlockChickenNest			chicken_nest;
 	public static BlockTrashCan				trash_can;
@@ -114,12 +114,12 @@ public class StartupCommon {
 		/*--------------------BEGIN INITIALIZE BLOCKS-------------------*/
 		
 		bridge = (BlockBridge) new BlockBridge().setUnlocalizedName("bridge");
-    	ender_block = (BlockEnder) new BlockEnder().setUnlocalizedName("blockEnder");
-    	blaze_block = (BlockBlaze) new BlockBlaze().setUnlocalizedName("blockBlaze");
-    	carrot_block = (BlockCarrot) new BlockCarrot().setUnlocalizedName("blockCarrot");
-    	apple_block = (BlockApple) new BlockApple().setUnlocalizedName("blockApple");
-    	potato_block = (BlockPotato) new BlockPotato().setUnlocalizedName("blockPotato");
-    	baked_potato_block = (BlockBakedPotato) new BlockBakedPotato().setUnlocalizedName("blockBakedPotato");
+    	ender_block = new Block(Material.ROCK).setUnlocalizedName("blockEnder").setHardness(5.0F).setCreativeTab(KALSTUFF);
+    	blaze_block = new Block(Material.IRON).setUnlocalizedName("blockBlaze").setHardness(35.0F).setCreativeTab(KALSTUFF);
+    	carrot_block = (BlockFood) new BlockFood(1.5F, 7, 4.8F).setUnlocalizedName("blockCarrot").setCreativeTab(KALSTUFF);
+    	apple_block = (BlockFood) new BlockFood(1.5F, 9, 2.4F).setUnlocalizedName("blockApple").setCreativeTab(KALSTUFF);
+    	potato_block = (BlockFood) new BlockFood(1.5F, 3, 0.6F).setUnlocalizedName("blockPotato").setCreativeTab(KALSTUFF);
+    	baked_potato_block = (BlockBakedPotato) new BlockBakedPotato(1.5F, 11, 6F).setUnlocalizedName("blockBakedPotato").setCreativeTab(KALSTUFF);
     	chicken_nest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("chickenNest");
     	trash_can = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
     	wild_grape_vine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("wildGrapeVine");

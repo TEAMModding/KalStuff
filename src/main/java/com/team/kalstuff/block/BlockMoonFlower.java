@@ -48,6 +48,7 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	public TileEntity createNewTileEntity(World worldIn, int meta) {
 		return new TileEntityMoonFlower();
 	}
+	
 	@Override
 	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
 		super.updateTick(worldIn, pos, state, rand);

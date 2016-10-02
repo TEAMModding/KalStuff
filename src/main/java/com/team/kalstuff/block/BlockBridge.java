@@ -63,28 +63,23 @@ public class BlockBridge extends Block {
 		 return chain(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ, pos);
 	    }
 
-	    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer)
-	    {
+	    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
 	        return this.getDefaultState().withProperty(FACING, BlockPistonBase.getFacingFromEntity(pos, placer));
 	    }
 
-	    public static EnumFacing getFacing(int meta)
-	    {
+	    public static EnumFacing getFacing(int meta) {
 	        return EnumFacing.getFront(meta & 7);
 	    }
 	    
-	    public IBlockState getStateForEntityRender(IBlockState state)
-	    {
+	    public IBlockState getStateForEntityRender(IBlockState state) {
 	        return this.getDefaultState().withProperty(FACING, EnumFacing.NORTH);
 	    }
 
-	    public IBlockState getStateFromMeta(int meta)
-	    {
+	    public IBlockState getStateFromMeta(int meta) {
 	        return this.getDefaultState();
 	    }
 
-	    public int getMetaFromState(IBlockState state)
-	    {
+	    public int getMetaFromState(IBlockState state) {
 	        byte b0 = 0;
 	        int i = b0 | ((EnumFacing)state.getValue(FACING)).getIndex();
 
@@ -94,8 +89,7 @@ public class BlockBridge extends Block {
 	    }
 
 	    
-	    protected BlockStateContainer createBlockState()
-	    {
+	    protected BlockStateContainer createBlockState() {
 	        return new BlockStateContainer(this, new IProperty[] {FACING});
 	    }
 	    
@@ -209,14 +203,13 @@ public class BlockBridge extends Block {
 	    }
 	    
 	    @SideOnly(Side.CLIENT)
-	    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
-	    {
+	    public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand) {
+	    	
 	    	if (this.particle)
-	    		for (int i = 0; i < 8; i ++) {
+	    		for (int i = 0; i < 8; i ++)
 	    			for (int j = 0; j < 2; j ++)
 	    				worldIn.spawnParticle(EnumParticleTypes.PORTAL, this.partLoc.getX() + 0.5, this.partLoc.getY() + 0.5, this.partLoc.getZ() + 0.5, (rand.nextDouble() * 2) - 1, (rand.nextDouble() * 2) - 1.5, (rand.nextDouble() * 2) - 1, new int[0]);
-	    			//worldIn.spawnParticle(EnumParticleTypes.PORTAL, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, (rand.nextDouble() * 2) - 1, (rand.nextDouble() * 2) - 1.5, (rand.nextDouble() * 2) - 1, new int[0]);
-	    		}
+	    	
 	    	this.particle = false;
 	    }
 }
