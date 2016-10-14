@@ -14,7 +14,7 @@ import net.minecraftforge.fml.client.config.IConfigElement;
 public class KalStuffConfigGui extends GuiConfig {
 
 	public KalStuffConfigGui(GuiScreen parent) {
-		super(parent, getConfigElements(), KalStuff.MODID, false, false, getTitle(parent));
+		super(parent, getConfigElements(), KalStuff.MODID, false, false, getTitle());
 	}
 	
 	private static List<IConfigElement> getConfigElements() {
@@ -25,7 +25,7 @@ public class KalStuffConfigGui extends GuiConfig {
 		return configElements;
 	}
 	
-	private static String getTitle(GuiScreen parent) {
+	private static String getTitle() {
 		return GuiConfig.getAbridgedConfigPath(Configs.configurationFile.toString());
 	}
 	
