@@ -1,4 +1,6 @@
 # KalStuff
+<a href="https://codeclimate.com/github/TEAMModding/KalStuff"><img src="https://codeclimate.com/github/TEAMModding/KalStuff/badges/gpa.svg" /></a>
+
 Files for a mod that adds random stuff.
 
 If anyone has any good ideas for the mod, put them here, under the Suggestions section, along with your name if you want. To keep things organized, if you decide to implement an idea from here write a comment saying that you are doing so before you start. Example: " - add Cheetos(Chester): FritoLay is working on it". Once a feature is finished and implemented, please change the status to "[Finished]" and move it over to the Finished Suggestions section. Example: " - add dumplings: [Finished]"
