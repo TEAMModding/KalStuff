@@ -32,8 +32,8 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBridge extends Block {
 	
-	boolean particle = false;
-	BlockPos partLoc;
+	private boolean particle = false;
+	private BlockPos partLoc;
     public static final PropertyDirection FACING = PropertyDirection.create("facing");
     
 	public BlockBridge() throws StackOverflowError, IllegalArgumentException, NullPointerException {
@@ -104,7 +104,7 @@ public class BlockBridge extends Block {
 	    	catch (Exception e) {return true;}
 	    	if (block == null) return true;
 	    	
-	    	if ((!EntityEnderman.getCarriable(block) && block != StartupCommon.bridge) || (Configs.bridgeTNT && block == Blocks.TNT)) {
+	    	if ((!EntityEnderman.getCarriable(block) && block != KalStuffBlocks.bridge) || (Configs.bridgeTNT && block == Blocks.TNT)) {
 	    		playerIn.addChatMessage(new TextComponentTranslation("The bridge is unable to send this block", new Object[0]));
 	    		return true;
 	    	}
@@ -117,50 +117,50 @@ public class BlockBridge extends Block {
 	    			aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState());
 	    	
 	    	if (state.getValue(FACING).equals(EnumFacing.WEST))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState());
 	    	
 	    	if (state.getValue(FACING).equals(EnumFacing.UP))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState());
 				
 	    	if (state.getValue(FACING).equals(EnumFacing.DOWN))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState());
 				
 	    	if (state.getValue(FACING).equals(EnumFacing.NORTH))
 	    		do {
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState());
 	    	
 	    	if (state.getValue(FACING).equals(EnumFacing.SOUTH))
 	    		do 	{
 	    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
 	    			i ++;
 	    		}
-	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != StartupCommon.bridge.getDefaultState());
+	    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState());
 	    	
-	    	if (aPos == origin) return true;
+	    	if (aPos.equals(origin)) return true;
 	    	if (i > 16) {
 	    		playerIn.addChatMessage(new TextComponentTranslation("The bridge cannot reach that far", new Object[0]));
 	    		return true;
 	    	}
 	    	
-	    	if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == StartupCommon.bridge.getDefaultState()) {
+	    	if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == KalStuffBlocks.bridge.getDefaultState()) {
 	    		BlockBridge aBridge = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
 	    			
 	    		try {

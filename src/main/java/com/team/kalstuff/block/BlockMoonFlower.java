@@ -2,7 +2,6 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
-import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.tileentity.TileEntityMoonFlower;
 
 import net.minecraft.block.BlockBush;
@@ -62,14 +61,14 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 		IBlockState iblockstate = worldIn.getBlockState(pos);
 		if (worldIn.getBlockState(pos).getBlock().getClass() == BlockMoonFlower.class) {
 			if (worldIn.canSeeSky(pos) && ((Integer)worldIn.getBlockState(pos).getValue(NIGHT)).intValue() == 1) {
-				if (worldIn.getCurrentMoonPhaseFactor() == 0) worldIn.setBlockState(pos, StartupCommon.moon_flower1.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == .25) worldIn.setBlockState(pos, StartupCommon.moon_flower2.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == .50) worldIn.setBlockState(pos, StartupCommon.moon_flower3.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == .75) worldIn.setBlockState(pos, StartupCommon.moon_flower4.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
-				if (worldIn.getCurrentMoonPhaseFactor() == 1) worldIn.setBlockState(pos, StartupCommon.moon_flower5.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == 0) worldIn.setBlockState(pos, KalStuffBlocks.moon_flower1.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .25) worldIn.setBlockState(pos, KalStuffBlocks.moon_flower2.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .50) worldIn.setBlockState(pos, KalStuffBlocks.moon_flower3.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == .75) worldIn.setBlockState(pos, KalStuffBlocks.moon_flower4.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
+				if (worldIn.getCurrentMoonPhaseFactor() == 1) worldIn.setBlockState(pos, KalStuffBlocks.moon_flower5.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)));
 			}
 			else {
-				worldIn.setBlockState(pos, StartupCommon.moon_flower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
+				worldIn.setBlockState(pos, KalStuffBlocks.moon_flower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)), 3);
 			}
 		}	
 	}
@@ -80,12 +79,12 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
     
     
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return Item.getItemFromBlock(StartupCommon.moon_flower);
+        return Item.getItemFromBlock(KalStuffBlocks.moon_flower);
     }
     
     @SideOnly(Side.CLIENT)
     public Item getItem(World worldIn, BlockPos pos) {
-        return Item.getItemFromBlock(StartupCommon.moon_flower);
+        return Item.getItemFromBlock(KalStuffBlocks.moon_flower);
     }
     
     /**

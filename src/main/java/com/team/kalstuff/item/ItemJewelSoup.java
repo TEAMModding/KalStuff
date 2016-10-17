@@ -1,7 +1,5 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.StartupCommon;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -40,6 +38,6 @@ public class ItemJewelSoup extends ItemDrink {
 	@Override
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
 		super.onItemUseFinish(stack, worldIn, entityLiving);
-		return new ItemStack(StartupCommon.golden_mug);
+		return new ItemStack(KalStuffItems.golden_mug);
 	}
 }

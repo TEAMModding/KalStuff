@@ -3,6 +3,7 @@ package com.team.kalstuff.block;
 import java.util.Random;
 
 import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.item.KalStuffItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
@@ -13,10 +14,10 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -68,7 +69,7 @@ public class BlockWildGrapeVine extends BlockBush {
                 float f1 = 0.0F;
                 IBlockState iblockstate = worldIn.getBlockState(blockpos1.add(i, 0, j));
 
-                if (iblockstate.getBlock().canSustainPlant(state, worldIn, blockpos1.add(i, 0, j), net.minecraft.util.EnumFacing.UP, (net.minecraftforge.common.IPlantable)blockIn))
+                if (iblockstate.getBlock().canSustainPlant(state, worldIn, blockpos1.add(i, 0, j), EnumFacing.UP, (net.minecraftforge.common.IPlantable)blockIn))
                 {
                     f1 = 1.0F;
 
@@ -130,7 +131,7 @@ public class BlockWildGrapeVine extends BlockBush {
 		if (((Integer)state.getValue(GROWN)).intValue() == 1) {
         worldIn.setBlockState(pos, state.withProperty(GROWN, 0));
         Random rand = new Random();
-        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
+        ItemStack aStack = new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3);
         spawnAsEntity(worldIn, pos, aStack);
 		return true;
 		}
@@ -169,7 +170,7 @@ public class BlockWildGrapeVine extends BlockBush {
 	    	super.onBlockDestroyedByPlayer(worldIn, pos, state);
 	    	if (((Integer)state.getValue(GROWN)).intValue() == 1) {
 	        Random rand = new Random();
-	        ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
+	        ItemStack aStack = new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3);
 	        spawnAsEntity(worldIn, pos, aStack);
 	    	}
 	    }

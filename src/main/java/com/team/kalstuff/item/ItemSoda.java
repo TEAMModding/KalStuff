@@ -1,7 +1,5 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.StartupCommon;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -36,8 +34,8 @@ public class ItemSoda extends ItemDrink {
 		if (!worldIn.isRemote && this.length != 0)
 		{
 			try{
-				player.addPotionEffect(new PotionEffect(this.effect, ((this.length / (this.getMaxDamage() + 1)) + player.getActivePotionEffect(this.effect).getDuration()), 0));
-			}catch (NullPointerException e) {player.addPotionEffect(new PotionEffect(this.effect, (this.length / (this.getMaxDamage() + 1)), 0));}
+				player.addPotionEffect(new PotionEffect(this.effect, ((this.length / (this.getMaxDamage(stack) + 1)) + player.getActivePotionEffect(this.effect).getDuration()), 0));
+			}catch (NullPointerException e) {player.addPotionEffect(new PotionEffect(this.effect, (this.length / (this.getMaxDamage(stack) + 1)), 0));}
 			if (player.getActivePotionEffect(this.effect).getDuration() > 7200) {
 				player.removePotionEffect(this.effect);
 				player.addPotionEffect(new PotionEffect(this.effect, 7200, 0));
@@ -65,8 +63,8 @@ public class ItemSoda extends ItemDrink {
 	      System.out.println(stack.getItemDamage() + ", " + stack.getMaxDamage());
           if (!player.capabilities.isCreativeMode && stack.stackSize == 0) {
         	  System.out.print("Yipee!");
-	            if (stack.stackSize <= 0) return new ItemStack(StartupCommon.soda_can);
-	            else player.inventory.addItemStackToInventory(new ItemStack(StartupCommon.soda_can));
+	            if (stack.stackSize <= 0) return new ItemStack(KalStuffItems.soda_can);
+	            else player.inventory.addItemStackToInventory(new ItemStack(KalStuffItems.soda_can));
           }
 	      return stack;
 	  }

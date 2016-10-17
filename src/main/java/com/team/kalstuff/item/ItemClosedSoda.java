@@ -1,6 +1,6 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.ModSoundEvents;
+import com.team.kalstuff.KalStuffSoundEvents;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -24,7 +24,7 @@ public class ItemClosedSoda extends Item {
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
 		
-		worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, ModSoundEvents.CAN_OPEN, SoundCategory.PLAYERS, 1.0F, 1.0F);
+		worldIn.playSound(playerIn, playerIn.posX, playerIn.posY, playerIn.posZ, KalStuffSoundEvents.CAN_OPEN, SoundCategory.PLAYERS, 1.0F, 1.0F);
 		
 		--itemStackIn.stackSize;
         if (itemStackIn.stackSize <= 0) return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, new ItemStack(this.item));

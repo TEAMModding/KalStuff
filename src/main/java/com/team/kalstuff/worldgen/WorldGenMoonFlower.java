@@ -3,7 +3,7 @@ package com.team.kalstuff.worldgen;
 import java.util.ArrayList;
 import java.util.Random;
 
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.block.KalStuffBlocks;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.math.BlockPos;
@@ -22,7 +22,7 @@ public class WorldGenMoonFlower implements IWorldGenerator {
 		if (somePos != null) {
 			for (int i = 0; i < somePos.size(); i ++)
 				if (somePos.get(i) != null)
-					world.setBlockState(somePos.get(i).up(), StartupCommon.moon_flower.getDefaultState());
+					world.setBlockState(somePos.get(i).up(), KalStuffBlocks.moon_flower.getDefaultState());
 
 		}
 		}

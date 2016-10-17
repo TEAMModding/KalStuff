@@ -44,6 +44,6 @@ public class ItemBlazeSoup extends ItemDrink {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
 	  {
 	      super.onItemUseFinish(stack, worldIn, entityLiving);
-	      return new ItemStack(StartupCommon.golden_mug);
+	      return new ItemStack(KalStuffItems.golden_mug);
 	  }
 }

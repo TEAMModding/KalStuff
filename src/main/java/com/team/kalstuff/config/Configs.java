@@ -22,7 +22,7 @@ public class Configs {
 	@SubscribeEvent
 	public void onConfigChangedEvent(OnConfigChangedEvent event) {
 		
-		if (KalStuff.MODID.equals(event.getModID()) == true) {
+		if (KalStuff.MODID.equals(event.getModID())) {
 			loadConfigs(config);
 		}
 	}

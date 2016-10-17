@@ -1,5 +1,7 @@
 package com.team.kalstuff;
 
+import com.team.kalstuff.item.KalStuffItems;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumHand;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
@@ -11,11 +13,11 @@ public class CoreEventHandler
 	public void onUpdateEvent(LivingUpdateEvent event)
 	{
 		EntityLivingBase living = event.getEntityLiving();
-		if (living.getHeldItem(EnumHand.MAIN_HAND)!= null && living.getHeldItem(EnumHand.MAIN_HAND).getItem() == StartupCommon.walking_stick)
+		if (living.getHeldItem(EnumHand.MAIN_HAND)!= null && living.getHeldItem(EnumHand.MAIN_HAND).getItem() == KalStuffItems.walking_stick)
 		{
 			event.getEntityLiving().stepHeight = 1F;
 		}
-		else if (living.getHeldItem(EnumHand.OFF_HAND)!= null && living.getHeldItem(EnumHand.OFF_HAND).getItem() == StartupCommon.walking_stick)
+		else if (living.getHeldItem(EnumHand.OFF_HAND)!= null && living.getHeldItem(EnumHand.OFF_HAND).getItem() == KalStuffItems.walking_stick)
 		{
 			event.getEntityLiving().stepHeight = 1F;
 		}

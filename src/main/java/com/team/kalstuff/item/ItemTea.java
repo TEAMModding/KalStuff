@@ -1,7 +1,5 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.StartupCommon;
-
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
@@ -17,6 +15,6 @@ public class ItemTea extends ItemDrink {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving)
 	  {
 	      super.onItemUseFinish(stack, worldIn, entityLiving);
-	      return new ItemStack(StartupCommon.coffee_mug);
+	      return new ItemStack(KalStuffItems.coffee_mug);
 	  }
 }

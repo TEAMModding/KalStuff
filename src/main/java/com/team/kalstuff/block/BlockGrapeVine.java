@@ -2,7 +2,7 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.item.KalStuffItems;
 
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.properties.IProperty;
@@ -54,7 +54,7 @@ public class BlockGrapeVine extends BlockCrops {
                 float f = getGrowthChance(this, worldIn, pos);
 
                 if (rand.nextInt((int)(25.0F / f) + 1) == 0) {
-            		if (i + 1 == 7 && state.getValue(GREAT)) worldIn.setBlockState(pos, StartupCommon.great_grape.getDefaultState());
+            		if (i + 1 == 7 && state.getValue(GREAT)) worldIn.setBlockState(pos, KalStuffBlocks.great_grape.getDefaultState());
             		else worldIn.setBlockState(pos, this.getDefaultState().withProperty(AGE, i + 1).withProperty(GREAT, state.getValue(GREAT)), 2);
                 }
             }
@@ -72,7 +72,7 @@ public class BlockGrapeVine extends BlockCrops {
 		if (((Integer)state.getValue(AGE)).intValue() == 7) {
 			worldIn.setBlockState(pos, state.withProperty(AGE, 6));
 			Random rand = new Random();
-			ItemStack aStack = new ItemStack(StartupCommon.grapes, rand.nextInt(3) + 4);
+			ItemStack aStack = new ItemStack(KalStuffItems.grapes, rand.nextInt(3) + 4);
 			spawnAsEntity(worldIn, pos, aStack);
 			return true;
 		}
@@ -85,7 +85,7 @@ public class BlockGrapeVine extends BlockCrops {
 		
 		if (((Integer)state.getValue(AGE)).intValue() == 1) {
 			Random rand = new Random();
-			ItemStack stack1 = new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3);
+			ItemStack stack1 = new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3);
 			ItemStack stack2 = new ItemStack(Items.STICK, 4);
 			spawnAsEntity(worldIn, pos, stack1);
 			spawnAsEntity(worldIn, pos, stack2);
@@ -99,8 +99,8 @@ public class BlockGrapeVine extends BlockCrops {
 		int age = ((Integer)state.getValue(AGE)).intValue();
 		Random rand = world instanceof World ? ((World)world).rand : new Random();
 		
-		if (age >= 7) ret.add(new ItemStack(StartupCommon.grapes, rand.nextInt(2) + 3));
-		else ret.add(new ItemStack(StartupCommon.grape_seeds, 1, 0));
+		if (age >= 7) ret.add(new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3));
+		else ret.add(new ItemStack(KalStuffItems.grape_seeds, 1, 0));
 		ret.add(new ItemStack(Items.STICK, 4));
 		
 		return ret;

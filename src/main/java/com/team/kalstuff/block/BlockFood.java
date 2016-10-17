@@ -11,7 +11,7 @@ import net.minecraft.world.World;
 
 public class BlockFood extends Block {
 
-	int amount;
+	private int amount;
 	float saturation;
 	
 	public BlockFood(float hardness, int amount, float saturation) {

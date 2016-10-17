@@ -2,7 +2,7 @@ package com.team.kalstuff.worldgen;
 
 import java.util.Random;
 
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.block.KalStuffBlocks;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.util.ResourceLocation;
@@ -28,7 +28,7 @@ public class WorldGenGrapeVine implements IWorldGenerator {
 		BlockPos aPos = this.getSurface(chunkX * 16 + random.nextInt(16), chunkZ * 16 + random.nextInt(16), world);
 		if (random.nextInt(10) == 1) {
 			if (aPos != null && world.getBiomeForCoordsBody(aPos) == Biome.REGISTRY.getObject(new ResourceLocation("roofed_forest"))) {
-				world.setBlockState(aPos.up(), StartupCommon.wild_grape_vine.getDefaultState());
+				world.setBlockState(aPos.up(), KalStuffBlocks.wild_grape_vine.getDefaultState());
 			}
 		}
 	}

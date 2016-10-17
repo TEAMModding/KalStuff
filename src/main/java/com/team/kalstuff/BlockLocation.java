@@ -8,8 +8,9 @@ import net.minecraft.util.math.BlockPos;
 public class BlockLocation implements Serializable 
 {
 	private static final long serialVersionUID = -7551624909690732269L;
-	Block block;
-	BlockPos blockPos;
+	private Block block;
+	private BlockPos blockPos;
+	
 	public BlockLocation(Block block, BlockPos blockPos) {
 		this.blockPos = blockPos;
 		this.block = block;
