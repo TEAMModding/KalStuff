@@ -40,9 +40,11 @@ public class BlockChickenNest extends BlockContainer {
 
 	/*
 	 * 
-	 * //These lines are presumed unnecessary, but were in the BlockSlab file.
-	 * If problems arise // related to the bounding boxes, try un-commenting
-	 * this. public void addCollisionBoxesToList(World worldIn, BlockPos pos,
+	 * These lines are presumed unnecessary, but were in the BlockSlab file.
+	 * If problems arise related to the bounding boxes, try un-commenting
+	 * this.
+	 * 
+	 * public void addCollisionBoxesToList(World worldIn, BlockPos pos,
 	 * IBlockState state, AxisAlignedBB mask, List list, Entity collidingEntity)
 	 * { this.setBlockBoundsBasedOnState(worldIn, pos);
 	 * super.addCollisionBoxesToList(worldIn, pos, state, mask, list,
