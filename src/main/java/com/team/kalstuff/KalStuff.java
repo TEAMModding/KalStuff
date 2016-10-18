@@ -21,7 +21,7 @@ public class KalStuff  {
 	
 	public static final String MODID = "kalstuff";
 	public static final String NAME = "KalStuff";
-	public static final String VERSION = "0.7.0";
+	public static final String VERSION = "0.7.2";
 	
 	//The instance of the mod that Forge uses.
 	@Mod.Instance(KalStuff.MODID)
