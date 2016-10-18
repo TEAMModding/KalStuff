@@ -1,6 +1,6 @@
 package com.team.kalstuff.block;
 
-import com.team.KalStuff;
+import com.team.kalstuff.KalStuff;
 import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 

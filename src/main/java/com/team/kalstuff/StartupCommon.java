@@ -4,7 +4,6 @@ package com.team.kalstuff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.team.KalStuff;
 import com.team.kalstuff.block.KalStuffBlocks;
 import com.team.kalstuff.item.KalStuffItems;
 import com.team.kalstuff.tileentity.KalStuffTileEntities;
@@ -19,7 +18,7 @@ public class StartupCommon {
 	public static final CreativeTabs KALSTUFF = new KalStuffCreativeTab("kalstuffTab");
 	public static final Logger log = LogManager.getLogger(KalStuff.MODID);
 
-	public static void preInitCommon() {
+	public static void preInit() {
 		
 		KalStuffSoundEvents.registerSounds();
 		KalStuffBlocks.setup();
@@ -30,7 +29,7 @@ public class StartupCommon {
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
 	}
 
-	public static void initCommon() {
+	public static void init() {
 
 		log.info("Hi there, nerdy geeks. You should just enjoy Minecraft and stop looking at the system output.");
 		
@@ -39,7 +38,7 @@ public class StartupCommon {
 		MinecraftForge.EVENT_BUS.register(events);
 	}
 
-	public static void postInitCommon() {
+	public static void postInit() {
 		
 		log.info("Wait a minute... Guys! IT WORKS!?! WE MADE A MOD!!!");
 	}

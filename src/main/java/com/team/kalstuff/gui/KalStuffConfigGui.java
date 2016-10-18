@@ -3,7 +3,7 @@ package com.team.kalstuff.gui;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.team.KalStuff;
+import com.team.kalstuff.KalStuff;
 import com.team.kalstuff.config.Configs;
 
 import net.minecraft.client.gui.GuiScreen;

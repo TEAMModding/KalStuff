@@ -2,7 +2,7 @@ package com.team.kalstuff.config;
 
 import java.io.File;
 
-import com.team.KalStuff;
+import com.team.kalstuff.KalStuff;
 
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.config.Property;
