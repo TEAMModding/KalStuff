@@ -8,24 +8,26 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class KalStuffBlocks {
 
-	public static BlockBridge				bridge;
-	public static Block						ender_block;
-	public static Block						blaze_block;
-	public static BlockFood					carrot_block;
+	//Please keep all blocks in alphabetical order!
 	public static BlockFood					apple_block;
-	public static BlockFood					potato_block;
 	public static BlockBakedPotato			baked_potato_block;
+	public static Block						blaze_block;
+	public static BlockBridge				bridge;
+	public static BlockFood					carrot_block;
 	public static BlockChickenNest			chicken_nest;
-	public static BlockTrashCan				trash_can;
-	public static BlockWildGrapeVine		wild_grape_vine;
+	public static Block						ender_block;
 	public static BlockGrapeVine			grape_vine;
+	public static Block						great_grape;
 	public static BlockMoonFlower			moon_flower;
 	public static BlockMoonFlower			moon_flower1;
 	public static BlockMoonFlower			moon_flower2;
 	public static BlockMoonFlower			moon_flower3;
 	public static BlockMoonFlower			moon_flower4;
 	public static BlockMoonFlower			moon_flower5;
-	public static Block						great_grape;
+	public static BlockFood					potato_block;
+	public static BlockTrashCan				trash_can;
+	public static BlockWildGrapeVine		wild_grape_vine;
+
 	
 	/**
 	 * Initializes and registers all blocks from the mod.
@@ -41,25 +43,25 @@ public class KalStuffBlocks {
 	 */
 	public static void initializeBlocks() {
 		
-		bridge = (BlockBridge) new BlockBridge().setUnlocalizedName("bridge");
-    	ender_block = new Block(Material.ROCK).setUnlocalizedName("blockEnder").setHardness(5.0F).setCreativeTab(StartupCommon.KALSTUFF);
-    	blaze_block = new Block(Material.IRON).setUnlocalizedName("blockBlaze").setHardness(35.0F).setCreativeTab(StartupCommon.KALSTUFF);
-    	carrot_block = (BlockFood) new BlockFood(1.5F, 7, 4.8F).setUnlocalizedName("blockCarrot").setCreativeTab(StartupCommon.KALSTUFF);
-    	apple_block = (BlockFood) new BlockFood(1.5F, 9, 2.4F).setUnlocalizedName("blockApple").setCreativeTab(StartupCommon.KALSTUFF);
-    	potato_block = (BlockFood) new BlockFood(1.5F, 3, 0.6F).setUnlocalizedName("blockPotato").setCreativeTab(StartupCommon.KALSTUFF);
-    	baked_potato_block = (BlockBakedPotato) new BlockBakedPotato(1.5F, 11, 6F).setUnlocalizedName("blockBakedPotato").setCreativeTab(StartupCommon.KALSTUFF);
-    	chicken_nest = (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("chickenNest");
-    	trash_can = (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
-    	wild_grape_vine = (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("wildGrapeVine");
-    	grape_vine = (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("grapeVine");
-    	great_grape = new Block(Material.SPONGE).setUnlocalizedName("greatGrape").setCreativeTab(StartupCommon.KALSTUFF);
-    	
-    	moon_flower = (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("moonFlower").setCreativeTab(StartupCommon.KALSTUFF);
-    	moon_flower1 = (BlockMoonFlower) new BlockMoonFlower(1).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower2 = (BlockMoonFlower) new BlockMoonFlower(2).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower3 = (BlockMoonFlower) new BlockMoonFlower(3).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower4 = (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower5 = (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("moonFlower").setCreativeTab(null);
+		//Please keep all blocks in alphabetical order!
+    	apple_block 		= (BlockFood) new BlockFood(1.5F, 9, 2.4F).setUnlocalizedName("blockApple").setCreativeTab(StartupCommon.KALSTUFF);
+    	baked_potato_block	= (BlockBakedPotato) new BlockBakedPotato(1.5F, 11, 6F).setUnlocalizedName("blockBakedPotato").setCreativeTab(StartupCommon.KALSTUFF);
+    	blaze_block 		= new Block(Material.IRON).setUnlocalizedName("blockBlaze").setHardness(35.0F).setCreativeTab(StartupCommon.KALSTUFF);
+		bridge 				= (BlockBridge) new BlockBridge().setUnlocalizedName("bridge");
+    	carrot_block 		= (BlockFood) new BlockFood(1.5F, 7, 4.8F).setUnlocalizedName("blockCarrot").setCreativeTab(StartupCommon.KALSTUFF);
+    	chicken_nest 		= (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("chickenNest");
+    	ender_block 		= new Block(Material.ROCK).setUnlocalizedName("blockEnder").setHardness(5.0F).setCreativeTab(StartupCommon.KALSTUFF);
+    	grape_vine 			= (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("grapeVine");
+    	great_grape 		= new Block(Material.SPONGE).setUnlocalizedName("greatGrape").setCreativeTab(StartupCommon.KALSTUFF);
+    	moon_flower 		= (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("moonFlower").setCreativeTab(StartupCommon.KALSTUFF);
+    	moon_flower1 		= (BlockMoonFlower) new BlockMoonFlower(1).setUnlocalizedName("moonFlower").setCreativeTab(null);
+    	moon_flower2 		= (BlockMoonFlower) new BlockMoonFlower(2).setUnlocalizedName("moonFlower").setCreativeTab(null);
+    	moon_flower3 		= (BlockMoonFlower) new BlockMoonFlower(3).setUnlocalizedName("moonFlower").setCreativeTab(null);
+    	moon_flower4 		= (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("moonFlower").setCreativeTab(null);
+    	moon_flower5 		= (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("moonFlower").setCreativeTab(null);
+    	potato_block 		= (BlockFood) new BlockFood(1.5F, 3, 0.6F).setUnlocalizedName("blockPotato").setCreativeTab(StartupCommon.KALSTUFF);
+    	trash_can 			= (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
+    	wild_grape_vine 	= (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("wildGrapeVine");
 	}
 	
 	/**
@@ -68,26 +70,24 @@ public class KalStuffBlocks {
 	public static void registerBlocks() {
 		
 		//REMEMBER to register ItemBlocks in KalStuffItems!
-		
-		GameRegistry.register(bridge.setRegistryName("bridge"));
-    	GameRegistry.register(ender_block.setRegistryName("ender_block"));
-    	GameRegistry.register(blaze_block.setRegistryName("blaze_block"));
-    	GameRegistry.register(carrot_block.setRegistryName("carrot_block"));
-    	GameRegistry.register(apple_block.setRegistryName("apple_block"));
-    	GameRegistry.register(potato_block.setRegistryName("potato_block"));
+		//Please keep all blocks in alphabetical order!
+		GameRegistry.register(apple_block.setRegistryName("apple_block"));
     	GameRegistry.register(baked_potato_block.setRegistryName("baked_potato_block"));
+    	GameRegistry.register(blaze_block.setRegistryName("blaze_block"));
+		GameRegistry.register(bridge.setRegistryName("bridge"));
+    	GameRegistry.register(carrot_block.setRegistryName("carrot_block"));
     	GameRegistry.register(chicken_nest.setRegistryName("chicken_nest"));
-    	GameRegistry.register(trash_can.setRegistryName("trash_can"));
-    	GameRegistry.register(wild_grape_vine.setRegistryName("wild_grape_vine"));
+    	GameRegistry.register(ender_block.setRegistryName("ender_block"));
     	GameRegistry.register(grape_vine.setRegistryName("grape_vine"));
     	GameRegistry.register(great_grape.setRegistryName("great_grape"));
-    	
     	GameRegistry.register(moon_flower.setRegistryName("moon_flower"));
     	GameRegistry.register(moon_flower1.setRegistryName("moon_flower1"));
     	GameRegistry.register(moon_flower2.setRegistryName("moon_flower2"));
     	GameRegistry.register(moon_flower3.setRegistryName("moon_flower3"));
     	GameRegistry.register(moon_flower4.setRegistryName("moon_flower4"));
     	GameRegistry.register(moon_flower5.setRegistryName("moon_flower5"));
+    	GameRegistry.register(potato_block.setRegistryName("potato_block"));
+    	GameRegistry.register(trash_can.setRegistryName("trash_can"));
+    	GameRegistry.register(wild_grape_vine.setRegistryName("wild_grape_vine"));
 	}
-	
 }
