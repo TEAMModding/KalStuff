@@ -6,6 +6,7 @@ import com.team.kalstuff.block.KalStuffBlocks;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -46,14 +47,20 @@ public class KalStuffItems {
 	public static Item						wine_bottle;
 	public static ItemWine					wine;
 	
-	
+	/**
+	 * Initializes and registers all items from the mod, including ItemBlocks.
+	 */
 	public static void setup() {
 		
-		initialize();
-		register();
+		initializeItems();
+		registerItems();
+		registerItemBlocks();
 	}
 	
-	public static void initialize() {
+	/**
+	 * Initializes all items from the mod.
+	 */
+	public static void initializeItems() {
 		
 		crushed_ender = (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("enderPowder").setCreativeTab(StartupCommon.KALSTUFF);
     	coffee_mug = new Item().setUnlocalizedName("coffeeMug").setCreativeTab(StartupCommon.KALSTUFF);
@@ -90,7 +97,10 @@ public class KalStuffItems {
     	wine_bottle = new Item().setUnlocalizedName("wineBottle").setCreativeTab(StartupCommon.KALSTUFF);
 	}
 	
-	public static void register() {
+	/**
+	 * Registers all items from the mod.
+	 */
+	public static void registerItems() {
 		
 		GameRegistry.register(crushed_ender.setRegistryName("crushed_ender"));
  		GameRegistry.register(coffee_mug.setRegistryName("coffee_mug"));
@@ -125,5 +135,25 @@ public class KalStuffItems {
     	GameRegistry.register(wooden_round_shield.setRegistryName("wooden_round_shield"));
     	GameRegistry.register(wine.setRegistryName("wine"));
     	GameRegistry.register(wine_bottle.setRegistryName("wine_bottle"));
+	}
+	
+	/**
+	 * Registers all ItemBlocks from the mod.
+	 */
+	public static void registerItemBlocks() {
+		
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.bridge).setRegistryName("bridge"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.ender_block).setRegistryName("ender_block"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.blaze_block).setRegistryName("blaze_block"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.carrot_block).setRegistryName("carrot_block"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.apple_block).setRegistryName("apple_block"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.potato_block).setRegistryName("potato_block"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.baked_potato_block).setRegistryName("baked_potato_block"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.chicken_nest).setRegistryName("chicken_nest"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.trash_can).setRegistryName("trash_can"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.wild_grape_vine).setRegistryName("wild_grape_vine"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.grape_vine).setRegistryName("grape_vine"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.great_grape).setRegistryName("great_grape"));
+    	GameRegistry.register(new ItemBlock(KalStuffBlocks.moon_flower).setRegistryName("moon_flower"));
 	}
 }

@@ -4,7 +4,6 @@ import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.ItemBlock;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class KalStuffBlocks {
@@ -28,14 +27,19 @@ public class KalStuffBlocks {
 	public static BlockMoonFlower			moon_flower5;
 	public static Block						great_grape;
 	
-	
+	/**
+	 * Initializes and registers all blocks from the mod.
+	 */
 	public static void setup() {
 		
-		initialize();
-		register();
+		initializeBlocks();
+		registerBlocks();
 	}
 	
-	public static void initialize() {
+	/**
+	 * Initializes all blocks from the mod.
+	 */
+	public static void initializeBlocks() {
 		
 		bridge = (BlockBridge) new BlockBridge().setUnlocalizedName("bridge");
     	ender_block = new Block(Material.ROCK).setUnlocalizedName("blockEnder").setHardness(5.0F).setCreativeTab(StartupCommon.KALSTUFF);
@@ -58,43 +62,25 @@ public class KalStuffBlocks {
     	moon_flower5 = (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("moonFlower").setCreativeTab(null);
 	}
 	
-	public static void register() {
+	/**
+	 * Registers all blocks from the mod.
+	 */
+	public static void registerBlocks() {
+		
+		//REMEMBER to register ItemBlocks in KalStuffItems!
 		
 		GameRegistry.register(bridge.setRegistryName("bridge"));
-    	GameRegistry.register(new ItemBlock(bridge).setRegistryName("bridge"));
-    	
     	GameRegistry.register(ender_block.setRegistryName("ender_block"));
-    	GameRegistry.register(new ItemBlock(ender_block).setRegistryName("ender_block"));
-    	
     	GameRegistry.register(blaze_block.setRegistryName("blaze_block"));
-    	GameRegistry.register(new ItemBlock(blaze_block).setRegistryName("blaze_block"));
-    	
     	GameRegistry.register(carrot_block.setRegistryName("carrot_block"));
-    	GameRegistry.register(new ItemBlock(carrot_block).setRegistryName("carrot_block"));
-    	
     	GameRegistry.register(apple_block.setRegistryName("apple_block"));
-    	GameRegistry.register(new ItemBlock(apple_block).setRegistryName("apple_block"));
-    	
     	GameRegistry.register(potato_block.setRegistryName("potato_block"));
-    	GameRegistry.register(new ItemBlock(potato_block).setRegistryName("potato_block"));
-    	
     	GameRegistry.register(baked_potato_block.setRegistryName("baked_potato_block"));
-    	GameRegistry.register(new ItemBlock(baked_potato_block).setRegistryName("baked_potato_block"));
-    	
     	GameRegistry.register(chicken_nest.setRegistryName("chicken_nest"));
-    	GameRegistry.register(new ItemBlock(chicken_nest).setRegistryName("chicken_nest"));
-    	
     	GameRegistry.register(trash_can.setRegistryName("trash_can"));
-    	GameRegistry.register(new ItemBlock(trash_can).setRegistryName("trash_can"));
-    	
     	GameRegistry.register(wild_grape_vine.setRegistryName("wild_grape_vine"));
-    	GameRegistry.register(new ItemBlock(wild_grape_vine).setRegistryName("wild_grape_vine"));
-    	
     	GameRegistry.register(grape_vine.setRegistryName("grape_vine"));
-    	GameRegistry.register(new ItemBlock(grape_vine).setRegistryName("grape_vine"));
-    	
     	GameRegistry.register(great_grape.setRegistryName("great_grape"));
-    	GameRegistry.register(new ItemBlock(great_grape).setRegistryName("great_grape"));
     	
     	GameRegistry.register(moon_flower.setRegistryName("moon_flower"));
     	GameRegistry.register(moon_flower1.setRegistryName("moon_flower1"));
@@ -102,6 +88,6 @@ public class KalStuffBlocks {
     	GameRegistry.register(moon_flower3.setRegistryName("moon_flower3"));
     	GameRegistry.register(moon_flower4.setRegistryName("moon_flower4"));
     	GameRegistry.register(moon_flower5.setRegistryName("moon_flower5"));
-    	GameRegistry.register(new ItemBlock(moon_flower).setRegistryName("moon_flower"));
 	}
+	
 }
