@@ -11,7 +11,9 @@ UPDATE: We're trying to keep everything in KalStuff unique. Please, if you add a
 
  - [ideas here]
 
- - add day counter to tell you what day you are on(pianoman373): ParkerMc is wokring on it
+ - add boxing gloves(nunyabiznis): Kalman98 is working on it.
+ 
+ - add day counter to tell you what day you are on(pianoman373): ParkerMc is working on it.
 
  - block in minecart like to make some thing like an RV but with minecarts and sticky blocks(ParkerMC)
 
