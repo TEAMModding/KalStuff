@@ -11,6 +11,8 @@ UPDATE: We're trying to keep everything in KalStuff unique. Please, if you add a
 
  - [ideas here]
 
+ - add pome-granites(Kalman98): Kalman98 is working on it.
+
  - add boxing gloves(nunyabiznis): Kalman98 is working on it.
  
  - add day counter to tell you what day you are on(pianoman373): ParkerMc is working on it.
