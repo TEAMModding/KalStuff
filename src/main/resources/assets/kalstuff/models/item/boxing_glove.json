@@ -1,0 +1,46 @@
+{
+    "textures": {
+	"texture" : "kalstuff:items/boxing_glove",
+	"bottom" : "kalstuff:items/boxing_glove_bottom"
+    },
+	"elements": [
+		{
+			"from": [ 5, 5, 5 ],
+			"to": [ 11, 11, 11 ],
+			"faces": {
+    			"down": {"uv": [ 0, 0, 16, 16 ], "texture": "#bottom"},
+				"up": {"uv": [ 0, 0, 16, 16 ], "texture": "#texture"},
+    			"north": {"uv": [ 0, 0, 16, 16 ], "texture": "#texture"},
+    			"south": {"uv": [ 0, 0, 16, 16 ], "texture": "#texture"},
+    			"west": {"uv": [ 0, 0, 16, 16 ], "texture": "#texture"},
+    			"east": {"uv": [ 0, 0, 16, 16 ], "texture": "#texture"}
+			}
+		}
+	],
+	 "display": {
+        "gui": {
+            "rotation": [ 30, 135, 270 ],
+            "translation": [ 0, 0, 0]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0]
+        },
+        "fixed": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 0, 0]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ -90, 0, 0 ],
+            "translation": [ 0, -2, 2]
+        },
+        "firstperson_righthand": {
+            "rotation": [ -90, 0, 0 ],
+            "translation": [ 0, 0, 0]
+        },
+        "firstperson_lefthand": {
+            "rotation": [ -90, 0, 0 ],
+            "translation": [ 0, 0, 0]
+        }
+    }
+}

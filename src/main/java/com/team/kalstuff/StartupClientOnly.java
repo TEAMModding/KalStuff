@@ -63,6 +63,7 @@ public class StartupClientOnly {
 		registerItemRendering("great_grape");
 		registerItemRendering("wine");
 		registerItemRendering("wine_bottle");
+		registerItemRendering("boxing_glove");
 		//from now on add itemRendering here
 	}
 	 
