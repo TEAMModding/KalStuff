@@ -22,9 +22,9 @@ public class ItemBoxingGlove extends Item {
 
             ((WorldServer)player.getEntityWorld()).spawnParticle(EnumParticleTypes.CRIT, entity.posX, entity.posY + (double)entity.height * 0.5D, entity.posZ, 100, 0.0D, 0.0D, 0.0D, 0.5D, new int[0]);
 
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 200, 0));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 200, 9));
-			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 200, 128));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, 200, 0, true, true));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.SLOWNESS, 200, 9, true, true));
+			((EntityLivingBase) entity).addPotionEffect(new PotionEffect(MobEffects.JUMP_BOOST, 200, 128, true, true));
 
 			return true;
 		}
