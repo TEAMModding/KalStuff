@@ -187,6 +187,19 @@ public class KalStuffRecipes {
 				'S', Items.STRING,
 				'D', new ItemStack(Items.DYE, 1, EnumDyeColor.RED.getDyeDamage())
 		});
+		
+		for (int i = 0; i < 16; ++i) {
+			
+			GameRegistry.addRecipe(new ItemStack(KalStuffItems.boxing_glove, 1, i),  new Object[] {
+					"LDL",
+					"LWL",
+					"S S",
+					'L', Items.LEATHER,
+					'W', Blocks.WOOL,
+					'S', Items.STRING,
+					'D', new ItemStack(Items.DYE, 1, i)
+			});
+        }
 	}
 
 	
