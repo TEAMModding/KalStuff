@@ -21,9 +21,9 @@ public class ItemBaconWand extends Item {
 	}
 	
 	@Override
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		playerIn.setActiveHand(hand);
-		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
+		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, playerIn.getHeldItem(hand));
 	}
 	
 	@Override
@@ -35,7 +35,11 @@ public class ItemBaconWand extends Item {
 		if (entity instanceof net.minecraft.entity.player.EntityPlayerMP) {
 			EntityPlayerMP anEntity = (EntityPlayerMP) entity;
 			anEntity.dropItem(false);
-			stack.stackSize --;
+			
+			//TODO: this is bound to change in an update
+			//pseudocode: stack.setSize(stack.getSize() - 1);
+			stack.func_190920_e(stack.func_190916_E() - 1);
+			
 			if (anEntity.canEat(false)) {
 				anEntity.getFoodStats().addStats(5, 10.0F);
 			}
