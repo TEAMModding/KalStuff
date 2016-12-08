@@ -15,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 @Mod(	modid = KalStuff.MODID,
 		name = KalStuff.NAME,
 		version = KalStuff.VERSION,
-		acceptedMinecraftVersions = "[1.9.4, 1.11)",
+		acceptedMinecraftVersions = "[1.12)",
 		guiFactory = "com.team.kalstuff.KalStuffGuiFactory")
 public class KalStuff  {
 	
