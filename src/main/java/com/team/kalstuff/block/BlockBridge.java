@@ -6,7 +6,6 @@ import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.config.Configs;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockPistonBase;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -64,7 +63,7 @@ public class BlockBridge extends Block {
 	    }
 
 	    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-	        return this.getDefaultState().withProperty(FACING, BlockPistonBase.getFacingFromEntity(pos, placer));
+	        return this.getDefaultState().withProperty(FACING, EnumFacing.func_190914_a(pos, placer));
 	    }
 
 	    public static EnumFacing getFacing(int meta) {
@@ -166,12 +165,12 @@ public class BlockBridge extends Block {
 	    		try {
 	    			aBridge.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, origin);
 	    		} catch (StackOverflowError e) {}
-	    		
-	    	} else if (i <= 16 && worldIn.canBlockBePlaced(block, aPos, true, BlockPistonBase.getFacingFromEntity(pos, playerIn), playerIn, itemstack)) {
+	      //} else if (i <= 16 && worldIn.canBlockBePlaced(block, aPos, true, EnumFacing.func_190914_a(pos, playerIn), playerIn, itemstack)) {
+	    	} else if (i <= 16 && block.canPlaceBlockAt(worldIn, aPos)) {
 	    		boolean success = false;
 	    		IBlockState blockstate;
 	    		try {
-	    			blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, BlockPistonBase.getFacingFromEntity(origin, playerIn));
+	    			blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, EnumFacing.func_190914_a(origin, playerIn));
 	    			if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
 	    			success = true;
 	    		} catch (Exception e) {
@@ -195,7 +194,7 @@ public class BlockBridge extends Block {
 	    			SoundType soundtype = block.getSoundType();
 	    			worldIn.playSound(null, aPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
 	    			worldIn.playSound(null, pos, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.BLOCKS, 0.5F, 0.8F);
-	    			if (!playerIn.capabilities.isCreativeMode) --playerIn.getHeldItemMainhand().stackSize;
+	    			if (!playerIn.capabilities.isCreativeMode) playerIn.getHeldItemMainhand().func_190917_f(-1); //TODO: update this
 	    		}
 
 	    	}
