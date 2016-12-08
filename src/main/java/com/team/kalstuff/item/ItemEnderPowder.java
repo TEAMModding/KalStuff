@@ -27,12 +27,16 @@ public class ItemEnderPowder extends Item {
 		this.setCreativeTab(StartupCommon.KALSTUFF); // the item will appear on the Miscellaneous tab in creative
 		}
 		
-		public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
-			super.onItemRightClick(itemStackIn, worldIn, playerIn, hand);
+		public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
+			super.onItemRightClick(worldIn, playerIn, hand);
 			Random rand = new Random();
-				
 			
-			--itemStackIn.stackSize;
+			ItemStack stack = playerIn.getHeldItem(hand);
+			
+			//TODO: name will change
+			//stack.addAmount(-1);
+			stack.func_190917_f(-1);
+			
 			worldIn.playSound(null, playerIn.getPosition(), SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
 			for (int i = 0; i < 32; ++i) {
 				worldIn.spawnParticle(EnumParticleTypes.PORTAL, playerIn.posX, playerIn.posY + rand.nextDouble() * 2.0D, playerIn.posZ, rand.nextGaussian(), 0.0D, rand.nextGaussian(), new int[0]);
@@ -96,7 +100,7 @@ public class ItemEnderPowder extends Item {
 				}
 				
 			}
-			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
+			return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 		}
 		
 		@Override
