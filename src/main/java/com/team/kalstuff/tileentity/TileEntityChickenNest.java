@@ -1,29 +1,31 @@
 package com.team.kalstuff.tileentity;
 
+import java.util.List;
+
 import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Items;
+import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityLockableLoot;
+import net.minecraft.util.ITickable;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraft.util.ITickable;
 import net.minecraft.world.World;
-import net.minecraft.entity.passive.EntityChicken;
-
-import java.util.Arrays;
-import java.util.List;
 
 
-public class TileEntityChickenNest extends TileEntity implements IInventory, ITickable {
+public class TileEntityChickenNest extends TileEntityLockableLoot implements IInventory, ITickable {
 	// Create and initialize the items variable that will store store the items
-	private ItemStack[] inventory = new ItemStack[1];
+    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>func_191197_a(5, ItemStack.field_190927_a);
 	private EntityChicken chicken;
 	private int cooldown;
 	
@@ -64,23 +66,23 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, ITi
     @SuppressWarnings("unused")
 	private boolean hasEmptySpace()
     {
-    	return (this.inventory[0] == null || this.inventory[0].stackSize != this.inventory[0].getMaxStackSize());
+    	return (this.inventory.get(0) == null || this.inventory.get(0).func_190916_E() != this.inventory.get(0).getMaxStackSize()); //TODO: update this
     }
 	
     //Checks if there is any space that the specified item can fit in. Meaning only partial stacks if they're the same item.
     private boolean hasRoomForItem(ItemStack itemstack)
     {
-    	return (this.inventory[0] == null || (this.inventory[0].stackSize != this.inventory[0].getMaxStackSize() && itemstack.getItem() == inventory[0].getItem()));
+    	return (this.inventory.get(0) == null || (this.inventory.get(0).func_190916_E() != this.inventory.get(0).getMaxStackSize() && itemstack.getItem() == this.inventory.get(0).getItem())); //TODO: update this
     }
     
     //Adds as many items from the item stack as it can to the inventory
     private ItemStack add(ItemStack itemstack) {
     	
     	int i;
-    	for (i = 0; i < itemstack.stackSize && this.hasRoomForItem(itemstack); i ++) {
-        	if (this.inventory[0] == null) this.inventory[0] = new ItemStack(itemstack.getItem(), 1);
-        	else this.inventory[0].stackSize++;
-    		itemstack.stackSize--;
+    	for (i = 0; i < itemstack.func_190916_E() && this.hasRoomForItem(itemstack); i ++) {//TODO: update this
+        	if (this.inventory.get(0) == null) this.inventory.set(0, new ItemStack(itemstack.getItem(), 1));
+        	else this.inventory.get(0).func_190917_f(1);//TODO: update this
+    		itemstack.func_190917_f(-1);//TODO: update this
     	}
     	return itemstack;
     }
@@ -88,13 +90,14 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, ITi
 	// Gets the number of slots in the inventory
 	@Override
 	public int getSizeInventory() {
-		return inventory.length;
+		return this.inventory.size();
 	}
 
 	// Gets the stack in the given slot
 	@Override
 	public ItemStack getStackInSlot(int slotIndex) {
-		return inventory[slotIndex];
+        this.fillWithLoot((EntityPlayer)null);
+        return (ItemStack)this.func_190576_q().get(slotIndex);
 	}
 
 	/**
@@ -109,12 +112,12 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, ITi
 		if (itemStackInSlot == null) return null;
 
 		ItemStack itemStackRemoved;
-		if (itemStackInSlot.stackSize <= count) {
+		if (itemStackInSlot.func_190916_E() <= count) {
 			itemStackRemoved = itemStackInSlot;
 			setInventorySlotContents(slotIndex, null);
 		} else {
 			itemStackRemoved = itemStackInSlot.splitStack(count);
-			if (itemStackInSlot.stackSize == 0) {
+			if (itemStackInSlot.func_190916_E() == 0) {
 				setInventorySlotContents(slotIndex, null);
 			}
 		}
@@ -125,9 +128,9 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, ITi
 	// overwrites the stack in the given slotIndex with the given stack
 	@Override
 	public void setInventorySlotContents(int slotIndex, ItemStack itemstack) {
-		inventory[slotIndex] = itemstack;
-		if (itemstack != null && itemstack.stackSize > getInventoryStackLimit()) {
-			itemstack.stackSize = getInventoryStackLimit();
+		inventory.set(slotIndex, itemstack);
+		if (itemstack != null && itemstack.func_190916_E() > getInventoryStackLimit()) {
+			itemstack.func_190920_e(getInventoryStackLimit()); //TODO: update this
 		}
 		markDirty();
 	}
@@ -174,11 +177,11 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, ITi
 		//   as slot=1, id=2353, count=1, etc
 		// Each of these NBTTagCompound are then inserted into NBTTagList, which is similar to an array.
 		NBTTagList dataForAllSlots = new NBTTagList();
-		for (int i = 0; i < this.inventory.length; ++i) {
-			if (this.inventory[i] != null)	{
+		for (int i = 0; i < this.inventory.size(); ++i) {
+			if (this.inventory.get(i) != null)	{
 				NBTTagCompound dataForThisSlot = new NBTTagCompound();
 				dataForThisSlot.setByte("Slot", (byte) i);
-				this.inventory[i].writeToNBT(dataForThisSlot);
+				this.inventory.get(i).writeToNBT(dataForThisSlot);
 				dataForAllSlots.appendTag(dataForThisSlot);
 			}
 		}
@@ -192,25 +195,18 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, ITi
 	@Override
 	public void readFromNBT(NBTTagCompound parentNBTTagCompound)
 	{
-		super.readFromNBT(parentNBTTagCompound); // The super call is required to save and load the tiles location
-		final byte NBT_TYPE_COMPOUND = 10;       // See NBTBase.createNewByType() for a listing
-		NBTTagList dataForAllSlots = parentNBTTagCompound.getTagList("Items", NBT_TYPE_COMPOUND);
+		 super.readFromNBT(parentNBTTagCompound);
+	        this.inventory = NonNullList.<ItemStack>func_191197_a(this.getSizeInventory(), ItemStack.field_190927_a);
 
-		Arrays.fill(inventory, null);           // set all slots to empty
-		for (int i = 0; i < dataForAllSlots.tagCount(); ++i) {
-			NBTTagCompound dataForOneSlot = dataForAllSlots.getCompoundTagAt(i);
-			int slotIndex = dataForOneSlot.getByte("Slot") & 255;
+	        if (!this.checkLootAndRead(parentNBTTagCompound))
+	        {
+	            ItemStackHelper.func_191283_b(parentNBTTagCompound, this.inventory);
+	        }
 
-			if (slotIndex >= 0 && slotIndex < this.inventory.length) {
-				this.inventory[slotIndex] = ItemStack.loadItemStackFromNBT(dataForOneSlot);
-			}
-		}
-	}
-
-	// set all slots to empty
-	@Override
-	public void clear() {
-		Arrays.fill(inventory, null);
+	        if (parentNBTTagCompound.hasKey("CustomName", 8))
+	        {
+	            this.field_190577_o = parentNBTTagCompound.getString("CustomName");
+	        }
 	}
 
 	// will add a key for this container to the lang file so we can name it in the GUI
@@ -272,5 +268,34 @@ public class TileEntityChickenNest extends TileEntity implements IInventory, ITi
 	@Override
 	public ItemStack removeStackFromSlot(int index) {
 		return ItemStackHelper.getAndRemove(inventory, index);
+	}
+
+	@Override
+	public boolean func_191420_l() {
+		return false;
+	}
+
+	@Override
+	public void markDirty() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getGuiID() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	protected NonNullList<ItemStack> func_190576_q() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

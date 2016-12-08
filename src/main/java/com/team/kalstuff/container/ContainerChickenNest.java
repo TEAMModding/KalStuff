@@ -112,7 +112,7 @@ public class ContainerChickenNest extends Container {
 		}
 
 		// If stack size == 0 (the entire stack was moved) set slot contents to null
-		if (sourceStack.func_190916_E() == 0) {
+		if (sourceStack.func_190916_E() == 0) { //TODO: update this
 			sourceSlot.putStack(null);
 		} else {
 			sourceSlot.onSlotChanged();
