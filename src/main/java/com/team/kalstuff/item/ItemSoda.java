@@ -61,9 +61,9 @@ public class ItemSoda extends ItemDrink {
         	  System.out.println("Oh it got hurt.");
           }
 	      System.out.println(stack.getItemDamage() + ", " + stack.getMaxDamage());
-          if (!player.capabilities.isCreativeMode && stack.stackSize == 0) {
+          if (!player.capabilities.isCreativeMode && stack.func_190916_E() == 0) { //TODO: update this
         	  System.out.print("Yipee!");
-	            if (stack.stackSize <= 0) return new ItemStack(KalStuffItems.soda_can);
+	            if (stack.func_190916_E() <= 0) return new ItemStack(KalStuffItems.soda_can); //TODO: update this
 	            else player.inventory.addItemStackToInventory(new ItemStack(KalStuffItems.soda_can));
           }
 	      return stack;
