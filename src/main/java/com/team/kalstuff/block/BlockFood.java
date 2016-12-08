@@ -26,7 +26,7 @@ public class BlockFood extends Block {
 	
 
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
 		if (playerIn.canEat(false)) {
 			playerIn.getFoodStats().addStats(amount, saturation);
 			worldIn.setBlockToAir(pos);
