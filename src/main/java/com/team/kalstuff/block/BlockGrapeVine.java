@@ -66,9 +66,10 @@ public class BlockGrapeVine extends BlockCrops {
             return soil.getBlock() == Blocks.FARMLAND;
     }
     
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, ItemStack heldItem, EnumFacing side, float hitX, float hitY, float hitZ) {
-		super.onBlockActivated(worldIn, pos, state, playerIn, hand, heldItem, side, hitX, hitY, hitZ);
-		
+    
+    
+	@Override
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
 		if (((Integer)state.getValue(AGE)).intValue() == 7) {
 			worldIn.setBlockState(pos, state.withProperty(AGE, 6));
 			Random rand = new Random();
