@@ -2,6 +2,8 @@ package com.team.kalstuff.tileentity;
 
 import java.util.List;
 
+import com.team.kalstuff.container.ContainerChickenNest;
+
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.entity.player.EntityPlayer;
@@ -25,7 +27,7 @@ import net.minecraft.world.World;
 
 public class TileEntityChickenNest extends TileEntityLockableLoot implements IInventory, ITickable {
 	// Create and initialize the items variable that will store store the items
-    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>func_191197_a(5, ItemStack.field_190927_a);
+    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>func_191197_a(1, ItemStack.field_190927_a);
 	private EntityChicken chicken;
 	private int cooldown;
 	
@@ -274,28 +276,20 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 	public boolean func_191420_l() {
 		return false;
 	}
-
+	
 	@Override
-	public void markDirty() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
+        this.fillWithLoot(playerIn);
+        return new ContainerChickenNest(playerInventory, this);
+    }
 
 	@Override
 	public String getGuiID() {
-		// TODO Auto-generated method stub
-		return null;
+		return "kalstuff:chicken_nest";
 	}
 
 	@Override
-	protected NonNullList<ItemStack> func_190576_q() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+    protected NonNullList<ItemStack> func_190576_q() {
+        return this.inventory;
+    }
 }
