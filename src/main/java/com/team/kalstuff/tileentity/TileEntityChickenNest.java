@@ -102,40 +102,29 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
         return (ItemStack)this.func_190576_q().get(slotIndex);
 	}
 
-	/**
-	 * Removes some of the units from itemstack in the given slot, and returns as a separate itemstack
- 	 * @param slotIndex the slot number to remove the items from
-	 * @param count the number of units to remove
-	 * @return a new itemstack containing the units removed from the slot
-	 */
-	@Override
-	public ItemStack decrStackSize(int slotIndex, int count) {
-		ItemStack itemStackInSlot = getStackInSlot(slotIndex);
-		if (itemStackInSlot == null) return null;
+    /**
+     * Removes up to a specified number of items from an inventory slot and returns them in a new stack.
+     */
+    public ItemStack decrStackSize(int index, int count)
+    {
+        this.fillWithLoot((EntityPlayer)null);
+        ItemStack itemstack = ItemStackHelper.getAndSplit(this.func_190576_q(), index, count);
+        return itemstack;
+    }
 
-		ItemStack itemStackRemoved;
-		if (itemStackInSlot.func_190916_E() <= count) {
-			itemStackRemoved = itemStackInSlot;
-			setInventorySlotContents(slotIndex, null);
-		} else {
-			itemStackRemoved = itemStackInSlot.splitStack(count);
-			if (itemStackInSlot.func_190916_E() == 0) {
-				setInventorySlotContents(slotIndex, null);
-			}
-		}
-	  markDirty();
-		return itemStackRemoved;
-	}
+	 /**
+     * Sets the given item stack to the specified slot in the inventory (can be crafting or armor sections).
+     */
+    public void setInventorySlotContents(int index, ItemStack stack)
+    {
+        this.fillWithLoot((EntityPlayer)null);
+        this.func_190576_q().set(index, stack);
 
-	// overwrites the stack in the given slotIndex with the given stack
-	@Override
-	public void setInventorySlotContents(int slotIndex, ItemStack itemstack) {
-		inventory.set(slotIndex, itemstack);
-		if (itemstack != null && itemstack.func_190916_E() > getInventoryStackLimit()) {
-			itemstack.func_190920_e(getInventoryStackLimit()); //TODO: update this
-		}
-		markDirty();
-	}
+        if (stack.func_190916_E() > this.getInventoryStackLimit())
+        {
+            stack.func_190920_e(this.getInventoryStackLimit());
+        }
+    }
 
 	// This is the maximum number if items allowed in each slot
 	// This only affects things such as hoppers trying to insert items you need to use the container to enforce this for players
@@ -288,8 +277,8 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 		return "kalstuff:chicken_nest";
 	}
 
-	@Override
-    protected NonNullList<ItemStack> func_190576_q() {
+    protected NonNullList<ItemStack> func_190576_q()
+    {
         return this.inventory;
     }
 }

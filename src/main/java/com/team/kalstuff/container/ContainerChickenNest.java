@@ -42,7 +42,7 @@ public class ContainerChickenNest extends Container {
 		this.tileEntityChickenNest = tileEntityChickenNest;
 
 		final int SLOT_X_SPACING = 18;
-    final int SLOT_Y_SPACING = 18;
+		final int SLOT_Y_SPACING = 18;
 		final int HOTBAR_XPOS = 8;
 		final int HOTBAR_YPOS = 109;
 		// Add the players hotbar to the gui - the [xpos, ypos] location of each item
