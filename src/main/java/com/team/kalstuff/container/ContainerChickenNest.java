@@ -110,13 +110,7 @@ public class ContainerChickenNest extends Container {
 			System.err.print("Invalid slotIndex:" + sourceSlotIndex);
 			return null;
 		}
-
-		// If stack size == 0 (the entire stack was moved) set slot contents to null
-		if (sourceStack.func_190916_E() == 0) { //TODO: update this
-			sourceSlot.putStack(null);
-		} else {
 			sourceSlot.onSlotChanged();
-		}
 
 		sourceSlot.func_190901_a(player, sourceStack);
 		return copyOfSourceStack;
