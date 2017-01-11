@@ -9,9 +9,9 @@ UPDATE: We're trying to keep everything in KalStuff unique. Please, if you add a
 
 ## Suggestions:
 
- - [ideas here]
+# Guys, could we try to move these to the Issue Tracker? I'm gonna delete them from the README either way. So hurry up.
 
- - add pome-granites(Kalman98): Kalman98 is working on it.
+ - [ideas here]
  
  - add day counter to tell you what day you are on(pianoman373): ParkerMc is working on it.
 
