@@ -37,11 +37,6 @@ public class StartupClientOnly {
 		registerItemRendering("plantable_grape_seeds");
 		registerItemRendering("grape_vine");
 		registerItemRendering("moon_flower");
-		/*registerItemRendering("moon_flower1");
-		registerItemRendering("moon_flower2");
-		registerItemRendering("moon_flower3");
-		registerItemRendering("moon_flower4");
-		registerItemRendering("moon_flower5");*/
 		registerItemRendering("blaze_soup");
 		registerItemRendering("walking_stick");
 		registerItemRendering("soda_can");
