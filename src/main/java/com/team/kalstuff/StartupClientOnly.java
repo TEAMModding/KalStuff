@@ -2,7 +2,6 @@ package com.team.kalstuff;
 
 import com.team.kalstuff.item.KalStuffItems;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
@@ -11,10 +10,6 @@ import net.minecraftforge.client.model.ModelLoader;
 
 public class StartupClientOnly {
 	public static void preInitClientOnly() {
-		
-	}
-	
-	public static void initClientOnly() {
 		
 		registerItemRendering("bridge");
 		registerItemRendering("crushed_ender");
@@ -42,11 +37,11 @@ public class StartupClientOnly {
 		registerItemRendering("plantable_grape_seeds");
 		registerItemRendering("grape_vine");
 		registerItemRendering("moon_flower");
-		registerItemRendering("moon_flower1");
+		/*registerItemRendering("moon_flower1");
 		registerItemRendering("moon_flower2");
 		registerItemRendering("moon_flower3");
 		registerItemRendering("moon_flower4");
-		registerItemRendering("moon_flower5");
+		registerItemRendering("moon_flower5");*/
 		registerItemRendering("blaze_soup");
 		registerItemRendering("walking_stick");
 		registerItemRendering("soda_can");
@@ -63,7 +58,7 @@ public class StartupClientOnly {
 		registerItemRendering("stone_dagger");
 		registerItemRendering("diamond_dagger");
 		registerItemRendering("golden_dagger");
-		registerItemRendering("round_wooden_shield");
+		//registerItemRendering("round_wooden_shield");
 		registerItemRendering("great_grape");
 		registerItemRendering("wine");
 		registerItemRendering("wine_bottle");
@@ -85,6 +80,10 @@ public class StartupClientOnly {
         registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getDyeDamage(), "boxing_glove_white");
         //from now on add itemRendering here
 	}
+	
+	public static void initClientOnly() {
+		
+	}
 	 
 	public static void postInitClientOnly() {
 		
@@ -99,8 +98,7 @@ public class StartupClientOnly {
 	 * @param name The itemModel/block name
 	 */
 	private static void registerItemRendering(String name) {
-		
-		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.REGISTRY.getObject(new ResourceLocation("kalstuff", name)), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(Item.REGISTRY.getObject(new ResourceLocation("kalstuff", name)), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
 	}
 	
 	/**Registers a new ItemModel.
@@ -114,7 +112,6 @@ public class StartupClientOnly {
 	 * @param identifier The string name of the item
 	 */
 	private static void registerItemRendering(Item itm, int subType, String identifier) {
-		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itm, subType, new ModelResourceLocation("kalstuff:" + identifier, "inventory"));
 		ModelLoader.setCustomModelResourceLocation(itm, subType, new ModelResourceLocation("kalstuff:" + identifier, "inventory"));
 	}    
 }

@@ -9,7 +9,6 @@ import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLServerStartingEvent;
 
 
 @Mod(	modid = KalStuff.MODID,
@@ -34,30 +33,21 @@ public class KalStuff  {
 		Configs.loadConfigsFromFile(event.getSuggestedConfigurationFile());
 		
 		FMLCommonHandler.instance().bus().register(this);
-		
 		MinecraftForge.EVENT_BUS.register(new Configs());
-	}
-	
-	@EventHandler
-	public void init(FMLInitializationEvent event) {
 		
 		com.team.kalstuff.StartupCommon.preInit();
 		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.preInitClientOnly();
 	}
 	
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
+	public void init(FMLInitializationEvent event) {
 		
 		com.team.kalstuff.StartupCommon.init();
 		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.initClientOnly();
 	}
 	
 	@EventHandler
-	public void init(FMLServerStartingEvent event) {
+	public void postInit(FMLPostInitializationEvent event) {
 		
-		com.team.kalstuff.StartupCommon.postInit();
-		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.postInitClientOnly();
-		
-		//event.registerServerCommand(new CommandWorldGenBuild());
 	}
 }
