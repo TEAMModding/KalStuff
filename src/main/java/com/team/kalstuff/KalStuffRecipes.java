@@ -178,27 +178,27 @@ public class KalStuffRecipes {
 				'S', Items.STICK
 		});
 		
-	/*	GameRegistry.addRecipe(new ItemStack(KalStuffItems.boxing_glove, 1),  new Object[] {
-				"LDL",
+		GameRegistry.addRecipe(new ItemStack(KalStuffItems.boxing_glove, 1),  new Object[] {
+				"LLL",
 				"LWL",
 				"S S",
 				'L', Items.LEATHER,
 				'W', Blocks.WOOL,
 				'S', Items.STRING,
 				'D', new ItemStack(Items.DYE, 1, EnumDyeColor.RED.getDyeDamage())
-		}); */
+		});
 		
 		for (int i = 0; i < 16; ++i) {
-			
-			GameRegistry.addRecipe(new ItemStack(KalStuffItems.boxing_glove, 1, i),  new Object[] {
-					"LDL",
-					"LWL",
-					"S S",
-					'L', Items.LEATHER,
-					'W', Blocks.WOOL,
-					'S', Items.STRING,
-					'D', new ItemStack(Items.DYE, 1, i)
-			});
+			if (i !=EnumDyeColor.BROWN.getDyeDamage())
+				GameRegistry.addRecipe(new ItemStack(KalStuffItems.boxing_glove, 1, i),  new Object[] {
+						"LLL",
+						"LWL",
+						"SDS",
+						'L', Items.LEATHER,
+						'W', Blocks.WOOL,
+						'S', Items.STRING,
+						'D', new ItemStack(Items.DYE, 1, i)
+				});
         }
 	}
 
