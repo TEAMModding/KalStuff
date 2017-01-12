@@ -1,5 +1,6 @@
 package com.team.kalstuff.item;
 
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -11,10 +12,18 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.DamageSource;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.EnumParticleTypes;
+import net.minecraft.util.NonNullList;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemBoxingGlove extends Item {
+	
+	
+	public ItemBoxingGlove() {
+        this.setHasSubtypes(true);
+	}
 	
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity) {
@@ -65,4 +74,16 @@ public class ItemBoxingGlove extends Item {
 		
 		return super.itemInteractionForEntity(stack, playerIn, target, hand);
 	}
+	
+    /**
+     * returns a list of items with the same ID, but different meta (eg: dye returns 16 items)
+     */
+    @SideOnly(Side.CLIENT)
+    public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems)
+    {
+        for (int i = 0; i < 16; ++i)
+        {
+            subItems.add(new ItemStack(itemIn, 1, i));
+        }
+    }
 }

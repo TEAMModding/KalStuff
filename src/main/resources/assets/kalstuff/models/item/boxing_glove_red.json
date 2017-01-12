@@ -1,7 +1,7 @@
 {
     "textures": {
-	"texture" : "kalstuff:items/boxing_glove",
-	"bottom" : "kalstuff:items/boxing_glove_bottom"
+	"texture" : "kalstuff:items/boxing_glove_red",
+	"bottom" : "kalstuff:items/boxing_glove_red_bottom"
     },
 	"elements": [
 		{

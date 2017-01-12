@@ -1,9 +1,13 @@
 package com.team.kalstuff;
 
+import com.team.kalstuff.item.KalStuffItems;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
 
 public class StartupClientOnly {
 	public static void preInitClientOnly() {
@@ -63,8 +67,23 @@ public class StartupClientOnly {
 		registerItemRendering("great_grape");
 		registerItemRendering("wine");
 		registerItemRendering("wine_bottle");
-		registerItemRendering("boxing_glove");
-		//from now on add itemRendering here
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLACK.getDyeDamage(), "boxing_glove_black");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.RED.getDyeDamage(), "boxing_glove_red");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GREEN.getDyeDamage(), "boxing_glove_green");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BROWN.getDyeDamage(), "boxing_glove_brown");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLUE.getDyeDamage(), "boxing_glove_blue");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PURPLE.getDyeDamage(), "boxing_glove_purple");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.CYAN.getDyeDamage(), "boxing_glove_cyan");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.SILVER.getDyeDamage(), "boxing_glove_silver");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GRAY.getDyeDamage(), "boxing_glove_gray");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PINK.getDyeDamage(), "boxing_glove_pink");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIME.getDyeDamage(), "boxing_glove_lime");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.YELLOW.getDyeDamage(), "boxing_glove_yellow");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getDyeDamage(), "boxing_glove_light_blue");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.MAGENTA.getDyeDamage(), "boxing_glove_magenta");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.ORANGE.getDyeDamage(), "boxing_glove_orange");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getDyeDamage(), "boxing_glove_white");
+        //from now on add itemRendering here
 	}
 	 
 	public static void postInitClientOnly() {
@@ -83,4 +102,19 @@ public class StartupClientOnly {
 		
 		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(Item.REGISTRY.getObject(new ResourceLocation("kalstuff", name)), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
 	}
+	
+	/**Registers a new ItemModel.
+	 * 
+	 * You must specify the Item object,
+	 * the metadata, and the String name of
+	 * the item.
+	 * 
+	 * @param itm The Item object you wish to register
+	 * @param subType The metadata of the item
+	 * @param identifier The string name of the item
+	 */
+	private static void registerItemRendering(Item itm, int subType, String identifier) {
+		//Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(itm, subType, new ModelResourceLocation("kalstuff:" + identifier, "inventory"));
+		ModelLoader.setCustomModelResourceLocation(itm, subType, new ModelResourceLocation("kalstuff:" + identifier, "inventory"));
+	}    
 }

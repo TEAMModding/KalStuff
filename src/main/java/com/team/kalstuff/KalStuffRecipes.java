@@ -178,7 +178,7 @@ public class KalStuffRecipes {
 				'S', Items.STICK
 		});
 		
-		GameRegistry.addRecipe(new ItemStack(KalStuffItems.boxing_glove, 1),  new Object[] {
+	/*	GameRegistry.addRecipe(new ItemStack(KalStuffItems.boxing_glove, 1),  new Object[] {
 				"LDL",
 				"LWL",
 				"S S",
@@ -186,7 +186,7 @@ public class KalStuffRecipes {
 				'W', Blocks.WOOL,
 				'S', Items.STRING,
 				'D', new ItemStack(Items.DYE, 1, EnumDyeColor.RED.getDyeDamage())
-		});
+		}); */
 		
 		for (int i = 0; i < 16; ++i) {
 			
