@@ -1,7 +1,7 @@
 {
     "variants": {
-        "facing=down":  { "model": "kalstuff:bridge_vertical", "x": 180 },
-        "facing=up":    { "model": "kalstuff:bridge_vertical" },
+        "facing=down":  { "model": "kalstuff:bridge", "x": 90 },
+        "facing=up":    { "model": "kalstuff:bridge", "x": 270 },
         "facing=north": { "model": "kalstuff:bridge" },
         "facing=south": { "model": "kalstuff:bridge", "y": 180 },
         "facing=west":  { "model": "kalstuff:bridge", "y": 270 },

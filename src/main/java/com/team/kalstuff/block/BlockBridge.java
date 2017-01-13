@@ -6,10 +6,10 @@ import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.config.Configs;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockDirectional;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
-import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -29,11 +29,10 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class BlockBridge extends Block {
+public class BlockBridge extends BlockDirectional {
 	
 	private boolean particle = false;
 	private BlockPos partLoc;
-    public static final PropertyDirection FACING = PropertyDirection.create("facing");
     
 	public BlockBridge() throws StackOverflowError, IllegalArgumentException, NullPointerException {
 		super(Material.WOOD);
@@ -43,28 +42,29 @@ public class BlockBridge extends Block {
 	}
 
 	 
-	 @SideOnly(Side.CLIENT)
-		public BlockRenderLayer getBlockLayer() {
-			return BlockRenderLayer.SOLID;
-		}
+	@SideOnly(Side.CLIENT)
+	public BlockRenderLayer getBlockLayer() {
+		return BlockRenderLayer.SOLID;
+	}
+	
+	@Override
+	public boolean isOpaqueCube(IBlockState state) {
+		return true;
+	}
+	
+	@Override
+	public boolean isFullCube(IBlockState state) {
+		return true;
+	}
+	
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+		return chain(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ, pos);
+	}
 
-	 @Override
-	 public boolean isOpaqueCube(IBlockState state) {
-	 return true;
-	 }
-	 
-	 @Override
-	 public boolean isFullCube(IBlockState state) {
-		 return true;
-	 }
-	 
-	 public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
-		 return chain(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ, pos);
-	 }
-
- /*   public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
+	@Override
+    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
         return this.getDefaultState().withProperty(FACING, EnumFacing.func_190914_a(pos, placer));
-    }*/
+    }
     
     @Override
     public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
@@ -80,14 +80,12 @@ public class BlockBridge extends Block {
     }
     
     public IBlockState getStateFromMeta(int meta) {
-    	return this.getDefaultState();
+    	return this.getDefaultState().withProperty(FACING, EnumFacing.getFront(meta));
     }
     
     public int getMetaFromState(IBlockState state) {
         byte b0 = 0;
         int i = b0 | ((EnumFacing)state.getValue(FACING)).getIndex();
-
-
 
         return i;
     }
