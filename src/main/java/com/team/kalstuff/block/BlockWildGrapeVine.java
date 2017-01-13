@@ -18,7 +18,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
@@ -112,18 +111,6 @@ public class BlockWildGrapeVine extends BlockBush {
         return f;
     }
     
-    public void grow(World worldIn, BlockPos pos, IBlockState state)
-    {
-        int i = ((Integer)state.getValue(GROWN)).intValue() + MathHelper.getRandomIntegerInRange(worldIn.rand, 2, 5);
-
-        if (i > 1)
-        {
-            i = 1;
-        }
-
-        worldIn.setBlockState(pos, state.withProperty(GROWN, Integer.valueOf(i)));
-    }
-    
 	 @Override
 	 public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
 		super.onBlockActivated(worldIn, pos, state, playerIn, hand, side, hitX, hitY, hitZ);
@@ -138,11 +125,6 @@ public class BlockWildGrapeVine extends BlockBush {
 		return false;
 		
 	}
-	
-	   public void grow(World worldIn, Random rand, BlockPos pos, IBlockState state)
-	    {
-	        this.grow(worldIn, pos, state);
-	    }
 	 
 	    protected BlockStateContainer createBlockState()
 	    {

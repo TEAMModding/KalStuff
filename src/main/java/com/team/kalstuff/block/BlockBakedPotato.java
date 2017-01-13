@@ -8,8 +8,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockBakedPotato extends BlockFood {
 	
@@ -53,16 +51,7 @@ public class BlockBakedPotato extends BlockFood {
             worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
         }
     }
-
-    /**
-     * Possibly modify the given BlockState before rendering it on an Entity (Minecarts, Endermen, ...)
-     */
-    @SideOnly(Side.CLIENT)
-    public IBlockState getStateForEntityRender(IBlockState state) {
-    	
-        return this.getDefaultState().withProperty(FACING, EnumFacing.SOUTH);
-    }
-
+    
     /**
      * Convert the given metadata into a BlockState for this Block
      */
