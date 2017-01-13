@@ -16,15 +16,14 @@ public class WorldGenMoonFlower implements IWorldGenerator {
 
 	@Override
 	public void generate(Random random, int chunkX, int chunkZ, World world, IChunkGenerator chunkGenerator, IChunkProvider chunkProvider) {
-		if (random.nextInt(100) == 1) {
-		ArrayList<BlockPos> somePos = this.getValidLocationsInArea(random, chunkX * 16 + random.nextInt(16), chunkZ * 16 + random.nextInt(16), 8, world);
-		
-		if (somePos != null) {
-			for (int i = 0; i < somePos.size(); i ++)
-				if (somePos.get(i) != null)
-					world.setBlockState(somePos.get(i).up(), KalStuffBlocks.moon_flower.getDefaultState());
-
-		}
+		if (random.nextInt(200) == 1) {
+			ArrayList<BlockPos> somePos = this.getValidLocationsInArea(random, chunkX * 16 + random.nextInt(16), chunkZ * 16 + random.nextInt(16), 8, world);
+			
+			if (somePos != null) {
+				for (int i = 0; i < somePos.size(); i ++)
+					if (somePos.get(i) != null)
+						world.setBlockState(somePos.get(i).up(), KalStuffBlocks.moon_flower.getDefaultState());
+			}
 		}
 	}
 

@@ -11,8 +11,8 @@ import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 
-public class GuiTrashCan extends GuiContainer
-{
+public class GuiTrashCan extends GuiContainer {
+	
 	private static final ResourceLocation texture = new ResourceLocation("kalstuff", "textures/gui/trash_can.png");
 	
 	public GuiTrashCan(InventoryPlayer invPlayer) {
@@ -22,8 +22,7 @@ public class GuiTrashCan extends GuiContainer
 	}
 
 	//Draws the gui image
-	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) 
-	{
+	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		
 		Minecraft.getMinecraft().getTextureManager().bindTexture(texture);
 		GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
@@ -31,8 +30,8 @@ public class GuiTrashCan extends GuiContainer
 	}
 	
 	//Draws the text at the top
-	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) 
-	{
+	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
+		
 		fontRendererObj.drawString(I18n.format("tile.trashCan.name", new Object[0]), 60, 5, Color.darkGray.getRGB());
 	}
 }

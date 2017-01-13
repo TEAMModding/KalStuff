@@ -13,13 +13,6 @@ import java.awt.*;
 import com.team.kalstuff.container.ContainerChickenNest;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
-/**
- * User: brandon3055
- * Date: 06/01/2015
- *
- * GuiChickenNest is a simple gui that does nothing but draw a background image and a line of text on the screen
- * everything else is handled by the vanilla container code
- */
 @SideOnly(Side.CLIENT)
 public class GuiChickenNest extends GuiContainer {
 
