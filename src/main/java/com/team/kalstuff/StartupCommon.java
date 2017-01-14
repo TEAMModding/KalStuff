@@ -5,6 +5,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.team.kalstuff.block.KalStuffBlocks;
+import com.team.kalstuff.entity.KalStuffEntities;
 import com.team.kalstuff.item.KalStuffItems;
 import com.team.kalstuff.tileentity.KalStuffTileEntities;
 import com.team.kalstuff.worldgen.KalStuffWorldGenerator;
@@ -25,7 +26,7 @@ public class StartupCommon {
 		KalStuffItems.setup();
 		KalStuffTileEntities.register();
 		KalStuffWorldGenerator.register();
-		
+		KalStuffEntities.setup();
 		NetworkRegistry.INSTANCE.registerGuiHandler(KalStuff.instance, new KalStuffGuiHandler());
 	}
 

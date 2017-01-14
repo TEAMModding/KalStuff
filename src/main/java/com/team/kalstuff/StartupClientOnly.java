@@ -1,15 +1,21 @@
 package com.team.kalstuff;
 
+import com.team.kalstuff.entity.EntityDuck;
+import com.team.kalstuff.renderer.entity.RenderDuck;
 import com.team.kalstuff.item.KalStuffItems;
 
+import net.minecraft.client.model.ModelChicken;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 
 public class StartupClientOnly {
 	public static void preInitClientOnly() {
+		
+		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class, manager -> new RenderDuck(manager, new ModelChicken(), 0.3F));
 		
 		registerItemRendering("bridge");
 		registerItemRendering("crushed_ender");

@@ -93,46 +93,28 @@ public class BlockBridge extends BlockDirectional {
     	//all of this is just looking sixteen blocks in front of the bridge block, depending on what direction it is facing, to try to find something to do with the given block
     	int i = 0;
     	if (state.getValue(FACING).equals(EnumFacing.EAST))
-    		do {
-    			aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
-    			i ++;
-    		}
-    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i <= 16);
+    		do aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
+    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
     	
     	if (state.getValue(FACING).equals(EnumFacing.WEST))
-    		do {
-    			aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
-    			i ++;
-    		}
-    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i <= 16);
+    		do aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
+    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
     	
     	if (state.getValue(FACING).equals(EnumFacing.UP))
-    		do {
-    			aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
-    			i ++;
-    		}
-    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i <= 16);
+    		do aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
+    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
 			
     	if (state.getValue(FACING).equals(EnumFacing.DOWN))
-    		do {
-    			aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
-    			i ++;
-    		}
-    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i <= 16);
+    		do aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
+    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
 			
     	if (state.getValue(FACING).equals(EnumFacing.NORTH))
-    		do {
-    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
-    			i ++;
-    		}
-    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i <= 16);
+    		do aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
+    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
     	
     	if (state.getValue(FACING).equals(EnumFacing.SOUTH))
-    		do 	{
-    			aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
-    			i ++;
-    		}
-    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i <= 16);
+    		do aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
+    		while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock().getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
     	//end the great block search
     	
     	//if the bridge blocks have chained back to the first one, return
