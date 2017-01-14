@@ -61,6 +61,11 @@ item.wineBottle.name=Empty Wine Bottle
 item.boxingGlove.name=Boxing Glove
 
 #
+# Entities
+##############################
+entity.kalstuff:duck.name=Duck
+
+#
 # GUI
 ##############################
 container.chickenNest.name=Chicken Nest

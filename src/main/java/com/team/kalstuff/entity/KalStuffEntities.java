@@ -18,7 +18,7 @@ public class KalStuffEntities {
 	
 	
 	public static void registerEntities() {
-		registerEntity(EntityDuck.class, "duck", 80, 3, true, 0x0DA70B, 0x101010);
+		registerEntity(EntityDuck.class, "duck", 80, 3, true, 0xFFFFFF, 0xE0C494);
 	}
 	
 	
