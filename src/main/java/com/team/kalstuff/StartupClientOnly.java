@@ -1,7 +1,7 @@
 package com.team.kalstuff;
 
+import com.team.kalstuff.client.renderer.entity.RenderDuck;
 import com.team.kalstuff.entity.EntityDuck;
-import com.team.kalstuff.renderer.entity.RenderDuck;
 import com.team.kalstuff.item.KalStuffItems;
 
 import net.minecraft.client.model.ModelChicken;

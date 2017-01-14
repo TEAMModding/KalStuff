@@ -1,13 +1,11 @@
-package com.team.kalstuff.renderer.entity;
+package com.team.kalstuff.client.renderer.entity;
 
 import com.team.kalstuff.entity.EntityDuck;
 
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.renderer.entity.RenderLiving;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.passive.EntityChicken;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
