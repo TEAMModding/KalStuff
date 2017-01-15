@@ -19,6 +19,7 @@ public class KalStuffItems {
 	public static ItemBaconWand				bacon_wand;
 	public static ItemBlazeSoup				blaze_soup;
 	public static ItemBoxingGlove			boxing_glove;
+	public static ItemChestNut				chest_nut;
 	public static Item						chocolate_cap;
 	public static ItemClosedSoda			closed_apple_soda;
 	public static ItemClosedSoda			closed_grape_soda;
@@ -70,6 +71,7 @@ public class KalStuffItems {
     	bacon_wand 				= (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("baconWand");
     	blaze_soup 				= (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("blazeSoup").setCreativeTab(StartupCommon.KALSTUFF);
     	boxing_glove			= (ItemBoxingGlove) new ItemBoxingGlove().setUnlocalizedName("boxingGlove").setCreativeTab(StartupCommon.KALSTUFF);
+    	chest_nut				= (ItemChestNut) new ItemChestNut(0, 0, false).setUnlocalizedName("chestNut").setCreativeTab(StartupCommon.KALSTUFF);
     	chocolate_cap 			= new Item().setUnlocalizedName("chocolateCap").setCreativeTab(StartupCommon.KALSTUFF);
     	closed_apple_soda		= (ItemClosedSoda) new ItemClosedSoda(apple_soda).setUnlocalizedName("closedAppleSoda").setCreativeTab(StartupCommon.KALSTUFF);
     	closed_grape_soda		= (ItemClosedSoda) new ItemClosedSoda(grape_soda).setUnlocalizedName("closedGrapeSoda").setCreativeTab(StartupCommon.KALSTUFF);
@@ -112,6 +114,7 @@ public class KalStuffItems {
  		GameRegistry.register(bacon_wand.setRegistryName("bacon_wand"));
  		GameRegistry.register(blaze_soup.setRegistryName("blaze_soup"));
  		GameRegistry.register(boxing_glove.setRegistryName("boxing_glove"));
+ 		GameRegistry.register(chest_nut.setRegistryName("chest_nut"));
  		GameRegistry.register(chocolate_cap.setRegistryName("chocolate_cap"));
  		GameRegistry.register(closed_apple_soda.setRegistryName("closed_apple_soda"));
  		GameRegistry.register(closed_grape_soda.setRegistryName("closed_grape_soda"));
