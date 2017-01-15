@@ -37,6 +37,7 @@ public class KalStuffItems {
 	public static ItemDagger				iron_dagger;
 	public static ItemJewelSoup				jewel_soup;
 	public static ItemCoffee				light_coffee;
+	public static ItemLute					lute;
 	public static ItemSoda					melon_soda;
 	public static ItemSeeds					plantable_grape_seeds;
 	public static ItemSoda					root_beer;
@@ -88,6 +89,7 @@ public class KalStuffItems {
     	iron_dagger 			= (ItemDagger) new ItemDagger(Item.ToolMaterial.IRON).setUnlocalizedName("ironDagger").setCreativeTab(StartupCommon.KALSTUFF);
     	jewel_soup 				= (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("jewelSoup").setCreativeTab(StartupCommon.KALSTUFF);
     	light_coffee			= (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("lightCoffee").setCreativeTab(StartupCommon.KALSTUFF);
+    	lute					= (ItemLute) new ItemLute().setUnlocalizedName("lute").setCreativeTab(StartupCommon.KALSTUFF);
     	melon_soda 				= (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.HASTE).setAlwaysEdible().setUnlocalizedName("melonSoda");
     	plantable_grape_seeds 	= (ItemSeeds) new ItemSeeds(KalStuffBlocks.grape_vine, Blocks.FARMLAND).setUnlocalizedName("plantableGrapeSeeds").setCreativeTab(StartupCommon.KALSTUFF);
     	root_beer 				= (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("rootBeer");
@@ -130,6 +132,7 @@ public class KalStuffItems {
     	GameRegistry.register(iron_dagger.setRegistryName("iron_dagger"));
  		GameRegistry.register(jewel_soup.setRegistryName("jewel_soup"));
  		GameRegistry.register(light_coffee.setRegistryName("light_coffee"));
+ 		GameRegistry.register(lute.setRegistryName("lute"));
  		GameRegistry.register(melon_soda.setRegistryName("melon_soda"));
  		GameRegistry.register(plantable_grape_seeds.setRegistryName("plantable_grape_seeds"));
  		GameRegistry.register(root_beer.setRegistryName("root_beer"));
