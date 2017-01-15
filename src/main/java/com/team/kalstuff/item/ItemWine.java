@@ -1,5 +1,7 @@
 package com.team.kalstuff.item;
 
+import java.util.List;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
@@ -40,5 +42,10 @@ public class ItemWine extends ItemDrink {
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
 		super.onItemUseFinish(stack, worldIn, entityLiving);
 		return new ItemStack(KalStuffItems.wine_bottle);
+	}
+	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		tooltip.add("Wine is just messed up.");
 	}
 }
