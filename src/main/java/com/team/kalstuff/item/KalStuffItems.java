@@ -73,10 +73,6 @@ public class KalStuffItems {
     	boxing_glove			= (ItemBoxingGlove) new ItemBoxingGlove().setUnlocalizedName("boxingGlove").setCreativeTab(StartupCommon.KALSTUFF);
     	chest_nut				= (ItemChestNut) new ItemChestNut(0, 0, false).setUnlocalizedName("chestNut").setCreativeTab(StartupCommon.KALSTUFF);
     	chocolate_cap 			= new Item().setUnlocalizedName("chocolateCap").setCreativeTab(StartupCommon.KALSTUFF);
-    	closed_apple_soda		= (ItemClosedSoda) new ItemClosedSoda(apple_soda).setUnlocalizedName("closedAppleSoda").setCreativeTab(StartupCommon.KALSTUFF);
-    	closed_grape_soda		= (ItemClosedSoda) new ItemClosedSoda(grape_soda).setUnlocalizedName("closedGrapeSoda").setCreativeTab(StartupCommon.KALSTUFF);
-    	closed_melon_soda		= (ItemClosedSoda) new ItemClosedSoda(melon_soda).setUnlocalizedName("closedMelonSoda").setCreativeTab(StartupCommon.KALSTUFF);
-      	closed_root_beer		= (ItemClosedSoda) new ItemClosedSoda(root_beer).setUnlocalizedName("closedRootBeer").setCreativeTab(StartupCommon.KALSTUFF);
     	coffee 					= (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("coffee").setCreativeTab(StartupCommon.KALSTUFF);
     	coffee_mug 				= new Item().setUnlocalizedName("coffeeMug").setCreativeTab(StartupCommon.KALSTUFF);
 		crushed_ender 			= (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("enderPowder").setCreativeTab(StartupCommon.KALSTUFF);
@@ -101,6 +97,13 @@ public class KalStuffItems {
     	wine_bottle 			= new Item().setUnlocalizedName("wineBottle").setCreativeTab(StartupCommon.KALSTUFF);
     	wooden_dagger			= (ItemDagger) new ItemDagger(Item.ToolMaterial.WOOD).setUnlocalizedName("woodenDagger").setCreativeTab(StartupCommon.KALSTUFF);
     	wooden_round_shield 	= (ItemRoundShield) new ItemRoundShield(Item.ToolMaterial.WOOD).setUnlocalizedName("roundWoodenShield").setCreativeTab(StartupCommon.KALSTUFF);
+    	
+    	
+    	//These are the exception to the alphabetical rule. The sodas *must* be initiated before these!
+    	closed_apple_soda		= (ItemClosedSoda) new ItemClosedSoda(apple_soda).setUnlocalizedName("closedAppleSoda").setCreativeTab(StartupCommon.KALSTUFF);
+    	closed_grape_soda		= (ItemClosedSoda) new ItemClosedSoda(grape_soda).setUnlocalizedName("closedGrapeSoda").setCreativeTab(StartupCommon.KALSTUFF);
+    	closed_melon_soda		= (ItemClosedSoda) new ItemClosedSoda(melon_soda).setUnlocalizedName("closedMelonSoda").setCreativeTab(StartupCommon.KALSTUFF);
+      	closed_root_beer		= (ItemClosedSoda) new ItemClosedSoda(root_beer).setUnlocalizedName("closedRootBeer").setCreativeTab(StartupCommon.KALSTUFF);
 	}
 	
 	/**

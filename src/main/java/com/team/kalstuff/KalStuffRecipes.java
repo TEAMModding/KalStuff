@@ -236,22 +236,26 @@ public class KalStuffRecipes {
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(KalStuffItems.closed_apple_soda), new Object[] {
 				new ItemStack(KalStuffItems.soda_can),
-				new ItemStack(Items.APPLE)
+				new ItemStack(Items.APPLE),
+				new ItemStack(Blocks.END_STONE)
 		});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(KalStuffItems.closed_grape_soda), new Object[] {
 				new ItemStack(KalStuffItems.soda_can),
-				new ItemStack(KalStuffItems.grapes)
+				new ItemStack(KalStuffItems.grapes),
+				new ItemStack(Blocks.END_STONE)
 		});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(KalStuffItems.closed_melon_soda), new Object[] {
 				new ItemStack(KalStuffItems.soda_can),
-				new ItemStack(Items.MELON)
+				new ItemStack(Items.MELON),
+				new ItemStack(Blocks.END_STONE)
 		});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(KalStuffItems.closed_root_beer), new Object[] {
 				new ItemStack(KalStuffItems.soda_can),
-				new ItemStack(Items.NETHER_WART)
+				new ItemStack(Items.NETHER_WART),
+				new ItemStack(Blocks.END_STONE)
 		});
 		
 		GameRegistry.addShapelessRecipe(new ItemStack(KalStuffItems.infused_bacon_core, 1), new Object[] {

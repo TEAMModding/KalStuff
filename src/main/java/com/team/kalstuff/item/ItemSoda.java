@@ -1,5 +1,7 @@
 package com.team.kalstuff.item;
 
+import java.util.List;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -21,21 +23,24 @@ public class ItemSoda extends ItemDrink {
 		this.effect = potion;
 		this.setMaxDamage(5);
 		this.setMaxStackSize(1);
+		this.setAlwaysEdible();
 	}
 	
-	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn,
-			EnumHand hand) {
+	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
+		
 		if (playerIn.canEat(this.alwaysEdible)) playerIn.setActiveHand(hand);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
 	}
 	
-	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player)
-    {   
-		if (!worldIn.isRemote && this.length != 0)
-		{
-			try{
+	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
+		
+		if (!worldIn.isRemote && this.length != 0) {
+			try {
 				player.addPotionEffect(new PotionEffect(this.effect, ((this.length / (this.getMaxDamage(stack) + 1)) + player.getActivePotionEffect(this.effect).getDuration()), 0));
-			}catch (NullPointerException e) {player.addPotionEffect(new PotionEffect(this.effect, (this.length / (this.getMaxDamage(stack) + 1)), 0));}
+			} catch (NullPointerException e) {
+				player.addPotionEffect(new PotionEffect(this.effect, (this.length / (this.getMaxDamage(stack) + 1)), 0));
+			}
+			
 			if (player.getActivePotionEffect(this.effect).getDuration() > 7200) {
 				player.removePotionEffect(this.effect);
 				player.addPotionEffect(new PotionEffect(this.effect, 7200, 0));
@@ -44,30 +49,27 @@ public class ItemSoda extends ItemDrink {
     }
 	
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
-        if (worldIn.isRemote) return stack;
-        if (entityLiving instanceof EntityPlayer)
-        {
-            EntityPlayer entityplayer = (EntityPlayer)entityLiving;
+		
+		if (worldIn.isRemote) return stack;
+		if (entityLiving instanceof EntityPlayer) {
+			EntityPlayer entityplayer = (EntityPlayer)entityLiving;
             entityplayer.getFoodStats().addStats(this, stack);
             this.onFoodEaten(stack, worldIn, entityplayer);
             entityplayer.addStat(StatList.getObjectUseStats(this));
-        }
-        
-	      final EntityPlayer player = entityLiving instanceof EntityPlayer ? ((EntityPlayer) entityLiving) : null;
-	      
-	      
-          if (!player.capabilities.isCreativeMode) {
-        	  stack.damageItem(1, player);
-        	  System.out.println("Oh it got hurt.");
-          }
-	      System.out.println(stack.getItemDamage() + ", " + stack.getMaxDamage());
-          if (!player.capabilities.isCreativeMode && stack.func_190916_E() == 0) { //TODO: update this
-        	  System.out.print("Yipee!");
-	            if (stack.func_190916_E() <= 0) return new ItemStack(KalStuffItems.soda_can); //TODO: update this
-	            else player.inventory.addItemStackToInventory(new ItemStack(KalStuffItems.soda_can));
-          }
-	      return stack;
-	  }
+  	     }
+		
+		final EntityPlayer player = entityLiving instanceof EntityPlayer ? ((EntityPlayer) entityLiving) : null;
+		
+		
+		if (!player.capabilities.isCreativeMode) {
+			stack.damageItem(1, player);
+		}
+		if (!player.capabilities.isCreativeMode && stack.func_190916_E() == 0) { //TODO: update this
+			if (stack.func_190916_E() <= 0) return new ItemStack(KalStuffItems.soda_can); //TODO: update this
+			else player.inventory.addItemStackToInventory(new ItemStack(KalStuffItems.soda_can));
+		}
+		return stack;
+	}
 	
     /**
      * How long it takes to use or consume an item
@@ -76,4 +78,9 @@ public class ItemSoda extends ItemDrink {
     public int getMaxItemUseDuration(ItemStack stack) {
         return 5;
     }
+	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		tooltip.add("With bubbly endstone!");
+	}
 }

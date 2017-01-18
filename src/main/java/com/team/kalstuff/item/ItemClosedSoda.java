@@ -1,5 +1,7 @@
 package com.team.kalstuff.item;
 
+import java.util.List;
+
 import com.team.kalstuff.KalStuffSoundEvents;
 
 import net.minecraft.entity.player.EntityPlayer;
@@ -40,4 +42,8 @@ public class ItemClosedSoda extends Item {
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
 	}
 	
+	@Override
+	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+		tooltip.add("With bubbly endstone!");
+	}
 }
