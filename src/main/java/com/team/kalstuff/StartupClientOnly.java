@@ -24,6 +24,7 @@ public class StartupClientOnly {
 		registerItemRendering("ender_block");
 		registerItemRendering("tea");
 		registerItemRendering("light_coffee");
+		registerItemRendering("lute");
 		registerItemRendering("blaze_block");
 		registerItemRendering("carrot_block");
 		registerItemRendering("apple_block");
