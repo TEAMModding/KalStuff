@@ -8,3 +8,7 @@ before_install:
 
 install: ./gradlew setupCIWorkspace -S
 script: ./gradlew build -S
+
+env:
+  global:
+    TERM=dumb
