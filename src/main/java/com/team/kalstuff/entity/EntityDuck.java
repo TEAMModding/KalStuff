@@ -84,7 +84,7 @@ public class EntityDuck extends EntityAnimal {
         this.oFlap = this.wingRotation;
         this.oFlapSpeed = this.destPos;
         this.destPos = (float)((double)this.destPos + (double)(this.onGround ? -1 : 4) * 0.3D);
-        this.destPos = MathHelper.clamp_float(this.destPos, 0.0F, 1.0F);
+        this.destPos = MathHelper.clamp(this.destPos, 0.0F, 1.0F);
 
         if (!this.onGround && this.wingRotDelta < 1.0F)
         {
@@ -100,7 +100,7 @@ public class EntityDuck extends EntityAnimal {
 
         this.wingRotation += this.wingRotDelta * 2.0F;
 
-        if (!this.worldObj.isRemote && !this.isChild() && !this.isChickenJockey() && --this.timeUntilNextEgg <= 0)
+        if (!this.world.isRemote && !this.isChild() && !this.isChickenJockey() && --this.timeUntilNextEgg <= 0)
         {
             this.playSound(SoundEvents.ENTITY_CHICKEN_EGG, 1.0F, (this.rand.nextFloat() - this.rand.nextFloat()) * 0.2F + 1.0F);
             this.dropItem(Items.EGG, 1);
@@ -138,9 +138,9 @@ public class EntityDuck extends EntityAnimal {
         return LootTableList.ENTITIES_CHICKEN;
     }
 
-    public EntityChicken createChild(EntityAgeable ageable)
+    public EntityDuck createChild(EntityAgeable ageable)
     {
-        return new EntityChicken(this.worldObj);
+        return new EntityDuck(this.world);
     }
 
     /**

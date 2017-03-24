@@ -60,7 +60,7 @@ public class StartupClientOnly {
 		registerItemRendering("stone_dagger");
 		registerItemRendering("diamond_dagger");
 		registerItemRendering("golden_dagger");
-		//registerItemRendering("round_wooden_shield");
+		registerItemRendering("wooden_round_shield");
 		registerItemRendering("great_grape");
 		registerItemRendering("wine");
 		registerItemRendering("wine_bottle");

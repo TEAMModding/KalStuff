@@ -32,7 +32,7 @@ public class ItemInventory implements IInventory {
 	}
 
 	@Override
-	public boolean func_191420_l() {
+	public boolean isEmpty() {
 		// TODO Auto-generated method stub
 		return false;
 	}
@@ -74,7 +74,7 @@ public class ItemInventory implements IInventory {
 	}
 
 	@Override
-	public boolean isUseableByPlayer(EntityPlayer player) {
+	public boolean isUsableByPlayer(EntityPlayer player) {
 		// TODO Auto-generated method stub
 		return false;
 	}

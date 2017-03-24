@@ -36,9 +36,9 @@ public class ContainerTrashCan extends Container {
 	public ItemStack transferStackInSlot(EntityPlayer player, int sourceSlotIndex) {
 		
 		Slot sourceSlot = (Slot)inventorySlots.get(sourceSlotIndex);
-		//an item stack cannot be null. `ItemStack.field_190927_a` is a special "allowed" null stack
-		sourceSlot.putStack(ItemStack.field_190927_a);
-		return ItemStack.field_190927_a;
+		//an item stack cannot be null. `ItemStack.EMPTY` is a special "allowed" null stack
+		sourceSlot.putStack(ItemStack.EMPTY);
+		return ItemStack.EMPTY;
 	}
 	
 	@Override

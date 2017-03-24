@@ -109,7 +109,7 @@ public class BlockChickenNest extends BlockContainer {
 					item.motionZ = motionZ * multiplier;
 
 					// Spawn the item in the world
-					worldIn.spawnEntityInWorld(item);
+					worldIn.spawnEntity(item);
 				}
 			}
 

@@ -46,7 +46,7 @@ public class BlockBridge extends BlockDirectional {
     
     @Override
     public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, EnumHand hand) {
-        return this.getDefaultState().withProperty(FACING, EnumFacing.func_190914_a(pos, placer));
+        return this.getDefaultState().withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(pos, placer));
     }
 
     public IBlockState getStateFromMeta(int meta) {
@@ -84,7 +84,7 @@ public class BlockBridge extends BlockDirectional {
     	
     	//if the block cannot be picked up by endermen, is not a bridge block, and in the case of TNT is not allowed in the config, return with a chat message
     	if ((!EntityEnderman.getCarriable(block) && block != KalStuffBlocks.bridge) || (Configs.bridgeTNT && block == Blocks.TNT)) {
-    		playerIn.addChatMessage(new TextComponentTranslation("The bridge is unable to send this block", new Object[0]));
+    		playerIn.sendMessage(new TextComponentTranslation("The bridge is unable to send this block", new Object[0]));
     		return true;
     	}
     	
@@ -121,7 +121,7 @@ public class BlockBridge extends BlockDirectional {
     	if (aPos.equals(origin)) return true;
     	//if the found position is more than sixteen blocks away despite all of the checks above, then send a message that the bridge cannot reach that far
     	if (i > 16) {
-    		playerIn.addChatMessage(new TextComponentTranslation("The bridge cannot reach that far", new Object[0]));
+    		playerIn.sendMessage(new TextComponentTranslation("The bridge cannot reach that far", new Object[0]));
     		return true;
     	}
     	
@@ -139,7 +139,7 @@ public class BlockBridge extends BlockDirectional {
     		IBlockState blockstate;
     		try {
     			//attempt to place as a six-directional block, e.g. dispenser
-    			blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, EnumFacing.func_190914_a(origin, playerIn));
+    			blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem()).getStateFromMeta(itemstack.getMetadata()).withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(origin, playerIn));
     			if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos)) worldIn.setBlockState(aPos, blockstate);
     			success = true;
     		} catch (Exception e) {
@@ -165,7 +165,7 @@ public class BlockBridge extends BlockDirectional {
     			SoundType soundtype = block.getSoundType();
     			worldIn.playSound(null, aPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
     			worldIn.playSound(null, pos, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.BLOCKS, 0.5F, 0.8F);
-    			if (!playerIn.capabilities.isCreativeMode) playerIn.getHeldItemMainhand().func_190917_f(-1); //TODO: update this
+    			if (!playerIn.capabilities.isCreativeMode) playerIn.getHeldItemMainhand().shrink(1); //TODO: update this
     		}
 
     	}

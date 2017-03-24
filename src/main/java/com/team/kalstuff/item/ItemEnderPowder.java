@@ -33,9 +33,7 @@ public class ItemEnderPowder extends Item {
 			
 			ItemStack stack = playerIn.getHeldItem(hand);
 			
-			//TODO: name will change
-			//stack.addAmount(-1);
-			stack.func_190917_f(-1);
+			stack.shrink(1);
 			
 			worldIn.playSound(null, playerIn.getPosition(), SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.PLAYERS, 1.0F, 1.0F);
 			for (int i = 0; i < 32; ++i) {
@@ -85,7 +83,7 @@ public class ItemEnderPowder extends Item {
 							EntityEndermite entityendermite = new EntityEndermite(worldIn);
 							entityendermite.setSpawnedByPlayer(true);
 							entityendermite.setLocationAndAngles(playerIn.posX, playerIn.posY, playerIn.posZ, playerIn.rotationYaw, playerIn.rotationPitch);
-							worldIn.spawnEntityInWorld(entityendermite);
+							worldIn.spawnEntity(entityendermite);
 						}
 						
 						if (playerIn.isRiding()) {
@@ -94,7 +92,7 @@ public class ItemEnderPowder extends Item {
 						
 						playerIn.setPositionAndUpdate(event.getTargetX(), event.getTargetY(), event.getTargetZ());
 						playerIn.fallDistance = 0.0F;
-						playerIn.attackEntityFrom(DamageSource.fall, event.getAttackDamage());
+						playerIn.attackEntityFrom(DamageSource.FALL, event.getAttackDamage());
 					}
 					
 				}

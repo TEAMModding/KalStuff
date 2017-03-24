@@ -24,6 +24,7 @@ public class ItemSoda extends ItemDrink {
 		this.setMaxDamage(5);
 		this.setMaxStackSize(1);
 		this.setAlwaysEdible();
+		this.setCreativeTab(null);
 	}
 	
 	public ActionResult<ItemStack> onItemRightClick(ItemStack itemStackIn, World worldIn, EntityPlayer playerIn, EnumHand hand) {
@@ -64,8 +65,8 @@ public class ItemSoda extends ItemDrink {
 		if (!player.capabilities.isCreativeMode) {
 			stack.damageItem(1, player);
 		}
-		if (!player.capabilities.isCreativeMode && stack.func_190916_E() == 0) { //TODO: update this
-			if (stack.func_190916_E() <= 0) return new ItemStack(KalStuffItems.soda_can); //TODO: update this
+		if (!player.capabilities.isCreativeMode && stack.getCount() == 0) { //TODO: update this
+			if (stack.getCount() <= 0) return new ItemStack(KalStuffItems.soda_can); //TODO: update this
 			else player.inventory.addItemStackToInventory(new ItemStack(KalStuffItems.soda_can));
 		}
 		return stack;

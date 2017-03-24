@@ -30,20 +30,18 @@ public class ItemBaconWand extends Item {
 	public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer playerIn, EntityLivingBase entity, EnumHand hand)
     {
 		
-		if (entity.worldObj.isRemote) return false;
+		if (entity.world.isRemote) return false;
 		
 		if (entity instanceof net.minecraft.entity.player.EntityPlayerMP) {
 			EntityPlayerMP anEntity = (EntityPlayerMP) entity;
 			anEntity.dropItem(false);
 			
-			//TODO: this is bound to change in an update
-			//pseudocode: stack.setSize(stack.getSize() - 1);
-			stack.func_190920_e(stack.func_190916_E() - 1);
+			stack.shrink(1);;
 			
 			if (anEntity.canEat(false)) {
 				anEntity.getFoodStats().addStats(5, 10.0F);
 			}
-			anEntity.worldObj.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, anEntity.worldObj.rand.nextFloat() * 0.1F + 0.9F);
+			anEntity.world.playSound(null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_PLAYER_BURP, SoundCategory.PLAYERS, 0.5F, anEntity.world.rand.nextFloat() * 0.1F + 0.9F);
 			
 		}
 		return true;
