@@ -1,9 +1,5 @@
 package com.team.kalstuff;
 
-import com.team.kalstuff.config.Configs;
-
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -26,28 +22,25 @@ public class KalStuff  {
 	@Mod.Instance(KalStuff.MODID)
 	public static KalStuff instance;
 
-	@SuppressWarnings("deprecation")
 	@EventHandler
-	public void preInit(FMLPreInitializationEvent event) {
-		
-		Configs.loadConfigsFromFile(event.getSuggestedConfigurationFile());
-		
-		FMLCommonHandler.instance().bus().register(this);
-		MinecraftForge.EVENT_BUS.register(new Configs());
-		
-		com.team.kalstuff.StartupCommon.preInit();
-		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.preInitClientOnly();
+	public void preInit(FMLPreInitializationEvent event)
+	{	
+		com.team.kalstuff.StartupCommon.preInit(event, this);
+		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.preInitClientOnly(event);
 	}
 	
 	@EventHandler
-	public void init(FMLInitializationEvent event) {
-		
-		com.team.kalstuff.StartupCommon.init();
-		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.initClientOnly();
+	public void init(FMLInitializationEvent event)
+	{	
+		com.team.kalstuff.StartupCommon.init(event, this);
+		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.initClientOnly(event);
 	}
 	
 	@EventHandler
-	public void postInit(FMLPostInitializationEvent event) {
+	public void postInit(FMLPostInitializationEvent event)
+	{	
+		com.team.kalstuff.StartupCommon.postInit(event, this);
+		if (event.getSide().isClient()) com.team.kalstuff.StartupClientOnly.postInitClientOnly(event);
 		
 	}
 }

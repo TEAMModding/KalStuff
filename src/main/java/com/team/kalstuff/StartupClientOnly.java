@@ -11,10 +11,13 @@ import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 public class StartupClientOnly {
-	public static void preInitClientOnly() {
-		
+	public static void preInitClientOnly(FMLPreInitializationEvent event)
+	{	
 		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class, manager -> new RenderDuck(manager, new ModelChicken(), 0.3F));
 		
 		registerItemRendering("bridge");
@@ -83,11 +86,13 @@ public class StartupClientOnly {
         //from now on add itemRendering here
 	}
 	
-	public static void initClientOnly() {
+	public static void initClientOnly(FMLInitializationEvent event)
+	{
 		
 	}
 	 
-	public static void postInitClientOnly() {
+	public static void postInitClientOnly(FMLPostInitializationEvent event)
+	{
 		
 	}
 	
