@@ -26,16 +26,16 @@ import net.minecraft.world.World;
 
 
 public class TileEntityChickenNest extends TileEntityLockableLoot implements IInventory, ITickable {
-	// Create and initialize the items variable that will store store the items
-    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>func_191197_a(1, ItemStack.field_190927_a);
+	// Create and initialize the items variable that will store the items
+    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 	private EntityChicken chicken;
 	private int cooldown;
 	
 	//Check for items
 	@Override
 	public void update() {
-		if (!worldObj.isRemote) {
-			EntityItem item = CheckForItemEntities(this.worldObj, this.pos.getX(), this.pos.getY(), this.pos.getZ());
+		if (!world.isRemote) {
+			EntityItem item = CheckForItemEntities(this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
 			if (item != null)
 			{
 				ItemStack itemstack = item.getEntityItem().copy();
@@ -44,7 +44,7 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 			
 			if (this.cooldown > 0) this.cooldown --;
 			if (this.chicken != null && this.chicken.isDead) this.chicken = null;
-			if (this.chicken == null && this.cooldown <= 0) this.chicken = CheckForChickens(this.worldObj, this.pos.getX(), this.pos.getY(), this.pos.getZ());
+			if (this.chicken == null && this.cooldown <= 0) this.chicken = CheckForChickens(this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
 			else if (this.chicken != null) this.chicken.setPosition(this.getPos().getX() + .5, this.getPos().getY(), this.getPos().getZ() + .5);
 		}
 		
@@ -68,23 +68,23 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
     @SuppressWarnings("unused")
 	private boolean hasEmptySpace()
     {
-    	return (this.inventory.get(0) == null || this.inventory.get(0).func_190916_E() != this.inventory.get(0).getMaxStackSize()); //TODO: update this
+    	return (this.inventory.get(0) == null || this.inventory.get(0).getCount() != this.inventory.get(0).getMaxStackSize()); //TODO: update this
     }
 	
     //Checks if there is any space that the specified item can fit in. Meaning only partial stacks if they're the same item.
     private boolean hasRoomForItem(ItemStack itemstack)
     {
-    	return (this.inventory.get(0) == null || (this.inventory.get(0).func_190916_E() != this.inventory.get(0).getMaxStackSize() && itemstack.getItem() == this.inventory.get(0).getItem())); //TODO: update this
+    	return (this.inventory.get(0) == null || (this.inventory.get(0).getCount() != this.inventory.get(0).getMaxStackSize() && itemstack.getItem() == this.inventory.get(0).getItem())); //TODO: update this
     }
     
     //Adds as many items from the item stack as it can to the inventory
     private ItemStack add(ItemStack itemstack) {
     	
     	int i;
-    	for (i = 0; i < itemstack.func_190916_E() && this.hasRoomForItem(itemstack); i ++) {//TODO: update this
+    	for (i = 0; i < itemstack.getCount() && this.hasRoomForItem(itemstack); i ++) {//TODO: update this
         	if (this.inventory.get(0) == null) this.inventory.set(0, new ItemStack(itemstack.getItem(), 1));
-        	else this.inventory.get(0).func_190917_f(1);//TODO: update this
-    		itemstack.func_190917_f(-1);//TODO: update this
+        	else this.inventory.get(0).grow(1);//TODO: update this
+    		itemstack.shrink(1);//TODO: update this
     	}
     	return itemstack;
     }
@@ -99,7 +99,7 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 	@Override
 	public ItemStack getStackInSlot(int slotIndex) {
         this.fillWithLoot((EntityPlayer)null);
-        return (ItemStack)this.func_190576_q().get(slotIndex);
+        return (ItemStack)this.inventory.get(slotIndex);
 	}
 
     /**
@@ -108,7 +108,7 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
     public ItemStack decrStackSize(int index, int count)
     {
         this.fillWithLoot((EntityPlayer)null);
-        ItemStack itemstack = ItemStackHelper.getAndSplit(this.func_190576_q(), index, count);
+        ItemStack itemstack = ItemStackHelper.getAndSplit(this.inventory, index, count);
         return itemstack;
     }
 
@@ -118,11 +118,11 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
     public void setInventorySlotContents(int index, ItemStack stack)
     {
         this.fillWithLoot((EntityPlayer)null);
-        this.func_190576_q().set(index, stack);
+        this.inventory.set(index, stack);
 
-        if (stack.func_190916_E() > this.getInventoryStackLimit())
+        if (stack.getCount() > this.getInventoryStackLimit())
         {
-            stack.func_190920_e(this.getInventoryStackLimit());
+            stack.setCount(this.getInventoryStackLimit());
         }
     }
 
@@ -138,15 +138,15 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 	// 1) the world tileentity hasn't been replaced in the meantime, and
 	// 2) the player isn't too far away from the centre of the block
 	@Override
-	public boolean isUseableByPlayer(EntityPlayer player) {
-		if (this.worldObj.getTileEntity(this.pos) != this) return false;
+	public boolean isUsableByPlayer(EntityPlayer player) {
+		if (this.world.getTileEntity(this.pos) != this) return false;
 		final double X_CENTRE_OFFSET = 0.5;
 		final double Y_CENTRE_OFFSET = 0.5;
 		final double Z_CENTRE_OFFSET = 0.5;
 		final double MAXIMUM_DISTANCE_SQ = 8.0 * 8.0;
 		return player.getDistanceSq(pos.getX() + X_CENTRE_OFFSET, pos.getY() + Y_CENTRE_OFFSET, pos.getZ() + Z_CENTRE_OFFSET) < MAXIMUM_DISTANCE_SQ;
 	}
-
+	
 	// Return true if the given stack is allowed to go in the given slot.  In this case, we can insert anything.
 	// This only affects things such as hoppers trying to insert items you need to use the container to enforce this for players
 	// inserting items via the gui
@@ -187,16 +187,16 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 	public void readFromNBT(NBTTagCompound parentNBTTagCompound)
 	{
 		 super.readFromNBT(parentNBTTagCompound);
-	        this.inventory = NonNullList.<ItemStack>func_191197_a(this.getSizeInventory(), ItemStack.field_190927_a);
+	        this.inventory = NonNullList.<ItemStack>withSize(this.getSizeInventory(), ItemStack.EMPTY);
 
 	        if (!this.checkLootAndRead(parentNBTTagCompound))
 	        {
-	            ItemStackHelper.func_191283_b(parentNBTTagCompound, this.inventory);
+	            ItemStackHelper.loadAllItems(parentNBTTagCompound, this.inventory);
 	        }
 
 	        if (parentNBTTagCompound.hasKey("CustomName", 8))
 	        {
-	            this.field_190577_o = parentNBTTagCompound.getString("CustomName");
+	            this.customName = parentNBTTagCompound.getString("CustomName");
 	        }
 	}
 
@@ -218,7 +218,7 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 	}*/
 
 	public void dropChicken() {
-		if (!worldObj.isRemote) {
+		if (!world.isRemote) {
 			this.resetCooldown();
 			if (this.chicken != null) this.chicken.setPositionAndUpdate(this.getPos().getX() + .5, this.getPos().getY() + .6, this.getPos().getZ() + .5);
 			this.chicken = null;
@@ -260,11 +260,6 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 	public ItemStack removeStackFromSlot(int index) {
 		return ItemStackHelper.getAndRemove(inventory, index);
 	}
-
-	@Override
-	public boolean func_191420_l() {
-		return false;
-	}
 	
 	@Override
     public Container createContainer(InventoryPlayer playerInventory, EntityPlayer playerIn) {
@@ -277,8 +272,13 @@ public class TileEntityChickenNest extends TileEntityLockableLoot implements IIn
 		return "kalstuff:chicken_nest";
 	}
 
-    protected NonNullList<ItemStack> func_190576_q()
-    {
+	@Override
+	public boolean isEmpty() {
+		return false;
+	}
+
+	@Override
+	protected NonNullList<ItemStack> getItems() {
         return this.inventory;
-    }
+	}
 }

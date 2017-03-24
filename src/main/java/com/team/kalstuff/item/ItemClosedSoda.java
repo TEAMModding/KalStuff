@@ -30,13 +30,9 @@ public class ItemClosedSoda extends Item {
 		
 		ItemStack stack = playerIn.getHeldItem(hand);
 		
-		//TODO: these functions are going to change
+		stack.shrink(1);
 		
-		//pseudocode: stack.addAmount(-1);
-		stack.func_190917_f(-1);
-		
-		//pseudocode: stack.getAmount() <= 0
-        if (stack.func_190916_E() <= 0) return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, new ItemStack(this.item));
+        if (stack.getCount() <= 0) return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, new ItemStack(this.item));
         playerIn.inventory.addItemStackToInventory(new ItemStack(this.item));
         
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);

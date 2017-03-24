@@ -29,10 +29,10 @@ public class ItemDagger extends ItemSword {
 
 	        if (slot == EntityEquipmentSlot.MAINHAND)
 	        {
-	        	multimap.removeAll(SharedMonsterAttributes.ATTACK_DAMAGE.getAttributeUnlocalizedName());
-	        	multimap.removeAll(SharedMonsterAttributes.ATTACK_SPEED.getAttributeUnlocalizedName());
-	            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getAttributeUnlocalizedName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double)this.attackDamage, 0));
-	            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getAttributeUnlocalizedName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", -1.2D, 0));
+	        	multimap.removeAll(SharedMonsterAttributes.ATTACK_DAMAGE.getName());
+	        	multimap.removeAll(SharedMonsterAttributes.ATTACK_SPEED.getName());
+	            multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(), new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double)this.attackDamage, 0));
+	            multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(), new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", -1.2D, 0));
 	        }
 
 	        return multimap;

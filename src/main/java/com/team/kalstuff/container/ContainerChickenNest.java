@@ -77,7 +77,7 @@ public class ContainerChickenNest extends Container {
 	@Override
 	public boolean canInteractWith(EntityPlayer player)
 	{
-		return tileEntityChickenNest.isUseableByPlayer(player);
+		return tileEntityChickenNest.isUsableByPlayer(player);
 	}
 
 	// This is where you specify what happens when a player shift clicks a slot in the gui
@@ -112,7 +112,7 @@ public class ContainerChickenNest extends Container {
 		}
 			sourceSlot.onSlotChanged();
 
-		sourceSlot.func_190901_a(player, sourceStack);
+		sourceSlot.onTake(player, sourceStack);
 		return copyOfSourceStack;
 	}
 

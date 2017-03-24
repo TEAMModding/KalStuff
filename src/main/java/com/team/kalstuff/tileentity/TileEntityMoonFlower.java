@@ -11,11 +11,11 @@ public class TileEntityMoonFlower extends TileEntity implements ITickable {
 	
 	@Override
 	public void update() {
-		if (this.worldObj != null && !this.worldObj.isRemote && worldObj.getWorldTime() >= 13000 || worldObj.getWorldTime() < 1000) {  
+		if (this.world != null && !this.world.isRemote && world.getWorldTime() >= 13000 || world.getWorldTime() < 1000) {  
 			this.blockType = this.getBlockType();
 			
             if (this.blockType instanceof BlockMoonFlower)
-                ((BlockMoonFlower)this.blockType).checkSky(this.worldObj, this.pos);
+                ((BlockMoonFlower)this.blockType).checkSky(this.world, this.pos);
         }
 	}
 }
