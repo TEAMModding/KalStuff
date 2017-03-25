@@ -1,11 +1,7 @@
 package com.team.kalstuff.item;
 
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.world.World;
+import net.minecraft.potion.Potion;
 
 public class ItemCoffee extends ItemDrink {
 
@@ -18,26 +14,9 @@ public class ItemCoffee extends ItemDrink {
 	 *            is the length of the speed effect the player gets upon
 	 *            drinking.
 	 */
-	public ItemCoffee(int amount, float saturation, boolean isWolfFood, int potionLength) {
-		super(amount, saturation, isWolfFood);
+	public ItemCoffee(int amount, float saturation, int potionLength, Potion potion) {
+		super(amount, saturation, potionLength, potion);
 		this.setMaxStackSize(1);
-		this.potionLength = potionLength;
-	}
-
-	public ItemCoffee(int amount, float saturation, boolean isWolfFood) {
-		super(amount, saturation, isWolfFood);
-		this.setMaxStackSize(1);
-	}
-
-	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
-		if (!worldIn.isRemote && this.potionLength != 0) {
-			player.addPotionEffect(new PotionEffect(MobEffects.SPEED, this.potionLength, 0));
-		}
-	}
-
-	@Override
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
-		super.onItemUseFinish(stack, worldIn, entityLiving);
-		return new ItemStack(KalStuffItems.coffee_mug);
+		this.setReturnStack(new ItemStack(KalStuffItems.coffee_mug));
 	}
 }

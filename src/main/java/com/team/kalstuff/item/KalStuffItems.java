@@ -9,6 +9,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
+import net.minecraft.potion.Potion;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class KalStuffItems {
@@ -43,7 +44,7 @@ public class KalStuffItems {
 	public static ItemSoda					root_beer;
 	public static Item						soda_can;
 	public static ItemDagger				stone_dagger;	
-	public static Item						tea;
+	public static ItemTea						tea;
 	public static ItemWalkingStick			walking_stick;
 	public static ItemWine					wine;
 	public static Item						wine_bottle;
@@ -66,13 +67,17 @@ public class KalStuffItems {
 	public static void initializeItems() {
 
 		//Please keep all items in alphabetical order!
-    	apple_soda 				= (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.NIGHT_VISION).setAlwaysEdible().setUnlocalizedName("appleSoda");
+    	apple_soda 				= (ItemSoda) new ItemSoda(2, 2.0f, 600, MobEffects.NIGHT_VISION).setUnlocalizedName("appleSoda");
     	bacon_core 				= new Item().setUnlocalizedName("baconCore").setCreativeTab(StartupCommon.KALSTUFF);
     	bacon_wand 				= (ItemBaconWand) new ItemBaconWand().setUnlocalizedName("baconWand");
-    	blaze_soup 				= (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, false).setUnlocalizedName("blazeSoup").setCreativeTab(StartupCommon.KALSTUFF);
+    	blaze_soup 				= (ItemBlazeSoup) new ItemBlazeSoup(2, 2.0f, 6000, new Potion[] {MobEffects.ABSORPTION, MobEffects.NIGHT_VISION, MobEffects.STRENGTH, MobEffects.FIRE_RESISTANCE}).setUnlocalizedName("blazeSoup").setCreativeTab(StartupCommon.KALSTUFF);
     	boxing_glove			= (ItemBoxingGlove) new ItemBoxingGlove().setUnlocalizedName("boxingGlove").setCreativeTab(StartupCommon.KALSTUFF);
     	chocolate_cap 			= new Item().setUnlocalizedName("chocolateCap").setCreativeTab(StartupCommon.KALSTUFF);
-    	coffee 					= (ItemCoffee) new ItemCoffee(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("coffee").setCreativeTab(StartupCommon.KALSTUFF);
+    	closed_apple_soda		= (ItemClosedSoda) new ItemClosedSoda().setUnlocalizedName("closedAppleSoda").setCreativeTab(StartupCommon.KALSTUFF);
+    	closed_grape_soda		= (ItemClosedSoda) new ItemClosedSoda().setUnlocalizedName("closedGrapeSoda").setCreativeTab(StartupCommon.KALSTUFF);
+    	closed_melon_soda		= (ItemClosedSoda) new ItemClosedSoda().setUnlocalizedName("closedMelonSoda").setCreativeTab(StartupCommon.KALSTUFF);
+      	closed_root_beer		= (ItemClosedSoda) new ItemClosedSoda().setUnlocalizedName("closedRootBeer").setCreativeTab(StartupCommon.KALSTUFF);
+    	coffee 					= (ItemCoffee) new ItemCoffee(2, 2.0f, 200, MobEffects.SPEED).setUnlocalizedName("coffee").setCreativeTab(StartupCommon.KALSTUFF);
     	coffee_mug 				= new Item().setUnlocalizedName("coffeeMug").setCreativeTab(StartupCommon.KALSTUFF);
 		crushed_ender 			= (ItemEnderPowder) new ItemEnderPowder().setUnlocalizedName("enderPowder").setCreativeTab(StartupCommon.KALSTUFF);
     	diamond_dagger 			= (ItemDagger) new ItemDagger(Item.ToolMaterial.DIAMOND).setUnlocalizedName("diamondDagger").setCreativeTab(StartupCommon.KALSTUFF);
@@ -80,30 +85,40 @@ public class KalStuffItems {
     	golden_mug 				= new Item().setUnlocalizedName("goldenMug").setCreativeTab(StartupCommon.KALSTUFF);
     	grapes 					= (ItemFood) new ItemFood(3, 0.5f, false).setUnlocalizedName("grapes").setCreativeTab(StartupCommon.KALSTUFF);
     	grape_seeds 			= new Item().setUnlocalizedName("grapeSeeds").setCreativeTab(StartupCommon.KALSTUFF);
-    	grape_soda 				= (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.JUMP_BOOST).setAlwaysEdible().setUnlocalizedName("grapeSoda");
+    	grape_soda 				= (ItemSoda) new ItemSoda(2, 2.0f, 600, MobEffects.JUMP_BOOST).setUnlocalizedName("grapeSoda");
     	infused_bacon_core 		= new Item().setUnlocalizedName("infusedBaconCore").setCreativeTab(StartupCommon.KALSTUFF);
     	iron_dagger 			= (ItemDagger) new ItemDagger(Item.ToolMaterial.IRON).setUnlocalizedName("ironDagger").setCreativeTab(StartupCommon.KALSTUFF);
-    	jewel_soup 				= (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, false, 200).setAlwaysEdible().setUnlocalizedName("jewelSoup").setCreativeTab(StartupCommon.KALSTUFF);
-    	light_coffee			= (ItemCoffee) new ItemCoffee(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("lightCoffee").setCreativeTab(StartupCommon.KALSTUFF);
+    	jewel_soup 				= (ItemJewelSoup) new ItemJewelSoup(2, 2.0f, 6000, new Potion[] {MobEffects.SPEED, MobEffects.REGENERATION}).setUnlocalizedName("jewelSoup").setCreativeTab(StartupCommon.KALSTUFF);
+    	light_coffee			= (ItemCoffee) new ItemCoffee(2, 2.0f, 0, null).setUnlocalizedName("lightCoffee").setCreativeTab(StartupCommon.KALSTUFF);
     	lute					= (ItemLute) new ItemLute().setUnlocalizedName("lute").setCreativeTab(StartupCommon.KALSTUFF);
-    	melon_soda 				= (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.HASTE).setAlwaysEdible().setUnlocalizedName("melonSoda");
+    	melon_soda 				= (ItemSoda) new ItemSoda(2, 2.0f, 600, MobEffects.HASTE).setUnlocalizedName("melonSoda");
     	plantable_grape_seeds 	= (ItemSeeds) new ItemSeeds(KalStuffBlocks.grape_vine, Blocks.FARMLAND).setUnlocalizedName("plantableGrapeSeeds").setCreativeTab(StartupCommon.KALSTUFF);
-    	root_beer 				= (ItemSoda) new ItemSoda(2, 2.0f, false, 600, MobEffects.FIRE_RESISTANCE).setAlwaysEdible().setUnlocalizedName("rootBeer");
+    	root_beer 				= (ItemSoda) new ItemSoda(2, 2.0f, 600, MobEffects.FIRE_RESISTANCE).setUnlocalizedName("rootBeer");
     	soda_can 				= new Item().setUnlocalizedName("sodaCan").setCreativeTab(StartupCommon.KALSTUFF);
     	stone_dagger 			= (ItemDagger) new ItemDagger(Item.ToolMaterial.STONE).setUnlocalizedName("stoneDagger").setCreativeTab(StartupCommon.KALSTUFF);
-    	tea 					= (ItemTea) new ItemTea(2, 2.0f, false).setAlwaysEdible().setUnlocalizedName("tea").setCreativeTab(StartupCommon.KALSTUFF);
+    	tea 					= (ItemTea) new ItemTea(2, 2.0f).setUnlocalizedName("tea").setCreativeTab(StartupCommon.KALSTUFF);
     	walking_stick 			= (ItemWalkingStick) new ItemWalkingStick().setUnlocalizedName("walkingStick").setCreativeTab(StartupCommon.KALSTUFF);
-    	wine 					= (ItemWine) new ItemWine(2, 2.0f, false, 1200).setAlwaysEdible().setUnlocalizedName("wine").setCreativeTab(StartupCommon.KALSTUFF);
+    	wine 					= (ItemWine) new ItemWine(2, 2.0f, 1200, new Potion[] {MobEffects.NAUSEA, MobEffects.BLINDNESS}).setUnlocalizedName("wine").setCreativeTab(StartupCommon.KALSTUFF);
     	wine_bottle 			= new Item().setUnlocalizedName("wineBottle").setCreativeTab(StartupCommon.KALSTUFF);
     	wooden_dagger			= (ItemDagger) new ItemDagger(Item.ToolMaterial.WOOD).setUnlocalizedName("woodenDagger").setCreativeTab(StartupCommon.KALSTUFF);
     	wooden_round_shield 	= (ItemRoundShield) new ItemRoundShield(Item.ToolMaterial.WOOD).setUnlocalizedName("roundWoodenShield").setCreativeTab(StartupCommon.KALSTUFF);
     	
     	
-    	//These are the exception to the alphabetical rule. The sodas *must* be initiated before these!
-    	closed_apple_soda		= (ItemClosedSoda) new ItemClosedSoda(apple_soda).setUnlocalizedName("closedAppleSoda").setCreativeTab(StartupCommon.KALSTUFF);
-    	closed_grape_soda		= (ItemClosedSoda) new ItemClosedSoda(grape_soda).setUnlocalizedName("closedGrapeSoda").setCreativeTab(StartupCommon.KALSTUFF);
-    	closed_melon_soda		= (ItemClosedSoda) new ItemClosedSoda(melon_soda).setUnlocalizedName("closedMelonSoda").setCreativeTab(StartupCommon.KALSTUFF);
-      	closed_root_beer		= (ItemClosedSoda) new ItemClosedSoda(root_beer).setUnlocalizedName("closedRootBeer").setCreativeTab(StartupCommon.KALSTUFF);
+    	// set what items these will return when used. This must happen after_the items are initialized.
+      	apple_soda.setReturnStack(soda_can);
+      	blaze_soup.setReturnStack(golden_mug);
+      	closed_apple_soda.setReturnStack(apple_soda);
+      	closed_grape_soda.setReturnStack(grape_soda);
+      	closed_melon_soda.setReturnStack(melon_soda);
+      	closed_root_beer.setReturnStack(root_beer);
+      	coffee.setReturnStack(coffee_mug);
+      	grape_soda.setReturnStack(soda_can);
+      	jewel_soup.setReturnStack(golden_mug);
+      	light_coffee.setReturnStack(coffee_mug);
+      	melon_soda.setReturnStack(soda_can);
+      	root_beer.setReturnStack(soda_can);
+      	tea.setReturnStack(coffee_mug);
+      	wine.setReturnStack(wine_bottle);
 	}
 	
 	/**
