@@ -189,7 +189,7 @@ public class BlockBridge extends BlockDirectional {
     			if (!playerIn.capabilities.isCreativeMode) playerIn.getHeldItemMainhand().shrink(1); //TODO: update this
     		}
     		else 
-    			playerIn.sendMessage(new TextComponentTranslation("The bridge block is unable to alter that location", new Object[0]));
+    			playerIn.sendMessage(new TextComponentTranslation("The bridge block is unable to affect that location", new Object[0]));
 
     	}
 		return true;
