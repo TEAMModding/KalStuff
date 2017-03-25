@@ -15,10 +15,9 @@ import net.minecraft.world.World;
 
 public class ItemClosedSoda extends Item {
 	
-	Item item;
+	private ItemStack returnStack = ItemStack.EMPTY;
 	
-	public ItemClosedSoda(Item item) {
-		this.item = item;
+	public ItemClosedSoda() {
 		this.setMaxStackSize(6);
 	}
 	
@@ -32,10 +31,26 @@ public class ItemClosedSoda extends Item {
 		
 		stack.shrink(1);
 		
-        if (stack.getCount() <= 0) return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, new ItemStack(this.item));
-        playerIn.inventory.addItemStackToInventory(new ItemStack(this.item));
+        if (stack.getCount() <= 0) return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, this.getReturnStack());
+        playerIn.inventory.addItemStackToInventory(this.getReturnStack());
         
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, stack);
+	}
+	
+	public ItemClosedSoda setReturnStack(ItemStack stack)
+	{
+		this.returnStack = stack;
+		return this;
+	}
+
+	public ItemClosedSoda setReturnStack(Item item)
+	{
+		this.returnStack = new ItemStack(item);
+		return this;
+	}
+	
+	public ItemStack getReturnStack() {
+		return this.returnStack;
 	}
 	
 	@Override

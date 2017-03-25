@@ -2,12 +2,9 @@ package com.team.kalstuff.item;
 
 import java.util.List;
 
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.MobEffects;
 import net.minecraft.item.ItemStack;
-import net.minecraft.potion.PotionEffect;
-import net.minecraft.world.World;
+import net.minecraft.potion.Potion;
 
 public class ItemWine extends ItemDrink {
 
@@ -20,30 +17,12 @@ public class ItemWine extends ItemDrink {
 	 *            is the length of the speed effect the player gets upon
 	 *            drinking.
 	 */
-	public ItemWine(int amount, float saturation, boolean isWolfFood, int potionLength) {
-		super(amount, saturation, isWolfFood);
+	public ItemWine(int amount, float saturation, int potionLength, Potion potions[]) {
+		super(amount, saturation, potionLength, potions);
 		this.setMaxStackSize(1);
-		this.potionLength = potionLength;
+		this.setReturnStack(new ItemStack(KalStuffItems.wine));
 	}
 
-	public ItemWine(int amount, float saturation, boolean isWolfFood) {
-		super(amount, saturation, isWolfFood);
-		this.setMaxStackSize(1);
-	}
-
-	protected void onFoodEaten(ItemStack stack, World worldIn, EntityPlayer player) {
-		if (!worldIn.isRemote && this.potionLength != 0) {
-			player.addPotionEffect(new PotionEffect(MobEffects.NAUSEA, this.potionLength, 0));
-			player.addPotionEffect(new PotionEffect(MobEffects.BLINDNESS, this.potionLength, 0));
-		}
-	}
-
-	@Override
-	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
-		super.onItemUseFinish(stack, worldIn, entityLiving);
-		return new ItemStack(KalStuffItems.wine_bottle);
-	}
-	
 	@Override
 	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
 		tooltip.add("Wine is just messed up.");
