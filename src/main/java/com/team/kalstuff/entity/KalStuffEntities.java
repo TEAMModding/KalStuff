@@ -18,7 +18,8 @@ public class KalStuffEntities {
 	
 	
 	public static void registerEntities() {
-		registerEntity(EntityDuck.class, "duck", 80, 3, true, 0xFFFFFF, 0xE0C494);
+		// uncomment this line to add ducks back
+		//	registerEntity(EntityDuck.class, "duck", 80, 3, true, 0xFFFFFF, 0xE0C494);
 	}
 	
 	
@@ -51,6 +52,7 @@ public class KalStuffEntities {
 	 * @param eggPrimary           The spawn egg's primary (background) colour
 	 * @param eggSecondary         The spawn egg's secondary (foreground) colour
 	 */
+	@SuppressWarnings("unused")
 	private static void registerEntity(Class<? extends Entity> entityClass, String entityName, int trackingRange, int updateFrequency, boolean sendsVelocityUpdates, int eggPrimary, int eggSecondary) {
 		final ResourceLocation registryName = new ResourceLocation(KalStuff.MODID, entityName);
 		EntityRegistry.registerModEntity(registryName, entityClass, registryName.toString(), entityID++, KalStuff.instance, trackingRange, updateFrequency, sendsVelocityUpdates, eggPrimary, eggSecondary);
