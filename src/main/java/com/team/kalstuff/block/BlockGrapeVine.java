@@ -17,14 +17,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 public class BlockGrapeVine extends BlockCrops {
 
     public static final PropertyBool GREAT = PropertyBool.create("great");
 
-    public BlockGrapeVine() {
+    public BlockGrapeVine(String name) {
 		super();
+		BlockKalStuff.setupBlock(this, name);
         this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0).withProperty(GREAT, false));
     }
     
@@ -94,17 +96,15 @@ public class BlockGrapeVine extends BlockCrops {
 	}
 	
 	@Override
-	public java.util.List<ItemStack> getDrops(net.minecraft.world.IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+		super.getDrops(drops, world, pos, state, fortune);
 		
-		java.util.List<ItemStack> ret = super.getDrops(world, pos, state, fortune);
 		int age = ((Integer)state.getValue(AGE)).intValue();
 		Random rand = world instanceof World ? ((World)world).rand : new Random();
 		
-		if (age >= 7) ret.add(new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3));
-		else ret.add(new ItemStack(KalStuffItems.grape_seeds, 1, 0));
-		ret.add(new ItemStack(Items.STICK, 4));
-		
-		return ret;
+		if (age >= 7) drops.add(new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3));
+		else drops.add(new ItemStack(KalStuffItems.grape_seeds, 1, 0));
+		drops.add(new ItemStack(Items.STICK, 4));
 	}
 	
 	@Override

@@ -1,6 +1,5 @@
 package com.team.kalstuff.block;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,13 +9,13 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 
-public class BlockFood extends Block {
+public class BlockFood extends BlockKalStuff {
 
 	private int amount;
 	float saturation;
 	
-	public BlockFood(float hardness, int amount, float saturation) {
-		super(Material.ROCK);
+	public BlockFood(float hardness, int amount, float saturation, String name) {
+		super(Material.ROCK, name);
 		
 		this.setHardness(hardness);
 		this.amount = amount;

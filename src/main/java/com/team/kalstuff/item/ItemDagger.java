@@ -5,7 +5,6 @@ import com.google.common.collect.Multimap;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -20,17 +19,14 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemDagger extends Item {
+public class ItemDagger extends ItemKalStuff {
 
     private float attackDamage;
     private final Item.ToolMaterial material;
     
-	public ItemDagger(Item.ToolMaterial material) {
+	public ItemDagger(Item.ToolMaterial material, String name) {
+		super(name);
 		this.material = material;
-		this.maxStackSize = 1;
-		this.setMaxDamage(material.getMaxUses());
-		this.setCreativeTab(CreativeTabs.COMBAT);
-		this.attackDamage = 3.0F + material.getDamageVsEntity();
 		this.maxStackSize = 1;
 		this.setMaxDamage(material.getMaxUses());
 		this.attackDamage = 1 + (material.getDamageVsEntity() / 2);

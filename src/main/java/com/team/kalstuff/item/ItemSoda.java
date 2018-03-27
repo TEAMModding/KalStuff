@@ -3,8 +3,10 @@ package com.team.kalstuff.item;
 import java.util.List;
 import java.util.Random;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.stats.StatList;
@@ -14,11 +16,10 @@ import net.minecraftforge.items.ItemHandlerHelper;
 public class ItemSoda extends ItemDrink {
 
 
-	public ItemSoda(int amount, float saturation, int potionLength, Potion potion) {
-		super(amount, saturation, potionLength, potion);
+	public ItemSoda(int amount, float saturation, int potionLength, Potion potion, String name) {
+		super(amount, saturation, potionLength, potion, name);
 		this.setMaxDamage(5);
 		this.setMaxStackSize(1);
-		this.setCreativeTab(null);
 	}
 	
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {
@@ -35,7 +36,8 @@ public class ItemSoda extends ItemDrink {
 		System.out.println(player);
 		if (!player.capabilities.isCreativeMode)
 		{
-			if (stack.attemptDamageItem(1, new Random()))
+				// TODO the EntityPlayerMP argument may not work
+			if (stack.attemptDamageItem(1, new Random(), (EntityPlayerMP) player))
 			{
 				if (stack.getCount() <= 1)
 					return this.getReturnStack();
@@ -61,7 +63,7 @@ public class ItemSoda extends ItemDrink {
     }
 	
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+	public void addInformation(ItemStack stack, World playerIn, List<String> tooltip, ITooltipFlag advanced) {
 		tooltip.add("With bubbly endstone!");
 	}
 }

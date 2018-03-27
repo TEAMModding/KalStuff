@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.team.kalstuff.KalStuffSoundEvents;
 
+import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -13,11 +14,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemClosedSoda extends Item {
+public class ItemClosedSoda extends ItemKalStuff {
 	
 	private ItemStack returnStack = ItemStack.EMPTY;
 	
-	public ItemClosedSoda() {
+	public ItemClosedSoda(String name) {
+		super(name);
 		this.setMaxStackSize(6);
 	}
 	
@@ -52,9 +54,8 @@ public class ItemClosedSoda extends Item {
 	public ItemStack getReturnStack() {
 		return this.returnStack;
 	}
-	
 	@Override
-	public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+	public void addInformation(ItemStack stack, World playerIn, List<String> tooltip, ITooltipFlag advanced) {
 		tooltip.add("With bubbly endstone!");
 	}
 }

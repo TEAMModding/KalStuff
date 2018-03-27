@@ -2,7 +2,6 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
-import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.config.Configs;
 
 import net.minecraft.block.Block;
@@ -33,10 +32,10 @@ public class BlockBridge extends BlockDirectional {
 	private boolean particle = false;
 	private BlockPos partLoc;
     
-	public BlockBridge() throws StackOverflowError, IllegalArgumentException, NullPointerException
+	public BlockBridge(String name) throws StackOverflowError, IllegalArgumentException, NullPointerException
 	{
 		super(Material.WOOD);
-		this.setCreativeTab(StartupCommon.KALSTUFF);
+		BlockKalStuff.setupBlock(this, name);
     	this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     	this.setHardness(0.5f);
 	}

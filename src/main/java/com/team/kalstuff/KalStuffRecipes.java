@@ -20,7 +20,7 @@ public class KalStuffRecipes {
 	
 	
 	public static void addShapedRecipes() {
-		
+		/*
 		GameRegistry.addRecipe(new ItemStack(KalStuffItems.coffee_mug, 1),  new Object[] {
 				"   ",
 				"PC ",
@@ -200,11 +200,12 @@ public class KalStuffRecipes {
 						'D', new ItemStack(Items.DYE, 1, i)
 				});
         }
+        */
 	}
 
 	
 	public static void addShapelessRecipes() {
-		
+		/*
 		GameRegistry.addShapelessRecipe(new ItemStack(KalStuffItems.crushed_ender, 4), new Object[] {
 				new ItemStack(Items.ENDER_PEARL),
 				new ItemStack(Items.FLINT)
@@ -290,11 +291,12 @@ public class KalStuffRecipes {
 				new ItemStack(KalStuffBlocks.baked_potato_block),
 				new ItemStack(KalStuffBlocks.baked_potato_block),
 		});
+		*/
 	}
 	
 	
 	public static void addSmeltingRecipes(){
 		
-		GameRegistry.addSmelting(KalStuffBlocks.potato_block, new ItemStack(KalStuffBlocks.baked_potato_block), 2);
+	//	GameRegistry.addSmelting(KalStuffBlocks.potato_block, new ItemStack(KalStuffBlocks.baked_potato_block), 2);
 	}
 }

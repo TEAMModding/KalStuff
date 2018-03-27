@@ -1,8 +1,9 @@
 package com.team.kalstuff.item;
 
+import com.team.kalstuff.StartupCommon;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -11,7 +12,13 @@ import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemLute extends Item {
+public class ItemLute extends ItemKalStuff {
+	
+	public ItemLute(String name) {
+		super(name);
+		this.setCreativeTab(StartupCommon.KALSTUFF);
+	}
+	
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {
 		ItemStack stack = playerIn.getHeldItem(hand);
 		

@@ -14,29 +14,32 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 import net.minecraftforge.items.ItemHandlerHelper;
 
-public class ItemDrink extends Item {
+public class ItemDrink extends ItemKalStuff {
 
 	private int amount, potionLength = 0;
 	private float saturation;
 	private Potion potions[] = null;
 	private ItemStack returnStack = ItemStack.EMPTY;
 	
-	public ItemDrink(int amount, float saturation)
+	public ItemDrink(int amount, float saturation, String name)
 	{
+		super(name);
 		this.amount = amount;
 		this.saturation = saturation;
 	}
 
-	public ItemDrink(int amount, float saturation, int potionLength, Potion potion)
+	public ItemDrink(int amount, float saturation, int potionLength, Potion potion, String name)
 	{
+		super(name);
 		this.amount = amount;
 		this.saturation = saturation;
 		this.potionLength = potionLength;
 		this.potions = new Potion[] {potion};
 	}
 	
-	public ItemDrink(int amount, float saturation, int potionLength, Potion potions[])
+	public ItemDrink(int amount, float saturation, int potionLength, Potion potions[], String name)
 	{
+		super(name);
 		this.amount = amount;
 		this.saturation = saturation;
 		this.potionLength = potionLength;

@@ -4,90 +4,65 @@ import com.team.kalstuff.StartupCommon;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
+import net.minecraftforge.event.RegistryEvent.Register;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.IForgeRegistry;
 
+@GameRegistry.ObjectHolder("kalstuff")
+@Mod.EventBusSubscriber(modid = "kalstuff")
 public class KalStuffBlocks {
 
-	//Please keep all blocks in alphabetical order!
-	public static BlockFood					apple_block;
-	public static BlockBakedPotato			baked_potato_block;
-	public static Block						blaze_block;
-	public static BlockBridge				bridge;
-	public static BlockFood					carrot_block;
-	public static BlockChickenNest			chicken_nest;
-	public static Block						ender_block;
-	public static BlockGrapeVine			grape_vine;
-	public static Block						great_grape;
-	public static BlockMoonFlower			moon_flower;
-	public static BlockMoonFlower			moon_flower1;
-	public static BlockMoonFlower			moon_flower2;
-	public static BlockMoonFlower			moon_flower3;
-	public static BlockMoonFlower			moon_flower4;
-	public static BlockMoonFlower			moon_flower5;
-	public static BlockFood					potato_block;
-	public static BlockTrashCan				trash_can;
-	public static BlockWildGrapeVine		wild_grape_vine;
-
-	
-	/**
-	 * Initializes and registers all blocks from the mod.
-	 */
-	public static void setup() {
-		
-		initializeBlocks();
-		registerBlocks();
-	}
-	
-	/**
-	 * Initializes all blocks from the mod.
-	 */
-	public static void initializeBlocks() {
-		
-		//Please keep all blocks in alphabetical order!
-    	apple_block 		= (BlockFood) new BlockFood(1.5F, 9, 2.4F).setUnlocalizedName("blockApple").setCreativeTab(StartupCommon.KALSTUFF);
-    	baked_potato_block	= (BlockBakedPotato) new BlockBakedPotato(1.5F, 11, 6F).setUnlocalizedName("blockBakedPotato").setCreativeTab(StartupCommon.KALSTUFF);
-    	blaze_block 		= new Block(Material.IRON).setUnlocalizedName("blockBlaze").setHardness(35.0F).setCreativeTab(StartupCommon.KALSTUFF);
-		bridge 				= (BlockBridge) new BlockBridge().setUnlocalizedName("bridge");
-    	carrot_block 		= (BlockFood) new BlockFood(1.5F, 7, 4.8F).setUnlocalizedName("blockCarrot").setCreativeTab(StartupCommon.KALSTUFF);
-    	chicken_nest 		= (BlockChickenNest) new BlockChickenNest().setUnlocalizedName("chickenNest");
-    	ender_block 		= new Block(Material.ROCK).setUnlocalizedName("blockEnder").setHardness(5.0F).setCreativeTab(StartupCommon.KALSTUFF);
-    	grape_vine 			= (BlockGrapeVine) new BlockGrapeVine().setUnlocalizedName("grapeVine");
-    	great_grape 		= new Block(Material.SPONGE).setUnlocalizedName("greatGrape").setCreativeTab(StartupCommon.KALSTUFF);
-    	moon_flower 		= (BlockMoonFlower) new BlockMoonFlower(0).setUnlocalizedName("moonFlower").setCreativeTab(StartupCommon.KALSTUFF);
-    	moon_flower1 		= (BlockMoonFlower) new BlockMoonFlower(1).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower2 		= (BlockMoonFlower) new BlockMoonFlower(2).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower3 		= (BlockMoonFlower) new BlockMoonFlower(3).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower4 		= (BlockMoonFlower) new BlockMoonFlower(4).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	moon_flower5 		= (BlockMoonFlower) new BlockMoonFlower(5).setUnlocalizedName("moonFlower").setCreativeTab(null);
-    	potato_block 		= (BlockFood) new BlockFood(1.5F, 3, 0.6F).setUnlocalizedName("blockPotato").setCreativeTab(StartupCommon.KALSTUFF);
-    	trash_can 			= (BlockTrashCan) new BlockTrashCan().setUnlocalizedName("trashCan");
-    	wild_grape_vine 	= (BlockWildGrapeVine) new BlockWildGrapeVine().setUnlocalizedName("wildGrapeVine");
-	}
+	// ---Please keep all blocks in alphabetical order!---
+	public static final Block apple_block = Blocks.AIR;
+	public static final Block baked_potato_block = Blocks.AIR;
+	public static final Block blaze_block = Blocks.AIR;
+	public static final Block bridge = Blocks.AIR;
+	public static final Block carrot_block = Blocks.AIR;
+	public static final Block chicken_nest = Blocks.AIR;
+	public static final Block ender_block = Blocks.AIR;
+	public static final Block grape_vine = Blocks.AIR;
+	public static final Block great_grape = Blocks.AIR;
+	public static final Block moon_flower = Blocks.AIR;
+	public static final Block moon_flower1 = Blocks.AIR;
+	public static final Block moon_flower2 = Blocks.AIR;
+	public static final Block moon_flower3 = Blocks.AIR;
+	public static final Block moon_flower4 = Blocks.AIR;
+	public static final Block moon_flower5 = Blocks.AIR;
+	public static final Block potato_block = Blocks.AIR;
+	public static final Block trash_can = Blocks.AIR;
+	public static final Block wild_grape_vine = Blocks.AIR;
 	
 	/**
 	 * Registers all blocks from the mod.
 	 */
-	public static void registerBlocks() {
+	@SubscribeEvent
+	public static void registerBlocks(Register<Block> event) {
 		
-		//REMEMBER to register ItemBlocks in KalStuffItems!
-		//Please keep all blocks in alphabetical order!
-		GameRegistry.register(apple_block.setRegistryName("apple_block"));
-    	GameRegistry.register(baked_potato_block.setRegistryName("baked_potato_block"));
-    	GameRegistry.register(blaze_block.setRegistryName("blaze_block"));
-		GameRegistry.register(bridge.setRegistryName("bridge"));
-    	GameRegistry.register(carrot_block.setRegistryName("carrot_block"));
-    	GameRegistry.register(chicken_nest.setRegistryName("chicken_nest"));
-    	GameRegistry.register(ender_block.setRegistryName("ender_block"));
-    	GameRegistry.register(grape_vine.setRegistryName("grape_vine"));
-    	GameRegistry.register(great_grape.setRegistryName("great_grape"));
-    	GameRegistry.register(moon_flower.setRegistryName("moon_flower"));
-    	GameRegistry.register(moon_flower1.setRegistryName("moon_flower1"));
-    	GameRegistry.register(moon_flower2.setRegistryName("moon_flower2"));
-    	GameRegistry.register(moon_flower3.setRegistryName("moon_flower3"));
-    	GameRegistry.register(moon_flower4.setRegistryName("moon_flower4"));
-    	GameRegistry.register(moon_flower5.setRegistryName("moon_flower5"));
-    	GameRegistry.register(potato_block.setRegistryName("potato_block"));
-    	GameRegistry.register(trash_can.setRegistryName("trash_can"));
-    	GameRegistry.register(wild_grape_vine.setRegistryName("wild_grape_vine"));
+		IForgeRegistry<Block> reg = event.getRegistry();
+		// remember to register ItemBlocks in KalStuffItems, and
+		// please continue to keep all blocks in alphabetical order
+		
+		reg.register(new BlockFood(1.5F, 9, 2.4F, "apple_block"));
+		reg.register(new BlockBakedPotato(1.5F, 11, 6F, "baked_potato_block"));
+    	reg.register(new BlockKalStuff(Material.IRON, "blaze_block").setHardness(35.0F));
+    	reg.register(new BlockBridge("bridge"));
+    	reg.register(new BlockFood(11.5F, 7, 4.8F, "carrot_block"));
+    	reg.register(new BlockChickenNest("chicken_nest"));
+    	reg.register(new BlockKalStuff(Material.ROCK, "ender_block").setHardness(5.0F));
+    	reg.register(new BlockGrapeVine("grape_vine"));
+    	reg.register(new BlockKalStuff(Material.SPONGE, "great_grape"));
+    	// only the first BlockMoonFlower should appear in the Creative inventory
+    	reg.register(new BlockMoonFlower(0, "moon_flower").setCreativeTab(StartupCommon.KALSTUFF));
+    	reg.register(new BlockMoonFlower(1, "moon_flower1"));
+    	reg.register(new BlockMoonFlower(2, "moon_flower2"));
+    	reg.register(new BlockMoonFlower(3, "moon_flower3"));
+    	reg.register(new BlockMoonFlower(4, "moon_flower4"));
+    	reg.register(new BlockMoonFlower(5, "moon_flower5"));
+    	reg.register(new BlockFood(1.5F, 3, 0.6F, "potato_block"));
+    	reg.register(new BlockTrashCan("trash_can"));
+    	reg.register(new BlockWildGrapeVine("wild_grape_vine"));    	
 	}
 }

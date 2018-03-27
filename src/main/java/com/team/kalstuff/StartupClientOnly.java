@@ -9,15 +9,37 @@ import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.relauncher.Side;
 
+@Mod.EventBusSubscriber(Side.CLIENT)
 public class StartupClientOnly {
 	public static void preInitClientOnly(FMLPreInitializationEvent event)
 	{	
+
+	}
+	
+	public static void initClientOnly(FMLInitializationEvent event)
+	{
+		
+	}
+	 
+	public static void postInitClientOnly(FMLPostInitializationEvent event)
+	{
+		
+	}
+	
+    @SubscribeEvent
+    public static void registerModels(ModelRegistryEvent event) {
+
 		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class, manager -> new RenderDuck(manager, new ModelChicken(), 0.3F));
 		
 		registerItemRendering("bridge");
@@ -67,34 +89,25 @@ public class StartupClientOnly {
 		registerItemRendering("great_grape");
 		registerItemRendering("wine");
 		registerItemRendering("wine_bottle");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLACK.getDyeDamage(), "boxing_glove_black");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.RED.getDyeDamage(), "boxing_glove_red");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GREEN.getDyeDamage(), "boxing_glove_green");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BROWN.getDyeDamage(), "boxing_glove_brown");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLUE.getDyeDamage(), "boxing_glove_blue");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PURPLE.getDyeDamage(), "boxing_glove_purple");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.CYAN.getDyeDamage(), "boxing_glove_cyan");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.SILVER.getDyeDamage(), "boxing_glove_silver");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GRAY.getDyeDamage(), "boxing_glove_gray");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PINK.getDyeDamage(), "boxing_glove_pink");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIME.getDyeDamage(), "boxing_glove_lime");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.YELLOW.getDyeDamage(), "boxing_glove_yellow");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getDyeDamage(), "boxing_glove_light_blue");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.MAGENTA.getDyeDamage(), "boxing_glove_magenta");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.ORANGE.getDyeDamage(), "boxing_glove_orange");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getDyeDamage(), "boxing_glove_white");
-        //from now on add itemRendering here
-	}
-	
-	public static void initClientOnly(FMLInitializationEvent event)
-	{
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getMetadata(), "boxing_glove_white");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.ORANGE.getMetadata(), "boxing_glove_orange");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.MAGENTA.getMetadata(), "boxing_glove_magenta");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getMetadata(), "boxing_glove_light_blue");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.YELLOW.getMetadata(), "boxing_glove_yellow");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIME.getMetadata(), "boxing_glove_lime");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PINK.getMetadata(), "boxing_glove_pink");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GRAY.getMetadata(), "boxing_glove_gray");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.SILVER.getMetadata(), "boxing_glove_silver");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.CYAN.getMetadata(), "boxing_glove_cyan");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PURPLE.getMetadata(), "boxing_glove_purple");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLUE.getMetadata(), "boxing_glove_blue");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BROWN.getMetadata(), "boxing_glove_brown");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GREEN.getMetadata(), "boxing_glove_green");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.RED.getMetadata(), "boxing_glove_red");
+        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLACK.getMetadata(), "boxing_glove_black");
+
 		
-	}
-	 
-	public static void postInitClientOnly(FMLPostInitializationEvent event)
-	{
-		
-	}
+    }
 	
 	/**Registers a new ItemModel.
 	 * 
@@ -105,7 +118,11 @@ public class StartupClientOnly {
 	 * @param name The itemModel/block name
 	 */
 	private static void registerItemRendering(String name) {
-		ModelLoader.setCustomModelResourceLocation(Item.REGISTRY.getObject(new ResourceLocation("kalstuff", name)), 0, new ModelResourceLocation("kalstuff:" + name, "inventory"));
+		ResourceLocation resource = new ResourceLocation("kalstuff", name);
+		Item item = ForgeRegistries.ITEMS.getValue(resource);
+		ModelResourceLocation modelResource = new ModelResourceLocation(item.getRegistryName(), "inventory");
+		
+		ModelLoader.setCustomModelResourceLocation(item, 0, modelResource);
 	}
 	
 	/**Registers a new ItemModel.
@@ -118,7 +135,9 @@ public class StartupClientOnly {
 	 * @param subType The metadata of the item
 	 * @param identifier The string name of the item
 	 */
-	private static void registerItemRendering(Item itm, int subType, String identifier) {
-		ModelLoader.setCustomModelResourceLocation(itm, subType, new ModelResourceLocation("kalstuff:" + identifier, "inventory"));
+	private static void registerItemRendering(Item item, int subType, String identifier) {
+		ModelResourceLocation modelResource = new ModelResourceLocation("kalstuff:" + identifier, "inventory");
+		
+		ModelLoader.setCustomModelResourceLocation(item, subType, modelResource);
 	}    
 }

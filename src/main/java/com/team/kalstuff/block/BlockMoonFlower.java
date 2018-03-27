@@ -21,9 +21,12 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider {
 	
 	
     public static final PropertyInteger NIGHT = PropertyInteger.create("night", 0, 1);
-	public BlockMoonFlower(float light) {
+	public BlockMoonFlower(float light, String name) {
+		BlockKalStuff.setupBlock(this, name);
         this.setDefaultState(this.blockState.getBaseState().withProperty(NIGHT, Integer.valueOf(0)));
         this.setLightLevel((light) / 16.0f);
+        // we must set the creative tab to null here so all varieties will not show up in the inventory
+        this.setCreativeTab(null);
 	}
 
     public void breakBlock(World worldIn, BlockPos pos, IBlockState state) {

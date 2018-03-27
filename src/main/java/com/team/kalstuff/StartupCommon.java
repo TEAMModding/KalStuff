@@ -4,10 +4,8 @@ package com.team.kalstuff;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import com.team.kalstuff.block.KalStuffBlocks;
 import com.team.kalstuff.config.Configs;
 import com.team.kalstuff.entity.KalStuffEntities;
-import com.team.kalstuff.item.KalStuffItems;
 import com.team.kalstuff.tileentity.KalStuffTileEntities;
 import com.team.kalstuff.worldgen.KalStuffWorldGenerator;
 
@@ -30,9 +28,6 @@ public class StartupCommon {
 		//MinecraftForge.EVENT_BUS.register(ks);
 		MinecraftForge.EVENT_BUS.register(new Configs());
 		MinecraftForge.EVENT_BUS.register(new CoreEventHandler());
-		KalStuffSoundEvents.registerSounds();
-		KalStuffBlocks.setup();
-		KalStuffItems.setup();
 		KalStuffTileEntities.register();
 		KalStuffWorldGenerator.register();
 		KalStuffEntities.setup();

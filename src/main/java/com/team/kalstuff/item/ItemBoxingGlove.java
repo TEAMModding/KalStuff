@@ -18,10 +18,11 @@ import net.minecraft.world.WorldServer;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemBoxingGlove extends Item {
+public class ItemBoxingGlove extends ItemKalStuff {
 	
 	
-	public ItemBoxingGlove() {
+	public ItemBoxingGlove(String name) {
+		super(name);
         this.setHasSubtypes(true);
 	}
 	

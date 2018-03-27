@@ -1,7 +1,6 @@
 package com.team.kalstuff.block;
 
 import com.team.kalstuff.KalStuff;
-import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 import net.minecraft.block.BlockContainer;
@@ -25,10 +24,10 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class BlockChickenNest extends BlockContainer {
 	public static final AxisAlignedBB AABB = new AxisAlignedBB(0d, 0d, 0d, 1d, 3d / 16d, 1d);
 
-	public BlockChickenNest() {
+	public BlockChickenNest(String name) {
 		super(Material.PLANTS);
+		BlockKalStuff.setupBlock(this, name);
 		// this.setStepSound(soundTypeGrass);
-		this.setCreativeTab(StartupCommon.KALSTUFF);
 		this.setHardness(0.4F);
 
 	}

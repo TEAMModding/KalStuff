@@ -5,14 +5,14 @@ import com.google.common.collect.Multimap;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EntityEquipmentSlot;
-import net.minecraft.item.Item;
 
-public class ItemWalkingStick extends Item
+public class ItemWalkingStick extends ItemKalStuff
 {
     private final float attackDamage;
     
     
-	public ItemWalkingStick() {
+	public ItemWalkingStick(String name) {
+		super(name);
 		this.attackDamage = 1.0f;
 		this.maxStackSize = 1;
 	}

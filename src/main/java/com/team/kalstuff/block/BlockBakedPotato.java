@@ -9,12 +9,13 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+
 public class BlockBakedPotato extends BlockFood {
 	
     public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-	public BlockBakedPotato(float hardness, int amount, float saturation) {
-		super(hardness, amount, saturation);
+	public BlockBakedPotato(float hardness, int amount, float saturation, String name) {
+		super(hardness, amount, saturation, name);
 	}
 	
     public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {

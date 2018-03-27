@@ -2,7 +2,6 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
-import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.item.KalStuffItems;
 
 import net.minecraft.block.Block;
@@ -26,9 +25,9 @@ public class BlockWildGrapeVine extends BlockBush {
     public static final PropertyInteger GROWN = PropertyInteger.create("grown", 0, 1);
     public static final AxisAlignedBB AABB = new AxisAlignedBB(3d/16d, 0d, 3d/16d, 13d/16d, 1d, 13d/16d);
 	
-    public BlockWildGrapeVine() {
+    public BlockWildGrapeVine(String name) {
     	super(Material.PLANTS);
-    	this.setCreativeTab(StartupCommon.KALSTUFF);
+    	BlockKalStuff.setupBlock(this, name);
     	this.setDefaultState(this.blockState.getBaseState().withProperty(GROWN, Integer.valueOf(1)));
     }
     
