@@ -8,19 +8,19 @@
 #
 # Blocks
 ##############################
-tile.bridge.name=Bridge Block
-tile.blockEnder.name=Block of Ender
-tile.blockBlaze.name=Block of Blaze
-tile.blockPotato.name=Block of Potato
-tile.blockApple.name=Block of Apple
-tile.blockCarrot.name=Block of Carrot
-tile.chickenNest.name=Chicken Nest
-tile.trashCan.name=Trash Can
-tile.wildGrapeVine.name=Wild Grape Vine
-tile.grapeVine.name=Grape Vine
-tile.moonFlower.name=Moon Flower
-tile.blockBakedPotato.name=Baked Block of Potato
-tile.greatGrape.name=Great Grape
+tile.kalstuff:bridge.name=Bridge Block
+tile.kalstuff:ender_block.name=Block of Ender
+tile.kalstuff:blaze_block.name=Block of Blaze
+tile.kalstuff:potato_block.name=Block of Potato
+tile.kalstuff:apple_block.name=Block of Apple
+tile.kalstuff:carrot_block.name=Block of Carrot
+tile.kalstuff:chicken_nest.name=Chicken Nest
+tile.kalstuff:trash_can.name=Trash Can
+tile.kalstuff:wild_grape_vine.name=Wild Grape Vine
+tile.kalstuff:grape_vine.name=Grape Vine
+tile.kalstuff:moon_flower.name=Moon Flower
+tile.kalstuff:baked_potato_block.name=Baked Block of Potato
+tile.kalstuff:great_grape.name=Great Grape
 
 #
 # Items
