@@ -7,7 +7,7 @@ import com.team.kalstuff.gui.GuiTrashCan;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.tileentity.TileEntity;
+import net.minecraft.inventory.Container;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.network.IGuiHandler;
@@ -28,23 +28,17 @@ public class KalStuffGuiHandler implements IGuiHandler {
 	 * Gets the server gui element, should return a child of Container.
 	 */
 	@Override
-	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+	public Container getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		BlockPos pos = new BlockPos(x, y, z);
 		switch(ID)
 		{
-			case(0): {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity instanceof TileEntityChickenNest) 
-				{
-					TileEntityChickenNest tileEntityChickenNest = (TileEntityChickenNest) tileEntity;
-					return new ContainerChickenNest(player.inventory, tileEntityChickenNest);
-				}
-			}
-			case(1): {
+			case(0):
+				return new ContainerChickenNest(player.inventory, (TileEntityChickenNest)world.getTileEntity(pos));
+			case(1):
 				return new ContainerTrashCan(player.inventory);
-			}
+			default:
+				return null;
 		}
-		return null;
 	}
 
 	/**
@@ -52,22 +46,14 @@ public class KalStuffGuiHandler implements IGuiHandler {
 	 */
 	@Override
 	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
-		BlockPos pos = new BlockPos(x, y, z);
 		switch(ID)
 		{
-			case(0): {
-				TileEntity tileEntity = world.getTileEntity(pos);
-				if (tileEntity instanceof TileEntityChickenNest) 
-				{
-					TileEntityChickenNest tileEntityChickenNest = (TileEntityChickenNest) tileEntity;
-					return new GuiChickenNest(player.inventory, tileEntityChickenNest);
-				}
-				return null;
-			}
-			case(1): {
+			case(0):
+				return new GuiChickenNest(getServerGuiElement(ID, player, world, x, y, z), player.inventory);
+			case(1):
 				return new GuiTrashCan(player.inventory);
-			}
+			default:
+				return null;
 		}
-		return null;
 	}
 }
