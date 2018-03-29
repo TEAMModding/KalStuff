@@ -1,7 +1,7 @@
 package com.team.kalstuff.item;
 
 import com.team.kalstuff.KalStuff;
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.item.Item;
 
@@ -15,7 +15,7 @@ public class ItemKalStuff extends Item {
 	public static Item setupItem(Item item, String name) {
 		item.setRegistryName(name);
 		item.setUnlocalizedName(KalStuff.MODID + ":" + name);
-		item.setCreativeTab(StartupCommon.KALSTUFF);
+		item.setCreativeTab(CommonProxy.KALSTUFF);
 		return item;
 	}
 }

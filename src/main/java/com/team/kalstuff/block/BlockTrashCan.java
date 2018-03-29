@@ -1,7 +1,7 @@
 package com.team.kalstuff.block;
 
 import com.team.kalstuff.KalStuff;
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
@@ -19,7 +19,7 @@ public class BlockTrashCan extends BlockKalStuff
 
 	public BlockTrashCan(String name) {
 		super(Material.IRON, name);
-		this.setCreativeTab(StartupCommon.KALSTUFF);
+		this.setCreativeTab(CommonProxy.KALSTUFF);
 		this.setHardness(3.0F);
 	}
 	

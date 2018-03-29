@@ -1,6 +1,6 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
@@ -16,7 +16,7 @@ public class ItemLute extends ItemKalStuff {
 	
 	public ItemLute(String name) {
 		super(name);
-		this.setCreativeTab(StartupCommon.KALSTUFF);
+		this.setCreativeTab(CommonProxy.KALSTUFF);
 	}
 	
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand) {

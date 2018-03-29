@@ -1,4 +1,4 @@
-package com.team.kalstuff;
+package com.team.kalstuff.proxy;
 
 import com.team.kalstuff.client.renderer.entity.RenderDuck;
 import com.team.kalstuff.entity.EntityDuck;
@@ -13,32 +13,22 @@ import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
-public class StartupClientOnly {
-	public static void preInitClientOnly(FMLPreInitializationEvent event)
-	{	
-
-	}
+public class ClientProxy extends CommonProxy {
 	
-	public static void initClientOnly(FMLInitializationEvent event)
-	{
-		
-	}
-	 
-	public static void postInitClientOnly(FMLPostInitializationEvent event)
-	{
-		
+	@Override
+	public void preInit(FMLPreInitializationEvent e)
+	{	
+		super.preInit(e);
 	}
 	
     @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent event) {
+    public static void registerModels(ModelRegistryEvent e) {
 
 		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class, manager -> new RenderDuck(manager, new ModelChicken(), 0.3F));
 		

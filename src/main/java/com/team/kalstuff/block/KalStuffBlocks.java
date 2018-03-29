@@ -1,6 +1,6 @@
 package com.team.kalstuff.block;
 
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -55,7 +55,7 @@ public class KalStuffBlocks {
     	reg.register(new BlockGrapeVine("grape_vine"));
     	reg.register(new BlockKalStuff(Material.SPONGE, "great_grape"));
     	// only the first BlockMoonFlower should appear in the Creative inventory
-    	reg.register(new BlockMoonFlower(0, "moon_flower").setCreativeTab(StartupCommon.KALSTUFF));
+    	reg.register(new BlockMoonFlower(0, "moon_flower").setCreativeTab(CommonProxy.KALSTUFF));
     	reg.register(new BlockMoonFlower(1, "moon_flower1"));
     	reg.register(new BlockMoonFlower(2, "moon_flower2"));
     	reg.register(new BlockMoonFlower(3, "moon_flower3"));

@@ -2,7 +2,7 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
-import com.team.kalstuff.config.Configs;
+import com.team.kalstuff.config.Config;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockDirectional;
@@ -89,7 +89,7 @@ public class BlockBridge extends BlockDirectional {
     	if (block == null) return true;
     	
     	// if the block cannot be picked up by endermen, is not a bridge block, and in the case of TNT is not allowed in the config, return with a chat message
-    	if ((!EntityEnderman.getCarriable(block) && block != KalStuffBlocks.bridge) || (Configs.bridgeTNT && block == Blocks.TNT)) {
+    	if ((!EntityEnderman.getCarriable(block) && block != KalStuffBlocks.bridge) || (!Config.bridgeTNT && block == Blocks.TNT)) {
     		playerIn.sendMessage(new TextComponentTranslation("The bridge is unable to send this", new Object[0]));
     		return true;
     	}

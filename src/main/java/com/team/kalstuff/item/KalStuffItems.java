@@ -1,7 +1,7 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.StartupCommon;
 import com.team.kalstuff.block.KalStuffBlocks;
+import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -82,7 +82,7 @@ public class KalStuffItems {
 				reg.register(new ItemDagger(Item.ToolMaterial.DIAMOND, "diamond_dagger"));
 				reg.register(new ItemDagger(Item.ToolMaterial.GOLD, "golden_dagger"));
 				reg.register(new ItemKalStuff("golden_mug"));
-				reg.register(new ItemFood(3, 0.5F, false).setRegistryName("grapes").setUnlocalizedName("grapes").setCreativeTab(StartupCommon.KALSTUFF));
+				reg.register(new ItemFood(3, 0.5F, false).setRegistryName("grapes").setUnlocalizedName("grapes").setCreativeTab(CommonProxy.KALSTUFF));
 				reg.register(new ItemKalStuff("grape_seeds"));
 				reg.register(new ItemSoda(2, 2.0F, 600, MobEffects.JUMP_BOOST, "grape_soda"));
 				reg.register(new ItemKalStuff("infused_bacon_core"));
@@ -91,7 +91,7 @@ public class KalStuffItems {
 				reg.register(new ItemCoffee(2, 2.0F, 0, null, "light_coffee"));
 				reg.register(new ItemLute("lute"));
 				reg.register(new ItemSoda(2, 2.0F, 600, MobEffects.HASTE, "melon_soda"));
-				reg.register(new ItemSeeds(KalStuffBlocks.grape_vine, Blocks.FARMLAND).setRegistryName("plantable_grape_seeds").setUnlocalizedName("plantable_grape_seeds").setCreativeTab(StartupCommon.KALSTUFF));
+				reg.register(new ItemSeeds(KalStuffBlocks.grape_vine, Blocks.FARMLAND).setRegistryName("plantable_grape_seeds").setUnlocalizedName("plantable_grape_seeds").setCreativeTab(CommonProxy.KALSTUFF));
 				reg.register(new ItemSoda(2, 2.0F, 600, MobEffects.STRENGTH, "root_beer"));
 				reg.register(new ItemKalStuff("soda_can"));
 				reg.register(new ItemDagger(Item.ToolMaterial.STONE, "stone_dagger"));

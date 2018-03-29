@@ -1,7 +1,7 @@
 package com.team.kalstuff.block;
 
 import com.team.kalstuff.KalStuff;
-import com.team.kalstuff.StartupCommon;
+import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -18,7 +18,7 @@ public class BlockKalStuff extends Block {
 	public static Block setupBlock(Block block, String name) {
 		block.setRegistryName(name);
 		block.setUnlocalizedName(KalStuff.MODID + ":" + name);
-		block.setCreativeTab(StartupCommon.KALSTUFF);
+		block.setCreativeTab(CommonProxy.KALSTUFF);
 		return block;
 	}
 }
