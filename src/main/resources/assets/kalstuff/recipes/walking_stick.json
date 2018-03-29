@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "kalstuff:walking_stick"
+  },
+  "pattern": [
+    "  A",
+    " A ",
+    "A  "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:stick"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "kalstuff:coffee_mug"
+  },
+  "pattern": [
+    "   ",
+    "PC ",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "minecraft:flower_pot"
+    },
+    "C": {
+      "item": "minecraft:clay_ball"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "kalstuff:bacon_wand"
+  },
+  "pattern": [
+    "  C",
+    " B ",
+    "C  "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "kalstuff:infused_bacon_core"
+    },
+    "C": {
+      "item": "kalstuff:chocolate_cap"
+    }
+  }
+}

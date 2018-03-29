@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "kalstuff:light_coffee"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:milk_bucket"
+    },
+    {
+      "item": "kalstuff:coffee"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

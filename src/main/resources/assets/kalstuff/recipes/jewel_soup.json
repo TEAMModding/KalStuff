@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "kalstuff:jewel_soup"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "kalstuff:golden_mug"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

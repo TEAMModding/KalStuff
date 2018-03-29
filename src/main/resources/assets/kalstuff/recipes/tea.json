@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "kalstuff:tea"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:leaves",
+      "data": 0
+    },
+    {
+      "item": "kalstuff:coffee_mug"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

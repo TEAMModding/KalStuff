@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kalstuff:trash_can"
+  },
+  "pattern": [
+    "A A",
+    "A A",
+    "AAA"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:stone",
+      "data": 0
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kalstuff:closed_root_beer"
+  },
+  "ingredients": [
+    {
+      "item": "kalstuff:soda_can"
+    },
+    {
+      "item": "minecraft:nether_wart"
+    },
+    {
+      "item": "minecraft:end_stone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

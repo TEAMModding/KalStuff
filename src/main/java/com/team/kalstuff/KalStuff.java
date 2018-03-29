@@ -2,8 +2,10 @@ package com.team.kalstuff;
 
 import org.apache.logging.log4j.Logger;
 
+import com.team.kalstuff.config.Config;
 import com.team.kalstuff.proxy.CommonProxy;
 
+import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -34,10 +36,14 @@ public class KalStuff  {
 
 	public static Logger logger;
 
+	public static Configuration config;
+	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e)
 	{
 		logger = e.getModLog();
+		Config.initialize(e, e.getSuggestedConfigurationFile());
+		config = Config.getConfig();
 		proxy.preInit(e);
 	}
 	
@@ -50,6 +56,10 @@ public class KalStuff  {
 	@EventHandler
 	public void postInit(FMLPostInitializationEvent e)
 	{	
+		if (config.hasChanged())
+		{
+			config.save();
+		}
 		proxy.postInit(e);
 	}
 }

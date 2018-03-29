@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kalstuff:closed_melon_soda"
+  },
+  "ingredients": [
+    {
+      "item": "kalstuff:soda_can"
+    },
+    {
+      "item": "minecraft:melon"
+    },
+    {
+      "item": "minecraft:end_stone"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

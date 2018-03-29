@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "kalstuff:bacon_core"
+  },
+  "pattern": [
+    " P ",
+    "P  ",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "minecraft:cooked_porkchop"
+    }
+  }
+}

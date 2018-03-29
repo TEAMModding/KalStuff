@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "kalstuff:chicken_nest"
+  },
+  "pattern": [
+    " X ",
+    "X X",
+    " X "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "minecraft:wheat"
+    }
+  }
+}
