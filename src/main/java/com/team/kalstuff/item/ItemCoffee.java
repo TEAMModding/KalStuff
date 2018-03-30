@@ -1,6 +1,5 @@
 package com.team.kalstuff.item;
 
-import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 
 public class ItemCoffee extends ItemDrink {
@@ -17,6 +16,5 @@ public class ItemCoffee extends ItemDrink {
 	public ItemCoffee(int amount, float saturation, int potionLength, Potion potion, String name) {
 		super(amount, saturation, potionLength, potion, name);
 		this.setMaxStackSize(1);
-		this.setReturnStack(new ItemStack(KalStuffItems.coffee_mug));
 	}
 }

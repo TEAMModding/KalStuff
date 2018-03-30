@@ -18,8 +18,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @GameRegistry.ObjectHolder("kalstuff")
 @Mod.EventBusSubscriber(modid = "kalstuff")
-public class KalStuffItems {
-
+public class KalStuffItems
+{
 	// ---Please keep all items in alphabetical order!---
 	public static final Item apple_soda = Items.AIR;
 	public static final Item bacon_core = Items.AIR;
@@ -61,8 +61,8 @@ public class KalStuffItems {
 	 * Registers all items from the mod.
 	 */
 	@SubscribeEvent
-	public static void registerItems(Register<Item> event) {
-		
+	public static void registerItems(Register<Item> event)
+	{	
 		IForgeRegistry<Item> reg = event.getRegistry();
 		
 		// please continue to keep all items in alphabetical order
@@ -72,10 +72,10 @@ public class KalStuffItems {
 				reg.register(new ItemBlazeSoup(2, 2.0F, 6000, "blaze_soup"));
 				reg.register(new ItemBoxingGlove("boxing_glove"));
 				reg.register(new ItemKalStuff("chocolate_cap"));
-				reg.register(new ItemClosedSoda("closed_apple_soda").setReturnStack(apple_soda));
-				reg.register(new ItemClosedSoda("closed_grape_soda").setReturnStack(grape_soda));
-				reg.register(new ItemClosedSoda("closed_melon_soda").setReturnStack(melon_soda));
-				reg.register(new ItemClosedSoda("closed_root_beer").setReturnStack(root_beer));
+				reg.register(new ItemClosedSoda("closed_apple_soda"));
+				reg.register(new ItemClosedSoda("closed_grape_soda"));
+				reg.register(new ItemClosedSoda("closed_melon_soda"));
+				reg.register(new ItemClosedSoda("closed_root_beer"));
 				reg.register(new ItemCoffee(2, 2.0F, 200, MobEffects.SPEED, "coffee"));
 				reg.register(new ItemKalStuff("coffee_mug"));
 				reg.register(new ItemEnderPowder("crushed_ender"));
@@ -101,15 +101,15 @@ public class KalStuffItems {
 				reg.register(new ItemKalStuff("wine_bottle"));
 				reg.register(new ItemDagger(Item.ToolMaterial.WOOD, "wooden_dagger"));
 				reg.register(new ItemRoundShield(Item.ToolMaterial.WOOD, "wooden_round_shield"));
-		
-		registerItemBlocks(reg);
+				
+				registerItemBlocks(reg);
 	}
-	
+
 	/**
 	 * Registers all ItemBlocks from the mod.
 	 */
-	public static void registerItemBlocks(IForgeRegistry<Item> reg) {
-		
+	public static void registerItemBlocks(IForgeRegistry<Item> reg)
+	{	
 		// please keep all itemblocks in alphabetical order
 		reg.register(new ItemBlock(KalStuffBlocks.apple_block).setRegistryName("apple_block"));
 		reg.register(new ItemBlock(KalStuffBlocks.baked_potato_block).setRegistryName("baked_potato_block"));
@@ -124,5 +124,27 @@ public class KalStuffItems {
 		reg.register(new ItemBlock(KalStuffBlocks.potato_block).setRegistryName("potato_block"));
 		reg.register(new ItemBlock(KalStuffBlocks.trash_can).setRegistryName("trash_can"));
 		reg.register(new ItemBlock(KalStuffBlocks.wild_grape_vine).setRegistryName("wild_grape_vine"));
+	}
+	/**
+	 * Allows for configuration of items after item registry is complete.
+	 * Use if, for example, your item needs to access another item.
+	 */
+	public static void configureItems()
+	{
+		((ItemClosedSoda) closed_apple_soda).setReturnStack(apple_soda);
+		((ItemClosedSoda) closed_grape_soda).setReturnStack(grape_soda);
+		((ItemClosedSoda) closed_melon_soda).setReturnStack(melon_soda);
+		((ItemClosedSoda) closed_root_beer).setReturnStack(root_beer);
+		((ItemSoda) apple_soda).setReturnStack(soda_can);
+		((ItemSoda) grape_soda).setReturnStack(soda_can);
+		((ItemSoda) melon_soda).setReturnStack(soda_can);
+		((ItemSoda) root_beer).setReturnStack(soda_can);
+		((ItemCoffee) coffee).setReturnStack(coffee_mug);
+		((ItemCoffee) light_coffee).setReturnStack(coffee_mug);
+		((ItemTea) tea).setReturnStack(coffee_mug);
+		((ItemBlazeSoup) blaze_soup).setReturnStack(golden_mug);
+		((ItemJewelSoup)jewel_soup).setReturnStack(golden_mug);
+		((ItemWine)wine).setReturnStack(wine_bottle);
+
 	}
 }

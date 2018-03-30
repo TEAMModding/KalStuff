@@ -15,6 +15,5 @@ public class ItemJewelSoup extends ItemDrink {
 	public ItemJewelSoup(int amount, float saturation, int potionLength, String name) {
 		super(amount, saturation, potionLength, new Potion[] {MobEffects.SPEED, MobEffects.REGENERATION}, name);
 		this.setMaxStackSize(1);
-		this.setReturnStack(KalStuffItems.golden_mug);
 	}
 }

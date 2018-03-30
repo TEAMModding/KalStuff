@@ -7,6 +7,7 @@ import com.team.kalstuff.KalStuffCreativeTab;
 import com.team.kalstuff.KalStuffGuiHandler;
 import com.team.kalstuff.KalStuffRecipes;
 import com.team.kalstuff.entity.KalStuffEntities;
+import com.team.kalstuff.item.KalStuffItems;
 import com.team.kalstuff.tileentity.KalStuffTileEntities;
 import com.team.kalstuff.worldgen.KalStuffWorldGenerator;
 
@@ -35,6 +36,7 @@ public class CommonProxy {
 	public void init(FMLInitializationEvent e)
 	{
 		KalStuffRecipes.add();
+		KalStuffItems.configureItems();
 		KalStuff.logger.info("Hi there, nerdy geeks. You should just enjoy Minecraft and stop looking at the system output.");		
 	}
 

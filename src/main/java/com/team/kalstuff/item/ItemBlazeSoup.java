@@ -1,7 +1,6 @@
 package com.team.kalstuff.item;
 
 import net.minecraft.init.MobEffects;
-import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 
 public class ItemBlazeSoup extends ItemDrink {
@@ -15,7 +14,6 @@ public class ItemBlazeSoup extends ItemDrink {
 	{
 		super(amount, saturation, potionLength, new Potion[] {MobEffects.ABSORPTION, MobEffects.NIGHT_VISION, MobEffects.STRENGTH, MobEffects.FIRE_RESISTANCE}, name);
 		this.setMaxStackSize(1);
-		this.setReturnStack(new ItemStack(KalStuffItems.golden_mug));
 	}
 
 }

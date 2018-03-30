@@ -20,6 +20,7 @@ public class ItemSoda extends ItemDrink {
 		super(amount, saturation, potionLength, potion, name);
 		this.setMaxDamage(5);
 		this.setMaxStackSize(1);
+		this.setCreativeTab(null); // we don't want open sodas in the Creative inventory
 	}
 	
 	public ItemStack onItemUseFinish(ItemStack stack, World worldIn, EntityLivingBase entityLiving) {

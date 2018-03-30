@@ -22,7 +22,6 @@ public class ItemWine extends ItemDrink {
 	public ItemWine(int amount, float saturation, int potionLength, String name) {
 		super(amount, saturation, potionLength, new Potion[] {MobEffects.NAUSEA, MobEffects.BLINDNESS}, name);
 		this.setMaxStackSize(1);
-		this.setReturnStack(new ItemStack(KalStuffItems.wine));
 	}
 
 	@Override
