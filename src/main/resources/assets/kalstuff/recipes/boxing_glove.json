@@ -1,25 +1,21 @@
 {
   "result": {
     "item": "kalstuff:boxing_glove",
-    "data": 0
+    "data": 3
   },
   "pattern": [
     "LLL",
     "LWL",
-    "SDS"
+    "S S"
   ],
   "type": "minecraft:crafting_shaped",
   "key": {
     "S": {
       "item": "minecraft:string"
     },
-    "D": {
-      "item": "minecraft:dye",
-      "data": 0
-    },
     "W": {
       "item": "minecraft:wool",
-      "data": 0
+      "data":  32767
     },
     "L": {
       "item": "minecraft:leather"

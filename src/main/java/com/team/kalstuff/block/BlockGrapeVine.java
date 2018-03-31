@@ -27,6 +27,7 @@ public class BlockGrapeVine extends BlockCrops {
     public BlockGrapeVine(String name) {
 		super();
 		BlockKalStuff.setupBlock(this, name);
+		this.setCreativeTab(null); // we don't want this one in the Creative menu
         this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0).withProperty(GREAT, false));
     }
     

@@ -19,19 +19,22 @@ import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import net.minecraftforge.fml.relauncher.Side;
 
 @Mod.EventBusSubscriber(Side.CLIENT)
-public class ClientProxy extends CommonProxy {
-	
+public class ClientProxy extends CommonProxy
+{
+
 	@Override
 	public void preInit(FMLPreInitializationEvent e)
-	{	
+	{
 		super.preInit(e);
 	}
-	
-    @SubscribeEvent
-    public static void registerModels(ModelRegistryEvent e) {
 
-		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class, manager -> new RenderDuck(manager, new ModelChicken(), 0.3F));
-		
+	@SubscribeEvent
+	public static void registerModels(ModelRegistryEvent e)
+	{
+
+		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class,
+				manager -> new RenderDuck(manager, new ModelChicken(), 0.3F));
+
 		registerItemRendering("bridge");
 		registerItemRendering("crushed_ender");
 		registerItemRendering("coffee");
@@ -66,7 +69,7 @@ public class ClientProxy extends CommonProxy {
 		registerItemRendering("apple_soda");
 		registerItemRendering("melon_soda");
 		registerItemRendering("grape_soda");
-	    registerItemRendering("closed_root_beer");
+		registerItemRendering("closed_root_beer");
 		registerItemRendering("closed_apple_soda");
 		registerItemRendering("closed_melon_soda");
 		registerItemRendering("closed_grape_soda");
@@ -79,55 +82,63 @@ public class ClientProxy extends CommonProxy {
 		registerItemRendering("great_grape");
 		registerItemRendering("wine");
 		registerItemRendering("wine_bottle");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getMetadata(), "boxing_glove_white");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.ORANGE.getMetadata(), "boxing_glove_orange");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.MAGENTA.getMetadata(), "boxing_glove_magenta");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getMetadata(), "boxing_glove_light_blue");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.YELLOW.getMetadata(), "boxing_glove_yellow");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIME.getMetadata(), "boxing_glove_lime");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PINK.getMetadata(), "boxing_glove_pink");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GRAY.getMetadata(), "boxing_glove_gray");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.SILVER.getMetadata(), "boxing_glove_silver");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.CYAN.getMetadata(), "boxing_glove_cyan");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PURPLE.getMetadata(), "boxing_glove_purple");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLUE.getMetadata(), "boxing_glove_blue");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BROWN.getMetadata(), "boxing_glove_brown");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GREEN.getMetadata(), "boxing_glove_green");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.RED.getMetadata(), "boxing_glove_red");
-        registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLACK.getMetadata(), "boxing_glove_black");
 
-		
-    }
-	
-	/**Registers a new ItemModel.
+		// getDyeDamage returns the actual metadata for dyes - not getMetadata,
+		// strangely
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getDyeDamage(), "boxing_glove_white");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.ORANGE.getDyeDamage(), "boxing_glove_orange");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.MAGENTA.getDyeDamage(), "boxing_glove_magenta");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getDyeDamage(), "boxing_glove_light_blue");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.YELLOW.getDyeDamage(), "boxing_glove_yellow");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIME.getDyeDamage(), "boxing_glove_lime");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PINK.getDyeDamage(), "boxing_glove_pink");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GRAY.getDyeDamage(), "boxing_glove_gray");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.SILVER.getDyeDamage(), "boxing_glove_silver");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.CYAN.getDyeDamage(), "boxing_glove_cyan");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PURPLE.getDyeDamage(), "boxing_glove_purple");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLUE.getDyeDamage(), "boxing_glove_blue");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BROWN.getDyeDamage(), "boxing_glove_brown");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GREEN.getDyeDamage(), "boxing_glove_green");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.RED.getDyeDamage(), "boxing_glove_red");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLACK.getDyeDamage(), "boxing_glove_black");
+
+	}
+
+	/**
+	 * Registers a new ItemModel.
 	 * 
-	 * Will only work if the itemModel json
-	 * file has the same name as the registered
+	 * Will only work if the itemModel json file has the same name as the registered
 	 * blocks/items id.
 	 * 
-	 * @param name The itemModel/block name
+	 * @param name
+	 *            The itemModel/block name
 	 */
-	private static void registerItemRendering(String name) {
+	private static void registerItemRendering(String name)
+	{
 		ResourceLocation resource = new ResourceLocation("kalstuff", name);
 		Item item = ForgeRegistries.ITEMS.getValue(resource);
 		ModelResourceLocation modelResource = new ModelResourceLocation(item.getRegistryName(), "inventory");
-		
+
 		ModelLoader.setCustomModelResourceLocation(item, 0, modelResource);
 	}
-	
-	/**Registers a new ItemModel.
+
+	/**
+	 * Registers a new ItemModel.
 	 * 
-	 * You must specify the Item object,
-	 * the metadata, and the String name of
-	 * the item.
+	 * You must specify the Item object, the metadata, and the String name of the
+	 * item.
 	 * 
-	 * @param itm The Item object you wish to register
-	 * @param subType The metadata of the item
-	 * @param identifier The string name of the item
+	 * @param itm
+	 *            The Item object you wish to register
+	 * @param subType
+	 *            The metadata of the item
+	 * @param identifier
+	 *            The string name of the item
 	 */
-	private static void registerItemRendering(Item item, int subType, String identifier) {
+	private static void registerItemRendering(Item item, int subType, String identifier)
+	{
 		ModelResourceLocation modelResource = new ModelResourceLocation("kalstuff:" + identifier, "inventory");
-		
+
 		ModelLoader.setCustomModelResourceLocation(item, subType, modelResource);
-	}    
+	}
 }

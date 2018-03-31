@@ -11,7 +11,7 @@ public class TileEntityMoonFlower extends TileEntity implements ITickable {
 	
 	@Override
 	public void update() {
-		if (this.world != null && !this.world.isRemote && world.getWorldTime() >= 13000 || world.getWorldTime() < 1000) {  
+		if (this.world != null && !this.world.isRemote && world.getWorldTime() >= 12800 || world.getWorldTime() < 23000) {  
 			this.blockType = this.getBlockType();
 			
             if (this.blockType instanceof BlockMoonFlower)
