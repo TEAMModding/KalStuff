@@ -13,16 +13,16 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class Config {
-		
+public class Config
+{
 	public static File configurationFile;
 	public static Configuration config;
-	
+
 	public static final String CATEGORY_GENERAL = "General";
-	
+
 	public static int cottageRarity = 512;
 	public static boolean bridgeTNT = false;
-	
+
 	public static final void initialize(FMLPreInitializationEvent e, File file)
 	{
 		config = new Configuration(file, KalStuff.VERSION, true);
@@ -34,22 +34,25 @@ public class Config {
 		refresh();
 		config.save();
 	}
+
 	public static final Configuration getConfig()
 	{
 		return config;
 	}
-	
+
 	private static final void refresh()
 	{
-		cottageRarity = config.getInt("Cottage Rarity", CATEGORY_GENERAL, cottageRarity, 0, 16384, "Rarity for cottage generation");
-		bridgeTNT = config.getBoolean("Allow Bridge TNT", CATEGORY_GENERAL, bridgeTNT, "Restricts bridge blocks from placing TNT");
+		cottageRarity = config.getInt("Cottage Rarity", CATEGORY_GENERAL, cottageRarity, 0, 16384,
+				"Rarity for cottage generation");
+		bridgeTNT = config.getBoolean("Allow Bridge TNT", CATEGORY_GENERAL, bridgeTNT,
+				"Restricts bridge blocks from placing TNT");
 	}
-	
+
 	public static void add(List<IConfigElement> list)
 	{
 		list.add(new ConfigElement(config.getCategory(CATEGORY_GENERAL)));
 	}
-	
+
 	public static class EventHandler
 	{
 		@SubscribeEvent

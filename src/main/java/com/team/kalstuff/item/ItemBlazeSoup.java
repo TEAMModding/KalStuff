@@ -3,16 +3,18 @@ package com.team.kalstuff.item;
 import net.minecraft.init.MobEffects;
 import net.minecraft.potion.Potion;
 
-public class ItemBlazeSoup extends ItemDrink {
-	
+public class ItemBlazeSoup extends ItemDrink
+{
 	/**
-     * 
-     *  
-     * @param potionLength is the length of the speed effect the player gets upon drinking.
-     */
+	 * 
+	 * 
+	 * @param potionLength
+	 *            is the length of the speed effect the player gets upon drinking.
+	 */
 	public ItemBlazeSoup(int amount, float saturation, int potionLength, String name)
 	{
-		super(amount, saturation, potionLength, new Potion[] {MobEffects.ABSORPTION, MobEffects.NIGHT_VISION, MobEffects.STRENGTH, MobEffects.FIRE_RESISTANCE}, name);
+		super(amount, saturation, potionLength, new Potion[] { MobEffects.ABSORPTION, MobEffects.NIGHT_VISION,
+				MobEffects.STRENGTH, MobEffects.FIRE_RESISTANCE }, name);
 		this.setMaxStackSize(1);
 	}
 

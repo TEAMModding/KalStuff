@@ -15,35 +15,39 @@ import net.minecraft.world.World;
 
 public class BlockTrashCan extends BlockKalStuff
 {
-	public static final AxisAlignedBB AABB = new AxisAlignedBB(1d/16d, 0d, 1d/16d, 15d/16d, 1d, 15d/16d);
+	public static final AxisAlignedBB AABB = new AxisAlignedBB(1d / 16d, 0d, 1d / 16d, 15d / 16d, 1d, 15d / 16d);
 
-	public BlockTrashCan(String name) {
+	public BlockTrashCan(String name)
+	{
 		super(Material.IRON, name);
 		this.setCreativeTab(CommonProxy.KALSTUFF);
 		this.setHardness(3.0F);
 	}
-	
-	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
-    {
-        return AABB;
-    }
 
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
-    {
+	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
+	{
+		return AABB;
+	}
+
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+			EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
+	{
 		if (!worldIn.isRemote)
 		{
 			playerIn.openGui(KalStuff.instance, 1, worldIn, pos.getX(), pos.getY(), pos.getZ());
 		}
 		return true;
 	}
-	
+
 	@Override
-	public boolean isOpaqueCube(IBlockState state) {
+	public boolean isOpaqueCube(IBlockState state)
+	{
 		return false;
 	}
 
 	@Override
-	public boolean isFullCube(IBlockState state) {
+	public boolean isFullCube(IBlockState state)
+	{
 		return false;
 	}
 }

@@ -9,75 +9,77 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+public class BlockBakedPotato extends BlockFood
+{
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
 
-public class BlockBakedPotato extends BlockFood {
-	
-    public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
-
-	public BlockBakedPotato(float hardness, int amount, float saturation, String name) {
+	public BlockBakedPotato(float hardness, int amount, float saturation, String name)
+	{
 		super(hardness, amount, saturation, name);
 	}
-	
-    public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) {
-    	
-        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
-    }
-	
-    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
-    	
-        this.setDefaultFacing(worldIn, pos, state);
-    }
 
-    private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state) {
-    	
-        if (!worldIn.isRemote) {
-            IBlockState block = worldIn.getBlockState(pos.north());
-            IBlockState block1 = worldIn.getBlockState(pos.south());
-            IBlockState block2 = worldIn.getBlockState(pos.west());
-            IBlockState block3 = worldIn.getBlockState(pos.east());
-            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
+	public IBlockState onBlockPlaced(World worldIn, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ,
+			int meta, EntityLivingBase placer)
+	{
+		return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+	}
 
-            if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock())
-                enumfacing = EnumFacing.SOUTH;
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+	{
+		this.setDefaultFacing(worldIn, pos, state);
+	}
 
-            else if (enumfacing == EnumFacing.SOUTH && block1.isFullBlock() && !block.isFullBlock())
-                enumfacing = EnumFacing.NORTH;
+	private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
+	{
+		if (!worldIn.isRemote)
+		{
+			IBlockState block = worldIn.getBlockState(pos.north());
+			IBlockState block1 = worldIn.getBlockState(pos.south());
+			IBlockState block2 = worldIn.getBlockState(pos.west());
+			IBlockState block3 = worldIn.getBlockState(pos.east());
+			EnumFacing enumfacing = (EnumFacing) state.getValue(FACING);
 
-            else if (enumfacing == EnumFacing.WEST && block2.isFullBlock() && !block3.isFullBlock())
-                enumfacing = EnumFacing.EAST;
+			if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock())
+				enumfacing = EnumFacing.SOUTH;
 
-            else if (enumfacing == EnumFacing.EAST && block3.isFullBlock() && !block2.isFullBlock())
-                enumfacing = EnumFacing.WEST;
+			else if (enumfacing == EnumFacing.SOUTH && block1.isFullBlock() && !block.isFullBlock())
+				enumfacing = EnumFacing.NORTH;
 
-            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
-        }
-    }
-    
-    /**
-     * Convert the given metadata into a BlockState for this Block
-     */
-    public IBlockState getStateFromMeta(int meta) {
-    	
-        EnumFacing enumfacing = EnumFacing.getFront(meta);
+			else if (enumfacing == EnumFacing.WEST && block2.isFullBlock() && !block3.isFullBlock())
+				enumfacing = EnumFacing.EAST;
 
-        if (enumfacing.getAxis() == EnumFacing.Axis.Y)
-        {
-            enumfacing = EnumFacing.NORTH;
-        }
+			else if (enumfacing == EnumFacing.EAST && block3.isFullBlock() && !block2.isFullBlock())
+				enumfacing = EnumFacing.WEST;
 
-        return this.getDefaultState().withProperty(FACING, enumfacing);
-    }
+			worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
+		}
+	}
 
-    /**
-     * Convert the BlockState into the correct metadata value
-     */
-    public int getMetaFromState(IBlockState state) {
-    	
-        return ((EnumFacing)state.getValue(FACING)).getIndex();
-    }
+	/**
+	 * Convert the given metadata into a BlockState for this Block
+	 */
+	public IBlockState getStateFromMeta(int meta)
+	{
+		EnumFacing enumfacing = EnumFacing.getFront(meta);
 
-    protected BlockStateContainer createBlockState() {
-    	
-        return new BlockStateContainer(this, new IProperty[] {FACING});
-    }
+		if (enumfacing.getAxis() == EnumFacing.Axis.Y)
+		{
+			enumfacing = EnumFacing.NORTH;
+		}
+
+		return this.getDefaultState().withProperty(FACING, enumfacing);
+	}
+
+	/**
+	 * Convert the BlockState into the correct metadata value
+	 */
+	public int getMetaFromState(IBlockState state)
+	{
+		return ((EnumFacing) state.getValue(FACING)).getIndex();
+	}
+
+	protected BlockStateContainer createBlockState()
+	{
+		return new BlockStateContainer(this, new IProperty[] { FACING });
+	}
 }

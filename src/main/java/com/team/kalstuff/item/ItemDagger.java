@@ -21,7 +21,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemDagger extends ItemKalStuff
 {
-
 	private final float attackDamage;
 	private final Item.ToolMaterial material;
 
@@ -148,7 +147,6 @@ public class ItemDagger extends ItemKalStuff
 			multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),
 					new AttributeModifier(ATTACK_SPEED_MODIFIER, "Weapon modifier", -1.2D, 0));
 		}
-
 		return multimap;
 	}
 }

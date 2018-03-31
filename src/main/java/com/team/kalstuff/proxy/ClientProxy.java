@@ -21,7 +21,6 @@ import net.minecraftforge.fml.relauncher.Side;
 @Mod.EventBusSubscriber(Side.CLIENT)
 public class ClientProxy extends CommonProxy
 {
-
 	@Override
 	public void preInit(FMLPreInitializationEvent e)
 	{
@@ -31,7 +30,6 @@ public class ClientProxy extends CommonProxy
 	@SubscribeEvent
 	public static void registerModels(ModelRegistryEvent e)
 	{
-
 		RenderingRegistry.registerEntityRenderingHandler(EntityDuck.class,
 				manager -> new RenderDuck(manager, new ModelChicken(), 0.3F));
 
@@ -88,7 +86,8 @@ public class ClientProxy extends CommonProxy
 		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getDyeDamage(), "boxing_glove_white");
 		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.ORANGE.getDyeDamage(), "boxing_glove_orange");
 		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.MAGENTA.getDyeDamage(), "boxing_glove_magenta");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getDyeDamage(), "boxing_glove_light_blue");
+		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getDyeDamage(),
+				"boxing_glove_light_blue");
 		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.YELLOW.getDyeDamage(), "boxing_glove_yellow");
 		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIME.getDyeDamage(), "boxing_glove_lime");
 		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PINK.getDyeDamage(), "boxing_glove_pink");
@@ -138,7 +137,6 @@ public class ClientProxy extends CommonProxy
 	private static void registerItemRendering(Item item, int subType, String identifier)
 	{
 		ModelResourceLocation modelResource = new ModelResourceLocation("kalstuff:" + identifier, "inventory");
-
 		ModelLoader.setCustomModelResourceLocation(item, subType, modelResource);
 	}
 }

@@ -20,60 +20,72 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-public class BlockGrapeVine extends BlockCrops {
+public class BlockGrapeVine extends BlockCrops
+{
+	public static final PropertyBool GREAT = PropertyBool.create("great");
 
-    public static final PropertyBool GREAT = PropertyBool.create("great");
-
-    public BlockGrapeVine(String name) {
+	public BlockGrapeVine(String name)
+	{
 		super();
 		BlockKalStuff.setupBlock(this, name);
 		this.setCreativeTab(null); // we don't want this one in the Creative menu
-        this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0).withProperty(GREAT, false));
-    }
-    
-	
-	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) {
+		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0).withProperty(GREAT, false));
+	}
+
+	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
+	{
 		super.onBlockAdded(worldIn, pos, state);
-		
 		Random rand = new Random();
-		if (rand.nextInt(500) == 0) worldIn.setBlockState(pos, state.withProperty(GREAT, true));
+		if (rand.nextInt(500) == 0)
+			worldIn.setBlockState(pos, state.withProperty(GREAT, true));
 	}
-	
-	protected Item getSeed() {
+
+	protected Item getSeed()
+	{
 		return null;
 	}
 
-	protected Item getCrop() {
+	protected Item getCrop()
+	{
 		return null;
 	}
-	
-    public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand) {
-        this.checkAndDropBlock(worldIn, pos, state);
-        
-        if (worldIn.getLightFromNeighbors(pos.up()) >= 9) {
-            int i = this.getAge(state);
 
-            if (i < this.getMaxAge()) {
-                float f = getGrowthChance(this, worldIn, pos);
+	public void updateTick(World worldIn, BlockPos pos, IBlockState state, Random rand)
+	{
+		this.checkAndDropBlock(worldIn, pos, state);
 
-                if (rand.nextInt((int)(25.0F / f) + 1) == 0) {
-            		if (i + 1 == 7 && state.getValue(GREAT)) worldIn.setBlockState(pos, KalStuffBlocks.great_grape.getDefaultState());
-            		else worldIn.setBlockState(pos, this.getDefaultState().withProperty(AGE, i + 1).withProperty(GREAT, state.getValue(GREAT)), 2);
-                }
-            }
-        }
-    }
-	
-    public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state) {
-            IBlockState soil = worldIn.getBlockState(pos.down());
-            return soil.getBlock() == Blocks.FARMLAND;
-    }
-    
-    
-    
+		if (worldIn.getLightFromNeighbors(pos.up()) >= 9)
+		{
+			int i = this.getAge(state);
+
+			if (i < this.getMaxAge())
+			{
+				float f = getGrowthChance(this, worldIn, pos);
+
+				if (rand.nextInt((int) (25.0F / f) + 1) == 0)
+				{
+					if (i + 1 == 7 && state.getValue(GREAT))
+						worldIn.setBlockState(pos, KalStuffBlocks.great_grape.getDefaultState());
+					else
+						worldIn.setBlockState(pos, this.getDefaultState().withProperty(AGE, i + 1).withProperty(GREAT,
+								state.getValue(GREAT)), 2);
+				}
+			}
+		}
+	}
+
+	public boolean canBlockStay(World worldIn, BlockPos pos, IBlockState state)
+	{
+		IBlockState soil = worldIn.getBlockState(pos.down());
+		return soil.getBlock() == Blocks.FARMLAND;
+	}
+
 	@Override
-	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
-		if (((Integer)state.getValue(AGE)).intValue() == 7) {
+	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
+			EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY)
+	{
+		if (((Integer) state.getValue(AGE)).intValue() == 7)
+		{
 			worldIn.setBlockState(pos, state.withProperty(AGE, 6));
 			Random rand = new Random();
 			ItemStack aStack = new ItemStack(KalStuffItems.grapes, rand.nextInt(3) + 4);
@@ -82,12 +94,13 @@ public class BlockGrapeVine extends BlockCrops {
 		}
 		return false;
 	}
-	
+
 	@Override
-	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state) {
+	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state)
+	{
 		super.onBlockDestroyedByPlayer(worldIn, pos, state);
-		
-		if (((Integer)state.getValue(AGE)).intValue() == 1) {
+		if (((Integer) state.getValue(AGE)).intValue() == 1)
+		{
 			Random rand = new Random();
 			ItemStack stack1 = new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3);
 			ItemStack stack2 = new ItemStack(Items.STICK, 4);
@@ -95,41 +108,48 @@ public class BlockGrapeVine extends BlockCrops {
 			spawnAsEntity(worldIn, pos, stack2);
 		}
 	}
-	
+
 	@Override
-	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos, IBlockState state, int fortune) {
+	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
+			IBlockState state, int fortune)
+	{
 		super.getDrops(drops, world, pos, state, fortune);
-		
-		int age = ((Integer)state.getValue(AGE)).intValue();
-		Random rand = world instanceof World ? ((World)world).rand : new Random();
-		
-		if (age >= 7) drops.add(new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3));
-		else drops.add(new ItemStack(KalStuffItems.grape_seeds, 1, 0));
+		int age = ((Integer) state.getValue(AGE)).intValue();
+		Random rand = world instanceof World ? ((World) world).rand : new Random();
+
+		if (age >= 7)
+			drops.add(new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3));
+		else
+			drops.add(new ItemStack(KalStuffItems.grape_seeds, 1, 0));
 		drops.add(new ItemStack(Items.STICK, 4));
 	}
-	
+
 	@Override
-	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state) {
+	public boolean canUseBonemeal(World worldIn, Random rand, BlockPos pos, IBlockState state)
+	{
 		return false;
 	}
-	
-    protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, new IProperty[] {AGE, GREAT});
-    }
 
-    /**
-     * Convert the given metadata into a BlockState for this Block
-     */
-    public IBlockState getStateFromMeta(int meta) {
-    	return this.getDefaultState().withProperty(AGE, meta > 7 ? meta - 8 : meta).withProperty(GREAT, meta > 7 ? true : false);
-    }
+	protected BlockStateContainer createBlockState()
+	{
+		return new BlockStateContainer(this, new IProperty[] { AGE, GREAT });
+	}
 
-    /**
-     * Convert the BlockState into the correct metadata value
-     */
-    public int getMetaFromState(IBlockState state) {
-        int i = state.getValue(AGE);
-        return state.getValue(GREAT) ? i + 8 : i;
-    }
+	/**
+	 * Convert the given metadata into a BlockState for this Block
+	 */
+	public IBlockState getStateFromMeta(int meta)
+	{
+		return this.getDefaultState().withProperty(AGE, meta > 7 ? meta - 8 : meta).withProperty(GREAT,
+				meta > 7 ? true : false);
+	}
 
+	/**
+	 * Convert the BlockState into the correct metadata value
+	 */
+	public int getMetaFromState(IBlockState state)
+	{
+		int i = state.getValue(AGE);
+		return state.getValue(GREAT) ? i + 8 : i;
+	}
 }

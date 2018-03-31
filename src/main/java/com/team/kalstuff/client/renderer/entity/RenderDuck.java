@@ -14,15 +14,18 @@ public class RenderDuck extends RenderLiving<EntityDuck>
 {
 	private static final ResourceLocation CHICKEN_TEXTURES = new ResourceLocation("kalstuff:textures/entity/duck.png");
 
-    public RenderDuck(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn) {
+	public RenderDuck(RenderManager rendermanagerIn, ModelBase modelbaseIn, float shadowsizeIn)
+	{
 		super(rendermanagerIn, modelbaseIn, shadowsizeIn);
 	}
 
-    /**
-     * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
-     */
+	/**
+	 * Returns the location of an entity's texture. Doesn't seem to be called unless
+	 * you call Render.bindEntityTexture.
+	 */
 	@Override
-	protected ResourceLocation getEntityTexture(EntityDuck entity) {
+	protected ResourceLocation getEntityTexture(EntityDuck entity)
+	{
 		return CHICKEN_TEXTURES;
 	}
 }

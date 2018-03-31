@@ -35,26 +35,24 @@ public class KalStuffGuiFactory implements IModGuiFactory
 	{
 		return null;
 	}
-	
-	
+
 	public static class ConfigGui extends GuiConfig
 	{
 		public ConfigGui(GuiScreen parent)
 		{
 			super(parent, getList(), KalStuff.MODID, false, false, getTitle());
 		}
-		
+
 		public static List<IConfigElement> getList()
 		{
 			List<IConfigElement> list = new ArrayList<IConfigElement>();
 			Config.add(list);
 			return list;
 		}
-		
+
 		public static String getTitle()
 		{
 			return I18n.format("gui.kalstuff:main_config.name");
-		}	
+		}
 	}
-
 }
