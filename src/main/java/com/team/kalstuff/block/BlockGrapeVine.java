@@ -5,6 +5,7 @@ import java.util.Random;
 import com.team.kalstuff.item.KalStuffItems;
 
 import net.minecraft.block.BlockCrops;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
@@ -30,6 +31,7 @@ public class BlockGrapeVine extends BlockCrops
 		BlockKalStuff.setupBlock(this, name);
 		this.setCreativeTab(null); // we don't want this one in the Creative menu
 		this.setDefaultState(this.blockState.getBaseState().withProperty(AGE, 0).withProperty(GREAT, false));
+		this.setSoundType(SoundType.PLANT);
 	}
 
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state)
@@ -65,7 +67,7 @@ public class BlockGrapeVine extends BlockCrops
 				if (rand.nextInt((int) (25.0F / f) + 1) == 0)
 				{
 					if (i + 1 == 7 && state.getValue(GREAT))
-						worldIn.setBlockState(pos, KalStuffBlocks.great_grape.getDefaultState());
+						worldIn.setBlockState(pos, KalStuffBlocks.GREAT_GRAPE.getDefaultState());
 					else
 						worldIn.setBlockState(pos, this.getDefaultState().withProperty(AGE, i + 1).withProperty(GREAT,
 								state.getValue(GREAT)), 2);
@@ -88,7 +90,7 @@ public class BlockGrapeVine extends BlockCrops
 		{
 			worldIn.setBlockState(pos, state.withProperty(AGE, 6));
 			Random rand = new Random();
-			ItemStack aStack = new ItemStack(KalStuffItems.grapes, rand.nextInt(3) + 4);
+			ItemStack aStack = new ItemStack(KalStuffItems.GRAPES, rand.nextInt(3) + 4);
 			spawnAsEntity(worldIn, pos, aStack);
 			return true;
 		}
@@ -102,7 +104,7 @@ public class BlockGrapeVine extends BlockCrops
 		if (((Integer) state.getValue(AGE)).intValue() == 1)
 		{
 			Random rand = new Random();
-			ItemStack stack1 = new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3);
+			ItemStack stack1 = new ItemStack(KalStuffItems.GRAPES, rand.nextInt(2) + 3);
 			ItemStack stack2 = new ItemStack(Items.STICK, 4);
 			spawnAsEntity(worldIn, pos, stack1);
 			spawnAsEntity(worldIn, pos, stack2);
@@ -118,9 +120,9 @@ public class BlockGrapeVine extends BlockCrops
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 
 		if (age >= 7)
-			drops.add(new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3));
+			drops.add(new ItemStack(KalStuffItems.GRAPES, rand.nextInt(2) + 3));
 		else
-			drops.add(new ItemStack(KalStuffItems.grape_seeds, 1, 0));
+			drops.add(new ItemStack(KalStuffItems.GRAPE_SEEDS, 1, 0));
 		drops.add(new ItemStack(Items.STICK, 4));
 	}
 

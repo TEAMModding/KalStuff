@@ -41,7 +41,7 @@ public class GuiChickenNest extends GuiContainer
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY)
 	{
-		String name = I18n.format(KalStuffBlocks.chicken_nest.getUnlocalizedName() + ".name");
+		String name = I18n.format(KalStuffBlocks.CHICKEN_NEST.getUnlocalizedName() + ".name");
 		fontRendererObj.drawString(name, xSize / 2 - fontRendererObj.getStringWidth(name) / 2, 6, 0x404040);
 		fontRendererObj.drawString(playerInv.getDisplayName().getUnformattedText(), 8, ySize - 94, 0x404040);
 	}

@@ -8,7 +8,7 @@ public class ItemTea extends ItemDrink
 	{
 		super(amount, saturation, name);
 		this.setMaxStackSize(1);
-		this.setReturnStack(new ItemStack(KalStuffItems.coffee_mug));
+		this.setReturnStack(new ItemStack(KalStuffItems.COFFEE_MUG));
 	}
 
 }

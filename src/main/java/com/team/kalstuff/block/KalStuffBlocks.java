@@ -3,6 +3,7 @@ package com.team.kalstuff.block;
 import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraftforge.event.RegistryEvent.Register;
@@ -15,25 +16,25 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber(modid = "kalstuff")
 public class KalStuffBlocks
 {
-	// ---Please keep all blocks in alphabetical order!---
-	public static final Block apple_block = Blocks.AIR;
-	public static final Block baked_potato_block = Blocks.AIR;
-	public static final Block blaze_block = Blocks.AIR;
-	public static final Block bridge = Blocks.AIR;
-	public static final Block carrot_block = Blocks.AIR;
-	public static final Block chicken_nest = Blocks.AIR;
-	public static final Block ender_block = Blocks.AIR;
-	public static final Block grape_vine = Blocks.AIR;
-	public static final Block great_grape = Blocks.AIR;
-	public static final Block moon_flower = Blocks.AIR;
-	public static final Block moon_flower1 = Blocks.AIR;
-	public static final Block moon_flower2 = Blocks.AIR;
-	public static final Block moon_flower3 = Blocks.AIR;
-	public static final Block moon_flower4 = Blocks.AIR;
-	public static final Block moon_flower5 = Blocks.AIR;
-	public static final Block potato_block = Blocks.AIR;
-	public static final Block trash_can = Blocks.AIR;
-	public static final Block wild_grape_vine = Blocks.AIR;
+	// ---Please keep all blocks in alphabetical order!--- //
+	public static final Block APPLE_BLOCK = Blocks.AIR;
+	public static final Block BAKED_POTATO_BLOCK = Blocks.AIR;
+	public static final Block BLAZE_BLOCK = Blocks.AIR;
+	public static final Block BRIDGE = Blocks.AIR;
+	public static final Block CARROT_BLOCK = Blocks.AIR;
+	public static final Block CHICKEN_NEST = Blocks.AIR;
+	public static final Block ENDER_BLOCK = Blocks.AIR;
+	public static final Block GRAPE_VINE = Blocks.AIR;
+	public static final Block GREAT_GRAPE = Blocks.AIR;
+	public static final Block MOON_FLOWER = Blocks.AIR;
+	public static final Block MOON_FLOWER1 = Blocks.AIR;
+	public static final Block MOON_FLOWER2 = Blocks.AIR;
+	public static final Block MOON_FLOWER3 = Blocks.AIR;
+	public static final Block MOON_FLOWER4 = Blocks.AIR;
+	public static final Block MOON_FLOWER5 = Blocks.AIR;
+	public static final Block POTATO_BLOCK = Blocks.AIR;
+	public static final Block TRASH_CAN = Blocks.AIR;
+	public static final Block WILD_GRAPE_VINE = Blocks.AIR;
 
 	/**
 	 * Registers all blocks from the mod.
@@ -47,13 +48,13 @@ public class KalStuffBlocks
 
 		reg.register(new BlockFood(1.5F, 9, 2.4F, "apple_block"));
 		reg.register(new BlockBakedPotato(1.5F, 11, 6F, "baked_potato_block"));
-		reg.register(new BlockKalStuff(Material.IRON, "blaze_block").setHardness(35.0F));
+		reg.register(new BlockKalStuff(Material.IRON, SoundType.METAL, "blaze_block").setHardness(35.0F));
 		reg.register(new BlockBridge("bridge"));
 		reg.register(new BlockFood(11.5F, 7, 4.8F, "carrot_block"));
 		reg.register(new BlockChickenNest("chicken_nest"));
-		reg.register(new BlockKalStuff(Material.ROCK, "ender_block").setHardness(5.0F));
+		reg.register(new BlockKalStuff(Material.IRON, SoundType.METAL, "ender_block").setHardness(5.0F));
 		reg.register(new BlockGrapeVine("grape_vine"));
-		reg.register(new BlockKalStuff(Material.SPONGE, "great_grape"));
+		reg.register(new BlockKalStuff(Material.SPONGE, SoundType.CLOTH, "great_grape"));
 		// only the first BlockMoonFlower should appear in the Creative inventory
 		reg.register(new BlockMoonFlower(0, "moon_flower").setCreativeTab(CommonProxy.KALSTUFF));
 		reg.register(new BlockMoonFlower(1, "moon_flower1"));

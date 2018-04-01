@@ -70,6 +70,7 @@ entity.kalstuff:duck.name=Duck
 # GUI
 ##############################
 container.kalstuff:chicken_nest.name=Chicken Nest
+container.kalstuff:trash_can.name=Trash Can
 gui.kalstuff:main_config.name=KalStuff Configuration (kalstuff.cfg)
 
 #

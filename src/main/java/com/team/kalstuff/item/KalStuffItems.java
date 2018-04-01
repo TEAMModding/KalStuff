@@ -20,42 +20,42 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod.EventBusSubscriber(modid = "kalstuff")
 public class KalStuffItems
 {
-	// ---Please keep all items in alphabetical order!---
-	public static final Item apple_soda = Items.AIR;
-	public static final Item bacon_core = Items.AIR;
-	public static final Item bacon_wand = Items.AIR;
-	public static final Item blaze_soup = Items.AIR;
-	public static final Item boxing_glove = Items.AIR;
+	// ---Please keep all items in alphabetical order!--- //
+	public static final Item APPLE_SODA = Items.AIR;
+	public static final Item BACON_CORE = Items.AIR;
+	public static final Item BACON_WAND = Items.AIR;
+	public static final Item BLAZE_SOUP = Items.AIR;
+	public static final Item BOXING_GLOVE = Items.AIR;
 	public static final Item chocolate_cap = Items.AIR;
-	public static final Item closed_apple_soda = Items.AIR;
-	public static final Item closed_grape_soda = Items.AIR;
-	public static final Item closed_melon_soda = Items.AIR;
-	public static final Item closed_root_beer = Items.AIR;
-	public static final Item coffee = Items.AIR;
-	public static final Item coffee_mug = Items.AIR;
-	public static final Item crushed_ender = Items.AIR;
-	public static final Item diamond_dagger = Items.AIR;
-	public static final Item golden_dagger = Items.AIR;
-	public static final Item golden_mug = Items.AIR;
-	public static final Item grapes = Items.AIR;
-	public static final Item grape_seeds = Items.AIR;
-	public static final Item grape_soda = Items.AIR;
-	public static final Item infused_bacon_core = Items.AIR;
-	public static final Item iron_dagger = Items.AIR;
-	public static final Item jewel_soup = Items.AIR;
-	public static final Item light_coffee = Items.AIR;
-	public static final Item lute = Items.AIR;
-	public static final Item melon_soda = Items.AIR;
-	public static final Item plantable_grape_seeds = Items.AIR;
-	public static final Item root_beer = Items.AIR;
-	public static final Item soda_can = Items.AIR;
-	public static final Item stone_dagger = Items.AIR;
-	public static final Item tea = Items.AIR;
-	public static final Item walking_stick = Items.AIR;
-	public static final Item wine = Items.AIR;
-	public static final Item wine_bottle = Items.AIR;
-	public static final Item wooden_dagger = Items.AIR;
-	public static final Item wooden_round_shield = Items.AIR;
+	public static final Item CLOSED_APPLE_SODA = Items.AIR;
+	public static final Item CLOSED_GRAPE_SODA = Items.AIR;
+	public static final Item CLOSED_MELON_SODA = Items.AIR;
+	public static final Item CLOSED_ROOT_BEER = Items.AIR;
+	public static final Item COFFEE = Items.AIR;
+	public static final Item COFFEE_MUG = Items.AIR;
+	public static final Item CRUSHED_ENDER = Items.AIR;
+	public static final Item DIAMOND_DAGGER = Items.AIR;
+	public static final Item GOLDEN_DAGGER = Items.AIR;
+	public static final Item GOLDEN_MUG = Items.AIR;
+	public static final Item GRAPES = Items.AIR;
+	public static final Item GRAPE_SEEDS = Items.AIR;
+	public static final Item GRAPE_SODA = Items.AIR;
+	public static final Item INFUSED_BACON_CORE = Items.AIR;
+	public static final Item IRON_DAGGER = Items.AIR;
+	public static final Item JEWEL_SOUP = Items.AIR;
+	public static final Item LIGHT_COFFEE = Items.AIR;
+	public static final Item LUTE = Items.AIR;
+	public static final Item MELON_SODA = Items.AIR;
+	public static final Item PLANTABLE_GRAPE_SEEDS = Items.AIR;
+	public static final Item ROOT_BEER = Items.AIR;
+	public static final Item SODA_CAN = Items.AIR;
+	public static final Item STONE_DAGGER = Items.AIR;
+	public static final Item TEA = Items.AIR;
+	public static final Item WALKING_STICK = Items.AIR;
+	public static final Item WINE = Items.AIR;
+	public static final Item WINE_BOTTLE = Items.AIR;
+	public static final Item WOODEN_DAGGER = Items.AIR;
+	public static final Item WOODEN_ROUND_SHIELD = Items.AIR;
 
 	/**
 	 * Registers all items from the mod.
@@ -109,7 +109,7 @@ public class KalStuffItems
 
 		reg.register(new ItemFood(3, 0.5F, false).setRegistryName("grapes").setUnlocalizedName("grapes")
 				.setCreativeTab(CommonProxy.KALSTUFF));
-		reg.register(new ItemSeeds(KalStuffBlocks.grape_vine, Blocks.FARMLAND).setRegistryName("plantable_grape_seeds")
+		reg.register(new ItemSeeds(KalStuffBlocks.GRAPE_VINE, Blocks.FARMLAND).setRegistryName("plantable_grape_seeds")
 				.setUnlocalizedName("plantable_grape_seeds").setCreativeTab(CommonProxy.KALSTUFF));
 		reg.register(new ItemKalStuff("grape_seeds"));
 
@@ -130,25 +130,25 @@ public class KalStuffItems
 	public static void registerItemBlocks(IForgeRegistry<Item> reg)
 	{
 		// utility blocks
-		reg.register(new ItemBlock(KalStuffBlocks.bridge).setRegistryName("bridge"));
-		reg.register(new ItemBlock(KalStuffBlocks.chicken_nest).setRegistryName("chicken_nest"));
-		reg.register(new ItemBlock(KalStuffBlocks.trash_can).setRegistryName("trash_can"));
+		reg.register(new ItemBlock(KalStuffBlocks.BRIDGE).setRegistryName("bridge"));
+		reg.register(new ItemBlock(KalStuffBlocks.CHICKEN_NEST).setRegistryName("chicken_nest"));
+		reg.register(new ItemBlock(KalStuffBlocks.TRASH_CAN).setRegistryName("trash_can"));
 
 		// plants
-		reg.register(new ItemBlock(KalStuffBlocks.grape_vine).setRegistryName("grape_vine"));
-		reg.register(new ItemBlock(KalStuffBlocks.moon_flower).setRegistryName("moon_flower"));
-		reg.register(new ItemBlock(KalStuffBlocks.wild_grape_vine).setRegistryName("wild_grape_vine"));
+		reg.register(new ItemBlock(KalStuffBlocks.GRAPE_VINE).setRegistryName("grape_vine"));
+		reg.register(new ItemBlock(KalStuffBlocks.MOON_FLOWER).setRegistryName("moon_flower"));
+		reg.register(new ItemBlock(KalStuffBlocks.WILD_GRAPE_VINE).setRegistryName("wild_grape_vine"));
 
 		// food-based blocks
-		reg.register(new ItemBlock(KalStuffBlocks.apple_block).setRegistryName("apple_block"));
-		reg.register(new ItemBlock(KalStuffBlocks.carrot_block).setRegistryName("carrot_block"));
-		reg.register(new ItemBlock(KalStuffBlocks.potato_block).setRegistryName("potato_block"));
-		reg.register(new ItemBlock(KalStuffBlocks.baked_potato_block).setRegistryName("baked_potato_block"));
-		reg.register(new ItemBlock(KalStuffBlocks.great_grape).setRegistryName("great_grape"));
+		reg.register(new ItemBlock(KalStuffBlocks.APPLE_BLOCK).setRegistryName("apple_block"));
+		reg.register(new ItemBlock(KalStuffBlocks.CARROT_BLOCK).setRegistryName("carrot_block"));
+		reg.register(new ItemBlock(KalStuffBlocks.POTATO_BLOCK).setRegistryName("potato_block"));
+		reg.register(new ItemBlock(KalStuffBlocks.BAKED_POTATO_BLOCK).setRegistryName("baked_potato_block"));
+		reg.register(new ItemBlock(KalStuffBlocks.GREAT_GRAPE).setRegistryName("great_grape"));
 
 		// compaction blocks
-		reg.register(new ItemBlock(KalStuffBlocks.blaze_block).setRegistryName("blaze_block"));
-		reg.register(new ItemBlock(KalStuffBlocks.ender_block).setRegistryName("ender_block"));
+		reg.register(new ItemBlock(KalStuffBlocks.BLAZE_BLOCK).setRegistryName("blaze_block"));
+		reg.register(new ItemBlock(KalStuffBlocks.ENDER_BLOCK).setRegistryName("ender_block"));
 	}
 
 	/**
@@ -157,20 +157,20 @@ public class KalStuffItems
 	 */
 	public static void configureItems()
 	{
-		((ItemClosedSoda) closed_apple_soda).setReturnStack(apple_soda);
-		((ItemClosedSoda) closed_grape_soda).setReturnStack(grape_soda);
-		((ItemClosedSoda) closed_melon_soda).setReturnStack(melon_soda);
-		((ItemClosedSoda) closed_root_beer).setReturnStack(root_beer);
-		((ItemSoda) apple_soda).setReturnStack(soda_can);
-		((ItemSoda) grape_soda).setReturnStack(soda_can);
-		((ItemSoda) melon_soda).setReturnStack(soda_can);
-		((ItemSoda) root_beer).setReturnStack(soda_can);
-		((ItemCoffee) coffee).setReturnStack(coffee_mug);
-		((ItemCoffee) light_coffee).setReturnStack(coffee_mug);
-		((ItemTea) tea).setReturnStack(coffee_mug);
-		((ItemBlazeSoup) blaze_soup).setReturnStack(golden_mug);
-		((ItemJewelSoup) jewel_soup).setReturnStack(golden_mug);
-		((ItemWine) wine).setReturnStack(wine_bottle);
+		((ItemClosedSoda) CLOSED_APPLE_SODA).setReturnStack(APPLE_SODA);
+		((ItemClosedSoda) CLOSED_GRAPE_SODA).setReturnStack(GRAPE_SODA);
+		((ItemClosedSoda) CLOSED_MELON_SODA).setReturnStack(MELON_SODA);
+		((ItemClosedSoda) CLOSED_ROOT_BEER).setReturnStack(ROOT_BEER);
+		((ItemSoda) APPLE_SODA).setReturnStack(SODA_CAN);
+		((ItemSoda) GRAPE_SODA).setReturnStack(SODA_CAN);
+		((ItemSoda) MELON_SODA).setReturnStack(SODA_CAN);
+		((ItemSoda) ROOT_BEER).setReturnStack(SODA_CAN);
+		((ItemCoffee) COFFEE).setReturnStack(COFFEE_MUG);
+		((ItemCoffee) LIGHT_COFFEE).setReturnStack(COFFEE_MUG);
+		((ItemTea) TEA).setReturnStack(COFFEE_MUG);
+		((ItemBlazeSoup) BLAZE_SOUP).setReturnStack(GOLDEN_MUG);
+		((ItemJewelSoup) JEWEL_SOUP).setReturnStack(GOLDEN_MUG);
+		((ItemWine) WINE).setReturnStack(WINE_BOTTLE);
 
 	}
 }

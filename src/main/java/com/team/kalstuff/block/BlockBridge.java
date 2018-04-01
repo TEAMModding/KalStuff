@@ -38,6 +38,7 @@ public class BlockBridge extends BlockDirectional
 		BlockKalStuff.setupBlock(this, name);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
 		this.setHardness(0.5f);
+		this.setSoundType(SoundType.WOOD);
 	}
 
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
@@ -98,7 +99,7 @@ public class BlockBridge extends BlockDirectional
 
 		// if the block cannot be picked up by endermen, is not a bridge block, and in
 		// the case of TNT is not allowed in the config, return with a chat message
-		if ((!EntityEnderman.getCarriable(block) && block != KalStuffBlocks.bridge)
+		if ((!EntityEnderman.getCarriable(block) && block != KalStuffBlocks.BRIDGE)
 				|| (!Config.bridgeTNT && block == Blocks.TNT))
 		{
 			playerIn.sendMessage(new TextComponentTranslation("The bridge is unable to send this", new Object[0]));
@@ -115,37 +116,37 @@ public class BlockBridge extends BlockDirectional
 			do
 				aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
 			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
+					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
 
 		if (state.getValue(FACING).equals(EnumFacing.WEST))
 			do
 				aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
 			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
+					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
 
 		if (state.getValue(FACING).equals(EnumFacing.UP))
 			do
 				aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
 			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
+					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
 
 		if (state.getValue(FACING).equals(EnumFacing.DOWN))
 			do
 				aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
 			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
+					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
 
 		if (state.getValue(FACING).equals(EnumFacing.NORTH))
 			do
 				aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
 			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
+					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
 
 		if (state.getValue(FACING).equals(EnumFacing.SOUTH))
 			do
 				aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
 			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.bridge.getDefaultState() && i++ <= 16);
+					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
 		// end the great block search
 
 		// if the bridge blocks have chained back to the first one, return
@@ -160,7 +161,7 @@ public class BlockBridge extends BlockDirectional
 		}
 
 		// if a bridge block is found
-		if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == KalStuffBlocks.bridge.getDefaultState())
+		if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == KalStuffBlocks.BRIDGE.getDefaultState())
 		{
 			BlockBridge target = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
 

@@ -17,6 +17,6 @@ public class KalStuffRecipes
 
 	public static void addSmeltingRecipes()
 	{
-		GameRegistry.addSmelting(KalStuffBlocks.potato_block, new ItemStack(KalStuffBlocks.baked_potato_block), 2);
+		GameRegistry.addSmelting(KalStuffBlocks.POTATO_BLOCK, new ItemStack(KalStuffBlocks.BAKED_POTATO_BLOCK), 2);
 	}
 }

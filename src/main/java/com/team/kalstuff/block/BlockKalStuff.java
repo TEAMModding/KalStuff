@@ -4,13 +4,21 @@ import com.team.kalstuff.KalStuff;
 import com.team.kalstuff.proxy.CommonProxy;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 
 public class BlockKalStuff extends Block
 {
-	public BlockKalStuff(Material materialIn, String name)
+	public BlockKalStuff(Material material, String name)
 	{
-		super(materialIn);
+		super(material);
+		setupBlock(this, name);
+	}
+	
+	public BlockKalStuff(Material material, SoundType sound, String name)
+	{
+		super(material);
+		this.setSoundType(sound);
 		setupBlock(this, name);
 	}
 

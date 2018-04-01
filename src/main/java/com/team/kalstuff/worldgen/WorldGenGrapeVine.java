@@ -36,7 +36,7 @@ public class WorldGenGrapeVine implements IWorldGenerator
 			if (aPos != null && world.getBiomeForCoordsBody(aPos) == Biome.REGISTRY
 					.getObject(new ResourceLocation("roofed_forest")))
 			{
-				world.setBlockState(aPos.up(), KalStuffBlocks.wild_grape_vine.getDefaultState());
+				world.setBlockState(aPos.up(), KalStuffBlocks.WILD_GRAPE_VINE.getDefaultState());
 			}
 		}
 	}

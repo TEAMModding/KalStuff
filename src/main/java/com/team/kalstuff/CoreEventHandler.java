@@ -16,11 +16,11 @@ public class CoreEventHandler
 	{
 		EntityLivingBase living = event.getEntityLiving();
 		if (living.getHeldItem(EnumHand.MAIN_HAND) != null
-				&& living.getHeldItem(EnumHand.MAIN_HAND).getItem() == KalStuffItems.walking_stick)
+				&& living.getHeldItem(EnumHand.MAIN_HAND).getItem() == KalStuffItems.WALKING_STICK)
 			event.getEntityLiving().stepHeight = 1F;
 
 		else if (living.getHeldItem(EnumHand.OFF_HAND) != null
-				&& living.getHeldItem(EnumHand.OFF_HAND).getItem() == KalStuffItems.walking_stick)
+				&& living.getHeldItem(EnumHand.OFF_HAND).getItem() == KalStuffItems.WALKING_STICK)
 			event.getEntityLiving().stepHeight = 1F;
 
 		else

@@ -6,6 +6,7 @@ import com.team.kalstuff.KalStuff;
 import com.team.kalstuff.tileentity.TileEntityChickenNest;
 
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -31,6 +32,7 @@ public class BlockChickenNest extends BlockKalStuff implements ITileEntityProvid
 		super(Material.PLANTS, name);
 		// this.setStepSound(soundTypeGrass);
 		this.setHardness(0.4F);
+		this.setSoundType(SoundType.PLANT);
 	}
 
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

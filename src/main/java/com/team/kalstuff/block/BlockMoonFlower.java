@@ -6,6 +6,7 @@ import com.team.kalstuff.tileentity.TileEntityMoonFlower;
 
 import net.minecraft.block.BlockBush;
 import net.minecraft.block.ITileEntityProvider;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockStateContainer;
@@ -26,6 +27,7 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider
 		BlockKalStuff.setupBlock(this, name);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(NIGHT, Integer.valueOf(0)));
 		this.setLightLevel((light) / 16.0f);
+		this.setSoundType(SoundType.PLANT);
 		// we must set the creative tab to null here so all varieties will not show up
 		// in the inventory
 		this.setCreativeTab(null);
@@ -65,24 +67,24 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider
 			if (worldIn.canSeeSky(pos) && ((Integer) worldIn.getBlockState(pos).getValue(NIGHT)).intValue() == 1)
 			{
 				if (worldIn.getCurrentMoonPhaseFactor() == 0)
-					worldIn.setBlockState(pos, KalStuffBlocks.moon_flower1.getDefaultState().withProperty(NIGHT,
+					worldIn.setBlockState(pos, KalStuffBlocks.MOON_FLOWER1.getDefaultState().withProperty(NIGHT,
 							iblockstate.getValue(NIGHT)));
 				if (worldIn.getCurrentMoonPhaseFactor() == .25)
-					worldIn.setBlockState(pos, KalStuffBlocks.moon_flower2.getDefaultState().withProperty(NIGHT,
+					worldIn.setBlockState(pos, KalStuffBlocks.MOON_FLOWER2.getDefaultState().withProperty(NIGHT,
 							iblockstate.getValue(NIGHT)));
 				if (worldIn.getCurrentMoonPhaseFactor() == .50)
-					worldIn.setBlockState(pos, KalStuffBlocks.moon_flower3.getDefaultState().withProperty(NIGHT,
+					worldIn.setBlockState(pos, KalStuffBlocks.MOON_FLOWER3.getDefaultState().withProperty(NIGHT,
 							iblockstate.getValue(NIGHT)));
 				if (worldIn.getCurrentMoonPhaseFactor() == .75)
-					worldIn.setBlockState(pos, KalStuffBlocks.moon_flower4.getDefaultState().withProperty(NIGHT,
+					worldIn.setBlockState(pos, KalStuffBlocks.MOON_FLOWER4.getDefaultState().withProperty(NIGHT,
 							iblockstate.getValue(NIGHT)));
 				if (worldIn.getCurrentMoonPhaseFactor() == 1)
-					worldIn.setBlockState(pos, KalStuffBlocks.moon_flower5.getDefaultState().withProperty(NIGHT,
+					worldIn.setBlockState(pos, KalStuffBlocks.MOON_FLOWER5.getDefaultState().withProperty(NIGHT,
 							iblockstate.getValue(NIGHT)));
 			} else
 			{
 				worldIn.setBlockState(pos,
-						KalStuffBlocks.moon_flower.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)),
+						KalStuffBlocks.MOON_FLOWER.getDefaultState().withProperty(NIGHT, iblockstate.getValue(NIGHT)),
 						3);
 			}
 		}
@@ -95,13 +97,13 @@ public class BlockMoonFlower extends BlockBush implements ITileEntityProvider
 
 	public Item getItemDropped(IBlockState state, Random rand, int fortune)
 	{
-		return Item.getItemFromBlock(KalStuffBlocks.moon_flower);
+		return Item.getItemFromBlock(KalStuffBlocks.MOON_FLOWER);
 	}
 
 	@SideOnly(Side.CLIENT)
 	public Item getItem(World worldIn, BlockPos pos)
 	{
-		return Item.getItemFromBlock(KalStuffBlocks.moon_flower);
+		return Item.getItemFromBlock(KalStuffBlocks.MOON_FLOWER);
 	}
 
 	/**

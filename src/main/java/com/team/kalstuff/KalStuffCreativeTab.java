@@ -19,6 +19,6 @@ public class KalStuffCreativeTab extends CreativeTabs
 	@SideOnly(Side.CLIENT)
 	public ItemStack getTabIconItem()
 	{
-		return new ItemStack(KalStuffItems.tea);
+		return new ItemStack(KalStuffItems.TEA);
 	}
 }

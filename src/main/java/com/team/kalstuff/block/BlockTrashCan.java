@@ -3,6 +3,7 @@ package com.team.kalstuff.block;
 import com.team.kalstuff.KalStuff;
 import com.team.kalstuff.proxy.CommonProxy;
 
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -22,6 +23,7 @@ public class BlockTrashCan extends BlockKalStuff
 		super(Material.IRON, name);
 		this.setCreativeTab(CommonProxy.KALSTUFF);
 		this.setHardness(3.0F);
+		this.setSoundType(SoundType.LADDER);
 	}
 
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)

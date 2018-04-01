@@ -83,23 +83,23 @@ public class ClientProxy extends CommonProxy
 
 		// getDyeDamage returns the actual metadata for dyes - not getMetadata,
 		// strangely
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.WHITE.getDyeDamage(), "boxing_glove_white");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.ORANGE.getDyeDamage(), "boxing_glove_orange");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.MAGENTA.getDyeDamage(), "boxing_glove_magenta");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIGHT_BLUE.getDyeDamage(),
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.WHITE.getDyeDamage(), "boxing_glove_white");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.ORANGE.getDyeDamage(), "boxing_glove_orange");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.MAGENTA.getDyeDamage(), "boxing_glove_magenta");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.LIGHT_BLUE.getDyeDamage(),
 				"boxing_glove_light_blue");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.YELLOW.getDyeDamage(), "boxing_glove_yellow");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.LIME.getDyeDamage(), "boxing_glove_lime");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PINK.getDyeDamage(), "boxing_glove_pink");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GRAY.getDyeDamage(), "boxing_glove_gray");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.SILVER.getDyeDamage(), "boxing_glove_silver");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.CYAN.getDyeDamage(), "boxing_glove_cyan");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.PURPLE.getDyeDamage(), "boxing_glove_purple");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLUE.getDyeDamage(), "boxing_glove_blue");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BROWN.getDyeDamage(), "boxing_glove_brown");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.GREEN.getDyeDamage(), "boxing_glove_green");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.RED.getDyeDamage(), "boxing_glove_red");
-		registerItemRendering(KalStuffItems.boxing_glove, EnumDyeColor.BLACK.getDyeDamage(), "boxing_glove_black");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.YELLOW.getDyeDamage(), "boxing_glove_yellow");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.LIME.getDyeDamage(), "boxing_glove_lime");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.PINK.getDyeDamage(), "boxing_glove_pink");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.GRAY.getDyeDamage(), "boxing_glove_gray");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.SILVER.getDyeDamage(), "boxing_glove_silver");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.CYAN.getDyeDamage(), "boxing_glove_cyan");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.PURPLE.getDyeDamage(), "boxing_glove_purple");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.BLUE.getDyeDamage(), "boxing_glove_blue");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.BROWN.getDyeDamage(), "boxing_glove_brown");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.GREEN.getDyeDamage(), "boxing_glove_green");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.RED.getDyeDamage(), "boxing_glove_red");
+		registerItemRendering(KalStuffItems.BOXING_GLOVE, EnumDyeColor.BLACK.getDyeDamage(), "boxing_glove_black");
 
 	}
 

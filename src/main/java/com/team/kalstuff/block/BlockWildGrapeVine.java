@@ -6,6 +6,7 @@ import com.team.kalstuff.item.KalStuffItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockBush;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
@@ -30,6 +31,7 @@ public class BlockWildGrapeVine extends BlockBush
 		super(Material.PLANTS);
 		BlockKalStuff.setupBlock(this, name);
 		this.setDefaultState(this.blockState.getBaseState().withProperty(GROWN, Integer.valueOf(1)));
+		this.setSoundType(SoundType.PLANT);
 	}
 
 	public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos)
@@ -126,7 +128,7 @@ public class BlockWildGrapeVine extends BlockBush
 		{
 			worldIn.setBlockState(pos, state.withProperty(GROWN, 0));
 			Random rand = new Random();
-			ItemStack aStack = new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3);
+			ItemStack aStack = new ItemStack(KalStuffItems.GRAPES, rand.nextInt(2) + 3);
 			spawnAsEntity(worldIn, pos, aStack);
 			return true;
 		}
@@ -162,7 +164,7 @@ public class BlockWildGrapeVine extends BlockBush
 		if (((Integer) state.getValue(GROWN)).intValue() == 1)
 		{
 			Random rand = new Random();
-			ItemStack aStack = new ItemStack(KalStuffItems.grapes, rand.nextInt(2) + 3);
+			ItemStack aStack = new ItemStack(KalStuffItems.GRAPES, rand.nextInt(2) + 3);
 			spawnAsEntity(worldIn, pos, aStack);
 		}
 	}
