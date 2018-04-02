@@ -17,7 +17,7 @@ public class ItemLute extends ItemKalStuff
 	public ItemLute(String name)
 	{
 		super(name);
-		this.setCreativeTab(CommonProxy.KALSTUFF);
+		this.setCreativeTab(CommonProxy.KALSTUFFTAB);
 	}
 
 	public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand hand)

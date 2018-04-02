@@ -56,7 +56,7 @@ public class KalStuffBlocks
 		reg.register(new BlockGrapeVine("grape_vine"));
 		reg.register(new BlockKalStuff(Material.SPONGE, SoundType.CLOTH, "great_grape"));
 		// only the first BlockMoonFlower should appear in the Creative inventory
-		reg.register(new BlockMoonFlower(0, "moon_flower").setCreativeTab(CommonProxy.KALSTUFF));
+		reg.register(new BlockMoonFlower(0, "moon_flower").setCreativeTab(CommonProxy.KALSTUFFTAB));
 		reg.register(new BlockMoonFlower(1, "moon_flower1"));
 		reg.register(new BlockMoonFlower(2, "moon_flower2"));
 		reg.register(new BlockMoonFlower(3, "moon_flower3"));

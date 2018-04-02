@@ -26,7 +26,7 @@ public class BlockKalStuff extends Block
 	{
 		block.setRegistryName(name);
 		block.setUnlocalizedName(KalStuff.MODID + ":" + name);
-		block.setCreativeTab(CommonProxy.KALSTUFF);
+		block.setCreativeTab(CommonProxy.KALSTUFFTAB);
 		return block;
 	}
 }

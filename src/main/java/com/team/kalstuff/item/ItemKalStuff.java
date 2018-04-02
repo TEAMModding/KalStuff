@@ -16,7 +16,7 @@ public class ItemKalStuff extends Item
 	{
 		item.setRegistryName(name);
 		item.setUnlocalizedName(KalStuff.MODID + ":" + name);
-		item.setCreativeTab(CommonProxy.KALSTUFF);
+		item.setCreativeTab(CommonProxy.KALSTUFFTAB);
 		return item;
 	}
 }

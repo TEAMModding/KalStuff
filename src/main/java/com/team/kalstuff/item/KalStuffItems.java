@@ -1,5 +1,6 @@
 package com.team.kalstuff.item;
 
+import com.team.kalstuff.KalStuff;
 import com.team.kalstuff.block.KalStuffBlocks;
 import com.team.kalstuff.proxy.CommonProxy;
 
@@ -26,7 +27,7 @@ public class KalStuffItems
 	public static final Item BACON_WAND = Items.AIR;
 	public static final Item BLAZE_SOUP = Items.AIR;
 	public static final Item BOXING_GLOVE = Items.AIR;
-	public static final Item chocolate_cap = Items.AIR;
+	public static final Item CHOCOLATE_CAP = Items.AIR;
 	public static final Item CLOSED_APPLE_SODA = Items.AIR;
 	public static final Item CLOSED_GRAPE_SODA = Items.AIR;
 	public static final Item CLOSED_MELON_SODA = Items.AIR;
@@ -107,10 +108,10 @@ public class KalStuffItems
 		reg.register(new ItemBlazeSoup(2, 2.0F, 6000, "blaze_soup"));
 		reg.register(new ItemKalStuff("golden_mug"));
 
-		reg.register(new ItemFood(3, 0.5F, false).setRegistryName("grapes").setUnlocalizedName("grapes")
-				.setCreativeTab(CommonProxy.KALSTUFF));
+		reg.register(new ItemFood(3, 0.5F, false).setRegistryName("grapes").setUnlocalizedName(KalStuff.MODID + ":" + "grapes")
+				.setCreativeTab(CommonProxy.KALSTUFFTAB));
 		reg.register(new ItemSeeds(KalStuffBlocks.GRAPE_VINE, Blocks.FARMLAND).setRegistryName("plantable_grape_seeds")
-				.setUnlocalizedName("plantable_grape_seeds").setCreativeTab(CommonProxy.KALSTUFF));
+				.setUnlocalizedName(KalStuff.MODID + ":" + "plantable_grape_seeds").setCreativeTab(CommonProxy.KALSTUFFTAB));
 		reg.register(new ItemKalStuff("grape_seeds"));
 
 		// miscellaneous

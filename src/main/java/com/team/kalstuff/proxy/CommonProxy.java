@@ -22,7 +22,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 @Mod.EventBusSubscriber
 public class CommonProxy
 {
-	public static final CreativeTabs KALSTUFF = new KalStuffCreativeTab("kalstuffTab");
+	public static final CreativeTabs KALSTUFFTAB = new KalStuffCreativeTab("kalstuffTab");
 
 	public void preInit(FMLPreInitializationEvent e)
 	{

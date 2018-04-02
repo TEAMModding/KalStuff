@@ -98,20 +98,6 @@ public class BlockGrapeVine extends BlockCrops
 	}
 
 	@Override
-	public void onBlockDestroyedByPlayer(World worldIn, BlockPos pos, IBlockState state)
-	{
-		super.onBlockDestroyedByPlayer(worldIn, pos, state);
-		if (((Integer) state.getValue(AGE)).intValue() == 1)
-		{
-			Random rand = new Random();
-			ItemStack stack1 = new ItemStack(KalStuffItems.GRAPES, rand.nextInt(2) + 3);
-			ItemStack stack2 = new ItemStack(Items.STICK, 4);
-			spawnAsEntity(worldIn, pos, stack1);
-			spawnAsEntity(worldIn, pos, stack2);
-		}
-	}
-
-	@Override
 	public void getDrops(net.minecraft.util.NonNullList<ItemStack> drops, IBlockAccess world, BlockPos pos,
 			IBlockState state, int fortune)
 	{
@@ -120,9 +106,8 @@ public class BlockGrapeVine extends BlockCrops
 		Random rand = world instanceof World ? ((World) world).rand : new Random();
 
 		if (age >= 7)
-			drops.add(new ItemStack(KalStuffItems.GRAPES, rand.nextInt(2) + 3));
-		else
-			drops.add(new ItemStack(KalStuffItems.GRAPE_SEEDS, 1, 0));
+			drops.add(new ItemStack(KalStuffItems.GRAPES, rand.nextInt(3) + 4));
+		
 		drops.add(new ItemStack(Items.STICK, 4));
 	}
 

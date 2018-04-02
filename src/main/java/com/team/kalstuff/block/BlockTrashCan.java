@@ -21,7 +21,7 @@ public class BlockTrashCan extends BlockKalStuff
 	public BlockTrashCan(String name)
 	{
 		super(Material.IRON, name);
-		this.setCreativeTab(CommonProxy.KALSTUFF);
+		this.setCreativeTab(CommonProxy.KALSTUFFTAB);
 		this.setHardness(3.0F);
 		this.setSoundType(SoundType.LADDER);
 	}
