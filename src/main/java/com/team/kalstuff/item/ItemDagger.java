@@ -5,6 +5,7 @@ import com.google.common.collect.Multimap;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
@@ -30,7 +31,7 @@ public class ItemDagger extends ItemKalStuff
 		this.material = material;
 		this.maxStackSize = 1;
 		this.setMaxDamage(material.getMaxUses());
-		this.attackDamage = 1 + (material.getDamageVsEntity() / 2);
+		this.attackDamage = 1.0F + material.getDamageVsEntity();
 	}
 
 	/**
@@ -57,19 +58,59 @@ public class ItemDagger extends ItemKalStuff
 		}
 	}
 
-	/**
-	 * Current implementations of this method in child classes do not use the entry
-	 * argument beside ev. They just raise the damage on the stack.
-	 */
 	@Override
 	public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
 	{
-		if (target.getHorizontalFacing() == attacker.getHorizontalFacing())
+		// checking if the attacker is facing with 45 degrees in either direction of the
+		// target's yaw
+		if (areEntitiesFacingSameWay(target, attacker))
 		{
-			target.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), 1 + (attackDamage * 2));
+			// we get the damage the dagger will do, including enchantments and the +1
+			// damage every item gets. Also note that doing damage here will completely
+			// remove damage done in EntityPlayer#attackTargetEntityWithCurrentItem(Entity),
+			// due to the way Minecraft handles simultaneous damage sources (the stronger
+			// source wins). Thus we double the damage here to make up for that.
+			float f = 2.5F * (1.0F + this.attackDamage
+					+ EnchantmentHelper.getModifierForCreature(stack, target.getCreatureAttribute()));
+			target.attackEntityFrom(DamageSource.causePlayerDamage((EntityPlayer) attacker), f);
 		}
 		stack.damageItem(1, attacker);
 		return true;
+	}
+
+	public boolean areEntitiesFacingSameWay(EntityLivingBase entity1, EntityLivingBase entity2)
+	{
+		float temp, yawLowerBound, yawUpperBound, yaw1, yaw2;
+		boolean wrapped = false;
+		// Minecraft has a weird yaw system where rotating in a certain direction enough
+		// times will cause your yaw to go negative, but with the same absolute value.
+		// We must get the absolute values here to ensure the math never gets broken by
+		// this.
+		yaw1 = Math.abs(entity1.getRotationYawHead());
+		yaw2 = Math.abs(entity2.getRotationYawHead());
+
+		temp = yaw1 - 45;
+		if (temp < 0)
+		{
+			yawLowerBound = 360 + temp; // subtract the difference from 360 to loop back around 360
+			wrapped = true;
+		} else
+			yawLowerBound = temp;
+
+		temp = yaw1 + 45;
+		if (temp > 360)
+		{
+			yawUpperBound = temp - 360; // find the difference from 360 to loop back around 0
+			wrapped = true;
+		} else
+			yawUpperBound = temp;
+
+		if ((!wrapped && (yaw2 > yawLowerBound && yaw2 < yawUpperBound))
+				|| ((wrapped && (yaw2 > yawLowerBound || yaw2 < yawUpperBound))))
+		{
+			return true;
+		}
+		return false;
 	}
 
 	/**
