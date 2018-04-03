@@ -57,12 +57,15 @@ public class ItemBoxingGlove extends ItemKalStuff
 	{
 		if (player.getEntityWorld().isRemote)
 			return super.itemInteractionForEntity(stack, player, target, hand);
-
-		player.setHeldItem(EnumHand.OFF_HAND, player.getHeldItemMainhand());
-		player.setHeldItem(EnumHand.MAIN_HAND, stack);
+		ItemStack i1 = player.getHeldItemMainhand();
+		ItemStack i2 = player.getHeldItemOffhand();
+		player.setHeldItem(EnumHand.OFF_HAND, i2);
+		player.setHeldItem(EnumHand.MAIN_HAND, i1);
 		player.attackTargetEntityWithCurrentItem(target);
-		player.setHeldItem(EnumHand.MAIN_HAND, player.getHeldItemOffhand());
-		player.setHeldItem(EnumHand.OFF_HAND, stack);
+		i1 = player.getHeldItemMainhand();
+		i2 = player.getHeldItemOffhand();
+		player.setHeldItem(EnumHand.OFF_HAND, i1);
+		player.setHeldItem(EnumHand.MAIN_HAND, i2);
 		return true;
 	}
 
