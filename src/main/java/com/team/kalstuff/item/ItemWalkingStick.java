@@ -2,9 +2,11 @@ package com.team.kalstuff.item;
 
 import com.google.common.collect.Multimap;
 
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
 
 public class ItemWalkingStick extends ItemKalStuff
 {
@@ -13,15 +15,23 @@ public class ItemWalkingStick extends ItemKalStuff
 	public ItemWalkingStick(String name)
 	{
 		super(name);
-		this.attackDamage = 1.0f;
+		this.attackDamage = 2.0f;
 		this.maxStackSize = 1;
+		this.setMaxDamage(32);
 	}
 
-	public Multimap<String, AttributeModifier> getItemAttributeModifiers(EntityEquipmentSlot equipmentSlot)
+	@Override
+	public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker)
 	{
-		@SuppressWarnings("deprecation")
-		Multimap<String, AttributeModifier> multimap = super.getItemAttributeModifiers(equipmentSlot);
-		if (equipmentSlot == EntityEquipmentSlot.MAINHAND)
+		stack.damageItem(1, attacker);
+		return true;
+	}
+
+	@Override
+	public Multimap<String, AttributeModifier> getAttributeModifiers(EntityEquipmentSlot slot, ItemStack stack)
+	{
+		Multimap<String, AttributeModifier> multimap = super.getAttributeModifiers(slot, stack);
+		if (slot == EntityEquipmentSlot.MAINHAND)
 		{
 			multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
 					new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double) this.attackDamage, 0));

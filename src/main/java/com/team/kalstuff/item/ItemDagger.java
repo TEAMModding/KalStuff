@@ -180,9 +180,6 @@ public class ItemDagger extends ItemKalStuff
 
 		if (slot == EntityEquipmentSlot.MAINHAND)
 		{
-			// I'm not sure if these two lines are necessary.
-			// multimap.removeAll(SharedMonsterAttributes.ATTACK_DAMAGE.getName());
-			// multimap.removeAll(SharedMonsterAttributes.ATTACK_SPEED.getName());
 			multimap.put(SharedMonsterAttributes.ATTACK_DAMAGE.getName(),
 					new AttributeModifier(ATTACK_DAMAGE_MODIFIER, "Weapon modifier", (double) this.attackDamage, 0));
 			multimap.put(SharedMonsterAttributes.ATTACK_SPEED.getName(),

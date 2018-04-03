@@ -235,7 +235,7 @@ public class BlockBridge extends BlockDirectional
 	/**
 	 * This is the only way to display particles without a tile entity. It gets
 	 * fired at random, so the particle variable is used to schedule particles for
-	 * the next tick
+	 * the next tick.
 	 */
 	@SideOnly(Side.CLIENT)
 	public void randomDisplayTick(IBlockState stateIn, World worldIn, BlockPos pos, Random rand)
