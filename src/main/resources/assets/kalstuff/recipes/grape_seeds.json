@@ -1,0 +1,11 @@
+{
+  "result": {
+    "item": "kalstuff:grape_seeds"
+  },
+  "ingredients": [
+    {
+      "item": "kalstuff:grapes"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

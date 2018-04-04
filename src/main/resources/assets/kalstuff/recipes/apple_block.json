@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kalstuff:apple_block",
+    "count": 4
+  },
+  "pattern": [
+    "AAA",
+    "AAA",
+    "AAA"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "minecraft:apple"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kalstuff:chocolate_cap"
+  },
+  "pattern": [
+    "XXX",
+    "X X",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "minecraft:dye",
+      "data": 3
+    }
+  }
+}

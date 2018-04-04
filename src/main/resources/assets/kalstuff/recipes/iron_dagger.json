@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "kalstuff:iron_dagger"
+  },
+  "pattern": [
+    " M ",
+    " S ",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "M": {
+      "item": "minecraft:iron_ingot"
+    }
+  }
+}

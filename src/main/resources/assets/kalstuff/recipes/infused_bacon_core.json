@@ -1,0 +1,14 @@
+{
+  "result": {
+    "item": "kalstuff:infused_bacon_core"
+  },
+  "ingredients": [
+    {
+      "item": "kalstuff:bacon_core"
+    },
+    {
+      "item": "kalstuff:coffee"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

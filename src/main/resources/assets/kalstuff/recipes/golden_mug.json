@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "kalstuff:golden_mug"
+  },
+  "pattern": [
+    "X X",
+    " X ",
+    "   "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": {
+      "item": "minecraft:gold_ingot"
+    }
+  }
+}

@@ -8,57 +8,58 @@
 #
 # Blocks
 ##############################
-tile.bridge.name=Bridge Block
-tile.blockEnder.name=Block of Ender
-tile.blockBlaze.name=Block of Blaze
-tile.blockPotato.name=Block of Potato
-tile.blockApple.name=Block of Apple
-tile.blockCarrot.name=Block of Carrot
-tile.chickenNest.name=Chicken Nest
-tile.trashCan.name=Trash Can
-tile.wildGrapeVine.name=Wild Grape Vine
-tile.grapeVine.name=Grape Vine
-tile.moonFlower.name=Moon Flower
-tile.blockBakedPotato.name=Baked Block of Potato
-tile.greatGrape.name=Great Grape
+tile.kalstuff:bridge.name=Bridge Block
+tile.kalstuff:ender_block.name=Block of Ender
+tile.kalstuff:blaze_block.name=Block of Blaze
+tile.kalstuff:potato_block.name=Block of Potato
+tile.kalstuff:apple_block.name=Block of Apple
+tile.kalstuff:carrot_block.name=Block of Carrot
+tile.kalstuff:chicken_nest.name=Chicken Nest
+tile.kalstuff:trash_can.name=Trash Can
+tile.kalstuff:wild_grape_vine.name=Wild Grape Vine
+tile.kalstuff:grape_vine.name=Grape Vine
+tile.kalstuff:moon_flower.name=Moon Flower
+tile.kalstuff:baked_potato_block.name=Baked Block of Potato
+tile.kalstuff:great_grape.name=Great Grape
 
 #
 # Items
 ##############################
-item.enderPowder.name=Crushed Ender
-item.coffee.name=Mug of Coffee
-item.lightCoffee.name=Mug of Coffee with Milk
-item.coffeeMug.name=Coffee Mug
-item.goldenMug.name=Golden Mug
-item.tea.name=Mug of Tea
-item.jewelSoup.name=Jewel Soup
-item.blazeSoup.name=Blaze Soup
-item.baconWand.name=Chocolate Capped Bacon Wand
-item.baconCore.name=Bacon Wand Core
-item.infusedBaconCore.name=Infused Bacon Wand Core
-item.chocolateCap.name=Chocolate Cap
-item.walkingStick.name=Walking Stick
-item.sodaCan.name=Empty Soda Can
-item.appleSoda.name=Apple Soda
-item.grapeSoda.name=Grape Soda
-item.melonSoda.name=Melon Soda
-item.rootBeer.name=Root Beer
-item.closedAppleSoda.name=Apple Soda
-item.closedGrapeSoda.name=Grape Soda
-item.closedMelonSoda.name=Melon Soda
-item.closedRootBeer.name=Root Beer
-item.grapes.name=Grapes
-item.grapeSeeds.name=Grape Seeds
-item.plantableGrapeSeeds.name=Grape Seeds with Trellis
-item.ironDagger.name=Iron Dagger
-item.woodenDagger.name=Wooden Dagger
-item.stoneDagger.name=Stone Dagger
-item.diamondDagger.name=Diamond Dagger
-item.goldenDagger.name=Golden Dagger
-item.woodenRoundShield.name=Wooden Round Shield
-item.wine.name=Bottle of Wine
-item.wineBottle.name=Empty Wine Bottle
-item.boxingGlove.name=Boxing Glove
+item.kalstuff:crushed_ender.name=Crushed Ender
+item.kalstuff:coffee.name=Mug of Coffee
+item.kalstuff:light_coffee.name=Mug of Coffee with Milk
+item.kalstuff:coffee_mug.name=Coffee Mug
+item.kalstuff:golden_mug.name=Golden Mug
+item.kalstuff:tea.name=Mug of Tea
+item.kalstuff:jewel_soup.name=Jewel Soup
+item.kalstuff:blaze_soup.name=Blaze Soup
+item.kalstuff:bacon_wand.name=Chocolate Capped Bacon Wand
+item.kalstuff:bacon_core.name=Bacon Wand Core
+item.kalstuff:infused_bacon_core.name=Infused Bacon Wand Core
+item.kalstuff:chocolate_cap.name=Chocolate Cap
+item.kalstuff:walking_stick.name=Walking Stick
+item.kalstuff:soda_can.name=Empty Soda Can
+item.kalstuff:apple_soda.name=Apple Soda
+item.kalstuff:grape_soda.name=Grape Soda
+item.kalstuff:melon_soda.name=Melon Soda
+item.kalstuff:root_beer.name=Root Beer
+item.kalstuff:closed_apple_soda.name=Apple Soda
+item.kalstuff:closed_grape_soda.name=Grape Soda
+item.kalstuff:closed_melon_soda.name=Melon Soda
+item.kalstuff:closed_root_beer.name=Root Beer
+item.kalstuff:grapes.name=Grapes
+item.kalstuff:grape_seeds.name=Grape Seeds
+item.kalstuff:plantable_grape_seeds.name=Grape Seeds with Trellis
+item.kalstuff:iron_dagger.name=Iron Dagger
+item.kalstuff:wooden_dagger.name=Wooden Dagger
+item.kalstuff:stone_dagger.name=Stone Dagger
+item.kalstuff:diamond_dagger.name=Diamond Dagger
+item.kalstuff:golden_dagger.name=Golden Dagger
+item.kalstuff:wooden_round_shield.name=Wooden Round Shield
+item.kalstuff:wine.name=Bottle of Wine
+item.kalstuff:wine_bottle.name=Empty Wine Bottle
+item.kalstuff:boxing_glove.name=Boxing Glove
+item.kalstuff:lute.name=Lute
 
 #
 # Entities
@@ -68,7 +69,9 @@ entity.kalstuff:duck.name=Duck
 #
 # GUI
 ##############################
-container.chickenNest.name=Chicken Nest
+container.kalstuff:chicken_nest.name=Chicken Nest
+container.kalstuff:trash_can.name=Trash Can
+gui.kalstuff:main_config.name=KalStuff Configuration (kalstuff.cfg)
 
 #
 # Command Feedback

@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kalstuff:potato_block",
+    "count": 4
+  },
+  "pattern": [
+    "PPP",
+    "PPP",
+    "PPP"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "minecraft:potato"
+    }
+  }
+}

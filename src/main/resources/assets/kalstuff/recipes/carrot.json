@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "minecraft:carrot",
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "item": "kalstuff:carrot_block"
+    },
+    {
+      "item": "kalstuff:carrot_block"
+    },
+    {
+      "item": "kalstuff:carrot_block"
+    },
+    {
+      "item": "kalstuff:carrot_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,23 @@
+{
+  "result": {
+    "item": "kalstuff:bridge"
+  },
+  "pattern": [
+    "SPS",
+    "PEP",
+    "SPS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "minecraft:planks",
+      "data": 0
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "E": {
+      "item": "kalstuff:crushed_ender"
+    }
+  }
+}

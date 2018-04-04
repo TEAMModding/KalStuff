@@ -9,22 +9,24 @@ import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-public class CoreEventHandler {
-	
+public class CoreEventHandler
+{
 	@SubscribeEvent
 	public void onUpdateEvent(LivingUpdateEvent event)
-	{	
+	{
 		EntityLivingBase living = event.getEntityLiving();
-		if (living.getHeldItem(EnumHand.MAIN_HAND)!= null && living.getHeldItem(EnumHand.MAIN_HAND).getItem() == KalStuffItems.walking_stick)
+		if (living.getHeldItem(EnumHand.MAIN_HAND) != null
+				&& living.getHeldItem(EnumHand.MAIN_HAND).getItem() == KalStuffItems.WALKING_STICK)
 			event.getEntityLiving().stepHeight = 1F;
-		
-		else if (living.getHeldItem(EnumHand.OFF_HAND)!= null && living.getHeldItem(EnumHand.OFF_HAND).getItem() == KalStuffItems.walking_stick)
+
+		else if (living.getHeldItem(EnumHand.OFF_HAND) != null
+				&& living.getHeldItem(EnumHand.OFF_HAND).getItem() == KalStuffItems.WALKING_STICK)
 			event.getEntityLiving().stepHeight = 1F;
-		
+
 		else
 			event.getEntityLiving().stepHeight = 0.6F;
 	}
-	
+
 	@SubscribeEvent
 	public void onBlockClicked(LeftClickBlock event)
 	{

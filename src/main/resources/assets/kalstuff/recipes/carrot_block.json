@@ -1,0 +1,17 @@
+{
+  "result": {
+    "item": "kalstuff:carrot_block",
+    "count": 4
+  },
+  "pattern": [
+    "CCC",
+    "CCC",
+    "CCC"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "minecraft:carrot"
+    }
+  }
+}

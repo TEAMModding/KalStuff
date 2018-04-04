@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "kalstuff:plantable_grape_seeds"
+  },
+  "pattern": [
+    "S S",
+    " G ",
+    "S S"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "G": {
+      "item": "kalstuff:grape_seeds"
+    }
+  }
+}

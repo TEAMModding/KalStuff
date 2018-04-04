@@ -7,11 +7,11 @@
 
   "description": "A mod that adds plenty of random stuff. From chicken nests to moon flowers, KalStuff will suit all your random mod needs!",
 
-  "version": "v0.6 beta",
+  "version": "v0.8.0d beta",
 
-  "mcversion": "1.8",
+  "mcversion": "1.12.2",
 
-  "url": "http://www.minecraftforum.net/forums/mapping-and-modding/minecraft-mods/wip-mods/2441490",
+  "url": "http://minecraft.curseforge.com/projects/kalstuff",
 
   "updateUrl": "",
 
@@ -19,7 +19,7 @@
 
   "credits": "The TEAM Team",
 
-  "credits": "Creeps, inc(ideas) and TheGreyGhost(MinecraftByExample)",
+  "credits": "Creeps, inc. (ideas)",
   "logoFile": "KSLogo.png",
 
   "screenshots": [],

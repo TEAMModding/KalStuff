@@ -1,23 +1,21 @@
 package com.team.kalstuff.item;
 
-import com.team.kalstuff.StartupCommon;
-
-import net.minecraft.item.ItemStack;
+import net.minecraft.init.MobEffects;
 import net.minecraft.potion.Potion;
 
-public class ItemBlazeSoup extends ItemDrink {
-	
+public class ItemBlazeSoup extends ItemDrink
+{
 	/**
-     * 
-     *  
-     * @param potionLength is the length of the speed effect the player gets upon drinking.
-     */
-	public ItemBlazeSoup(int amount, float saturation, int potionLength, Potion[] potions)
+	 * 
+	 * 
+	 * @param potionLength
+	 *            is the length of the speed effect the player gets upon drinking.
+	 */
+	public ItemBlazeSoup(int amount, float saturation, int potionLength, String name)
 	{
-		super(amount, saturation, potionLength, potions);
+		super(amount, saturation, potionLength, new Potion[] { MobEffects.ABSORPTION, MobEffects.NIGHT_VISION,
+				MobEffects.STRENGTH, MobEffects.FIRE_RESISTANCE }, name);
 		this.setMaxStackSize(1);
-		this.setCreativeTab(StartupCommon.KALSTUFF);
-		this.setReturnStack(new ItemStack(KalStuffItems.golden_mug));
 	}
 
 }

@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "minecraft:baked_potato",
+    "count": 9
+  },
+  "ingredients": [
+    {
+      "item": "kalstuff:baked_potato_block"
+    },
+    {
+      "item": "kalstuff:baked_potato_block"
+    },
+    {
+      "item": "kalstuff:baked_potato_block"
+    },
+    {
+      "item": "kalstuff:baked_potato_block"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

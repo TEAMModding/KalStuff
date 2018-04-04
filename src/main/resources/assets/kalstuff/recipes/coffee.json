@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "kalstuff:coffee"
+  },
+  "ingredients": [
+    {
+      "item": "minecraft:dirt",
+      "data": 0
+    },
+    {
+      "item": "kalstuff:coffee_mug"
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
