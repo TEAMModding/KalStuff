@@ -2,6 +2,7 @@ package com.team.kalstuff.block;
 
 import java.util.Random;
 
+import com.team.kalstuff.KalStuff;
 import com.team.kalstuff.config.Config;
 
 import net.minecraft.block.Block;
@@ -16,6 +17,7 @@ import net.minecraft.entity.monster.EntityEnderman;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -44,7 +46,7 @@ public class BlockBridge extends BlockDirectional
 	public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn,
 			EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ)
 	{
-		return chain(worldIn, pos, state, playerIn, side, hitX, hitY, hitZ, pos);
+		return chain(worldIn, pos, state, playerIn, hand, side, hitX, hitY, hitZ, pos);
 	}
 
 	@Override
@@ -78,19 +80,20 @@ public class BlockBridge extends BlockDirectional
 	 * block
 	 */
 	@SuppressWarnings("deprecation")
-	public boolean chain(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side,
-			float hitX, float hitY, float hitZ, BlockPos origin)
+	public boolean chain(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand,
+			EnumFacing side, float hitX, float hitY, float hitZ, BlockPos origin)
 	{
-		if (worldIn.isRemote)
+		if (world.isRemote)
 			return true;
 
-		ItemStack itemstack = playerIn.getHeldItemMainhand();
+		ItemStack itemstack = player.getHeldItemMainhand();
 		Block block;
 		// attempt to get a block from the held item without crashing the game
 		try
 		{
 			block = Block.getBlockFromItem(itemstack.getItem());
-		} catch (Exception e)
+		}
+		catch (Exception e)
 		{
 			return true;
 		}
@@ -102,117 +105,76 @@ public class BlockBridge extends BlockDirectional
 		if ((!EntityEnderman.getCarriable(block) && block != KalStuffBlocks.BRIDGE)
 				|| (!Config.bridgeTNT && block == Blocks.TNT))
 		{
-			playerIn.sendMessage(new TextComponentTranslation("The bridge is unable to send this", new Object[0]));
+			player.sendMessage(new TextComponentTranslation("The bridge is unable to send this"));
 			return true;
 		}
 
-		BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+		// get next position that the bridge block is pointing towards
+		BlockPos aPos = this.getNextBlock(pos, state, world);
+		int dist = (int) aPos.getDistance(pos.getX(), pos.getY(), pos.getZ());
 
-		// all of this is just looking sixteen blocks in front of the bridge block,
-		// depending on what direction it is facing, to try to find something to do with
-		// the given block
-		int i = 0;
-		if (state.getValue(FACING).equals(EnumFacing.EAST))
-			do
-				aPos = new BlockPos(aPos.getX() + 1, aPos.getY(), aPos.getZ());
-			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
-
-		if (state.getValue(FACING).equals(EnumFacing.WEST))
-			do
-				aPos = new BlockPos(aPos.getX() - 1, aPos.getY(), aPos.getZ());
-			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
-
-		if (state.getValue(FACING).equals(EnumFacing.UP))
-			do
-				aPos = new BlockPos(aPos.getX(), aPos.getY() + 1, aPos.getZ());
-			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
-
-		if (state.getValue(FACING).equals(EnumFacing.DOWN))
-			do
-				aPos = new BlockPos(aPos.getX(), aPos.getY() - 1, aPos.getZ());
-			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
-
-		if (state.getValue(FACING).equals(EnumFacing.NORTH))
-			do
-				aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() - 1);
-			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
-
-		if (state.getValue(FACING).equals(EnumFacing.SOUTH))
-			do
-				aPos = new BlockPos(aPos.getX(), aPos.getY(), aPos.getZ() + 1);
-			while (worldIn.getBlockState(aPos) != Blocks.AIR.getDefaultState() && worldIn.getBlockState(aPos).getBlock()
-					.getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16);
-		// end the great block search
-
+		// check for unbreakable or very hard blocks - should only catch unbreakable
+		// blocks (e.g. bedrock), obsidian, and water by default (we explicitly allow
+		// lava)
+		if (world.getBlockState(aPos).getBlockHardness(world, aPos) == -1.0F
+				|| (world.getBlockState(aPos).getBlockHardness(world, aPos) >= 50.0F
+						&& world.getBlockState(aPos).getBlock() != Blocks.LAVA
+						&& world.getBlockState(aPos).getBlock() != Blocks.FLOWING_LAVA))
+		{
+			player.sendMessage(new TextComponentTranslation("Something is blocking the bridge"));
+			KalStuff.logger.info(world.getBlockState(aPos).getBlock());
+			return true;
+		}
 		// if the bridge blocks have chained back to the first one, return
 		if (aPos.equals(origin))
 			return true;
 		// if the found position is more than sixteen blocks away despite all of the
 		// checks above, then send a message that the bridge cannot reach that far
-		if (i > 16)
+		if (dist > 16)
 		{
-			playerIn.sendMessage(new TextComponentTranslation("The bridge cannot reach that far", new Object[0]));
+			player.sendMessage(new TextComponentTranslation("The bridge cannot reach that far"));
 			return true;
 		}
 
 		// if a bridge block is found
-		if (worldIn.getBlockState(aPos).getBlock().getDefaultState() == KalStuffBlocks.BRIDGE.getDefaultState())
+		if (world.getBlockState(aPos).getBlock().getDefaultState() == KalStuffBlocks.BRIDGE.getDefaultState())
 		{
-			BlockBridge target = (BlockBridge) worldIn.getBlockState(aPos).getBlock();
-
+			BlockBridge target = (BlockBridge) world.getBlockState(aPos).getBlock();
 			// attempt to "chain" the target bridge
 			try
 			{
-				target.chain(worldIn, aPos, worldIn.getBlockState(aPos), playerIn, side, hitX, hitY, hitZ, origin);
-			}
-			catch (StackOverflowError e) {}
+				target.chain(world, aPos, world.getBlockState(aPos), player, hand, side, hitX, hitY, hitZ, origin);
+			} catch (StackOverflowError e) {}
 
-		}
-		else if (i <= 16 && block.canPlaceBlockAt(worldIn, aPos))
+		} else if (dist <= 16 && block.canPlaceBlockAt(world, aPos))
 		{ // if air is found
 			boolean success = false;
-			IBlockState blockstate;
+			IBlockState blockstate, directional;
+			blockstate = Block.getBlockFromItem(player.getHeldItem(hand).getItem()).getStateForPlacement(world, aPos,
+					side, hitX, hitY, hitZ, itemstack.getMetadata(), player, hand);
 			try
-			{
-				// attempt to place as a six-directional block, e.g. dispenser
-				blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem())
-						.getStateFromMeta(itemstack.getMetadata())
-						.withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(origin, playerIn));
-				if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos))
-					if (worldIn.setBlockState(aPos, blockstate))
-						success = true;
-			} catch (Exception e)
+			{ // try placing as a six-directional block
+				directional = blockstate.withProperty(FACING, EnumFacing.getDirectionFromEntityLiving(origin, player));
+				if (((ItemBlock) player.getHeldItem(hand).getItem()).placeBlockAt(itemstack, player, world, aPos, side,
+						hitZ, hitZ, hitZ, directional))
+					success = true;
+			}
+			catch (Exception e)
 			{
 				try
-				{
-					// attempt to place as a four-directional block, e.g. furnace
-					blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem())
-							.getStateFromMeta(itemstack.getMetadata())
-							.withProperty(FACING, playerIn.getHorizontalFacing().getOpposite());
-					if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos))
-						if (worldIn.setBlockState(aPos, blockstate))
-							success = true;
-
-				} catch (Exception e2)
-				{
-					try
-					{
-						// attempt to place as a normal block, e.g. dirt
-						blockstate = (IBlockState) Block.getBlockFromItem(playerIn.getHeldItemMainhand().getItem())
-								.getStateFromMeta(itemstack.getMetadata());
-						if (blockstate.getBlock().canPlaceBlockAt(worldIn, aPos))
-							if (worldIn.setBlockState(aPos, blockstate))
-								success = true;
-					} catch (Exception e3)
-					{
-					}
-				}
+				{ // set the block without a direction - we kept the blockstate backup because I
+					// don't know how to remove a property from a block :P
+					// oh and by the way, Vanilla blocks with quad-rotations (e.g. furnaces) will
+					// still magically get their rotation - I'm not entirely sure how. Note that for
+					// some reason they will never place facing a solid block if there's an opening
+					// (air) available. They'll just rotate away from it. Or at least furnaces
+					// do, anyway, those are the only blocks I tried
+					if (((ItemBlock) player.getHeldItem(hand).getItem()).placeBlockAt(itemstack, player, world, aPos,
+							side, hitZ, hitZ, hitZ, blockstate))
+						success = true;
+				} catch (Exception g) {}
 			}
+
 			// if the block was placed, fire particles, play sound, and all the fancy stuff
 			if (success)
 			{
@@ -220,16 +182,52 @@ public class BlockBridge extends BlockDirectional
 				this.particle = true;
 
 				SoundType soundtype = block.getSoundType();
-				worldIn.playSound(null, aPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
-				worldIn.playSound(null, pos, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.BLOCKS, 0.5F, 0.8F);
-				if (!playerIn.capabilities.isCreativeMode)
-					playerIn.getHeldItemMainhand().shrink(1); // TODO: update this
+				world.playSound(null, aPos, soundtype.getPlaceSound(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+				world.playSound(null, pos, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.BLOCKS, 0.5F, 0.8F);
+				if (!player.capabilities.isCreativeMode)
+					player.getHeldItemMainhand().shrink(1); // TODO: update this
 			} else
-				playerIn.sendMessage(new TextComponentTranslation("The bridge block is unable to affect that location",
-						new Object[0]));
+				player.sendMessage(new TextComponentTranslation("The bridge is unable to affect that location"));
 
 		}
 		return true;
+	}
+
+	public BlockPos getNextBlock(BlockPos pos, IBlockState state, World world)
+	{
+		BlockPos aPos = new BlockPos(pos.getX(), pos.getY(), pos.getZ());
+		IBlockState blockstate;
+		int i = 0;
+		do
+		{
+			switch (state.getValue(FACING).getIndex())
+			{
+			case 0:
+				aPos = aPos.down();
+				break;
+			case 1:
+				aPos = aPos.up();
+				break;
+			case 2:
+				aPos = aPos.north();
+				break;
+			case 3:
+				aPos = aPos.south();
+				break;	
+			case 4:
+				aPos = aPos.west();
+				break;
+			case 5:
+				aPos = aPos.east();
+				break;
+			}
+			blockstate = world.getBlockState(aPos);
+			KalStuff.logger.info(aPos);
+		} while (blockstate != Blocks.AIR.getDefaultState()
+				&& blockstate.getBlock().getDefaultState() != KalStuffBlocks.BRIDGE.getDefaultState() && i++ <= 16
+				&& blockstate.getBlockHardness(world, aPos) != -1.0F
+				&& blockstate.getBlockHardness(world, aPos) < 50.0F);
+		return aPos;
 	}
 
 	/**
